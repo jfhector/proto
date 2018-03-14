@@ -1,4 +1,4 @@
-# react typescript react-hot-loader styledcomponents prototype boilerplate
+# prototype
 Simple, ready-to-use boilerplate for rapid prototyping with:
 - React, React Hot Loader
 - Typescript, TS Lint
