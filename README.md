@@ -8,4 +8,4 @@ Simple, ready-to-use boilerplate for rapid prototyping with:
 1. clone this repo using git clone, or download it here
 2. npm install
 3. npm run start
-4. app launches on http://localhost:8080/
+4. go to http://localhost:8080/
