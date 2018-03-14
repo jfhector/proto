@@ -1,4 +1,4 @@
-# prototype
+# proto
 Simple, ready-to-use boilerplate for rapid prototyping with:
 - React, React Hot Loader
 - Typescript, TS Lint
