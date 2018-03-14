@@ -4,7 +4,7 @@ Simple, ready-to-use boilerplate for rapid prototyping with:
 - Typescript, TS Lint
 - Styled Components, style presets for rapid prototyping
 
-## installation
+### installation
 1. clone this repo using git clone, or download it here
 2. npm install
 3. npm run start
