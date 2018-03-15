@@ -26,7 +26,7 @@ class CounterPreStyle extends React.Component<CounterProps, {
             )
       }
 
-      componentWillUnmount() {
+      componentDidUnmount() {
             clearInterval(this.interval)
       }
 
