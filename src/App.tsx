@@ -6,6 +6,8 @@ import {
       Button,
       Button_types,
       Button_sizes,
+      Alert,
+      Alert_types,
 } from './components/'
 
 interface AppProps {
@@ -26,6 +28,12 @@ class AppPreStyle extends React.Component<AppProps, {}> {
                         >
                               Hello!
                         </Button>
+                        <Alert
+                              visible
+                              type={Alert_types.danger}
+                        >
+                              You did something wrong!
+                        </Alert>
                   </h1>
             )
       }

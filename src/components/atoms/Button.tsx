@@ -4,6 +4,7 @@ import { colors } from '../../stylepresets'
 
 class Props {
       children: React.ReactNode
+      
       disabled?: boolean
       handleButtonClick?: () => void
       type?: Button_types
