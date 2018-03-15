@@ -9,14 +9,18 @@ interface Props {
       type?: Alert_types
       dismissable?: boolean
       className?: string
-      onClickHandler?: () => void
+      handleClick?: () => void
 }
 export enum Alert_types { 'primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark' }
+
+
+
+
 
 const AlertPreStyle: React.StatelessComponent<Props> = (props) => (
       <div 
             className={props.className}
-            onClick={props.onClickHandler}
+            onClick={props.handleClick}
       >
             {props.children}
 
@@ -97,5 +101,5 @@ Alert.defaultProps = {
       visible: true,
       type: Alert_types.primary,
       dismissable: false,
-      onClickHandler: () => {console.log('Alert was clicked')}
+      handleClick: () => {console.log('Alert was clicked')}
 }

@@ -4,7 +4,7 @@ import { colors } from '../../stylepresets'
 
 class Props {
       children: React.ReactNode
-      
+
       disabled?: boolean
       handleButtonClick?: () => void
       type?: Button_types
@@ -15,7 +15,7 @@ class Props {
 export enum Button_types { primary, secondary, success, danger, warning, info, light, dark }
 export enum Button_sizes { normal, large, small }
 
-const ButtonPreStyle: React.StatelessComponent<Props> = (props) => (
+const Button_preStyle: React.StatelessComponent<Props> = (props) => (
       <div 
             className={props.className}
             onClick={!props.disabled ? props.handleButtonClick : (() => {})}
@@ -25,7 +25,7 @@ const ButtonPreStyle: React.StatelessComponent<Props> = (props) => (
 
 )
 
-export const Button = styled(ButtonPreStyle)`
+export const Button = styled(Button_preStyle)`
 
       display: flex;
       justify-content: center;

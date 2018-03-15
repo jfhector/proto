@@ -8,13 +8,14 @@ import {
       Button_sizes,
       Alert,
       Alert_types,
+      CollapseButton,
 } from './components/'
 
-interface AppProps {
+interface Props {
       className?: string
 }
 
-class AppPreStyle extends React.Component<AppProps, {}> {
+class App_preStyle extends React.Component<Props, {}> {
       render() {
             const { className } = this.props
 
@@ -34,12 +35,15 @@ class AppPreStyle extends React.Component<AppProps, {}> {
                         >
                               You did something wrong!
                         </Alert>
+                        <CollapseButton 
+                              expanded
+                        />
                   </h1>
             )
       }
 }
 
-const App = styled(AppPreStyle)`
+const App = styled(App_preStyle)`
       background-color: yellow;
 `
 

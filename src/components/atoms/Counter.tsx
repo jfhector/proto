@@ -7,7 +7,7 @@ interface Props {
       big?: boolean
 }
 
-class CounterPreStyle extends React.Component<Props, {
+class Counter_preStyle extends React.Component<Props, {
       count: number
 }> {
       interval: number
@@ -41,7 +41,7 @@ class CounterPreStyle extends React.Component<Props, {
       }
 }
 
-export const Counter = styled(CounterPreStyle)`
+export const Counter = styled(Counter_preStyle)`
       color: ${colors.textColor.positive};
 
       ${(props: Props) => props.big && css`
