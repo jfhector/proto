@@ -2,17 +2,17 @@ import * as React from 'react'
 import styled, { css } from 'styled-components'
 import { colors } from '../../stylepresets'
 
-interface CounterProps {
+interface Props {
       className?: string
       big?: boolean
 }
 
-class CounterPreStyle extends React.Component<CounterProps, {
+class CounterPreStyle extends React.Component<Props, {
       count: number
 }> {
       interval: number
 
-      constructor(props: CounterProps) {
+      constructor(props: Props) {
             super(props)
             this.state = {
                   count: 0
@@ -44,7 +44,7 @@ class CounterPreStyle extends React.Component<CounterProps, {
 export const Counter = styled(CounterPreStyle)`
       color: ${colors.textColor.positive};
 
-      ${(props: CounterProps) => props.big && css`
+      ${(props: Props) => props.big && css`
             font-size: 72px;
             font-weight: 700;
       `}
