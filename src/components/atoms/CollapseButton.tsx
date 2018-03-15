@@ -1,6 +1,6 @@
-import React = require("react")
-import styled from "styled-components"
-import { colors } from "../../stylepresets";
+import React = require('react')
+import styled from 'styled-components'
+import { colors } from '../../stylepresets'
 
 interface Props {
       expanded: boolean

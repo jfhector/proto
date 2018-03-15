@@ -36,7 +36,7 @@ class App_preStyle extends React.Component<Props, {}> {
                               You did something wrong!
                         </Alert>
                         <CollapseButton 
-                              expanded
+                              expanded={false}
                         />
                   </h1>
             )

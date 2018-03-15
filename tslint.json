@@ -10,7 +10,7 @@
                   "statements"
             ],
             "ban": false,
-            "class-name": true,
+            "class-name": false,
             "comment-format": [
                   true,
                   "check-space"
@@ -110,7 +110,8 @@
                   "ban-keywords",
                   "check-format",
                   "allow-leading-underscore",
-                  "allow-pascal-case"
+                  "allow-pascal-case",
+                  "allow-snake-case"
             ],
             "whitespace": [
                   true,
@@ -122,6 +123,6 @@
                   "check-type",
                   "check-typecast"
             ],
-            "jsx-boolean-value": false,
+            "jsx-boolean-value": false
       }
 }
