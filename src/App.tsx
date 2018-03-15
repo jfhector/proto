@@ -7,7 +7,7 @@ interface AppProps {
       className?: string
 }
 
-class AppPreStyle extends React.Component<AppProps, {}> {
+class App_preStyle extends React.Component<AppProps, {}> {
       render() {
             const { className } = this.props
 
@@ -20,7 +20,7 @@ class AppPreStyle extends React.Component<AppProps, {}> {
       }
 }
 
-const App = styled(AppPreStyle)`
+const App = styled(App_preStyle)`
       background-color: yellow;
 `
 
