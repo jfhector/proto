@@ -2,16 +2,17 @@ import * as React from 'react'
 import styled, { css } from 'styled-components'
 import { colors } from '../../stylepresets'
 
-interface Props {
-      // tslint:disable-next-line:no-any
+class Props {
       children: React.ReactNode
       disabled?: boolean
       handleButtonClick?: () => void
-      type?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark'
-      size?: 'normal' | 'large' | 'small'
+      type?: Button_types
+      size?: Button_sizes
       className?: string
       fullWidth?: boolean
 }
+export enum Button_types { primary, secondary, success, danger, warning, info, light, dark }
+export enum Button_sizes { normal, large, small }
 
 const ButtonPreStyle: React.StatelessComponent<Props> = (props) => (
       <div 
@@ -42,55 +43,55 @@ export const Button = styled(ButtonPreStyle)`
 
       ${props => {
             switch (props.type) {
-                  case 'primary': return css`
+                  case Button_types.primary: return css`
                         background-color: ${colors.bgColor.button.primary};
                         color: white;
                   `
-                  case 'secondary': return css`
+                  case Button_types.secondary: return css`
                         background-color: ${colors.bgColor.button.secondary};
                         color: white;
                   `
-                  case 'success': return css`
+                  case Button_types.success: return css`
                         background-color: ${colors.bgColor.button.success};
                         color: white;
                   `
-                  case 'danger': return css`
+                  case Button_types.danger: return css`
                         background-color: ${colors.bgColor.button.danger};
                         color: white;
                   `
-                  case 'warning': return css`
+                  case Button_types.warning: return css`
                         background-color: ${colors.bgColor.button.warn};
                   `
-                  case 'info': return css`
+                  case Button_types.info: return css`
                         background-color: ${colors.bgColor.button.info};
                         color: white;
                   `
-                  case 'light': return css`
+                  case Button_types.light: return css`
                         background-color: ${colors.bgColor.button.light};
                   `
-                  case 'dark': return css`
+                  case Button_types.dark: return css`
                         background-color: ${colors.bgColor.button.dark};
                         color: white;
                   `
-                  default: console.log('@Button switch props.type: no switch case found')
+                  default: throw new Error('switch props.type: no switch case found')
             } 
       }}
 
       ${props => {
             switch (props.size) {
-                  case 'small': return css`
+                  case Button_sizes.small: return css`
                         padding: 4px 8px;
                         line-height: 21px;                        
                   `
-                  case 'normal': return css`
+                  case Button_sizes.normal: return css`
                         padding: 6px 12px;
                         line-height: 24px;
                   `
-                  case 'large': return css`
+                  case Button_sizes.large: return css`
                         padding: 8px 16px;
                         line-height: 30px;                        
                   `
-                  default: console.log('@Button switch props.size: no switch case found')
+                  default: throw new Error('props.size didn\'t match any switch statement')
             }
       }}
 
@@ -104,7 +105,7 @@ export const Button = styled(ButtonPreStyle)`
 Button.defaultProps = {
       disabled: false,
       handleButtonClick: () => {console.log('Button clicked')},
-      type: 'primary',
-      size: 'normal',
+      type: Button_types.primary,
+      size: Button_sizes.normal,
       fullWidth: false,
 }
