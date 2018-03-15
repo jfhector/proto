@@ -16,7 +16,7 @@ class AppPreStyle extends React.Component<AppProps, {}> {
                         Hello, world.<br/>
                         <Counter big />
                         <Button 
-                              type='danger'
+                              type='info'
                               size='large'
                         >
                               Hello!

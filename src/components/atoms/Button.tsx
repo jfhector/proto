@@ -4,7 +4,7 @@ import { colors } from '../../stylepresets'
 
 interface Props {
       // tslint:disable-next-line:no-any
-      children: any
+      children: React.ReactNode
       disabled?: boolean
       handleButtonClick?: () => void
       type?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark'
@@ -13,23 +13,12 @@ interface Props {
       fullWidth?: boolean
 }
 
-const ButtonPreStyle: React.StatelessComponent<Props> = ({
-      handleButtonClick,
-      children,
-
-      type,
-      size,
-      disabled,
-      fullWidth,
-
-      className
-}) => (
-
+const ButtonPreStyle: React.StatelessComponent<Props> = (props) => (
       <div 
-            className={className}
-            onClick={!disabled ? handleButtonClick : (() => {})}
+            className={props.className}
+            onClick={!props.disabled ? props.handleButtonClick : (() => {})}
       >
-            {children}
+            {props.children}
       </div>
 
 )
