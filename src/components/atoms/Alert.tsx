@@ -13,10 +13,6 @@ interface Props {
 }
 export enum Alert_types { 'primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark' }
 
-
-
-
-
 const AlertPreStyle: React.StatelessComponent<Props> = (props) => (
       <div 
             className={props.className}
