@@ -11,20 +11,22 @@ import {
       CollapseButton,
       Selector,
 } from './components/'
+import { KpiTile_preStyle } from './components/molecules/KpiTile'
+import { MeasuresForKpiTiles } from './data'
 
 interface Props {
       className?: string
 }
 
-export interface State {
+export interface AppState {
       selectedSweet: string
 }
 
-const initialState: State = {
+const initialState: AppState = {
       selectedSweet: 'Quiche'
 }
 
-class App_preStyle extends React.Component<Props, State> {
+class App_preStyle extends React.Component<Props, AppState> {
       constructor(props: Props) {
             super(props)
             this.state = initialState
@@ -61,6 +63,12 @@ class App_preStyle extends React.Component<Props, State> {
                                     'Jambon'
                               ]}
                               handleSelectorChange={newSelection => this.setState({selectedSweet: newSelection})}  
+                        />
+                        <KpiTile_preStyle
+                              measure={MeasuresForKpiTiles.FrequencyOfPurchase}
+                              selected
+                              appState={this.state}
+                              handleKpiTileClick={(measure: MeasuresForKpiTiles) => {}}
                         />
                   </h1>
             )
