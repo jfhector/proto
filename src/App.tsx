@@ -9,13 +9,27 @@ import {
       Alert,
       Alert_typeOptions,
       CollapseButton,
+      Selector,
 } from './components/'
 
 interface Props {
       className?: string
 }
 
-class App_preStyle extends React.Component<Props, {}> {
+interface State {
+      selectedSweet: string
+}
+
+const initialState: State = {
+      selectedSweet: 'Quiche'
+}
+
+class App_preStyle extends React.Component<Props, State> {
+      constructor(props: Props) {
+            super(props)
+            this.state = initialState
+      }
+
       render() {
             const { className } = this.props
 
@@ -37,6 +51,16 @@ class App_preStyle extends React.Component<Props, {}> {
                         </Alert>
                         <CollapseButton 
                               expanded={false}
+                        />
+                        <Selector
+                              value={this.state.selectedSweet}
+                              optionsArray={[
+                                    'Bonbon',
+                                    'Pie',
+                                    'Quiche',
+                                    'Jambon'
+                              ]}
+                              handleSelectorChange={newSelection => this.setState({selectedSweet: newSelection})}  
                         />
                   </h1>
             )
