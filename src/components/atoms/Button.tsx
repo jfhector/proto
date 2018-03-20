@@ -6,7 +6,7 @@ class Props {
       children: React.ReactNode
 
       disabled?: boolean
-      handleButtonClick?: () => void
+      handleButtonClick?: React.MouseEventHandler<HTMLElement>
       typeOption?: Button_typeOptions
       sizeOption?: Button_sizeOptions
       className?: string
