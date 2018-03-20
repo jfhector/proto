@@ -12,8 +12,8 @@ class Props {
       className?: string
       fullWidth?: boolean
 }
-export enum Button_typeOptions { primary, secondary, success, danger, warning, info, light, dark }
-export enum Button_sizeOptions { normal, large, small }
+export enum Button_typeOptions { Primary, Secondary, Success, Danger, Warning, Info, Light, Dark }
+export enum Button_sizeOptions { Normal, Large, Small }
 
 const Button_preStyle: React.StatelessComponent<Props> = (props: Props) => (
       <div 
@@ -44,33 +44,33 @@ export const Button = styled(Button_preStyle)`
 
       ${props => {
             switch (props.typeOption) {
-                  case Button_typeOptions.primary: return css`
+                  case Button_typeOptions.Primary: return css`
                         background-color: ${colors.bgColor.button.primary};
                         color: white;
                   `
-                  case Button_typeOptions.secondary: return css`
+                  case Button_typeOptions.Secondary: return css`
                         background-color: ${colors.bgColor.button.secondary};
                         color: white;
                   `
-                  case Button_typeOptions.success: return css`
+                  case Button_typeOptions.Success: return css`
                         background-color: ${colors.bgColor.button.success};
                         color: white;
                   `
-                  case Button_typeOptions.danger: return css`
+                  case Button_typeOptions.Danger: return css`
                         background-color: ${colors.bgColor.button.danger};
                         color: white;
                   `
-                  case Button_typeOptions.warning: return css`
+                  case Button_typeOptions.Warning: return css`
                         background-color: ${colors.bgColor.button.warn};
                   `
-                  case Button_typeOptions.info: return css`
+                  case Button_typeOptions.Info: return css`
                         background-color: ${colors.bgColor.button.info};
                         color: white;
                   `
-                  case Button_typeOptions.light: return css`
+                  case Button_typeOptions.Light: return css`
                         background-color: ${colors.bgColor.button.light};
                   `
-                  case Button_typeOptions.dark: return css`
+                  case Button_typeOptions.Dark: return css`
                         background-color: ${colors.bgColor.button.dark};
                         color: white;
                   `
@@ -80,15 +80,15 @@ export const Button = styled(Button_preStyle)`
 
       ${props => {
             switch (props.sizeOption) {
-                  case Button_sizeOptions.small: return css`
+                  case Button_sizeOptions.Small: return css`
                         padding: 4px 8px;
                         line-height: 21px;                        
                   `
-                  case Button_sizeOptions.normal: return css`
+                  case Button_sizeOptions.Normal: return css`
                         padding: 6px 12px;
                         line-height: 24px;
                   `
-                  case Button_sizeOptions.large: return css`
+                  case Button_sizeOptions.Large: return css`
                         padding: 8px 16px;
                         line-height: 30px;                        
                   `
@@ -106,7 +106,7 @@ export const Button = styled(Button_preStyle)`
 Button.defaultProps = {
       disabled: false,
       handleButtonClick: () => {console.log('Button clicked')},
-      typeOption: Button_typeOptions.primary,
-      sizeOption: Button_sizeOptions.normal,
+      typeOption: Button_typeOptions.Primary,
+      sizeOption: Button_sizeOptions.Normal,
       fullWidth: false,
 }

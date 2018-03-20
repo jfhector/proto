@@ -1,17 +1,17 @@
 import * as React from 'react'
-import styled, { css } from 'styled-components';
-import { colors } from '../../stylepresets';
+import styled, { css } from 'styled-components'
+import { colors } from '../../stylepresets'
 
 interface Props {
       visible: boolean
       children: React.ReactNode
 
-      type?: Alert_types
+      typeOption?: Alert_typeOptions
       dismissable?: boolean
       className?: string
-      handleClick?: () => void
+      handleClick?: React.MouseEventHandler<HTMLElement>
 }
-export enum Alert_types { 'primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark' }
+export enum Alert_typeOptions { Primary, Secondary, Success, Danger, Warning, Info, Light, Dark }
 
 const AlertPreStyle: React.StatelessComponent<Props> = (props) => (
       <div 
@@ -47,43 +47,43 @@ export const Alert = styled(AlertPreStyle)`
       overflow: hidden;
 
       ${props => {
-            switch (props.type) {
-                  case Alert_types.primary: return css`
+            switch (props.typeOption) {
+                  case Alert_typeOptions.Primary: return css`
                         color: ${colors.textColor.alert.primary};
                         background-color: ${colors.bgColor.alert.primary};
                         border: 1px solid ${colors.borderColor.alert.primary};                        
                   `
-                  case Alert_types.secondary: return css`
+                  case Alert_typeOptions.Secondary: return css`
                         color: ${colors.textColor.alert.secondary};
                         background-color: ${colors.bgColor.alert.secondary};
                         border: 1px solid ${colors.borderColor.alert.secondary};
                   `
-                  case Alert_types.success: return css`
+                  case Alert_typeOptions.Success: return css`
                         color: ${colors.textColor.alert.success};
                         background-color: ${colors.bgColor.alert.success};
                         border: 1px solid ${colors.borderColor.alert.success};
                   `
-                  case Alert_types.danger: return css`
+                  case Alert_typeOptions.Danger: return css`
                         color: ${colors.textColor.alert.danger};
                         background-color: ${colors.bgColor.alert.danger};
                         border: 1px solid ${colors.borderColor.alert.danger};
                   `
-                  case Alert_types.warning: return css`
+                  case Alert_typeOptions.Warning: return css`
                         color: ${colors.textColor.alert.warn};
                         background-color: ${colors.bgColor.alert.warn};
                         border: 1px solid ${colors.borderColor.alert.warn};
                   `
-                  case Alert_types.info: return css`
+                  case Alert_typeOptions.Info: return css`
                         color: ${colors.textColor.alert.info};
                         background-color: ${colors.bgColor.alert.info};
                         border: 1px solid ${colors.borderColor.alert.info};
                   `
-                  case Alert_types.light: return css`
+                  case Alert_typeOptions.Light: return css`
                         color: ${colors.textColor.alert.light};
                         background-color: ${colors.bgColor.alert.light};
                         border: 1px solid ${colors.borderColor.alert.light};
                   `
-                  case Alert_types.dark: return css`
+                  case Alert_typeOptions.Dark: return css`
                         color: ${colors.textColor.alert.dark};
                         background-color: ${colors.bgColor.alert.dark};
                         border: 1px solid ${colors.borderColor.alert.dark};
@@ -95,7 +95,7 @@ export const Alert = styled(AlertPreStyle)`
 
 Alert.defaultProps = {
       visible: true,
-      type: Alert_types.primary,
+      typeOption: Alert_typeOptions.Primary,
       dismissable: false,
       handleClick: () => {console.log('Alert was clicked')}
 }

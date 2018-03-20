@@ -7,7 +7,7 @@ import {
       Button_typeOptions,
       Button_sizeOptions,
       Alert,
-      Alert_types,
+      Alert_typeOptions,
       CollapseButton,
 } from './components/'
 
@@ -24,14 +24,14 @@ class App_preStyle extends React.Component<Props, {}> {
                         Hello, world.<br/>
                         <Counter big />
                         <Button 
-                              typeOption={Button_typeOptions.success}
-                              sizeOption={Button_sizeOptions.small}
+                              typeOption={Button_typeOptions.Success}
+                              sizeOption={Button_sizeOptions.Large}
                         >
                               Hello!
                         </Button>
                         <Alert
                               visible
-                              type={Alert_types.danger}
+                              typeOption={Alert_typeOptions.Success}
                         >
                               You did something wrong!
                         </Alert>
