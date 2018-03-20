@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import { colors } from '../../stylepresets'
-import { getKpisData, MeasuresForKpiTiles } from '../../data'
+import { MeasuresForKpiTiles, getMeasureValue } from '../../data'
 import { AppState } from '../../App'
 
 interface Props {
@@ -23,10 +23,10 @@ export const KpiTile_preStyle: React.StatelessComponent<Props> = (props: Props) 
                   {props.measure}
             </div>
 
-            {/* <div
+            <div
                   className='measureValue'
             >
-
-            </div> */}
+                  {getMeasureValue(props.appState, props.measure)}
+            </div>
       </div>
 )

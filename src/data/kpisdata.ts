@@ -7,31 +7,19 @@ interface MeasureData {
       changedUpwards: boolean
 }
 
-// export enum MeasuresForKpiTiles {
-//       SalesValue = 'Sales value',
-//       SpendPerCustomer = 'Spend per customer',
-//       Customers = 'Customers',
-//       RetailerVisits = 'Retailer visits',
-//       SpendPerVisit = 'Spend per visit',
-//       UnitsPerVisit = 'Units per visit',
-//       BasketPenetration = 'Basket penetration',
-//       FrequencyOfPurchase = 'Frequency of purchase',
-//       SalesUnits = 'Sales units',
-// }
-
 export type MeasuresForKpiTiles = 'Sales value' | 
       'Spend per customer' | 'Customers' | 'Retailer visits' | 'Spend per visit' | 
       'Units per visit' | 'Basket penetration' | 'Frequency of purchase' | 'Sales units'
 
-type KpisData = {[K in MeasuresForKpiTiles]: MeasureData}
+type KpisData = { [k in MeasuresForKpiTiles]: MeasureData }
 
-// export function getMeasureValue(appState: AppState, measureName: MeasuresForKpiTiles) {
-//       let kpiData = getKpisData(appState)
+export function getMeasureValue(appState: AppState, measureName: MeasuresForKpiTiles) {
+      let kpiData = getKpisData(appState)
 
-//       return kpiData[MeasuresForKpiTiles.SalesUnits]
-// }
+      return kpiData[measureName].value
+}
 
-export function getKpisData(appState: AppState): KpisData {
+function getKpisData(appState: AppState): KpisData {
       return ({
             ['Sales value']: {
                   value: 'R$5.823.489.124',
@@ -89,3 +77,33 @@ export function getKpisData(appState: AppState): KpisData {
             },
       })
 }
+
+// export enum MeasuresForKpiTiles {
+//       SalesValue = 'Sales value',
+//       SpendPerCustomer = 'Spend per customer',
+//       Customers = 'Customers',
+//       RetailerVisits = 'Retailer visits',
+//       SpendPerVisit = 'Spend per visit',
+//       UnitsPerVisit = 'Units per visit',
+//       BasketPenetration = 'Basket penetration',
+//       FrequencyOfPurchase = 'Frequency of purchase',
+//       SalesUnits = 'Sales units',
+// }
+
+// export function getMeasureValue(appState: AppState, measureName: MeasuresForKpiTiles) {
+//       let kpiData = getKpisData(appState)
+
+//       return kpiData[MeasuresForKpiTiles.SalesUnits]
+// }
+
+// type KpisData = {
+//       ['Sales value']: MeasureData
+//       ['Spend per customer']: MeasureData
+//       ['Customers']: MeasureData
+//       ['Retailer visits']: MeasureData
+//       ['Spend per visit']: MeasureData
+//       ['Units per visit']: MeasureData
+//       ['Basket penetration']: MeasureData
+//       ['Frequency of purchase']: MeasureData
+//       ['Sales units']: MeasureData
+// }

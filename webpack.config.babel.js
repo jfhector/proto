@@ -21,5 +21,6 @@ module.exports = {
       resolve: {
             extensions: ['.ts', '.tsx', '.js', '.jsx']
       },
-      plugins: [new HtmlWebpackPlugin(), new webpack.NamedModulesPlugin()]
+      plugins: [new HtmlWebpackPlugin(), new webpack.NamedModulesPlugin()],
+      devtool: 'eval-source-map'
 }
