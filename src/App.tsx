@@ -65,7 +65,7 @@ class App_preStyle extends React.Component<Props, AppState> {
                               handleSelectorChange={newSelection => this.setState({selectedSweet: newSelection})}  
                         />
                         <KpiTile_preStyle
-                              measure={'Sales value'}
+                              measure={'Customers'}
                               selected
                               appState={this.state}
                               handleKpiTileClick={(measure: MeasuresForKpiTiles) => {}}

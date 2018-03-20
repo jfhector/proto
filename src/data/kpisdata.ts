@@ -13,13 +13,7 @@ export type MeasuresForKpiTiles = 'Sales value' |
 
 type KpisData = { [k in MeasuresForKpiTiles]: MeasureData }
 
-export function getMeasureValue(appState: AppState, measureName: MeasuresForKpiTiles) {
-      let kpiData = getKpisData(appState)
-
-      return kpiData[measureName].value
-}
-
-function getKpisData(appState: AppState): KpisData {
+export function getDataForAllMeasures(appState: AppState): KpisData {
       return ({
             ['Sales value']: {
                   value: 'R$5.823.489.124',
