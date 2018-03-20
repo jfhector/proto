@@ -5,7 +5,7 @@ import { colors } from '../../stylepresets'
 interface Props {
       expanded: boolean
 
-      handleClick?: () => void
+      handleClick?: React.MouseEventHandler<HTMLElement>
       className?: string
 }
 
