@@ -4,8 +4,8 @@ import styled from 'styled-components'
 import {
       Counter, 
       Button,
-      Button_types,
-      Button_sizes,
+      Button_typeOptions,
+      Button_sizeOptions,
       Alert,
       Alert_types,
       CollapseButton,
@@ -24,8 +24,8 @@ class App_preStyle extends React.Component<Props, {}> {
                         Hello, world.<br/>
                         <Counter big />
                         <Button 
-                              type={Button_types.light}
-                              size={Button_sizes.large}
+                              typeOption={Button_typeOptions.success}
+                              sizeOption={Button_sizeOptions.small}
                         >
                               Hello!
                         </Button>

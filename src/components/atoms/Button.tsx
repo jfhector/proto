@@ -7,15 +7,15 @@ class Props {
 
       disabled?: boolean
       handleButtonClick?: () => void
-      type?: Button_types
-      size?: Button_sizes
+      typeOption?: Button_typeOptions
+      sizeOption?: Button_sizeOptions
       className?: string
       fullWidth?: boolean
 }
-export enum Button_types { primary, secondary, success, danger, warning, info, light, dark }
-export enum Button_sizes { normal, large, small }
+export enum Button_typeOptions { primary, secondary, success, danger, warning, info, light, dark }
+export enum Button_sizeOptions { normal, large, small }
 
-const Button_preStyle: React.StatelessComponent<Props> = (props) => (
+const Button_preStyle: React.StatelessComponent<Props> = (props: Props) => (
       <div 
             className={props.className}
             onClick={!props.disabled ? props.handleButtonClick : (() => {})}
@@ -43,34 +43,34 @@ export const Button = styled(Button_preStyle)`
       };
 
       ${props => {
-            switch (props.type) {
-                  case Button_types.primary: return css`
+            switch (props.typeOption) {
+                  case Button_typeOptions.primary: return css`
                         background-color: ${colors.bgColor.button.primary};
                         color: white;
                   `
-                  case Button_types.secondary: return css`
+                  case Button_typeOptions.secondary: return css`
                         background-color: ${colors.bgColor.button.secondary};
                         color: white;
                   `
-                  case Button_types.success: return css`
+                  case Button_typeOptions.success: return css`
                         background-color: ${colors.bgColor.button.success};
                         color: white;
                   `
-                  case Button_types.danger: return css`
+                  case Button_typeOptions.danger: return css`
                         background-color: ${colors.bgColor.button.danger};
                         color: white;
                   `
-                  case Button_types.warning: return css`
+                  case Button_typeOptions.warning: return css`
                         background-color: ${colors.bgColor.button.warn};
                   `
-                  case Button_types.info: return css`
+                  case Button_typeOptions.info: return css`
                         background-color: ${colors.bgColor.button.info};
                         color: white;
                   `
-                  case Button_types.light: return css`
+                  case Button_typeOptions.light: return css`
                         background-color: ${colors.bgColor.button.light};
                   `
-                  case Button_types.dark: return css`
+                  case Button_typeOptions.dark: return css`
                         background-color: ${colors.bgColor.button.dark};
                         color: white;
                   `
@@ -79,16 +79,16 @@ export const Button = styled(Button_preStyle)`
       }}
 
       ${props => {
-            switch (props.size) {
-                  case Button_sizes.small: return css`
+            switch (props.sizeOption) {
+                  case Button_sizeOptions.small: return css`
                         padding: 4px 8px;
                         line-height: 21px;                        
                   `
-                  case Button_sizes.normal: return css`
+                  case Button_sizeOptions.normal: return css`
                         padding: 6px 12px;
                         line-height: 24px;
                   `
-                  case Button_sizes.large: return css`
+                  case Button_sizeOptions.large: return css`
                         padding: 8px 16px;
                         line-height: 30px;                        
                   `
@@ -106,7 +106,7 @@ export const Button = styled(Button_preStyle)`
 Button.defaultProps = {
       disabled: false,
       handleButtonClick: () => {console.log('Button clicked')},
-      type: Button_types.primary,
-      size: Button_sizes.normal,
+      typeOption: Button_typeOptions.primary,
+      sizeOption: Button_sizeOptions.normal,
       fullWidth: false,
 }
