@@ -16,7 +16,7 @@ interface Props {
       className?: string
 }
 
-interface State {
+export interface State {
       selectedSweet: string
 }
 
