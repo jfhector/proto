@@ -22,5 +22,11 @@ export const KpiTile_preStyle: React.StatelessComponent<Props> = (props: Props) 
             >
                   {props.measure}
             </div>
+
+            {/* <div
+                  className='measureValue'
+            >
+
+            </div> */}
       </div>
 )
