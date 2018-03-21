@@ -1,7 +1,7 @@
 import * as React from 'react'
+import './Counter.css'
 
 interface Props {
-      className?: string
       big?: boolean
 }
 
@@ -9,9 +9,13 @@ interface State {
       count: number
 }
 
-export class Counter extends React.Component<Props, State> {
-      interval: number
+export class Counter extends React.Component<Props, State> {      
+      static defaultProps = {
+            big: false,
+      }
 
+      interval: number
+      
       constructor(props: Props) {
             super(props)
             this.state = {
@@ -31,21 +35,14 @@ export class Counter extends React.Component<Props, State> {
       }
 
       render() {
-            const { className } = this.props
-
             return (
-                  <span className={className}>
+                  <span 
+                        className={`Counter
+                              ${this.props.big && 'big'}
+                        `}
+                  >
                         {this.state.count}
                   </span>
             )
       }
 }
-
-// export const Counter = styled(Counter_preStyle)`
-//       color: ${colors.textColor.positive};
-
-//       ${(props: Props) => props.big && css`
-//             font-size: 72px;
-//             font-weight: 700;
-//       `}
-// `

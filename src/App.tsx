@@ -31,7 +31,7 @@ class App extends React.Component<Props, AppState> {
             return (
                   <div className='App'>
                         Hello, world.<br/>
-                        <Counter big />
+                        <Counter />
                         <Button 
                               typeOption='primary'
                               sizeOption='small'

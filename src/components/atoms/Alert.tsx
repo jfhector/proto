@@ -7,7 +7,6 @@ interface Props {
 
       typeOption?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark'
       dismissable?: boolean
-      className?: string
       handleClick?: React.MouseEventHandler<HTMLElement>
 }
 
