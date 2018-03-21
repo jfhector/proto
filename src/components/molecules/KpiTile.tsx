@@ -7,36 +7,39 @@ interface Props {
       selected: boolean
       appState: AppState
       handleKpiTileClick: (measure: MeasuresForKpiTiles) => void
-      className?: string
 }
 
-export const KpiTile: React.StatelessComponent<Props> = (props: Props) => (
-      <div 
-            className={props.className}
-            onClick={() => props.handleKpiTileClick(props.measure)}
-      >
-            <div
-                  className='measureName'
-            >
-                  {props.measure}
-            </div>
-
-            <div
-                  className='measureValue'
-            >
-                  {getDataForAllMeasures(props.appState)[props.measure].value}
-            </div>
-
-            <div
-                  className='valueChange'
-            >
-                  {getDataForAllMeasures(props.appState)[props.measure].valueChange}
-            </div>
-
-            <div
-                  className='percentChange'
-            >
-                  {getDataForAllMeasures(props.appState)[props.measure].percentChange}
-            </div>
-      </div>
-)
+export class KpiTile extends React.Component<Props, {}> {
+      render() {
+            return (
+                  <div 
+                        className='KpiTile'
+                        onClick={() => this.props.handleKpiTileClick(this.props.measure)}
+                  >
+                        <div
+                              className='measureName'
+                        >
+                              {this.props.measure}
+                        </div>
+            
+                        <div
+                              className='measureValue'
+                        >
+                              {getDataForAllMeasures(this.props.appState)[this.props.measure].value}
+                        </div>
+            
+                        <div
+                              className='valueChange'
+                        >
+                              {getDataForAllMeasures(this.props.appState)[this.props.measure].valueChange}
+                        </div>
+            
+                        <div
+                              className='percentChange'
+                        >
+                              {getDataForAllMeasures(this.props.appState)[this.props.measure].percentChange}
+                        </div>
+                  </div>
+            )
+      }
+}
