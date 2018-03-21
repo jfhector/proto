@@ -1,4 +1,5 @@
 import * as React from 'react'
+import './Alert.css'
 
 interface Props {
       visible: boolean
@@ -12,7 +13,10 @@ interface Props {
 
 export const Alert: React.StatelessComponent<Props> = (props) => (
       <div 
-            className={props.className}
+            className={`
+                  Alert
+                  
+            `}
             onClick={props.handleClick}
       >
             {props.children}
