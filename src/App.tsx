@@ -42,7 +42,7 @@ class App extends React.Component<Props, AppState> {
                         </Button>
                         <Alert
                               visible
-                              typeOption='info'
+                              typeOption='danger'
                         >
                               You did something wrong!
                         </Alert>

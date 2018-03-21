@@ -1,3 +1,55 @@
 .Alert {
-      background-color: red;
+      margin: 16px 0;
+      padding: 12px 20px;
+
+      border-radius: 4px;
+
+      font-size: medium;
+      line-height: 24px;
+      text-align: left;
+
+      cursor: pointer;
+      overflow: hidden;
+}
+
+/* typeOption PROP */
+
+.primary {
+      color: var(--textColor_alert_primary);
+      background-color: var(--backgroundColor_alert_primary);
+}
+
+.secondary {
+      color: var(--textColor_alert_secondary);
+      background-color: var(--backgroundColor_alert_secondary);
+}
+
+.success {
+      color: var(--textColor_alert_success);
+      background-color: var(--backgroundColor_alert_success);
+}
+
+.danger {
+      color: var(--textColor_alert_danger);
+      background-color: var(--backgroundColor_alert_danger);
+}
+
+.warning {
+      color: var(--textColor_alert_warning);
+      background-color: var(--backgroundColor_alert_warning);
+}
+
+.info {
+      color: var(--textColor_alert_info);
+      background-color: var(--backgroundColor_alert_info);
+}
+
+.light {
+      color: var(--textColor_alert_light);
+      background-color: var(--backgroundColor_alert_light);
+}
+
+.dark {
+      color: var(--textColor_alert_dark);
+      background-color: var(--backgroundColor_alert_dark);
 }
