@@ -11,7 +11,7 @@ import {
       CollapseButton,
       Selector,
 } from './components/'
-import { KpiTile_preStyle } from './components/molecules/KpiTile'
+import { KpiTile } from './components/molecules/KpiTile'
 import { MeasuresForKpiTiles } from './data'
 
 interface Props {
@@ -40,7 +40,7 @@ class App_preStyle extends React.Component<Props, AppState> {
                         Hello, world.<br/>
                         <Counter big />
                         <Button 
-                              typeOption={Button_typeOptions.Success}
+                              typeOption='info'
                               sizeOption={Button_sizeOptions.Large}
                         >
                               Hello!
@@ -64,7 +64,7 @@ class App_preStyle extends React.Component<Props, AppState> {
                               ]}
                               handleSelectorChange={newSelection => this.setState({selectedSweet: newSelection})}  
                         />
-                        <KpiTile_preStyle
+                        <KpiTile
                               measure={'Customers'}
                               selected
                               appState={this.state}

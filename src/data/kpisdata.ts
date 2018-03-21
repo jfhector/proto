@@ -1,15 +1,15 @@
 import { AppState } from '../App'
 
+export type MeasuresForKpiTiles = 'Sales value' | 
+      'Spend per customer' | 'Customers' | 'Retailer visits' | 'Spend per visit' | 
+      'Units per visit' | 'Basket penetration' | 'Frequency of purchase' | 'Sales units'
+
 interface MeasureData {
       value: string
       valueChange: string
       percentChange: string
       changedUpwards: boolean
 }
-
-export type MeasuresForKpiTiles = 'Sales value' | 
-      'Spend per customer' | 'Customers' | 'Retailer visits' | 'Spend per visit' | 
-      'Units per visit' | 'Basket penetration' | 'Frequency of purchase' | 'Sales units'
 
 type KpisData = { [k in MeasuresForKpiTiles]: MeasureData }
 
@@ -71,33 +71,3 @@ export function getDataForAllMeasures(appState: AppState): KpisData {
             },
       })
 }
-
-// export enum MeasuresForKpiTiles {
-//       SalesValue = 'Sales value',
-//       SpendPerCustomer = 'Spend per customer',
-//       Customers = 'Customers',
-//       RetailerVisits = 'Retailer visits',
-//       SpendPerVisit = 'Spend per visit',
-//       UnitsPerVisit = 'Units per visit',
-//       BasketPenetration = 'Basket penetration',
-//       FrequencyOfPurchase = 'Frequency of purchase',
-//       SalesUnits = 'Sales units',
-// }
-
-// export function getMeasureValue(appState: AppState, measureName: MeasuresForKpiTiles) {
-//       let kpiData = getKpisData(appState)
-
-//       return kpiData[MeasuresForKpiTiles.SalesUnits]
-// }
-
-// type KpisData = {
-//       ['Sales value']: MeasureData
-//       ['Spend per customer']: MeasureData
-//       ['Customers']: MeasureData
-//       ['Retailer visits']: MeasureData
-//       ['Spend per visit']: MeasureData
-//       ['Units per visit']: MeasureData
-//       ['Basket penetration']: MeasureData
-//       ['Frequency of purchase']: MeasureData
-//       ['Sales units']: MeasureData
-// }

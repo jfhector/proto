@@ -30,15 +30,19 @@ export const KpiTile_preStyle: React.StatelessComponent<Props> = (props: Props) 
             </div>
 
             <div
-                  className='measureValueChange'
+                  className='valueChange'
             >
                   {getDataForAllMeasures(props.appState)[props.measure].valueChange}
             </div>
 
             <div
-                  className='measurePercentChange'
+                  className='percentChange'
             >
                   {getDataForAllMeasures(props.appState)[props.measure].percentChange}
             </div>
       </div>
 )
+
+export const KpiTile = styled(KpiTile_preStyle)`
+      
+`
