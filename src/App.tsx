@@ -30,10 +30,8 @@ class App_preStyle extends React.Component<Props, AppState> {
       }
 
       render() {
-            const { className } = this.props
-
             return (
-                  <h1 className={className}>
+                  <h1 className={this.props.className}>
                         Hello, world.<br/>
                         <Counter big />
                         <Button 

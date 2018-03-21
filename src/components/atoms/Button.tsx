@@ -13,7 +13,7 @@ class Props {
       fullWidth?: boolean
 }
 
-const Button_preStyle: React.StatelessComponent<Props> = (props: Props) => (
+const Button_preStyle: React.StatelessComponent<Props> = (props) => (
       <div 
             className={props.className}
             onClick={!props.disabled ? props.handleButtonClick : (() => {})}

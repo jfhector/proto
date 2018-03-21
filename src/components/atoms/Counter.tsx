@@ -7,9 +7,11 @@ interface Props {
       big?: boolean
 }
 
-class Counter_preStyle extends React.Component<Props, {
+interface State {
       count: number
-}> {
+}
+
+class Counter_preStyle extends React.Component<Props, State> {
       interval: number
 
       constructor(props: Props) {
