@@ -9,10 +9,9 @@ import {
 } from './components/'
 import { KpiTile } from './components/molecules/KpiTile'
 import { MeasuresForKpiTiles } from './data'
+import './App.css'
 
-interface Props {
-      className?: string
-}
+interface Props {}
 
 export interface AppState {
       selectedSweet: string
@@ -30,7 +29,7 @@ class App extends React.Component<Props, AppState> {
 
       render() {
             return (
-                  <h1 className={this.props.className}>
+                  <div className='App'>
                         Hello, world.<br/>
                         <Counter big />
                         <Button 
@@ -66,13 +65,9 @@ class App extends React.Component<Props, AppState> {
                               appState={this.state}
                               handleKpiTileClick={(measure: MeasuresForKpiTiles) => {}}
                         />
-                  </h1>
+                  </div>
             )
       }
 }
 
 export default hot(module)(App)
-
-// const App = styled(App_preStyle)`
-//       background-color: yellow;
-// `
