@@ -1,0 +1,85 @@
+.Button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border-radius: 4px;
+      font-size: medium;
+
+      cursor: pointer;
+
+      width: max-content;
+
+      background-color: red;
+}
+
+/* bool */
+
+.fullWidth {
+      width: 100%;
+}
+
+/* typeOption */
+
+.primary {
+      background-color: var(--backgroundColor_button_primary);
+      color: white;
+}
+
+.secondary {
+      background-color: var(--backgroundColor_button_secondary);
+      color: white;
+}
+
+.success {
+      background-color: var(--backgroundColor_button_success);
+      color: white;
+}
+
+.danger {
+      background-color: var(--backgroundColor_button_danger);
+      color: white;
+}
+
+.warning {
+      background-color: var(--backgroundColor_button_warning);
+      color: white;
+}
+
+.info {
+      background-color: var(--backgroundColor_button_info);
+      color: white;
+}
+
+.light {
+      background-color: var(--backgroundColor_button_light);
+      color: white;
+}
+
+.dark {
+      background-color: var(--backgroundColor_button_dark);
+      color: white;
+}
+
+/* sizeOption */
+
+.small {
+      padding: 4px 8px;
+      line-height: 21px;
+}
+
+.normal {
+      padding: 6px 12px;
+      line-height: 24px;
+}
+
+.large {
+      padding: 8px 16px;
+      line-height: 30px;
+}
+
+/* bool */
+
+.disabled {
+      background-color: var(--backgroundColor_button_disabled);
+}

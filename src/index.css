@@ -96,7 +96,7 @@
 html {
       font-size: 10px;
       font-family: system-ui;
-      color: var(-var(--textColor_default));
+      color: var(--textColor_default);
 }
 
 body {

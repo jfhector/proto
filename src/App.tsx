@@ -34,8 +34,9 @@ class App extends React.Component<Props, AppState> {
                         Hello, world.<br/>
                         <Counter big />
                         <Button 
-                              typeOption='secondary'
+                              typeOption='primary'
                               sizeOption='small'
+                              disabled
                               fullWidth
                         >
                               Hello!
