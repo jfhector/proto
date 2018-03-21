@@ -1,6 +1,4 @@
 import * as React from 'react'
-import styled from 'styled-components'
-import { colors } from '../../stylepresets'
 
 interface Props {
       optionsArray: string[]
@@ -9,7 +7,7 @@ interface Props {
       handleSelectorChange?: (newSelection: string) => void
 }
 
-const Selector_preStyle: React.StatelessComponent<Props> = (props: Props) => (
+export const Selector: React.StatelessComponent<Props> = (props: Props) => (
       <select 
             className={props.className}
             value={props.value}
@@ -32,13 +30,13 @@ const Selector_preStyle: React.StatelessComponent<Props> = (props: Props) => (
       </select>
 )
 
-export const Selector = styled(Selector_preStyle)`
-      width: 230px;
-      height: 30px;
-      font-size: small;
-      background-color: ${colors.bgColor.background.fbfbfc}
-`
-
 Selector.defaultProps = {
       handleSelectorChange: () => {}
 }
+
+// export const Selector = styled(Selector_preStyle)`
+//       width: 230px;
+//       height: 30px;
+//       font-size: small;
+//       background-color: ${colors.bgColor.background.fbfbfc}
+// `

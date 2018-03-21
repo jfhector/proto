@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { hot } from 'react-hot-loader'
-import styled from 'styled-components'
 import {
       Counter, 
       Button,
@@ -23,7 +22,7 @@ const initialState: AppState = {
       selectedSweet: 'Quiche'
 }
 
-class App_preStyle extends React.Component<Props, AppState> {
+class App extends React.Component<Props, AppState> {
       constructor(props: Props) {
             super(props)
             this.state = initialState
@@ -35,8 +34,9 @@ class App_preStyle extends React.Component<Props, AppState> {
                         Hello, world.<br/>
                         <Counter big />
                         <Button 
-                              typeOption='dark'
+                              typeOption='secondary'
                               sizeOption='small'
+                              fullWidth
                         >
                               Hello!
                         </Button>
@@ -70,8 +70,8 @@ class App_preStyle extends React.Component<Props, AppState> {
       }
 }
 
-const App = styled(App_preStyle)`
-      background-color: yellow;
-`
-
 export default hot(module)(App)
+
+// const App = styled(App_preStyle)`
+//       background-color: yellow;
+// `

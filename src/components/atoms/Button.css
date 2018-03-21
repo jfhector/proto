@@ -1,0 +1,32 @@
+.default {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border-radius: 4px;
+      font-size: medium;
+
+      cursor: pointer;
+
+      width: max-content;
+
+      background-color: red;
+}
+
+/* BOOL PROPS */
+
+.fullWidth {
+      width: 100%;
+}
+
+/* typeOption PROPS */
+
+.primary {
+      background-color: red;
+      color: white;
+}
+
+.secondary {
+      background-color: green;
+      color: white;
+}

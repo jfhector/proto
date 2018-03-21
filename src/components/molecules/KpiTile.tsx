@@ -1,6 +1,4 @@
 import * as React from 'react'
-import styled from 'styled-components'
-import { colors } from '../../stylepresets'
 import { MeasuresForKpiTiles, getDataForAllMeasures } from '../../data'
 import { AppState } from '../../App'
 
@@ -42,7 +40,3 @@ export const KpiTile_preStyle: React.StatelessComponent<Props> = (props: Props) 
             </div>
       </div>
 )
-
-export const KpiTile = styled(KpiTile_preStyle)`
-      
-`
