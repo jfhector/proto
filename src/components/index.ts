@@ -1,9 +1,9 @@
 // ATOMS
-export * from './atoms/Counter/Counter'
-export * from './atoms/Button/Button'
-export * from './atoms/Alert/Alert'
-export * from './atoms/CollapseButton/CollapseButton'
-export * from './atoms/Selector/Selector'
+export * from './atoms/Counter'
+export * from './atoms/Button'
+export * from './atoms/Alert'
+export * from './atoms/CollapseButton'
+export * from './atoms/Selector'
 
 // MOLECULES
 
