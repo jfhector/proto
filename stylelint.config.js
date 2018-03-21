@@ -1,7 +1,7 @@
 /* eslint-disable */
 module.exports = {
-      extends: "stylelint-config-recommended",
+      extends: "stylelint-config-standard",
       rules: {
-
+            indentation: 6,
       },
 }
