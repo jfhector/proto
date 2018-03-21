@@ -10,7 +10,7 @@ interface Props {
       className?: string
 }
 
-export const KpiTile_preStyle: React.StatelessComponent<Props> = (props: Props) => (
+export const KpiTile: React.StatelessComponent<Props> = (props: Props) => (
       <div 
             className={props.className}
             onClick={() => props.handleKpiTileClick(props.measure)}
