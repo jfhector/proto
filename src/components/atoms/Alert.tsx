@@ -6,12 +6,11 @@ interface Props {
       visible: boolean
       children: React.ReactNode
 
-      typeOption?: Alert_typeOptions
+      typeOption?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark'
       dismissable?: boolean
       className?: string
       handleClick?: React.MouseEventHandler<HTMLElement>
 }
-export enum Alert_typeOptions { Primary, Secondary, Success, Danger, Warning, Info, Light, Dark }
 
 const AlertPreStyle: React.StatelessComponent<Props> = (props) => (
       <div 
@@ -48,42 +47,42 @@ export const Alert = styled(AlertPreStyle)`
 
       ${props => {
             switch (props.typeOption) {
-                  case Alert_typeOptions.Primary: return css`
+                  case 'primary': return css`
                         color: ${colors.textColor.alert.primary};
                         background-color: ${colors.bgColor.alert.primary};
                         border: 1px solid ${colors.borderColor.alert.primary};                        
                   `
-                  case Alert_typeOptions.Secondary: return css`
+                  case 'secondary': return css`
                         color: ${colors.textColor.alert.secondary};
                         background-color: ${colors.bgColor.alert.secondary};
                         border: 1px solid ${colors.borderColor.alert.secondary};
                   `
-                  case Alert_typeOptions.Success: return css`
+                  case 'success': return css`
                         color: ${colors.textColor.alert.success};
                         background-color: ${colors.bgColor.alert.success};
                         border: 1px solid ${colors.borderColor.alert.success};
                   `
-                  case Alert_typeOptions.Danger: return css`
+                  case 'danger': return css`
                         color: ${colors.textColor.alert.danger};
                         background-color: ${colors.bgColor.alert.danger};
                         border: 1px solid ${colors.borderColor.alert.danger};
                   `
-                  case Alert_typeOptions.Warning: return css`
+                  case 'warning': return css`
                         color: ${colors.textColor.alert.warn};
                         background-color: ${colors.bgColor.alert.warn};
                         border: 1px solid ${colors.borderColor.alert.warn};
                   `
-                  case Alert_typeOptions.Info: return css`
+                  case 'info': return css`
                         color: ${colors.textColor.alert.info};
                         background-color: ${colors.bgColor.alert.info};
                         border: 1px solid ${colors.borderColor.alert.info};
                   `
-                  case Alert_typeOptions.Light: return css`
+                  case 'light': return css`
                         color: ${colors.textColor.alert.light};
                         background-color: ${colors.bgColor.alert.light};
                         border: 1px solid ${colors.borderColor.alert.light};
                   `
-                  case Alert_typeOptions.Dark: return css`
+                  case 'dark': return css`
                         color: ${colors.textColor.alert.dark};
                         background-color: ${colors.bgColor.alert.dark};
                         border: 1px solid ${colors.borderColor.alert.dark};
@@ -95,7 +94,7 @@ export const Alert = styled(AlertPreStyle)`
 
 Alert.defaultProps = {
       visible: true,
-      typeOption: Alert_typeOptions.Primary,
+      typeOption: 'primary',
       dismissable: false,
       handleClick: () => {console.log('Alert was clicked')}
 }

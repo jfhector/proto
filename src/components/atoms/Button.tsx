@@ -7,13 +7,11 @@ class Props {
 
       disabled?: boolean
       handleButtonClick?: React.MouseEventHandler<HTMLElement>
-      typeOption?: Button_typeOptions
-      sizeOption?: Button_sizeOptions
+      typeOption?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark'
+      sizeOption?: 'small' | 'normal' | 'large'
       className?: string
       fullWidth?: boolean
 }
-export type Button_typeOptions = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark'
-export enum Button_sizeOptions { Normal, Large, Small }
 
 const Button_preStyle: React.StatelessComponent<Props> = (props: Props) => (
       <div 
@@ -80,15 +78,15 @@ export const Button = styled(Button_preStyle)`
 
       ${props => {
             switch (props.sizeOption) {
-                  case Button_sizeOptions.Small: return css`
+                  case 'small': return css`
                         padding: 4px 8px;
                         line-height: 21px;                        
                   `
-                  case Button_sizeOptions.Normal: return css`
+                  case 'normal': return css`
                         padding: 6px 12px;
                         line-height: 24px;
                   `
-                  case Button_sizeOptions.Large: return css`
+                  case 'large': return css`
                         padding: 8px 16px;
                         line-height: 30px;                        
                   `
@@ -107,6 +105,6 @@ Button.defaultProps = {
       disabled: false,
       handleButtonClick: () => {console.log('Button clicked')},
       typeOption: 'primary',
-      sizeOption: Button_sizeOptions.Normal,
+      sizeOption: 'normal',
       fullWidth: false,
 }

@@ -4,10 +4,7 @@ import styled from 'styled-components'
 import {
       Counter, 
       Button,
-      Button_typeOptions,
-      Button_sizeOptions,
       Alert,
-      Alert_typeOptions,
       CollapseButton,
       Selector,
 } from './components/'
@@ -40,14 +37,14 @@ class App_preStyle extends React.Component<Props, AppState> {
                         Hello, world.<br/>
                         <Counter big />
                         <Button 
-                              typeOption='info'
-                              sizeOption={Button_sizeOptions.Large}
+                              typeOption='dark'
+                              sizeOption='small'
                         >
                               Hello!
                         </Button>
                         <Alert
                               visible
-                              typeOption={Alert_typeOptions.Success}
+                              typeOption='info'
                         >
                               You did something wrong!
                         </Alert>
