@@ -20,9 +20,7 @@ export class CollapseButton extends React.Component<Props, {}> {
 
             return (
                   <div 
-                        className={[
-                              s.CollapseButton
-                        ].join(' ')}
+                        className={s.CollapseButton}
                         onClick={handleClick}
                   >
                         {expanded ? '\u2013' : '+'}
