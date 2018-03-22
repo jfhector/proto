@@ -8,6 +8,7 @@ import {
       Selector,
       CollapsibleContentModule,
       KpiTile,
+      CollapsibleContentBoard,
 } from './components/'
 import * as s from './App.css'
 import { MeasureName } from './sharedTypes'
@@ -39,32 +40,47 @@ class App extends React.Component<Props, AppState> {
                               big
                         />
 
-                        <CollapsibleContentModule
-                              title='Hello'
+                        <CollapsibleContentBoard 
+                              title='Hello!!!'
                               expanded
-                              displayedFilters={{
-                                    duration: '4 weeks',
-                                    dates: '21 Jan 2018 to 24 Feb 2018',
-                                    comparison: 'vs. last year',
-                                    subcategory: 'DERMATOLOGY',
-                                    region: 'North region',
-                                    storeFormat: 'All store formats',
-                                    customerSegment: 'All customer segments',
-                              }}
                         >
-                              <KpiTile 
-                                    measure='Sales value'
-                                    appState={this.state}
-
-                              />
-
-                              <Button
-                                    typeOption='primary'
-                                    sizeOption='large'
+                              <CollapsibleContentModule
+                                    title='Hello'
+                                    expanded
+                                    displayedFilters={{
+                                          duration: '4 weeks',
+                                          dates: '21 Jan 2018 to 24 Feb 2018',
+                                          comparison: 'vs. last year',
+                                          subcategory: 'DERMATOLOGY',
+                                          region: 'North region',
+                                          storeFormat: 'All store formats',
+                                          customerSegment: 'All customer segments',
+                                    }}
+                                    rightNode={
+                                          <Selector 
+                                                value='Quiche'
+                                                optionsArray={[
+                                                      'Quiche',
+                                                      'Bonbon',
+                                                      'Pizza'
+                                                ]}
+                                          />
+                                    }
                               >
-                                    Click me
-                              </Button>
-                        </CollapsibleContentModule>
+                                    <KpiTile 
+                                          measure='Sales value'
+                                          appState={this.state}
+
+                                    />
+
+                                    <Button
+                                          typeOption='primary'
+                                          sizeOption='large'
+                                    >
+                                          Click me
+                                    </Button>
+                              </CollapsibleContentModule>
+                        </CollapsibleContentBoard>
 
                         <Alert 
                               visible
@@ -73,14 +89,6 @@ class App extends React.Component<Props, AppState> {
                               Hello!
                         </Alert>
 
-                        <Selector 
-                              value='Quiche'
-                              optionsArray={[
-                                    'Quiche',
-                                    'Bonbon',
-                                    'Pizza'
-                              ]}
-                        />
                   </div>
             )
       }

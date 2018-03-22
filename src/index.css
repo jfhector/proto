@@ -77,6 +77,9 @@
       --borderColor_button_dark: var(--color_outerSpace);
       --borderColor_button_disabled: var(--color_iron);
       --borderColor_aroundWhiteOrLightestGrey: var(--color_iron);
+
+      /* SHADOWS */
+      --shadowColor_default: rgba(0, 0, 0, 0.25);
 }
 
 /* OVERRIDING SOME DEFAULT STYLES */
