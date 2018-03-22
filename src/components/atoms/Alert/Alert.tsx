@@ -1,5 +1,5 @@
 import * as React from 'react'
-import './Alert.css'
+import * as s from './Alert.css'
 
 interface Props {
       visible: boolean
@@ -29,7 +29,10 @@ export class Alert extends React.Component<Props, {}> {
 
             return (
                   <div 
-                        className={`Alert ${typeOption}`}
+                        className={[
+                              s.Alert,
+                              s[typeOption]
+                        ].join(' ')}
                         onClick={handleClick}
                   >
                         {children}

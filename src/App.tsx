@@ -54,6 +54,11 @@ class App extends React.Component<Props, AppState> {
                                     Click me
                               </Button>
                         </CollapsibleContentModule>
+                        <Alert 
+                              visible
+                        >
+                              Hello!
+                        </Alert>
                   </div>
             )
       }

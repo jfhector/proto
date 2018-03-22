@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { FiltersSet } from '../../sharedTypes'
-import { CollapseButton } from '..'
+import { FiltersSet } from '../../../sharedTypes'
 import './CollapsibleContentModule.css'
+import { CollapseButton } from '../..'
 
 interface Props {
       title: string,
