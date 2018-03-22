@@ -48,7 +48,10 @@ class App extends React.Component<Props, AppState> {
                                     customerSegment: 'All customer segments',
                               }}
                         >
-                              <Button>
+                              <Button
+                                    typeOption='primary'
+                                    sizeOption='large'
+                              >
                                     Click me
                               </Button>
                         </CollapsibleContentModule>

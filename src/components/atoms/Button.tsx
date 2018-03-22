@@ -9,7 +9,6 @@ class Props {
       handleButtonClick?: React.MouseEventHandler<HTMLElement>
       typeOption?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark'
       sizeOption?: 'small' | 'normal' | 'large'
-      className?: string
       fullWidth?: boolean
 }
 
@@ -29,13 +28,18 @@ export class Button extends React.Component<Props, {}> {
                   handleButtonClick,
                   typeOption,
                   sizeOption,
-                  className,
                   fullWidth,
             } = this.props
 
             return (
                   <div 
-                        className={styles.Button}
+                        className={[
+                                    styles.defaults,
+                                    styles[typeOption],
+                                    styles[sizeOption],
+                                    fullWidth && styles.fullWidth,
+                                    disabled && styles.disabled
+                        ].join(' ')}
                         onClick={!disabled ? handleButtonClick : (() => { console.log('Button was clicked but is disabled') })}
                   >
                         {children}

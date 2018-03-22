@@ -18,8 +18,17 @@ module.exports = {
                   },
                   {
                         test: /\.css$/,
-                        loader: ['style-loader', 'css-loader'],
+                        loader: 'style-loader',
                         exclude: /node-modules/,
+                  },
+                  {
+                        test: /\.css$/,
+                        loader: 'css-loader',
+                        exclude: /node-modules/,
+                        query: {
+                              modules: true,
+                              localIdentName: '[name]_[local]'
+                        }
                   }
             ]
       },
