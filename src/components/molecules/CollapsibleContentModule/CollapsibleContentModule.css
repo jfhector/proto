@@ -14,7 +14,7 @@
       height: 50px;
 }
 
-.collapsibleButtonContainer {
+.collapseButtonContainer {
       grid-area: buttonArea;
       margin-right: 10px;
 }

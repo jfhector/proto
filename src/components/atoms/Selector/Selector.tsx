@@ -1,5 +1,5 @@
 import * as React from 'react'
-import './Selector.css'
+import * as s from './Selector.css'
 
 interface Props {
       optionsArray: string[]
@@ -21,7 +21,7 @@ export class Selector extends React.Component<Props, {}> {
 
             return (
                   <select 
-                        className='Selector'
+                        className={s.Selector}
                         value={value}
                         onChange={(event) => handleSelectorChange(event.target.value)}
                   > 

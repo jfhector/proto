@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { FiltersSet } from '../../../sharedTypes'
-import './CollapsibleContentModule.css'
+import * as s from './CollapsibleContentModule.css'
 import { CollapseButton } from '../..'
 
 interface Props {
@@ -36,11 +36,14 @@ export class CollapsibleContentModule extends React.Component<Props, {}> {
 
             return (
                   <div
-                        className={`CollapsibleContentModule ${expanded ? 'expanded' : ''}`}
+                        className={[
+                              s.CollapsibleContentModule,
+                              expanded ? s.expanded : ''
+                        ].join(' ')}
                   >
 
                         <div
-                              className='collapsibleButtonContainer'
+                              className={s.collapseButtonContainer}
                         >
                               <CollapseButton 
                                     expanded={expanded}
@@ -50,14 +53,14 @@ export class CollapsibleContentModule extends React.Component<Props, {}> {
                         </div>
 
                         <div
-                              className='title'
+                              className={s.title}
                         >
                               {title}
                         </div>
 
                         {expanded &&
                               <div 
-                                    className='subTitle'
+                                    className={s.subTitle}
                               >
                                     {`${duration} • ${dates} ${comparison}`}
                                     <br />
@@ -67,7 +70,7 @@ export class CollapsibleContentModule extends React.Component<Props, {}> {
 
                         {expanded &&
                               <div
-                                    className='childrenContainer'
+                                    className={s.childrenContainer}
                               >
                                     {children}
                               </div>

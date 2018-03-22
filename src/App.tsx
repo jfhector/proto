@@ -7,8 +7,9 @@ import {
       CollapseButton,
       Selector,
       CollapsibleContentModule,
+      KpiTile,
 } from './components/'
-import './App.css'
+import * as s from './App.css'
 import { MeasureName } from './sharedTypes'
 
 interface Props {}
@@ -33,7 +34,11 @@ class App extends React.Component<Props, AppState> {
             } = this.state
 
             return (
-                  <div className='App'>
+                  <div className={s.App}>
+                        <Counter 
+                              big
+                        />
+
                         <CollapsibleContentModule
                               title='Hello'
                               expanded
@@ -47,6 +52,12 @@ class App extends React.Component<Props, AppState> {
                                     customerSegment: 'All customer segments',
                               }}
                         >
+                              <KpiTile 
+                                    measure='Sales value'
+                                    appState={this.state}
+
+                              />
+
                               <Button
                                     typeOption='primary'
                                     sizeOption='large'
@@ -54,11 +65,22 @@ class App extends React.Component<Props, AppState> {
                                     Click me
                               </Button>
                         </CollapsibleContentModule>
+
                         <Alert 
                               visible
+                              typeOption='warning'
                         >
                               Hello!
                         </Alert>
+
+                        <Selector 
+                              value='Quiche'
+                              optionsArray={[
+                                    'Quiche',
+                                    'Bonbon',
+                                    'Pizza'
+                              ]}
+                        />
                   </div>
             )
       }

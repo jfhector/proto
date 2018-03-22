@@ -2,17 +2,17 @@
 
 :root {
       /* COLOR REFERENCES */
-      --color_shark: #25272C;
+      --color_shark: #25272c;
 
       /* BOOTSTRAP PALETTE */
       --color_azureRadiance: #007bff;
-      --color_greenHaze: #01A368;
-      --color_cinnabar: #E34234;
-      --color_easternBlueLight: #1E9AB0;
-      --color_outerSpace: #2D383A;
-      --color_paleSky: #6E7783;
-      --color_iron: #D4D5D9;
-      --color_athensGray: #EEF0F3;
+      --color_greenHaze: #01a368;
+      --color_cinnabar: #e34234;
+      --color_easternBlueLight: #1e9ab0;
+      --color_outerSpace: #2d383a;
+      --color_paleSky: #6e7783;
+      --color_iron: #d4d5d9;
+      --color_athensGray: #eef0f3;
       --color_fbfbfc: #fbfbfc;
 
       /* DUNNHUMBY PALETTE */
@@ -83,7 +83,7 @@
 
 html {
       font-size: 10px;
-      font-family: system-ui;
+      font-family: system-ui, sans-serif;
       color: var(--textColor_default);
 }
 

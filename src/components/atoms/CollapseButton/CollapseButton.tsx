@@ -1,5 +1,5 @@
 import React = require('react')
-import './CollapseButton.css'
+import * as s from './CollapseButton.css'
 
 interface Props {
       expanded?: boolean,
@@ -20,7 +20,9 @@ export class CollapseButton extends React.Component<Props, {}> {
 
             return (
                   <div 
-                        className='CollapseButton'
+                        className={[
+                              s.CollapseButton
+                        ].join(' ')}
                         onClick={handleClick}
                   >
                         {expanded ? '\u2013' : '+'}

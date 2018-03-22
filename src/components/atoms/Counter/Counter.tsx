@@ -1,5 +1,5 @@
 import * as React from 'react'
-import './Counter.css'
+import * as s from './Counter.css'
 
 interface Props {
       big?: boolean
@@ -45,7 +45,10 @@ export class Counter extends React.Component<Props, State> {
 
             return (
                   <span 
-                        className={`Counter ${big ? 'big' : ''}`}
+                        className={[
+                              s.Counter,
+                              big ? s.big : '',
+                        ].join(' ')}
                   >
                         {count}
                   </span>
