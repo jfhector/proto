@@ -10,6 +10,7 @@ import {
 import { KpiTile } from './components/molecules/KpiTile'
 import './App.css'
 import { MeasureName } from './sharedTypes'
+import { CollapsibleContentModule } from './components/molecules/CollapsibleContentModule'
 
 interface Props {}
 
@@ -34,41 +35,23 @@ class App extends React.Component<Props, AppState> {
 
             return (
                   <div className='App'>
-                        Hello, world.<br/>
-                        <Counter />
-                        <Button 
-                              typeOption='primary'
-                              sizeOption='small'
-                              disabled
-                              fullWidth
+                        <CollapsibleContentModule
+                              title='Hello'
+                              expanded
+                              displayedFilters={{
+                                    duration: '4 weeks',
+                                    dates: '21 Jan 2018 to 24 Feb 2018',
+                                    comparison: 'vs. last year',
+                                    subcategory: 'DERMATOLOGY',
+                                    region: 'North region',
+                                    storeFormat: 'All store formats',
+                                    customerSegment: 'All customer segments',
+                              }}
                         >
-                              Hello!
-                        </Button>
-                        <Alert
-                              visible
-                              typeOption='danger'
-                        >
-                              You did something wrong!
-                        </Alert>
-                        <CollapseButton 
-                              expanded={false}
-                        />
-                        <Selector
-                              value={selectedSweet}
-                              optionsArray={[
-                                    'Bonbon',
-                                    'Pie',
-                                    'Quiche',
-                                    'Jambon'
-                              ]}
-                              handleSelectorChange={newSelection => this.setState({selectedSweet: newSelection})}  
-                        />
-                        <KpiTile
-                              measure={'Sales units'}
-                              selected
-                              appState={this.state}
-                              handleKpiTileClick={(measure: MeasureName) => {}}
-                        />
+                              <Button>
+                                    Click me
+                              </Button>
+                        </CollapsibleContentModule>
                   </div>
             )
       }

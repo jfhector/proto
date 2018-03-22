@@ -1,0 +1,44 @@
+.CollapsibleContentModule {
+      margin-bottom: 20px;
+      padding: 15px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-template-areas:
+            "buttonArea       titleArea"
+            "_                subTitleArea"
+            "childrenArea     childrenArea";
+      border: 1px solid var(--borderColor_aroundWhiteOrLightestGrey);
+      border-radius: 3px;
+      background-color: var(--backgroundColor_backgrounds_fbfbfc);
+      overflow: hidden;
+      height: 50px;
+}
+
+.collapsibleButtonContainer {
+      grid-area: buttonArea;
+      margin-right: 10px;
+}
+
+.title {
+      grid-area: titleArea;
+      margin-bottom: 5px;
+      font-size: large;
+      font-weight: bold;
+}
+
+.subTitle {
+      grid-area: subTitleArea;
+      margin-bottom: 25px;
+      font-size: small;
+      color: var(--color_paleSky);
+}
+
+.childrenContainer {
+      grid-area: childrenArea;
+}
+
+/* exoabded BOOL PROP */
+
+.expanded {
+      height: auto;
+}

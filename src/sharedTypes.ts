@@ -19,7 +19,7 @@ export interface FiltersSet {
       subcategory: Subcategory,
       region: Region,
       storeFormat: StoreFormat,
-      customerType: CustomerSegment,
+      customerSegment: CustomerSegment,
 }
 
 export type MeasureName = 'Sales value' | 

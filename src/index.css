@@ -18,15 +18,11 @@
       /* DUNNHUMBY PALETTE */
       --color_tuatara: #363534;
 
-
-
       /* TEXT COLOR PALETTE */
       --textColor_default: var(--color_shark);
       --textColor_grey: var(--color_paleSky);
-      
       --textColor_links_active: var(--color_azureRadiance);
       --textColor_links_disabled: var(--color_paleSky);
-
       --textColor_alert_primary: #004085;
       --textColor_alert_secondary: #383d41;
       --textColor_alert_success: #155724;
@@ -35,7 +31,6 @@
       --textColor_alert_info: #0c5460;
       --textColor_alert_light: #818182;
       --textColor_alert_dark: #1b1e21;
-
       --textColor_button_outlineButton_primary: var(--color_azureRadiance);
       --textColor_button_outlineButton_secondary: var(--color_paleSky);
       --textColor_button_outlineButton_success: var(--color_cinnabar);
@@ -45,7 +40,6 @@
       --textColor_button_outlineButton_light: var(--color_athensGray);
       --textColor_button_outlineButton_dark: var(--color_outerSpace);
       --textColor_button_outlineButton_disabled: var(--color_iron);
-
       --textColor_positive: var(--color_greenHaze);
       --textColor_negative: var(--color_cinnabar);
 
@@ -59,7 +53,6 @@
       --backgroundColor_button_light: var(--color_athensGray);
       --backgroundColor_button_dark: var(--color_outerSpace);
       --backgroundColor_button_disabled: var(--color_iron);
-
       --backgroundColor_alert_primary: #cce5ff;
       --backgroundColor_alert_secondary: var(--color_athensGray);
       --backgroundColor_alert_success: #d4edda;
@@ -68,7 +61,6 @@
       --backgroundColor_alert_info: #d1ecf1;
       --backgroundColor_alert_light: #fefefe;
       --backgroundColor_alert_dark: #d6d8d9;
-
       --backgroundColor_backgrounds_fbfbfc: #fbfcfc;
       --backgroundColor_backgrounds_athensGray: var(--color_athensGray);
       --backgroundColor_backgrounds_iron: var(--color_iron);
@@ -84,12 +76,8 @@
       --borderColor_button_light: var(--color_athensGray);
       --borderColor_button_dark: var(--color_outerSpace);
       --borderColor_button_disabled: var(--color_iron);
-
       --borderColor_aroundWhiteOrLightestGrey: var(--color_iron);
 }
-
-
-
 
 /* OVERRIDING SOME DEFAULT STYLES */
 
