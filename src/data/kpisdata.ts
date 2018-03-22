@@ -1,19 +1,9 @@
 import { AppState } from '../App'
+import { MeasureData, MeasureName } from '../sharedTypes'
 
-export type MeasuresForKpiTiles = 'Sales value' | 
-      'Spend per customer' | 'Customers' | 'Retailer visits' | 'Spend per visit' | 
-      'Units per visit' | 'Basket penetration' | 'Frequency of purchase' | 'Sales units'
+type DataForAllMeasures = { [k in MeasureName]: MeasureData }
 
-interface MeasureData {
-      value: string
-      valueChange: string
-      percentChange: string
-      changedUpwards: boolean
-}
-
-type KpisData = { [k in MeasuresForKpiTiles]: MeasureData }
-
-export function getDataForMeasures(appState: AppState, measure: MeasuresForKpiTiles): MeasureData {
+export function getDataForMeasures(appState: AppState, measure: MeasureName): MeasureData {
       let dataForAllMeasuresBasedOnAppState = {
             ['Sales value']: {
                   value: 'R$5.823.489.124',

@@ -8,8 +8,8 @@ import {
       Selector,
 } from './components/'
 import { KpiTile } from './components/molecules/KpiTile'
-import { MeasuresForKpiTiles } from './data'
 import './App.css'
+import { MeasureName } from './sharedTypes'
 
 interface Props {}
 
@@ -28,6 +28,10 @@ class App extends React.Component<Props, AppState> {
       }
 
       render() {
+            const {
+                  selectedSweet
+            } = this.state
+
             return (
                   <div className='App'>
                         Hello, world.<br/>
@@ -50,7 +54,7 @@ class App extends React.Component<Props, AppState> {
                               expanded={false}
                         />
                         <Selector
-                              value={this.state.selectedSweet}
+                              value={selectedSweet}
                               optionsArray={[
                                     'Bonbon',
                                     'Pie',
@@ -63,7 +67,7 @@ class App extends React.Component<Props, AppState> {
                               measure={'Sales units'}
                               selected
                               appState={this.state}
-                              handleKpiTileClick={(measure: MeasuresForKpiTiles) => {}}
+                              handleKpiTileClick={(measure: MeasureName) => {}}
                         />
                   </div>
             )

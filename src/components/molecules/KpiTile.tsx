@@ -1,13 +1,14 @@
 import * as React from 'react'
-import { MeasuresForKpiTiles, getDataForMeasures } from '../../data'
+import { getDataForMeasures } from '../../data'
 import { AppState } from '../../App'
 import './KpiTile.css'
+import { MeasureName } from '../../sharedTypes'
 
 interface Props {
-      measure: MeasuresForKpiTiles
+      measure: MeasureName
       selected?: boolean
       appState: AppState
-      handleKpiTileClick: (measure: MeasuresForKpiTiles) => void
+      handleKpiTileClick: (measure: MeasureName) => void
 }
 
 export class KpiTile extends React.Component<Props, {}> {
