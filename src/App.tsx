@@ -43,6 +43,17 @@ class App extends React.Component<Props, AppState> {
                         <CollapsibleContentBoard 
                               title='Hello!!!'
                               expanded
+                              rightNodeIsHighlighted
+                              rightNode={
+                                    <Selector 
+                                          value='Quiche'
+                                          optionsArray={[
+                                                'Quiche',
+                                                'Bonbon',
+                                                'Pizza'
+                                          ]}
+                                    />
+                              }
                         >
                               <CollapsibleContentModule
                                     title='Hello'
@@ -56,16 +67,6 @@ class App extends React.Component<Props, AppState> {
                                           storeFormat: 'All store formats',
                                           customerSegment: 'All customer segments',
                                     }}
-                                    rightNode={
-                                          <Selector 
-                                                value='Quiche'
-                                                optionsArray={[
-                                                      'Quiche',
-                                                      'Bonbon',
-                                                      'Pizza'
-                                                ]}
-                                          />
-                                    }
                               >
                                     <KpiTile 
                                           measure='Sales value'

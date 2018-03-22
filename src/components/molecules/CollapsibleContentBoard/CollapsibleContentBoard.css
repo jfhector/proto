@@ -61,7 +61,7 @@
 
 /* rightNodeIsSticky BOOL PROP */
 
-.rightNodeIsSticky {
+.rightNodeIsSticky .rightNodeContainer {
       position: sticky;
       top: 0;
       z-index: 1;
@@ -69,9 +69,9 @@
 
 /* rightNodeIsHighlighted BOOL PROP */
 
-.rightNodeIsHighlighted {
+.rightNodeIsHighlighted .rightNodeContainer {
       box-shadow: 0 2px 4px var(--shadowColor_default);
-      border: 1px solid var(--borderColor_button_dark);
+      border: 1px solid var(--borderColor_aroundWhiteOrLightestGrey);
       border-top: none;
       animation: flash 800ms;
 }
@@ -85,7 +85,7 @@
 
       to {
             box-shadow: 0 2px 4px var(--shadowColor_default);
-            border: 1px solid var(--borderColor_button_dark);
+            border: 1px solid var(--borderColor_aroundWhiteOrLightestGrey);
             border-top: none;
       }
 }
