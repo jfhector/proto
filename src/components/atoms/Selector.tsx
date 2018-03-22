@@ -13,17 +13,20 @@ export class Selector extends React.Component<Props, {}> {
       }
 
       render() {
+            const {
+                  optionsArray,
+                  value,
+                  handleSelectorChange,
+            } = this.props
+
             return (
                   <select 
                         className='Selector'
-                        value={this.props.value}
-                        onChange={
-                              (event) => this.props.handleSelectorChange(event.target.value)
-                        }
+                        value={value}
+                        onChange={(event) => handleSelectorChange(event.target.value)}
                   > 
                         {
-                              this.props.optionsArray.map(
-                                    (arrayElement: string, index: number) => (
+                              optionsArray.map((arrayElement: string, index: number) => (
                                           <option
                                                 key={arrayElement + String(index)}
                                                 value={arrayElement}

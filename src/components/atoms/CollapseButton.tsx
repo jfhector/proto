@@ -8,18 +8,21 @@ interface Props {
 
 export class CollapseButton extends React.Component<Props, {}> {
       static defaultProps = {
-            handleClick: () => {},
+            handleClick: () => { console.log('CollapseButton clicked') },
       }
 
       render() {
+            const {
+                  expanded,
+                  handleClick,
+            } = this.props
+
             return (
                   <div 
                         className='CollapseButton'
-                        onClick={this.props.handleClick}
+                        onClick={handleClick}
                   >
-                        {
-                              this.props.expanded ? '\u2013' : '+'
-                        }
+                        {expanded ? '\u2013' : '+'}
                   </div>
             )
       }

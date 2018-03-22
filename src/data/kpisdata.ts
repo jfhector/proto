@@ -13,8 +13,8 @@ interface MeasureData {
 
 type KpisData = { [k in MeasuresForKpiTiles]: MeasureData }
 
-export function getDataForAllMeasures(appState: AppState): KpisData {
-      return ({
+export function getDataForMeasures(appState: AppState, measure: MeasuresForKpiTiles): MeasureData {
+      let dataForAllMeasuresBasedOnAppState = {
             ['Sales value']: {
                   value: 'R$5.823.489.124',
                   valueChange: '-R$488.843',
@@ -69,5 +69,7 @@ export function getDataForAllMeasures(appState: AppState): KpisData {
                   percentChange: '+1,8%',
                   changedUpwards: true,
             },
-      })
+      }
+
+      return dataForAllMeasuresBasedOnAppState[measure]
 }

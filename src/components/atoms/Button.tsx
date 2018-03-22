@@ -22,17 +22,22 @@ export class Button extends React.Component<Props, {}> {
       }
 
       render() {
+            const {
+                  children,
+                  disabled,
+                  handleButtonClick,
+                  typeOption,
+                  sizeOption,
+                  className,
+                  fullWidth,
+            } = this.props
+
             return (
                   <div 
-                        className={`Button 
-                              ${this.props.fullWidth && 'fullWidth'} 
-                              ${this.props.typeOption} 
-                              ${this.props.sizeOption}
-                              ${this.props.disabled && 'disabled'}
-                        `}
-                        onClick={!this.props.disabled ? this.props.handleButtonClick : (() => {})}
+                        className={`Button ${typeOption} ${sizeOption} ${fullWidth ? 'fullWidth' : ''} ${disabled ? 'disabled' : ''}`}
+                        onClick={!disabled ? handleButtonClick : (() => { console.log('Button was clicked but is disabled') })}
                   >
-                        {this.props.children}
+                        {children}
                   </div>
             )
       }

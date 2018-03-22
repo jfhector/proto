@@ -35,13 +35,19 @@ export class Counter extends React.Component<Props, State> {
       }
 
       render() {
+            const {
+                  big,
+            } = this.props
+
+            const {
+                  count,
+            } = this.state
+
             return (
                   <span 
-                        className={`Counter
-                              ${this.props.big && 'big'}
-                        `}
+                        className={`Counter ${big ? 'big' : ''}`}
                   >
-                        {this.state.count}
+                        {count}
                   </span>
             )
       }

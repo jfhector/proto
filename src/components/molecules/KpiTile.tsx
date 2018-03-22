@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { MeasuresForKpiTiles, getDataForAllMeasures } from '../../data'
+import { MeasuresForKpiTiles, getDataForMeasures } from '../../data'
 import { AppState } from '../../App'
 import './KpiTile.css'
 
@@ -12,36 +12,43 @@ interface Props {
 
 export class KpiTile extends React.Component<Props, {}> {
       render() {
+            const {
+                  measure,
+                  selected,
+                  appState,
+                  handleKpiTileClick
+            } = this.props
+
             return (
                   <div 
                         className={`KpiTile
-                              ${this.props.selected && 'selected'}
-                              ${getDataForAllMeasures(this.props.appState)[this.props.measure].changedUpwards && 'changedUpwards'}
+                              ${selected && 'selected'}
+                              ${getDataForMeasures(appState, measure).changedUpwards && 'changedUpwards'}
                         `}
-                        onClick={() => this.props.handleKpiTileClick(this.props.measure)}
+                        onClick={() => handleKpiTileClick(measure)}
                   >
                         <div
                               className='measureName'
                         >
-                              {this.props.measure}
+                              {measure}
                         </div>
             
                         <div
                               className='measureValue'
                         >
-                              {getDataForAllMeasures(this.props.appState)[this.props.measure].value}
+                              {getDataForMeasures(appState, measure).value}
                         </div>
             
                         <div
                               className='changeMeasure valueChange'
                         >
-                              {getDataForAllMeasures(this.props.appState)[this.props.measure].valueChange}
+                              {getDataForMeasures(appState, measure).valueChange}
                         </div>
             
                         <div
                               className='changeMeasure percentChange'
                         >
-                              {getDataForAllMeasures(this.props.appState)[this.props.measure].percentChange}
+                              {getDataForMeasures(appState, measure).percentChange}
                         </div>
                   </div>
             )

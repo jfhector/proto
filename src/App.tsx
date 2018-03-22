@@ -60,8 +60,8 @@ class App extends React.Component<Props, AppState> {
                               handleSelectorChange={newSelection => this.setState({selectedSweet: newSelection})}  
                         />
                         <KpiTile
-                              measure={'Customers'}
-                              // selected
+                              measure={'Sales units'}
+                              selected
                               appState={this.state}
                               handleKpiTileClick={(measure: MeasuresForKpiTiles) => {}}
                         />

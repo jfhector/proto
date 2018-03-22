@@ -19,16 +19,22 @@ export class Alert extends React.Component<Props, {}> {
       }
 
       render() {
+            const {
+                  visible,
+                  children,
+                  typeOption,
+                  dismissable,
+                  handleClick
+            } = this.props
+
             return (
                   <div 
-                        className={`Alert
-                              ${this.props.typeOption}
-                        `}
-                        onClick={this.props.handleClick}
+                        className={`Alert ${typeOption}`}
+                        onClick={handleClick}
                   >
-                        {this.props.children}
+                        {children}
             
-                        {this.props.dismissable &&
+                        {dismissable &&
                               <button
                                     type='button'
                                     onClick={() => {}}
