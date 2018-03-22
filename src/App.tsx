@@ -61,7 +61,7 @@ class App extends React.Component<Props, AppState> {
                         />
                         <KpiTile
                               measure={'Customers'}
-                              selected
+                              // selected
                               appState={this.state}
                               handleKpiTileClick={(measure: MeasuresForKpiTiles) => {}}
                         />
