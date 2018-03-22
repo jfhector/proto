@@ -43,6 +43,7 @@ class App extends React.Component<Props, AppState> {
                         <CollapsibleContentBoard 
                               title='Hello!!!'
                               expanded
+                              rightNodeIsSticky
                               rightNodeIsHighlighted
                               rightNode={
                                     <Selector 
@@ -55,6 +56,87 @@ class App extends React.Component<Props, AppState> {
                                     />
                               }
                         >
+                              <CollapsibleContentModule
+                                    title='Hello'
+                                    expanded
+                                    displayedFilters={{
+                                          duration: '4 weeks',
+                                          dates: '21 Jan 2018 to 24 Feb 2018',
+                                          comparison: 'vs. last year',
+                                          subcategory: 'DERMATOLOGY',
+                                          region: 'North region',
+                                          storeFormat: 'All store formats',
+                                          customerSegment: 'All customer segments',
+                                    }}
+                              >
+                                    <KpiTile 
+                                          measure='Sales value'
+                                          appState={this.state}
+
+                                    />
+
+                                    <Button
+                                          typeOption='primary'
+                                          sizeOption='large'
+                                    >
+                                          Click me
+                                    </Button>
+                              </CollapsibleContentModule>
+
+                              <CollapsibleContentModule
+                                    title='Hello'
+                                    expanded
+                                    displayedFilters={{
+                                          duration: '4 weeks',
+                                          dates: '21 Jan 2018 to 24 Feb 2018',
+                                          comparison: 'vs. last year',
+                                          subcategory: 'DERMATOLOGY',
+                                          region: 'North region',
+                                          storeFormat: 'All store formats',
+                                          customerSegment: 'All customer segments',
+                                    }}
+                              >
+                                    <KpiTile 
+                                          measure='Sales value'
+                                          appState={this.state}
+
+                                    />
+
+                                    <Button
+                                          typeOption='primary'
+                                          sizeOption='large'
+                                    >
+                                          Click me
+                                    </Button>
+                              </CollapsibleContentModule>
+
+                              <CollapsibleContentModule
+                                    title='Hello'
+                                    expanded
+                                    displayedFilters={{
+                                          duration: '4 weeks',
+                                          dates: '21 Jan 2018 to 24 Feb 2018',
+                                          comparison: 'vs. last year',
+                                          subcategory: 'DERMATOLOGY',
+                                          region: 'North region',
+                                          storeFormat: 'All store formats',
+                                          customerSegment: 'All customer segments',
+                                    }}
+                              >
+                                    <KpiTile 
+                                          measure='Sales value'
+                                          appState={this.state}
+
+                                    />
+
+                                    <Button
+                                          typeOption='primary'
+                                          sizeOption='large'
+                                    >
+                                          Click me
+                                    </Button>
+                              </CollapsibleContentModule>
+
                               <CollapsibleContentModule
                                     title='Hello'
                                     expanded
