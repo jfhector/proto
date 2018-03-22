@@ -1,6 +1,6 @@
 import * as React from 'react'
 // import './Button.css'
-const styles = require('./Button.css')
+const s = require('./Button.css')
 
 class Props {
       children: React.ReactNode
@@ -34,11 +34,11 @@ export class Button extends React.Component<Props, {}> {
             return (
                   <div 
                         className={[
-                                    styles.defaults,
-                                    styles[typeOption],
-                                    styles[sizeOption],
-                                    fullWidth && styles.fullWidth,
-                                    disabled && styles.disabled
+                                    s.Button,
+                                    s[typeOption],
+                                    s[sizeOption],
+                                    fullWidth ? s.fullWidth : '',
+                                    disabled ? s.disabled : '',
                         ].join(' ')}
                         onClick={!disabled ? handleButtonClick : (() => { console.log('Button was clicked but is disabled') })}
                   >
