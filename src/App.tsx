@@ -6,11 +6,10 @@ import {
       Alert,
       CollapseButton,
       Selector,
+      CollapsibleContentModule,
 } from './components/'
-import { KpiTile } from './components/molecules/KpiTile'
 import './App.css'
 import { MeasureName } from './sharedTypes'
-import { CollapsibleContentModule } from './components/molecules/CollapsibleContentModule'
 
 interface Props {}
 

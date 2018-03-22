@@ -23,10 +23,11 @@ module.exports = {
                   },
                   {
                         test: /\.css$/,
-                        loader: 'css-loader',
+                        loader: 'typings-for-css-modules-loader',
                         exclude: /node-modules/,
                         query: {
                               modules: true,
+                              namedExport: true,
                               localIdentName: '[local]-[hash:base64:5]'
                         }
                   }

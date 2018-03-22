@@ -1,6 +1,5 @@
 import * as React from 'react'
-// import './Button.css'
-const s = require('./Button.css')
+import * as s from './Button.css'
 
 class Props {
       children: React.ReactNode
