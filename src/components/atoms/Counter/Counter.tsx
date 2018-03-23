@@ -1,5 +1,6 @@
 import * as React from 'react'
 import * as s from './Counter.css'
+import classNames = require('classnames');
 
 interface Props {
       big?: boolean
@@ -45,10 +46,12 @@ export class Counter extends React.Component<Props, State> {
 
             return (
                   <span 
-                        className={[
+                        className={classNames(
                               s.Counter,
-                              big ? s.big : '',
-                        ].join(' ')}
+                              {
+                                    [s.big]: big
+                              }, 
+                        )}
                   >
                         {count}
                   </span>
