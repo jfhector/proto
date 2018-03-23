@@ -7,7 +7,7 @@ type ComparisonAvailableFor52WeekDuration = 'vs. last year' | 'vs. previous 52 w
 export type Comparison = ComparisonAvailableFor4WeekDuration | ComparisonAvailableFor12WeekDuration | ComparisonAvailableFor26WeekDuration | ComparisonAvailableFor52WeekDuration
 
 export type TopLevelCategory = 'MEDICINE'
-export type Subcategory = 'DERMATOLOGY' | 'GASTRIC HEALTH' | 'INTESTINE HEALTH' | 'CHOLESTEROL' | 'CARDIOTHERAPY' | 'ANTICOAGULANT' | 'WEIGHT CONTROL' | 'HYPERTENSION'
+export type Subcategory = 'All product groups' | 'DERMATOLOGY' | 'GASTRIC HEALTH' | 'INTESTINE HEALTH' | 'CHOLESTEROL' | 'CARDIOTHERAPY' | 'ANTICOAGULANT' | 'WEIGHT CONTROL' | 'HYPERTENSION'
 export type Region = 'All regions' | 'North region' | 'Central region' | 'West region' | 'South region'
 export type StoreFormat = 'All store formats' | 'Express stores' | 'Metro stores' | 'Extra stores' | 'Online'
 export type CustomerSegment = 'All customer segments' | 'Young single person' | 'Family with young children' | 'Post family' | 'Older person'
