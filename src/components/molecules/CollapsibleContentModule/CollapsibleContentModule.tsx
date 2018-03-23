@@ -2,7 +2,7 @@ import * as React from 'react'
 import { FiltersSet } from '../../../sharedTypes'
 import * as s from './CollapsibleContentModule.css'
 import { CollapseButton } from '../..'
-import classNames = require('classnames');
+import classNames = require('classnames')
 
 interface Props {
       title: string,
