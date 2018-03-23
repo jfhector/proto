@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as s from './Button.css'
-var classNames = require('classnames')
+import classNames = require('classnames')
 
 class Props {
       children: React.ReactNode
