@@ -36,6 +36,13 @@ class App extends React.Component<Props, AppState> {
 
             return (
                   <div className={s.App}>
+                        <Alert
+                              visible
+                              typeOption='danger'
+                        >
+                              Hello you!!!
+                        </Alert>
+
                         <Counter 
                               big
                         />
