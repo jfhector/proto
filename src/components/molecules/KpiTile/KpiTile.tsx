@@ -3,6 +3,7 @@ import { getDataForMeasures } from '../../../data'
 import * as s from './KpiTile.css'
 import { MeasureName } from '../../../sharedTypes'
 import { AppState } from '../../../App'
+import classNames = require('classnames')
 
 interface Props {
       measure: MeasureName,
@@ -26,11 +27,13 @@ export class KpiTile extends React.Component<Props, {}> {
 
             return (
                   <div 
-                        className={[
+                        className={classNames(
                               s.KpiTile,
-                              selected ? s.selected : '',
-                              getDataForMeasures(appState, measure).changedUpwards ? s.changedUpwards : '',
-                        ].join(' ')}
+                              {
+                                    [s.selected]: selected,
+                                    [s.changedUpwards]: getDataForMeasures(appState, measure).changedUpwards,
+                              }
+                        )}
                         onClick={() => handleKpiTileClick(measure)}
                   >
                         <div
@@ -46,19 +49,19 @@ export class KpiTile extends React.Component<Props, {}> {
                         </div>
             
                         <div
-                              className={[
+                              className={classNames(
                                     s.changeMeasure,
                                     s.valueChange
-                              ].join(' ')}
+                              )}
                         >
                               {getDataForMeasures(appState, measure).valueChange}
                         </div>
             
                         <div
-                              className={[
+                              className={classNames(
                                     s.changeMeasure,
                                     s.percentChange
-                              ].join(' ')}
+                              )}
                         >
                               {getDataForMeasures(appState, measure).percentChange}
                         </div>

@@ -2,6 +2,7 @@ import * as React from 'react'
 import { FiltersSet } from '../../../sharedTypes'
 import * as s from './CollapsibleContentModule.css'
 import { CollapseButton } from '../..'
+import classNames = require('classnames');
 
 interface Props {
       title: string,
@@ -36,10 +37,12 @@ export class CollapsibleContentModule extends React.Component<Props, {}> {
 
             return (
                   <div
-                        className={[
+                        className={classNames(
                               s.CollapsibleContentModule,
-                              expanded ? s.expanded : ''
-                        ].join(' ')}
+                              {
+                                    [s.expanded]: expanded,
+                              }
+                        )}
                   >
 
                         <div

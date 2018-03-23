@@ -77,7 +77,7 @@ class App extends React.Component<Props, AppState> {
                                     }}
                               >
                                     <KpiTile 
-                                          measure='Sales value'
+                                          measure='Basket penetration'
                                           appState={this.state}
 
                                     />
@@ -104,7 +104,7 @@ class App extends React.Component<Props, AppState> {
                                     }}
                               >
                                     <KpiTile 
-                                          measure='Sales value'
+                                          measure='Sales units'
                                           appState={this.state}
 
                                     />

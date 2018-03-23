@@ -1,6 +1,7 @@
 import React = require('react')
 import { CollapseButton } from '../..'
 import * as s from './CollapsibleContentBoard.css'
+import classNames = require('classnames')
 
 interface Props {
       title: string,
@@ -34,12 +35,14 @@ export class CollapsibleContentBoard extends React.Component<Props, {}> {
 
             return (
                   <div
-                        className={[
+                        className={classNames(
                               s.CollapsibleContentBoard,
-                              expanded ? s.expanded : '',
-                              rightNodeIsSticky ? s.rightNodeIsSticky : '',
-                              rightNodeIsHighlighted ? s.rightNodeIsHighlighted : '',
-                        ].join(' ')}
+                              {
+                                    [s.expanded]: expanded,
+                                    [s.rightNodeIsSticky]: rightNodeIsSticky,
+                                    [s.rightNodeIsHighlighted]: rightNodeIsHighlighted,
+                              }
+                        )}
                   >
                         <div
                               className={s.collapseButtonContainer}
