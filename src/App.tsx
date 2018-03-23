@@ -132,6 +132,7 @@ class App extends React.Component<Props, AppState> {
                                     <Button
                                           typeOption='primary'
                                           sizeOption='large'
+                                          disabled
                                     >
                                           Click me
                                     </Button>

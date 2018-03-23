@@ -1,5 +1,6 @@
 import * as React from 'react'
 import * as s from './Button.css'
+var classNames = require('classnames')
 
 class Props {
       children: React.ReactNode
@@ -32,13 +33,15 @@ export class Button extends React.Component<Props, {}> {
 
             return (
                   <div 
-                        className={[
-                                    s.Button,
-                                    s[typeOption],
-                                    s[sizeOption],
-                                    fullWidth ? s.fullWidth : '',
-                                    disabled ? s.disabled : '',
-                        ].join(' ')}
+                        className={classNames(
+                              s.Button,
+                              s[typeOption],
+                              s[sizeOption],
+                              {
+                                    [s.fullWidth]: fullWidth,
+                                    [s.disabled]: disabled,
+                              }
+                        )}
                         onClick={!disabled ? handleButtonClick : (() => { console.log('Button was clicked but is disabled') })}
                   >
                         {children}
