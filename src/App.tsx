@@ -16,19 +16,13 @@ import { MeasureName, Duration, Comparison, Subcategory, StoreFormat, CustomerSe
 interface Props {}
 
 export interface AppState {
-
-      topLevelCategory: string,
-
-      // REFLECTS THE STATE OF THE SELECTORS (RATHER THAN WHAT'S DISPLAYED IN dataPanel)
+     
+      // FILTERS SELECTION AND RELATED VIEW-LOGIC
       selectedFilters: FiltersSet,
-      
-      // REFLECTS WHAT'S DISPLAYED IN dataPanel (NOT NECESSARILY THE STATE OF THE SELECTORS)
       displayedFilters: FiltersSet,
-      
-      // TRIGGERED BY A CHANGE IN THE SELECTORS, UNTRIGGERED BY A VIEW UPDATE
       dataViewNeedsUpdating: boolean,
 
-      // SELECTED KPI TILE
+      // SELECTED MEASURE 
       selectedKpiTile: MeasureName,
 
       // DEFINES WHICH CONTENT BOARDS ARE EXPANDED
@@ -48,21 +42,15 @@ export interface AppState {
 }
 
 const initialState: AppState = {
-
-      topLevelCategory: 'MEDICINE',
-
-      // REFLECTS THE STATE OF THE SELECTORS (RATHER THAN WHAT'S DISPLAYED IN dataPanel)
       selectedFilters: {
             duration: '4 weeks',
             dates: '25 Dec 2017 - 21 Jan 2018',
             comparison: 'vs. last year',
             subcategory: 'All product groups',
             storeFormat: 'All store formats',
-            customerSegment: 'All customer types',
+            customerSegment: 'All customer segments',
             region: 'All regions',
       },
-      
-      // REFLECTS WHAT'S DISPLAYED IN dataPanel (NOT NECESSARILY THE STATE OF THE SELECTORS)
       displayedFilters: {
             duration: '4 weeks',
             dates: '25 Dec 2017 - 21 Jan 2018',
@@ -70,28 +58,22 @@ const initialState: AppState = {
             subcategory: 'All product groups',
             region: 'All regions',                  
             storeFormat: 'All store formats',
-            customerType: 'All customer segments',
+            customerSegment: 'All customer segments',
       },
-      
-      // TRIGGERED BY A CHANGE IN THE SELECTORS, UNTRIGGERED BY A VIEW UPDATE
       dataViewNeedsUpdating: false,
 
-      // SELECTED KPI TILE
       selectedKpiTile: 'Sales value',
 
-      // DEFINES WHICH CONTENT BOARDS ARE EXPANDED
       measuresSummaryExpanded: true,
       measuresInDetailExpanded: true,
       KPITreesExpanded: false,
 
-      // DEFINES WHICH CONTENT MODULES ARE EXPANDED
       trendGraphExpanded: false,
       splitBySubcategoriesExpanded: false,
       splitByStoreFormatsExpanded: false,
       splitByCustomerSegmentsExpanded: false,
       splitByRegionsExpanded: false,
       
-      // MEASURE SELECTOR VISIBLE
       measureSelectorContainerVisible: false,
 }
 
@@ -103,7 +85,23 @@ class App extends React.Component<Props, AppState> {
 
       render() {
             const {
-                  selectedSweet
+                  selectedFilters,
+                  displayedFilters,
+                  dataViewNeedsUpdating,
+            
+                  selectedKpiTile,
+            
+                  measuresSummaryExpanded,
+                  measuresInDetailExpanded,
+                  KPITreesExpanded,
+            
+                  trendGraphExpanded,
+                  splitBySubcategoriesExpanded,
+                  splitByStoreFormatsExpanded,
+                  splitByCustomerSegmentsExpanded,
+                  splitByRegionsExpanded,
+                  
+                  measureSelectorContainerVisible,
             } = this.state
 
             return (
