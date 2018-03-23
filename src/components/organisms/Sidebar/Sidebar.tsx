@@ -183,14 +183,14 @@ export class Sidebar extends React.Component<Props, {}> {
                                           value='a'
                                     />
                               </div>
-
-                              <Button
-                                    fullWidth
-                                    disabled={!appState.dataViewNeedsUpdating}
-                              >
-                                          Update view
-                              </Button>
                         </div>
+
+                        <Button
+                              fullWidth
+                              disabled={!appState.dataViewNeedsUpdating}
+                        >
+                                    Update view
+                        </Button>
                   </div>
             )
       }

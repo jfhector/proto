@@ -18,10 +18,6 @@
       margin-bottom: 20px;
 }
 
-.selectorGroupContainer:last-child {
-      margin-bottom: 0;
-}
-
 .selectorGroupTitle {
       margin-bottom: 6px;
       font-size: medium;
