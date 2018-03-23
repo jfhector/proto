@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { hot } from 'react-hot-loader'
 import {
-      Counter, 
       Button,
       Alert,
       CollapseButton,
@@ -9,6 +8,7 @@ import {
       CollapsibleContentModule,
       KpiTile,
       CollapsibleContentBoard,
+      Sidebar,
 } from './components/'
 import * as s from './App.css'
 import { MeasureName, Duration, Comparison, Subcategory, StoreFormat, CustomerSegment, Region, FiltersSet } from './sharedTypes'
@@ -106,150 +106,10 @@ class App extends React.Component<Props, AppState> {
 
             return (
                   <div className={s.App}>
-                        <Alert
-                              visible
-                              typeOption='danger'
-                        >
-                              Hello you!!!
-                        </Alert>
-
-                        <Counter 
-                              big
+                        <Sidebar 
+                              appState={this.state}
+                              setAppState={this.setState}
                         />
-
-                        <CollapsibleContentBoard 
-                              title='Hello!!!'
-                              expanded
-                              rightNodeIsSticky
-                              rightNodeIsHighlighted
-                              rightNode={
-                                    <Selector 
-                                          value='Quiche'
-                                          optionsArray={[
-                                                'Quiche',
-                                                'Bonbon',
-                                                'Pizza'
-                                          ]}
-                                    />
-                              }
-                        >
-                              <CollapsibleContentModule
-                                    title='Hello'
-                                    expanded
-                                    displayedFilters={{
-                                          duration: '4 weeks',
-                                          dates: '21 Jan 2018 to 24 Feb 2018',
-                                          comparison: 'vs. last year',
-                                          subcategory: 'DERMATOLOGY',
-                                          region: 'North region',
-                                          storeFormat: 'All store formats',
-                                          customerSegment: 'All customer segments',
-                                    }}
-                              >
-                                    <KpiTile 
-                                          measure='Basket penetration'
-                                          appState={this.state}
-
-                                    />
-
-                                    <Button
-                                          typeOption='primary'
-                                          sizeOption='large'
-                                    >
-                                          Click me
-                                    </Button>
-                              </CollapsibleContentModule>
-
-                              <CollapsibleContentModule
-                                    title='Hello'
-                                    expanded
-                                    displayedFilters={{
-                                          duration: '4 weeks',
-                                          dates: '21 Jan 2018 to 24 Feb 2018',
-                                          comparison: 'vs. last year',
-                                          subcategory: 'DERMATOLOGY',
-                                          region: 'North region',
-                                          storeFormat: 'All store formats',
-                                          customerSegment: 'All customer segments',
-                                    }}
-                              >
-                                    <KpiTile 
-                                          measure='Sales units'
-                                          appState={this.state}
-
-                                    />
-
-                                    <Button
-                                          typeOption='primary'
-                                          sizeOption='large'
-                                    >
-                                          Click me
-                                    </Button>
-                              </CollapsibleContentModule>
-
-                              <CollapsibleContentModule
-                                    title='Hello'
-                                    expanded
-                                    displayedFilters={{
-                                          duration: '4 weeks',
-                                          dates: '21 Jan 2018 to 24 Feb 2018',
-                                          comparison: 'vs. last year',
-                                          subcategory: 'DERMATOLOGY',
-                                          region: 'North region',
-                                          storeFormat: 'All store formats',
-                                          customerSegment: 'All customer segments',
-                                    }}
-                              >
-                                    <KpiTile 
-                                          measure='Sales value'
-                                          appState={this.state}
-
-                                    />
-
-                                    <Button
-                                          typeOption='primary'
-                                          sizeOption='large'
-                                          disabled
-                                    >
-                                          Click me
-                                    </Button>
-                              </CollapsibleContentModule>
-
-                              <CollapsibleContentModule
-                                    title='Hello'
-                                    expanded
-                                    displayedFilters={{
-                                          duration: '4 weeks',
-                                          dates: '21 Jan 2018 to 24 Feb 2018',
-                                          comparison: 'vs. last year',
-                                          subcategory: 'DERMATOLOGY',
-                                          region: 'North region',
-                                          storeFormat: 'All store formats',
-                                          customerSegment: 'All customer segments',
-                                    }}
-                              >
-                                    <KpiTile 
-                                          measure='Sales value'
-                                          appState={this.state}
-
-                                    />
-
-                                    <Button
-                                          typeOption='primary'
-                                          sizeOption='large'
-                                    >
-                                          Click me
-                                    </Button>
-                              </CollapsibleContentModule>
-                        </CollapsibleContentBoard>
-
-                        <Alert 
-                              visible
-                              typeOption='warning'
-                        >
-                              Hello!
-                        </Alert>
-
                   </div>
             )
       }

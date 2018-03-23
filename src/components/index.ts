@@ -11,6 +11,7 @@ export * from './molecules/CollapsibleContentModule/CollapsibleContentModule'
 export * from './molecules/CollapsibleContentBoard/CollapsibleContentBoard'
 
 // ORGANISMS
+export * from './organisms/Sidebar/Sidebar'
 
 // PAGES
 
