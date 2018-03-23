@@ -28,165 +28,169 @@ export class Sidebar extends React.Component<Props, {}> {
                         )}
                   >
                         <div
-                              className='title'
+                              className={s.title}
                         >
                               Configure view
                         </div>
 
                         <div
-                              className={s.selectorGroupTitle}
+                              className={s.selectorGroupContainer}
                         >
-                              Analysis period
-                        </div>
+                              <div
+                                    className={s.selectorGroupTitle}
+                              >
+                                    Analysis period
+                              </div>
 
-                        <div
-                              className={s.selectorContainer}
-                        >
-                              <Selector
-                                    optionsArray={[
-                                          'a',
-                                          'b',
-                                          'c',
-                                    ]}
-                                    value='a'
-                              />
-                        </div>
-
-                        <div
-                              className={s.selectorContainer}
-                        >
-                              <Selector
-                                    optionsArray={[
-                                          'a',
-                                          'b',
-                                          'c',
-                                    ]}
-                                    value='a'
-                              />
-                        </div>
-
-                        <div
-                              className={s.selectorContainer}
-                        >
-                              <Selector
-                                    optionsArray={[
-                                          'a',
-                                          'b',
-                                          'c',
-                                    ]}
-                                    value='a'
-                              />
-                        </div>
-
-                        <div
-                              className={s.selectorGroupTitle}
-                        >
-                                    Data source
-                        </div>
-
-                        <form
-                              className={s.radiosAndLabels}
-                        >
-                                    <input
-                                          type='radio'
-                                          id='dataSourceChoice1'
-                                          name='dataSource'
-                                          value='All data'
-                                          defaultChecked
+                              <div
+                                    className={s.selectorContainer}
+                              >
+                                    <Selector
+                                          optionsArray={[
+                                                'a',
+                                                'b',
+                                                'c',
+                                          ]}
+                                          value='a'
                                     />
-                                    
-                                    <label
-                                          className={classNames(
-                                                s.labels,
-                                                s.labelLeft,
-                                          )}
-                                          htmlFor='dataSourceChoice1'
-                                    >
-                                          All data
-                                    </label>
+                              </div>
 
-                                    <input
-                                          type='radio'
-                                          id='dataSourceChoice2'
-                                          name='dataSource'
-                                          value='Loyalty Card'
+                              <div
+                                    className={s.selectorContainer}
+                              >
+                                    <Selector
+                                          optionsArray={[
+                                                'a',
+                                                'b',
+                                                'c',
+                                          ]}
+                                          value='a'
                                     />
-                                    
-                                    <label
-                                          className={classNames(
-                                                s.labels,
-                                                s.labelRight,
-                                          )}
-                                          htmlFor='dataSourceChoice2'
-                                    >
-                                          Loyalty Card (LC)
-                                    </label>
-                        </form>
+                              </div>
 
-                        <div
-                              className={s.selectorGroupTitle}
-                        >
-                                    Data filters
+                              <div
+                                    className={s.selectorContainer}
+                              >
+                                    <Selector
+                                          optionsArray={[
+                                                'a',
+                                                'b',
+                                                'c',
+                                          ]}
+                                          value='a'
+                                    />
+                              </div>
                         </div>
 
                         <div
-                              className={s.selectorContainer}
+                              className={s.selectorGroupContainer}
                         >
-                              <Selector
-                                    optionsArray={[
-                                          'a',
-                                          'b',
-                                          'c',
-                                    ]}
-                                    value='a'
-                              />
+                              <div
+                                    className={s.selectorGroupTitle}
+                              >
+                                          Data source
+                              </div>
+
+                              <form
+                                    className={s.radiosAndLabels}
+                              >
+                                          <input
+                                                type='radio'
+                                                id='dataSourceChoice1'
+                                                name='dataSource'
+                                                value='All data'
+                                                defaultChecked
+                                          />
+                                          
+                                          <label
+                                                htmlFor='dataSourceChoice1'
+                                          >
+                                                All data
+                                          </label>
+
+                                          <input
+                                                type='radio'
+                                                id='dataSourceChoice2'
+                                                name='dataSource'
+                                                value='Loyalty Card'
+                                          />
+                                          
+                                          <label
+                                                htmlFor='dataSourceChoice2'
+                                          >
+                                                Loyalty Card (LC)
+                                          </label>
+                              </form>
                         </div>
 
                         <div
-                              className={s.selectorContainer}
+                              className={s.selectorGroupContainer}
                         >
-                              <Selector
-                                    optionsArray={[
-                                          'a',
-                                          'b',
-                                          'c',
-                                    ]}
-                                    value='a'
-                              />
-                        </div>
+                              <div
+                                    className={s.selectorGroupTitle}
+                              >
+                                          Data filters
+                              </div>
 
-                        <div
-                              className={s.selectorContainer}
-                        >
-                              <Selector
-                                    optionsArray={[
-                                          'a',
-                                          'b',
-                                          'c',
-                                    ]}
-                                    value='a'
-                              />
-                        </div>
+                              <div
+                                    className={s.selectorContainer}
+                              >
+                                    <Selector
+                                          optionsArray={[
+                                                'a',
+                                                'b',
+                                                'c',
+                                          ]}
+                                          value='a'
+                                    />
+                              </div>
 
-                        <div
-                              className={s.selectorContainer}
-                        >
-                              <Selector
-                                    optionsArray={[
-                                          'a',
-                                          'b',
-                                          'c',
-                                    ]}
-                                    value='a'
-                              />
-                        </div>
+                              <div
+                                    className={s.selectorContainer}
+                              >
+                                    <Selector
+                                          optionsArray={[
+                                                'a',
+                                                'b',
+                                                'c',
+                                          ]}
+                                          value='a'
+                                    />
+                              </div>
 
-                        <Button
-                              fullWidth
-                              disabled={!appState.dataViewNeedsUpdating}
-                        >
-                                    Update view
-                        </Button>
+                              <div
+                                    className={s.selectorContainer}
+                              >
+                                    <Selector
+                                          optionsArray={[
+                                                'a',
+                                                'b',
+                                                'c',
+                                          ]}
+                                          value='a'
+                                    />
+                              </div>
+
+                              <div
+                                    className={s.selectorContainer}
+                              >
+                                    <Selector
+                                          optionsArray={[
+                                                'a',
+                                                'b',
+                                                'c',
+                                          ]}
+                                          value='a'
+                                    />
+                              </div>
+
+                              <Button
+                                    fullWidth
+                                    disabled={!appState.dataViewNeedsUpdating}
+                              >
+                                          Update view
+                              </Button>
+                        </div>
                   </div>
             )
       }

@@ -1,26 +1,46 @@
 .Sidebar {
+      position: sticky;
+      top: 20px;
+      width: 272px;
+      padding: 20px;
+      border: 1px solid var(--borderColor_aroundWhiteOrLightestGrey);
+      border-radius: 5px;
+      background-color: white;
+}
 
+.title {
+      margin-bottom: 16px;
+      font-size: large;
+      font-weight: bold;
+}
+
+.selectorGroupContainer {
+      margin-bottom: 20px;
+}
+
+.selectorGroupContainer:last-child {
+      margin-bottom: 0;
 }
 
 .selectorGroupTitle {
-
+      margin-bottom: 6px;
+      font-size: medium;
 }
 
 .selectorContainer {
-
+      margin-bottom: 10px;
 }
 
-.radiosAndLabels {
-
+.radiosAndLabels > input {
+      width: 15px;
+      height: 15px;
 }
 
-.labels {
-
-}
-.labelLeft {
-
+.radiosAndLabels > label {
+      font-size: small;
+      margin-left: 5px;
 }
 
-.labelRight {
-      
+.radiosAndLabels > label:first-of-type {
+      margin-right: 17px;
 }
