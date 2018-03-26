@@ -11,7 +11,7 @@ import {
       Sidebar,
 } from './components/'
 import * as s from './App.css'
-import { MeasureName, Duration, Comparison, Subcategory, StoreFormat, CustomerSegment, Region, FiltersSet } from './sharedTypes'
+import { MeasureName, FiltersSet } from './sharedTypes'
 
 interface Props {}
 
