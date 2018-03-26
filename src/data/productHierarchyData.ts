@@ -1,18 +1,4 @@
-type DermatologySubcategoryName = 'All product groups' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H'
-type DermatologySubcategories = {
-      [K in DermatologySubcategoryName]: {
-            displayName: K,
-            children: null,
-      }
-}
-
-type MedicineSubCategoryName = 'All product groups' | 'DERMATOLOGY' | 'GASTRIC HEALTH' | 'INTESTINE HEALTH' | 'CHOLESTEROL' | 'CARDIOTHERAPY' | 'ANTICOAGULANT' | 'WEIGHT CONTROL' | 'HYPERTENSION'
-type MedicineSubcategories = {
-      [K in MedicineSubCategoryName]: {
-            displayName: K,
-            children: null | DermatologySubcategories,
-      }
-}
+import { MedicineSubcategories } from '../sharedTypes'
 
 export const medicineSubcategories: MedicineSubcategories = {
       ['All product groups']: {

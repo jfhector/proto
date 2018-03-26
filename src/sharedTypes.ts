@@ -4,21 +4,6 @@ export type DurationOption =
       '12 weeks' | 
       '4 weeks'
 
-export type ComparisonOptionsAvailableFor4WeekDuration = 
-      'vs. last year' 
-      | 'vs. previous 4 weeks'
-
-export type ComparisonOptionsAvailableFor12WeekDuration = 
-      'vs. last year' | 
-      'vs. previous 12 weeks'
-
-export type ComparisonOptionsAvailableFor26WeekDuration = 
-      'vs. last year' | 
-      'vs. previous 26 weeks'
-
-export type ComparisonOptionsAvailableFor52WeekDuration = 
-      'vs. previous 52 weeks'
-
 export type DateOptionsAvailableFor4WeekDuration = 
       '12 Feb 2018 - 11 Mar 2018' | 
       '05 Feb 2018 - 04 Mar 2018' | 
@@ -87,6 +72,55 @@ export type DateOptionsAvailableFor52WeekDuration =
       '12 Dec 2016 - 10 Dec 2017' |
       '05 Dec 2016 - 03 Dec 2017'
 
+export type ComparisonOptionsAvailableFor4WeekDuration = 
+      'vs. last year' 
+      | 'vs. previous 4 weeks'
+
+export type ComparisonOptionsAvailableFor12WeekDuration = 
+      'vs. last year' | 
+      'vs. previous 12 weeks'
+
+export type ComparisonOptionsAvailableFor26WeekDuration = 
+      'vs. last year' | 
+      'vs. previous 26 weeks'
+
+export type ComparisonOptionsAvailableFor52WeekDuration = 
+      'vs. previous 52 weeks'
+
+type DermatologySubcategoryName = 
+      'All product groups' | 
+      'A' | 
+      'B' | 
+      'C' | 
+      'D' | 
+      'E' | 
+      'F' | 
+      'G' | 
+      'H'
+type DermatologySubcategories = {
+      [K in DermatologySubcategoryName]: {
+            displayName: K,
+            children: null,
+      }
+}
+
+export type MedicineSubCategoryName = 
+      'All product groups' | 
+      'DERMATOLOGY' | 
+      'GASTRIC HEALTH' | 
+      'INTESTINE HEALTH' | 
+      'CHOLESTEROL' | 
+      'CARDIOTHERAPY' | 
+      'ANTICOAGULANT' | 
+      'WEIGHT CONTROL' | 
+      'HYPERTENSION'
+export type MedicineSubcategories = {
+      [K in MedicineSubCategoryName]: {
+            displayName: K,
+            children: null | DermatologySubcategories,
+      }
+}
+
 export type StoreFormatOption = 
       'All store formats' | 
       'Express stores' | 
@@ -108,22 +142,11 @@ export type CustomerSegmentOption =
       'Post family' | 
       'Older person'
 
-export type Subcategory = 
-      'All product groups' | 
-      'DERMATOLOGY' | 
-      'GASTRIC HEALTH' | 
-      'INTESTINE HEALTH' | 
-      'CHOLESTEROL' | 
-      'CARDIOTHERAPY' | 
-      'ANTICOAGULANT' | 
-      'WEIGHT CONTROL' | 
-      'HYPERTENSION'
-
 export interface FiltersSet {
       duration: DurationOption,
       dates: string,
       comparison: ComparisonOptionsAvailableFor4WeekDuration | ComparisonOptionsAvailableFor12WeekDuration | ComparisonOptionsAvailableFor26WeekDuration | ComparisonOptionsAvailableFor52WeekDuration,
-      subcategory: Subcategory,
+      subcategory: MedicineSubCategoryName,
       region: RegionOption,
       storeFormat: StoreFormatOption,
       customerSegment: CustomerSegmentOption,

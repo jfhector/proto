@@ -123,7 +123,25 @@ function getDatesOptions(selectedDuration: DurationOption):
       }
 }
 
-export const storeFormatOptions: StoreFormatOption[] = ['All store formats', 'Express stores', 'Metro stores', 'Extra stores', 'Online']
+export const storeFormatOptions: StoreFormatOption[] = [
+      'All store formats', 
+      'Express stores', 
+      'Metro stores', 
+      'Extra stores', 
+      'Online'
+]
 
-export const regionOptions: RegionOption[] = ['All regions', 'North region', 'Central region', 'West region', 'South region']
-export const customerSegmentOptions: CustomerSegmentOption[] = ['All customer types', 'Young single person', 'Family with young children', 'Post family', 'Older person']
+export const regionOptions: RegionOption[] = [
+      'All regions', 
+      'North region', 
+      'Central region', 
+      'West region', 
+      'South region'
+]
+export const customerSegmentOptions: CustomerSegmentOption[] = [
+      'All customer types', 
+      'Young single person', 
+      'Family with young children', 
+      'Post family', 
+      'Older person'
+]
