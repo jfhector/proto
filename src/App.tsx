@@ -56,9 +56,9 @@ const initialState: AppState = {
             dates: '25 Dec 2017 - 21 Jan 2018',
             comparison: 'vs. last year',
             subcategory: 'All product groups',
-            region: 'All regions',                  
             storeFormat: 'All store formats',
             customerSegment: 'All customer segments',
+            region: 'All regions'
       },
       dataViewNeedsUpdating: false,
 

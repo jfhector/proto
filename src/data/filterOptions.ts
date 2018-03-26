@@ -139,7 +139,7 @@ export const regionOptions: RegionOption[] = [
       'South region'
 ]
 export const customerSegmentOptions: CustomerSegmentOption[] = [
-      'All customer types', 
+      'All customer segments', 
       'Young single person', 
       'Family with young children', 
       'Post family', 

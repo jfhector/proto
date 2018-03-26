@@ -136,7 +136,7 @@ export type RegionOption =
       'South region'
 
 export type CustomerSegmentOption = 
-      'All customer types' | 
+      'All customer segments' | 
       'Young single person' | 
       'Family with young children' | 
       'Post family' | 
@@ -145,7 +145,11 @@ export type CustomerSegmentOption =
 export interface FiltersSet {
       duration: DurationOption,
       dates: string,
-      comparison: ComparisonOptionsAvailableFor4WeekDuration | ComparisonOptionsAvailableFor12WeekDuration | ComparisonOptionsAvailableFor26WeekDuration | ComparisonOptionsAvailableFor52WeekDuration,
+      comparison: 
+            ComparisonOptionsAvailableFor4WeekDuration | 
+            ComparisonOptionsAvailableFor12WeekDuration | 
+            ComparisonOptionsAvailableFor26WeekDuration | 
+            ComparisonOptionsAvailableFor52WeekDuration,
       subcategory: MedicineSubCategoryName,
       region: RegionOption,
       storeFormat: StoreFormatOption,
