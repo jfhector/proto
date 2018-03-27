@@ -6,19 +6,13 @@ import * as s from './Sidebar.css'
 import { DurationOption } from '../../../sharedTypes'
 import { durationOptions, getDatesOptions, getComparisonOptions, medicineSubcategories, regionOptions, storeFormatOptions, customerSegmentOptions } from '../../../data'
 
-interface SetStateArgumentFunction {
-      (prevState: AppState, props?: Props): AppState
-}
-
-interface SetAppState {
-      (newPartialState: AppState): void,
-      (innerSetStateFunction: SetStateArgumentFunction): void,
-}
-
 interface Props {
       appState: AppState,
       handleUpdateViewButtonClick?: React.MouseEventHandler<HTMLElement>,
-      setAppState: SetAppState,
+      setAppState<K extends keyof AppState>(
+            state: ((prevState: Readonly<AppState>, props: Props) => (Pick<AppState, K> | AppState | null)) | (Pick<AppState, K> | AppState | null),
+            callback?: () => void
+      ): void,
 }
 
 export class Sidebar extends React.Component<Props, {}> {
