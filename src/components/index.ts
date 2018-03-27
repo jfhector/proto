@@ -12,6 +12,7 @@ export * from './molecules/CollapsibleContentBoard/CollapsibleContentBoard'
 
 // ORGANISMS
 export * from './organisms/Sidebar/Sidebar'
+export * from './organisms/DataView/DataView'
 
 // PAGES
 

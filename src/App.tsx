@@ -9,6 +9,7 @@ import {
       KpiTile,
       CollapsibleContentBoard,
       Sidebar,
+      DataView,
 } from './components/'
 import * as s from './App.css'
 import { MeasureName, FiltersSet } from './sharedTypes'
@@ -106,7 +107,13 @@ class App extends React.Component<Props, AppState> {
 
             return (
                   <div className={s.App}>
-                        <Sidebar 
+                        {/* <Sidebar 
+                              appState={this.state}
+                              // tslint:disable-next-line:jsx-no-bind
+                              setAppState={this.setState.bind(this)}
+                        /> */}
+
+                        <DataView 
                               appState={this.state}
                               // tslint:disable-next-line:jsx-no-bind
                               setAppState={this.setState.bind(this)}

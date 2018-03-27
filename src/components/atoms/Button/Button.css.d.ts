@@ -9,6 +9,6 @@ export const info: string;
 export const light: string;
 export const dark: string;
 export const small: string;
-export const normal: string;
+export const medium: string;
 export const large: string;
 export const disabled: string;

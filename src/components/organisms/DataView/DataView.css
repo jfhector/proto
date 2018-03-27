@@ -1,0 +1,28 @@
+.DataView {
+      margin-left: 20px;
+      width: 865px;
+      min-height: 800px;
+}
+
+.viewTitleRow {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+}
+
+.viewTitle {
+      margin-left: 20px;
+      font-size: xx-large;
+      font-weight: 300;
+}
+
+.viewTitleButtonsRow {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+}
+
+.viewTitleButtonsRow > button:first-child {
+      margin-right: 15px;
+}
