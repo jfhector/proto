@@ -1,3 +1,5 @@
+// COVERS ALL SELECTORS' OPTIONS OTHER THAN SUBCATEGORIES (HANDLED IN A SEPARATE DATA FILE)
+
 import {
       DurationOption, 
       StoreFormatOption, 
@@ -10,7 +12,8 @@ import {
       DateOptionAvailableFor4WeekDuration,
       DateOptionAvailableFor12WeekDuration,
       DateOptionAvailableFor26WeekDuration,
-      DateOptionAvailableFor52WeekDuration
+      DateOptionAvailableFor52WeekDuration,
+      MeasureName
 } from '../sharedTypes'
 
 export const durationOptions: DurationOption[] = [
@@ -145,4 +148,16 @@ export const customerSegmentOptions: CustomerSegmentOption[] = [
       'Family with young children', 
       'Post family', 
       'Older person'
+]
+
+export const measureOptions: MeasureName[] = [
+      'Sales value', 
+      'Spend per customer', 
+      'Customers', 
+      'Retailer visits', 
+      'Spend per visit', 
+      'Units per visit', 
+      'Basket penetration', 
+      'Frequency of purchase', 
+      'Sales units'
 ]

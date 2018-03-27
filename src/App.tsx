@@ -24,7 +24,7 @@ export interface AppState {
       dataViewNeedsUpdating?: boolean,
 
       // SELECTED MEASURE 
-      selectedKpiTile?: MeasureName,
+      selectedMeasure?: MeasureName,
 
       // DEFINES WHICH CONTENT BOARDS ARE EXPANDED
       measuresSummaryExpanded?: boolean,
@@ -63,7 +63,7 @@ const initialState: AppState = {
       },
       dataViewNeedsUpdating: false,
 
-      selectedKpiTile: 'Sales value',
+      selectedMeasure: 'Sales value',
 
       measuresSummaryExpanded: true,
       measuresInDetailExpanded: true,
@@ -90,7 +90,7 @@ class App extends React.Component<Props, AppState> {
                   displayedFilters,
                   dataViewNeedsUpdating,
             
-                  selectedKpiTile,
+                  selectedMeasure,
             
                   measuresSummaryExpanded,
                   measuresInDetailExpanded,

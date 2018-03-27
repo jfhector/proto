@@ -2,21 +2,23 @@
 import * as React from 'react'
 import { AppState } from '../../../App'
 import * as s from './DataView.css'
-import { Button, Alert, CollapsibleContentBoard, KpiTile } from '../..'
+import { Button, Alert, CollapsibleContentBoard, KpiTile, Selector, CollapsibleContentModule } from '../..'
+import { measureOptions } from '../../../data';
+import { MeasureName } from '../../../sharedTypes';
 
-// import PROTOIMG_graph_salesValue from '../../assets/PROTOIMG_graph_salesValue.png'
-// import PROTOIMG_graph_customers from '../../assets/PROTOIMG_graph_customers.png'
-// import PROTOIMG_graph_spendPerCustomer from '../../assets/PROTOIMG_graph_spendPerCustomer.png'
-// import PROTOIMG_graph_spendPerVisit from '../../assets/PROTOIMG_graph_spendPerVisit.png'
+const PROTOIMG_graph_salesValue = require('../../../assets/PROTOIMG_graph_salesValue.png')
+const PROTOIMG_graph_customers = require('../../../assets/PROTOIMG_graph_customers.png')
+const PROTOIMG_graph_spendPerCustomer = require('../../../assets/PROTOIMG_graph_spendPerCustomer.png')
+const PROTOIMG_graph_spendPerVisit = require('../../../assets/PROTOIMG_graph_spendPerVisit.png')
 
-// import PROTOIMG_table_subcategories_customers from '../../assets/PROTOIMG_table_subcategories_customers.png'
-// import PROTOIMG_table_subcategories_salesValue from '../../assets/PROTOIMG_table_subcategories_salesValue.png'
-// import PROTOIMG_table_subcategories_spendPerCustomer from '../../assets/PROTOIMG_table_subcategories_spendPerCustomer.png'
-// import PROTOIMG_table_subcategories_spendPerVisit from '../../assets/PROTOIMG_table_subcategories_spendPerVisit.png'
+const PROTOIMG_table_subcategories_customers = require('../../../assets/PROTOIMG_table_subcategories_customers.png')
+const PROTOIMG_table_subcategories_salesValue = require('../../../assets/PROTOIMG_table_subcategories_salesValue.png')
+const PROTOIMG_table_subcategories_spendPerCustomer = require('../../../assets/PROTOIMG_table_subcategories_spendPerCustomer.png')
+const PROTOIMG_table_subcategories_spendPerVisit = require('../../../assets/PROTOIMG_table_subcategories_spendPerVisit.png')
 
-// import PROTOIMG_table_customerTypes_salesValue from '../../assets/PROTOIMG_table_customerTypes_salesValue.png'
-// import PROTOIMG_table_regions_salesValue from '../../assets/PROTOIMG_table_regions_salesValue.png'
-// import PROTOIMG_table_storeFormats_salesValue from '../../assets/PROTOIMG_table_storeFormats_salesValue.png'
+const PROTOIMG_table_customerTypes_salesValue = require('../../../assets/PROTOIMG_table_customerTypes_salesValue.png')
+const PROTOIMG_table_regions_salesValue = require('../../../assets/PROTOIMG_table_regions_salesValue.png')
+const PROTOIMG_table_storeFormats_salesValue = require('../../../assets/PROTOIMG_table_storeFormats_salesValue.png')
 
 const PROTOIMG_kpiTree = require('./../../../assets/PROTOIMG_kpiTree.png')
 
@@ -36,7 +38,8 @@ export class DataView extends React.Component<Props, {}> {
             } = this.props
 
             const {
-                  displayedFilters
+                  displayedFilters,
+                  selectedMeasure,
             } = appState
 
             return (
@@ -94,11 +97,11 @@ export class DataView extends React.Component<Props, {}> {
                                     <KpiTile 
                                           measure='Sales value'
                                           appState={appState}
-                                          selected={appState.selectedKpiTile === 'Sales value'}
+                                          selected={appState.selectedMeasure === 'Sales value'}
                                           handleKpiTileClick={
                                                 (nameOfAssociatedMeasure) => {
                                                       setAppState({
-                                                            selectedKpiTile: nameOfAssociatedMeasure
+                                                            selectedMeasure: nameOfAssociatedMeasure
                                                       })
                                                 }
                                           }
@@ -107,11 +110,11 @@ export class DataView extends React.Component<Props, {}> {
                                     <KpiTile 
                                           measure='Sales units'
                                           appState={appState}
-                                          selected={appState.selectedKpiTile === 'Sales units'}
+                                          selected={appState.selectedMeasure === 'Sales units'}
                                           handleKpiTileClick={
                                                 (nameOfAssociatedMeasure) => {
                                                       setAppState({
-                                                            selectedKpiTile: nameOfAssociatedMeasure
+                                                            selectedMeasure: nameOfAssociatedMeasure
                                                       })
                                                 }
                                           }
@@ -120,11 +123,11 @@ export class DataView extends React.Component<Props, {}> {
                                     <KpiTile 
                                           measure='Customers'
                                           appState={appState}
-                                          selected={appState.selectedKpiTile === 'Customers'}
+                                          selected={appState.selectedMeasure === 'Customers'}
                                           handleKpiTileClick={
                                                 (nameOfAssociatedMeasure) => {
                                                       setAppState({
-                                                            selectedKpiTile: nameOfAssociatedMeasure
+                                                            selectedMeasure: nameOfAssociatedMeasure
                                                       })
                                                 }
                                           }
@@ -133,11 +136,11 @@ export class DataView extends React.Component<Props, {}> {
                                     <KpiTile 
                                           measure='Spend per customer'
                                           appState={appState}
-                                          selected={appState.selectedKpiTile === 'Spend per customer'}
+                                          selected={appState.selectedMeasure === 'Spend per customer'}
                                           handleKpiTileClick={
                                                 (nameOfAssociatedMeasure) => {
                                                       setAppState({
-                                                            selectedKpiTile: nameOfAssociatedMeasure
+                                                            selectedMeasure: nameOfAssociatedMeasure
                                                       })
                                                 }
                                           }
@@ -146,11 +149,11 @@ export class DataView extends React.Component<Props, {}> {
                                     <KpiTile 
                                           measure='Retailer visits'
                                           appState={appState}
-                                          selected={appState.selectedKpiTile === 'Retailer visits'}
+                                          selected={appState.selectedMeasure === 'Retailer visits'}
                                           handleKpiTileClick={
                                                 (nameOfAssociatedMeasure) => {
                                                       setAppState({
-                                                            selectedKpiTile: nameOfAssociatedMeasure
+                                                            selectedMeasure: nameOfAssociatedMeasure
                                                       })
                                                 }
                                           }
@@ -159,11 +162,11 @@ export class DataView extends React.Component<Props, {}> {
                                     <KpiTile 
                                           measure='Spend per visit'
                                           appState={appState}
-                                          selected={appState.selectedKpiTile === 'Spend per visit'}
+                                          selected={appState.selectedMeasure === 'Spend per visit'}
                                           handleKpiTileClick={
                                                 (nameOfAssociatedMeasure) => {
                                                       setAppState({
-                                                            selectedKpiTile: nameOfAssociatedMeasure
+                                                            selectedMeasure: nameOfAssociatedMeasure
                                                       })
                                                 }
                                           }
@@ -172,11 +175,11 @@ export class DataView extends React.Component<Props, {}> {
                                     <KpiTile 
                                           measure='Units per visit'
                                           appState={appState}
-                                          selected={appState.selectedKpiTile === 'Units per visit'}
+                                          selected={appState.selectedMeasure === 'Units per visit'}
                                           handleKpiTileClick={
                                                 (nameOfAssociatedMeasure) => {
                                                       setAppState({
-                                                            selectedKpiTile: nameOfAssociatedMeasure
+                                                            selectedMeasure: nameOfAssociatedMeasure
                                                       })
                                                 }
                                           }
@@ -185,11 +188,11 @@ export class DataView extends React.Component<Props, {}> {
                                     <KpiTile 
                                           measure='Basket penetration'
                                           appState={appState}
-                                          selected={appState.selectedKpiTile === 'Basket penetration'}
+                                          selected={appState.selectedMeasure === 'Basket penetration'}
                                           handleKpiTileClick={
                                                 (nameOfAssociatedMeasure) => {
                                                       setAppState({
-                                                            selectedKpiTile: nameOfAssociatedMeasure
+                                                            selectedMeasure: nameOfAssociatedMeasure
                                                       })
                                                 }
                                           }
@@ -198,11 +201,11 @@ export class DataView extends React.Component<Props, {}> {
                                     <KpiTile 
                                           measure='Frequency of purchase'
                                           appState={appState}
-                                          selected={appState.selectedKpiTile === 'Frequency of purchase'}
+                                          selected={appState.selectedMeasure === 'Frequency of purchase'}
                                           handleKpiTileClick={
                                                 (nameOfAssociatedMeasure) => {
                                                       setAppState({
-                                                            selectedKpiTile: nameOfAssociatedMeasure
+                                                            selectedMeasure: nameOfAssociatedMeasure
                                                       })
                                                 }
                                           }
@@ -237,6 +240,58 @@ export class DataView extends React.Component<Props, {}> {
                                     src={PROTOIMG_kpiTree} 
                               />
                         </CollapsibleContentBoard>
+
+                        <CollapsibleContentBoard
+                              title='Measure in detail'
+                              rightNodeIsSticky
+                              rightNodeIsHighlighted={appState.measureSelectorContainerVisible}
+                              expanded={appState.measuresInDetailExpanded}
+                              handleCollapseButtonClick={
+                                    () => {
+                                          setAppState(
+                                                (prevState: AppState) => ({
+                                                      measuresInDetailExpanded: !prevState.measuresInDetailExpanded,
+                                                })
+                                          )
+                                    }
+                              }
+                              rightNode={
+                                    <Selector
+                                          optionsArray={measureOptions}
+                                          value={appState.selectedMeasure}
+                                          handleSelectorChange={
+                                                (newlySelectedMeasure: MeasureName) => {
+                                                      setAppState({
+                                                            selectedMeasure: newlySelectedMeasure
+                                                      })
+                                                }
+                                          }
+                                    />
+                              }
+                        >
+                              <CollapsibleContentModule
+                                    title={`${selectedMeasure} • Trend`}
+                                    displayedFilters={appState.displayedFilters}
+                              >
+                                    Caca
+                              </CollapsibleContentModule>
+                        </CollapsibleContentBoard>
+
+                        <img src={PROTOIMG_graph_salesValue} style={{'visibility': 'hidden', 'width': 0, 'height': 0, 'overflow': 'hidden'}} />
+                        <img src={PROTOIMG_graph_customers} style={{'visibility': 'hidden', 'width': 0, 'height': 0, 'overflow': 'hidden'}} />
+                        <img src={PROTOIMG_graph_spendPerCustomer} style={{'visibility': 'hidden', 'width': 0, 'height': 0, 'overflow': 'hidden'}} />
+                        <img src={PROTOIMG_graph_spendPerVisit} style={{'visibility': 'hidden', 'width': 0, 'height': 0, 'overflow': 'hidden'}} />
+
+                        <img src={PROTOIMG_table_subcategories_customers} style={{'visibility': 'hidden', 'width': 0, 'height': 0, 'overflow': 'hidden'}} />
+                        <img src={PROTOIMG_table_subcategories_salesValue} style={{'visibility': 'hidden', 'width': 0, 'height': 0, 'overflow': 'hidden'}} />
+                        <img src={PROTOIMG_table_subcategories_spendPerCustomer} style={{'visibility': 'hidden', 'width': 0, 'height': 0, 'overflow': 'hidden'}} />
+                        <img src={PROTOIMG_table_subcategories_spendPerVisit} style={{'visibility': 'hidden', 'width': 0, 'height': 0, 'overflow': 'hidden'}} />
+
+                        <img src={PROTOIMG_table_customerTypes_salesValue} style={{'visibility': 'hidden', 'width': 0, 'height': 0, 'overflow': 'hidden'}} />
+                        <img src={PROTOIMG_table_regions_salesValue} style={{'visibility': 'hidden', 'width': 0, 'height': 0, 'overflow': 'hidden'}} />
+                        <img src={PROTOIMG_table_storeFormats_salesValue} style={{'visibility': 'hidden', 'width': 0, 'height': 0, 'overflow': 'hidden'}} />
+
+                        <img src={PROTOIMG_kpiTree} style={{'visibility': 'hidden', 'width': 0, 'height': 0, 'overflow': 'hidden'}} />
                   </div>
             )
       }
