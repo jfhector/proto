@@ -2,7 +2,7 @@ import * as React from 'react'
 import * as s from './Button.css'
 import classNames = require('classnames')
 
-class Props {
+interface Props {
       children: React.ReactNode
 
       disabled?: boolean

@@ -8,7 +8,6 @@ import { durationOptions, getDatesOptions, getComparisonOptions, medicineSubcate
 
 interface Props {
       appState: AppState,
-      handleUpdateViewButtonClick?: React.MouseEventHandler<HTMLElement>,
       setAppState<K extends keyof AppState>(
             state: ((prevState: Readonly<AppState>, props: Props) => (Pick<AppState, K> | AppState | null)) | (Pick<AppState, K> | AppState | null),
             callback?: () => void
@@ -19,7 +18,6 @@ export class Sidebar extends React.Component<Props, {}> {
       render() {
             const {
                   appState,
-                  handleUpdateViewButtonClick,
                   setAppState,
             } = this.props
 
@@ -254,6 +252,15 @@ export class Sidebar extends React.Component<Props, {}> {
                         <Button
                               fullWidth
                               disabled={!appState.dataViewNeedsUpdating}
+                              handleButtonClick={
+                                    () => {
+                                          setAppState(
+                                                (prevState: AppState) => ({
+                                                      dataViewNeedsUpdating: false,
+                                                })
+                                          )
+                                    }
+                              }
                         >
                                     Update view
                         </Button>
