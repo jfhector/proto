@@ -3,6 +3,7 @@ import { AppState } from '../../../App'
 import classNames = require('classnames')
 import { Selector, Button } from '../..'
 import * as s from './Sidebar.css'
+import { durationOptions, getDatesOptions, getComparisonOptions, medicineSubcategories } from '../../../data'
 
 interface Props {
       appState: AppState,
@@ -46,12 +47,8 @@ export class Sidebar extends React.Component<Props, {}> {
                                     className={s.selectorContainer}
                               >
                                     <Selector
-                                          optionsArray={[
-                                                'a',
-                                                'b',
-                                                'c',
-                                          ]}
-                                          value='a'
+                                          optionsArray={durationOptions}
+                                          value={appState.selectedFilters.duration}
                                     />
                               </div>
 
@@ -59,12 +56,8 @@ export class Sidebar extends React.Component<Props, {}> {
                                     className={s.selectorContainer}
                               >
                                     <Selector
-                                          optionsArray={[
-                                                'a',
-                                                'b',
-                                                'c',
-                                          ]}
-                                          value='a'
+                                          optionsArray={getDatesOptions(appState.selectedFilters.duration)}
+                                          value={appState.selectedFilters.dates}
                                     />
                               </div>
 
@@ -72,12 +65,8 @@ export class Sidebar extends React.Component<Props, {}> {
                                     className={s.selectorContainer}
                               >
                                     <Selector
-                                          optionsArray={[
-                                                'a',
-                                                'b',
-                                                'c',
-                                          ]}
-                                          value='a'
+                                          optionsArray={getComparisonOptions(appState.selectedFilters.duration)}
+                                          value={appState.selectedFilters.comparison}
                                     />
                               </div>
                         </div>
@@ -136,12 +125,8 @@ export class Sidebar extends React.Component<Props, {}> {
                                     className={s.selectorContainer}
                               >
                                     <Selector
-                                          optionsArray={[
-                                                'a',
-                                                'b',
-                                                'c',
-                                          ]}
-                                          value='a'
+                                          optionsArray={Object.keys(medicineSubcategories)}
+                                          value={appState.selectedFilters.subcategory}
                                     />
                               </div>
 

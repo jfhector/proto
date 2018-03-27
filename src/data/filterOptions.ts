@@ -14,38 +14,13 @@ import {
 } from '../sharedTypes'
 
 export const durationOptions: DurationOption[] = [
-      '52 weeks', 
-      '26 weeks', 
+      '4 weeks',
       '12 weeks', 
-      '4 weeks'
+      '26 weeks', 
+      '52 weeks', 
 ]
 
-function getComparisonOptions(selectedDuration: DurationOption): 
-      ComparisonOptionsAvailableFor4WeekDuration[] | 
-      ComparisonOptionsAvailableFor12WeekDuration[] | 
-      ComparisonOptionsAvailableFor26WeekDuration[] | 
-      ComparisonOptionsAvailableFor52WeekDuration[] {
-      switch (selectedDuration) {
-            case '52 weeks': return [
-                  'vs. previous 52 weeks'
-            ]
-            case '26 weeks': return [
-                  'vs. previous 26 weeks',
-                  'vs. last year',
-            ]
-            case '12 weeks': return [
-                  'vs. previous 12 weeks',
-                  'vs. last year',
-            ]
-            case '4 weeks': return [
-                  'vs. previous 4 weeks',
-                  'vs. last year',
-            ]
-            default: throw new Error('No switch case matched selectedDuration @ getComparisonOptions')
-      }
-}
-
-function getDatesOptions(selectedDuration: DurationOption):
+export function getDatesOptions(selectedDuration: DurationOption):
       DateOptionsAvailableFor4WeekDuration[] |
       DateOptionsAvailableFor12WeekDuration[] |
       DateOptionsAvailableFor26WeekDuration[] |
@@ -120,6 +95,31 @@ function getDatesOptions(selectedDuration: DurationOption):
                   '05 Dec 2016 - 03 Dec 2017'
             ]
             default: throw new Error('No switch case matched selectedDuration @ getDatesOptions')
+      }
+}
+
+export function getComparisonOptions(selectedDuration: DurationOption): 
+      ComparisonOptionsAvailableFor4WeekDuration[] | 
+      ComparisonOptionsAvailableFor12WeekDuration[] | 
+      ComparisonOptionsAvailableFor26WeekDuration[] | 
+      ComparisonOptionsAvailableFor52WeekDuration[] {
+      switch (selectedDuration) {
+            case '52 weeks': return [
+                  'vs. previous 52 weeks'
+            ]
+            case '26 weeks': return [
+                  'vs. previous 26 weeks',
+                  'vs. last year',
+            ]
+            case '12 weeks': return [
+                  'vs. previous 12 weeks',
+                  'vs. last year',
+            ]
+            case '4 weeks': return [
+                  'vs. previous 4 weeks',
+                  'vs. last year',
+            ]
+            default: throw new Error('No switch case matched selectedDuration @ getComparisonOptions')
       }
 }
 
