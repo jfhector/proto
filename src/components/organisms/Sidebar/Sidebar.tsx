@@ -6,13 +6,13 @@ import * as s from './Sidebar.css'
 import { DurationOption } from '../../../sharedTypes'
 import { durationOptions, getDatesOptions, getComparisonOptions, medicineSubcategories, regionOptions, storeFormatOptions, customerSegmentOptions } from '../../../data'
 
-interface InnerSetStateFunction {
+interface SetStateArgumentFunction {
       (prevState: AppState, props?: Props): AppState
 }
 
 interface SetAppState {
-      (newState: AppState): void,
-      (innerSetStateFunction: InnerSetStateFunction): void,
+      (newPartialState: AppState): void,
+      (innerSetStateFunction: SetStateArgumentFunction): void,
 }
 
 interface Props {
