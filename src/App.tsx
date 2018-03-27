@@ -45,7 +45,7 @@ const initialState: AppState = {
       selectedFilters: {
             duration: '4 weeks',
             dates: '25 Dec 2017 - 21 Jan 2018',
-            comparison: 'vs. last year',
+            comparison: 'vs. previous 4 weeks',
             subcategory: 'All product groups',
             storeFormat: 'All store formats',
             customerSegment: 'All customer segments',
@@ -54,7 +54,7 @@ const initialState: AppState = {
       displayedFilters: {
             duration: '4 weeks',
             dates: '25 Dec 2017 - 21 Jan 2018',
-            comparison: 'vs. last year',
+            comparison: 'vs. previous 4 weeks',
             subcategory: 'All product groups',
             storeFormat: 'All store formats',
             customerSegment: 'All customer segments',
@@ -108,6 +108,7 @@ class App extends React.Component<Props, AppState> {
                   <div className={s.App}>
                         <Sidebar 
                               appState={this.state}
+                              // tslint:disable-next-line:jsx-no-bind
                               setAppState={this.setState.bind(this)}
                         />
                   </div>

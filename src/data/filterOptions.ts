@@ -3,14 +3,14 @@ import {
       StoreFormatOption, 
       RegionOption, 
       CustomerSegmentOption,
-      ComparisonOptionsAvailableFor4WeekDuration, 
-      ComparisonOptionsAvailableFor12WeekDuration, 
-      ComparisonOptionsAvailableFor26WeekDuration, 
-      ComparisonOptionsAvailableFor52WeekDuration, 
-      DateOptionsAvailableFor4WeekDuration,
-      DateOptionsAvailableFor12WeekDuration,
-      DateOptionsAvailableFor26WeekDuration,
-      DateOptionsAvailableFor52WeekDuration
+      ComparisonOptionAvailableFor4WeekDuration, 
+      ComparisonOptionAvailableFor12WeekDuration, 
+      ComparisonOptionAvailableFor26WeekDuration, 
+      ComparisonOptionAvailableFor52WeekDuration, 
+      DateOptionAvailableFor4WeekDuration,
+      DateOptionAvailableFor12WeekDuration,
+      DateOptionAvailableFor26WeekDuration,
+      DateOptionAvailableFor52WeekDuration
 } from '../sharedTypes'
 
 export const durationOptions: DurationOption[] = [
@@ -21,10 +21,10 @@ export const durationOptions: DurationOption[] = [
 ]
 
 export function getDatesOptions(selectedDuration: DurationOption):
-      DateOptionsAvailableFor4WeekDuration[] |
-      DateOptionsAvailableFor12WeekDuration[] |
-      DateOptionsAvailableFor26WeekDuration[] |
-      DateOptionsAvailableFor52WeekDuration[] {
+      DateOptionAvailableFor4WeekDuration[] |
+      DateOptionAvailableFor12WeekDuration[] |
+      DateOptionAvailableFor26WeekDuration[] |
+      DateOptionAvailableFor52WeekDuration[] {
             switch (selectedDuration) {
             case '4 weeks': return [
                   '12 Feb 2018 - 11 Mar 2018', 
@@ -99,10 +99,10 @@ export function getDatesOptions(selectedDuration: DurationOption):
 }
 
 export function getComparisonOptions(selectedDuration: DurationOption): 
-      ComparisonOptionsAvailableFor4WeekDuration[] | 
-      ComparisonOptionsAvailableFor12WeekDuration[] | 
-      ComparisonOptionsAvailableFor26WeekDuration[] | 
-      ComparisonOptionsAvailableFor52WeekDuration[] {
+      ComparisonOptionAvailableFor4WeekDuration[] | 
+      ComparisonOptionAvailableFor12WeekDuration[] | 
+      ComparisonOptionAvailableFor26WeekDuration[] | 
+      ComparisonOptionAvailableFor52WeekDuration[] {
       switch (selectedDuration) {
             case '52 weeks': return [
                   'vs. previous 52 weeks'

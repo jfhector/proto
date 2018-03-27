@@ -3,7 +3,7 @@ import { AppState } from '../../../App'
 import classNames = require('classnames')
 import { Selector, Button } from '../..'
 import * as s from './Sidebar.css'
-import { DurationOption } from '../../../sharedTypes'
+import { DurationOption, DateOption, ComparisonOption, MedicineSubcategoryName, RegionOption, StoreFormatOption, CustomerSegmentOption } from '../../../sharedTypes'
 import { durationOptions, getDatesOptions, getComparisonOptions, medicineSubcategories, regionOptions, storeFormatOptions, customerSegmentOptions } from '../../../data'
 
 interface Props {
@@ -57,7 +57,9 @@ export class Sidebar extends React.Component<Props, {}> {
                                                                   selectedFilters: {
                                                                         ...prevState.selectedFilters,
                                                                         duration: newlySelectedDuration,
-                                                                  }
+                                                                        comparison: getComparisonOptions(newlySelectedDuration)[0]
+                                                                  },
+                                                                  dataViewNeedsUpdating: true,
                                                             })
                                                       )
                                                 }
@@ -71,6 +73,19 @@ export class Sidebar extends React.Component<Props, {}> {
                                     <Selector
                                           optionsArray={getDatesOptions(appState.selectedFilters.duration)}
                                           value={appState.selectedFilters.dates}
+                                          handleSelectorChange={
+                                                (newlySelectedDates: DateOption) => {
+                                                      setAppState(
+                                                            (prevState: AppState) => ({
+                                                                  selectedFilters: {
+                                                                        ...prevState.selectedFilters,
+                                                                        dates: newlySelectedDates
+                                                                  },
+                                                                  dataViewNeedsUpdating: true,
+                                                            })
+                                                      )
+                                                }
+                                          }
                                     />
                               </div>
 
@@ -80,6 +95,19 @@ export class Sidebar extends React.Component<Props, {}> {
                                     <Selector
                                           optionsArray={getComparisonOptions(appState.selectedFilters.duration)}
                                           value={appState.selectedFilters.comparison}
+                                          handleSelectorChange={
+                                                (newlySelectedComparison: ComparisonOption) => {
+                                                      setAppState(
+                                                            (prevState: AppState) => ({
+                                                                  selectedFilters: {
+                                                                        ...prevState.selectedFilters,
+                                                                        comparison: newlySelectedComparison,
+                                                                  },
+                                                                  dataViewNeedsUpdating: true,
+                                                            })
+                                                      )
+                                                }
+                                          }
                                     />
                               </div>
                         </div>
@@ -140,6 +168,19 @@ export class Sidebar extends React.Component<Props, {}> {
                                     <Selector
                                           optionsArray={Object.keys(medicineSubcategories)}
                                           value={appState.selectedFilters.subcategory}
+                                          handleSelectorChange={
+                                                (newlySelectedSubcategory: MedicineSubcategoryName) => {
+                                                      setAppState(
+                                                            (prevState: AppState) => ({
+                                                                  selectedFilters: {
+                                                                        ...prevState.selectedFilters,
+                                                                        subcategory: newlySelectedSubcategory,
+                                                                  },
+                                                                  dataViewNeedsUpdating: true,
+                                                            })
+                                                      )
+                                                }
+                                          }
                                     />
                               </div>
 
@@ -149,6 +190,19 @@ export class Sidebar extends React.Component<Props, {}> {
                                     <Selector
                                           optionsArray={regionOptions}
                                           value={appState.selectedFilters.region}
+                                          handleSelectorChange={
+                                                (newlySelectedRegion: RegionOption) => {
+                                                      setAppState(
+                                                            (prevState: AppState) => ({
+                                                                  selectedFilters: {
+                                                                        ...prevState.selectedFilters,
+                                                                        region: newlySelectedRegion,
+                                                                  },
+                                                                  dataViewNeedsUpdating: true,
+                                                            })
+                                                      )
+                                                }
+                                          }
                                     />
                               </div>
 
@@ -158,6 +212,19 @@ export class Sidebar extends React.Component<Props, {}> {
                                     <Selector
                                           optionsArray={storeFormatOptions}
                                           value={appState.selectedFilters.storeFormat}
+                                          handleSelectorChange={
+                                                (newlySelectedStoreFormat: StoreFormatOption) => {
+                                                      setAppState(
+                                                            (prevState: AppState) => ({
+                                                                  selectedFilters: {
+                                                                        ...prevState.selectedFilters,
+                                                                        storeFormat: newlySelectedStoreFormat,
+                                                                  },
+                                                                  dataViewNeedsUpdating: true,
+                                                            })
+                                                      )
+                                                }
+                                          }
                                     />
                               </div>
 
@@ -167,6 +234,19 @@ export class Sidebar extends React.Component<Props, {}> {
                                     <Selector
                                           optionsArray={customerSegmentOptions}
                                           value={appState.selectedFilters.customerSegment}
+                                          handleSelectorChange={
+                                                (newlySelectedCustomerSegment: CustomerSegmentOption) => {
+                                                      setAppState(
+                                                            (prevState: AppState) => ({
+                                                                  selectedFilters: {
+                                                                        ...prevState.selectedFilters,
+                                                                        customerSegment: newlySelectedCustomerSegment,
+                                                                  },
+                                                                  dataViewNeedsUpdating: true,
+                                                            })
+                                                      )
+                                                }
+                                          }
                                     />
                               </div>
                         </div>

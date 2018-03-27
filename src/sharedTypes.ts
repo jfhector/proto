@@ -6,7 +6,7 @@ export type DurationOption =
       '12 weeks' | 
       '4 weeks'
 
-export type DateOptionsAvailableFor4WeekDuration = 
+export type DateOptionAvailableFor4WeekDuration = 
       '12 Feb 2018 - 11 Mar 2018' | 
       '05 Feb 2018 - 04 Mar 2018' | 
       '29 Jan 2018 - 25 Feb 2018' | 
@@ -23,7 +23,7 @@ export type DateOptionsAvailableFor4WeekDuration =
       '13 Nov 2017 - 10 Dec 2017' | 
       '06 Dec 2017 - 03 Dec 2017'
 
-export type DateOptionsAvailableFor12WeekDuration = 
+export type DateOptionAvailableFor12WeekDuration = 
       '11 Dec 2017 - 11 Mar 2018' |
       '04 Dec 2017 - 04 Mar 2018' |
       '27 Nov 2017 - 25 Feb 2018' |
@@ -40,7 +40,7 @@ export type DateOptionsAvailableFor12WeekDuration =
       '11 Sept 2017 - 10 Dec 2017' |
       '04 Sept 2017 - 03 Dec 2017'
 
-export type DateOptionsAvailableFor26WeekDuration = 
+export type DateOptionAvailableFor26WeekDuration = 
       '31 Aug 2017 - 11 Mar 2018' |
       '24 Aug 2017 - 04 Mar 2018' |
       '14 Aug 2017 - 25 Feb 2018' |
@@ -57,7 +57,7 @@ export type DateOptionsAvailableFor26WeekDuration =
       '29 May 2017 - 10 Dec 2017' |
       '22 May 2017 - 03 Dec 2017'
 
-export type DateOptionsAvailableFor52WeekDuration = 
+export type DateOptionAvailableFor52WeekDuration = 
       '13 Mar 2017 - 11 Mar 2018' |
       '06 Mar 2017 - 04 Mar 2018' |
       '27 Feb 2017 - 25 Feb 2018' |
@@ -74,20 +74,32 @@ export type DateOptionsAvailableFor52WeekDuration =
       '12 Dec 2016 - 10 Dec 2017' |
       '05 Dec 2016 - 03 Dec 2017'
 
-export type ComparisonOptionsAvailableFor4WeekDuration = 
+export type DateOption = 
+      DateOptionAvailableFor4WeekDuration |
+      DateOptionAvailableFor12WeekDuration |
+      DateOptionAvailableFor26WeekDuration | 
+      DateOptionAvailableFor52WeekDuration
+
+export type ComparisonOptionAvailableFor4WeekDuration = 
       'vs. last year' 
       | 'vs. previous 4 weeks'
 
-export type ComparisonOptionsAvailableFor12WeekDuration = 
+export type ComparisonOptionAvailableFor12WeekDuration = 
       'vs. last year' | 
       'vs. previous 12 weeks'
 
-export type ComparisonOptionsAvailableFor26WeekDuration = 
+export type ComparisonOptionAvailableFor26WeekDuration = 
       'vs. last year' | 
       'vs. previous 26 weeks'
 
-export type ComparisonOptionsAvailableFor52WeekDuration = 
+export type ComparisonOptionAvailableFor52WeekDuration = 
       'vs. previous 52 weeks'
+
+export type ComparisonOption =
+      ComparisonOptionAvailableFor4WeekDuration |
+      ComparisonOptionAvailableFor12WeekDuration |
+      ComparisonOptionAvailableFor26WeekDuration |
+      ComparisonOptionAvailableFor52WeekDuration
 
 type DermatologySubcategoryName = 
       'All product groups' | 
@@ -105,7 +117,7 @@ type DermatologySubcategories = {
       }
 }
 
-export type MedicineSubCategoryName = 
+export type MedicineSubcategoryName = 
       'All product groups' | 
       'DERMATOLOGY' | 
       'GASTRIC HEALTH' | 
@@ -116,7 +128,7 @@ export type MedicineSubCategoryName =
       'WEIGHT CONTROL' | 
       'HYPERTENSION'
 export type MedicineSubcategories = {
-      [K in MedicineSubCategoryName]: {
+      [K in MedicineSubcategoryName]: {
             children: null | DermatologySubcategories,
       }
 }
@@ -146,11 +158,11 @@ export interface FiltersSet {
       duration: DurationOption,
       dates: string,
       comparison: 
-            ComparisonOptionsAvailableFor4WeekDuration | 
-            ComparisonOptionsAvailableFor12WeekDuration | 
-            ComparisonOptionsAvailableFor26WeekDuration | 
-            ComparisonOptionsAvailableFor52WeekDuration,
-      subcategory: MedicineSubCategoryName,
+            ComparisonOptionAvailableFor4WeekDuration | 
+            ComparisonOptionAvailableFor12WeekDuration | 
+            ComparisonOptionAvailableFor26WeekDuration | 
+            ComparisonOptionAvailableFor52WeekDuration,
+      subcategory: MedicineSubcategoryName,
       region: RegionOption,
       storeFormat: StoreFormatOption,
       customerSegment: CustomerSegmentOption,
