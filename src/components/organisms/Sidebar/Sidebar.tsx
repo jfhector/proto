@@ -1,6 +1,5 @@
 import React = require('react')
 import { AppState } from '../../../App'
-import classNames = require('classnames')
 import { Selector, Button } from '../..'
 import * as s from './Sidebar.css'
 import { DurationOption, DateOption, ComparisonOption, MedicineSubcategoryName, RegionOption, StoreFormatOption, CustomerSegmentOption } from '../../../sharedTypes'
@@ -23,9 +22,7 @@ export class Sidebar extends React.Component<Props, {}> {
 
             return (
                   <div
-                        className={classNames(
-                              s.Sidebar
-                        )}
+                        className={s.Sidebar}
                   >
                         <div
                               className={s.title}
