@@ -279,6 +279,19 @@ export class DataView extends React.Component<Props, {}> {
                                                       setAppState({
                                                             selectedMeasure: newlySelectedMeasure
                                                       })
+
+                                                      const targetScrollY: number =
+                                                            (!appState.measuresSummaryExpanded && !appState.KPITreesExpanded) ? 353
+                                                            : (appState.measuresSummaryExpanded && !appState.KPITreesExpanded) ? 688
+                                                            : (!appState.measuresSummaryExpanded && appState.KPITreesExpanded) ? 1373
+                                                            : 1707
+
+                                                      if (window.scrollY < targetScrollY) {
+                                                            window.scroll({
+                                                                  top: targetScrollY,
+                                                                  behavior: 'smooth',
+                                                            })
+                                                      }
                                                 }
                                           }
                                     />
