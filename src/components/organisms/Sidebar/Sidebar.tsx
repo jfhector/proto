@@ -3,15 +3,22 @@ import { AppState } from '../../../App'
 import classNames = require('classnames')
 import { Selector, Button } from '../..'
 import * as s from './Sidebar.css'
+import { DurationOption } from '../../../sharedTypes'
 import { durationOptions, getDatesOptions, getComparisonOptions, medicineSubcategories, regionOptions, storeFormatOptions, customerSegmentOptions } from '../../../data'
+
+// interface InnerSetStateFunction {
+//       (prevState: AppState, props?: Props): Partial<AppState>
+// }
+
+// interface SetAppState {
+//       (newState: Partial<AppState>): void,
+//       (innerSetStateFunction: InnerSetStateFunction): void,
+// }
 
 interface Props {
       appState: AppState,
       handleUpdateViewButtonClick?: React.MouseEventHandler<HTMLElement>,
-      setAppState<K extends keyof AppState>(
-            state: ((prevState: Readonly<AppState>, props: Props) => (Pick<AppState, K> | AppState | null)) | (Pick<AppState, K> | AppState | null),
-            callback?: () => void
-      ): void,
+      setAppState: any,
 }
 
 export class Sidebar extends React.Component<Props, {}> {
@@ -49,6 +56,18 @@ export class Sidebar extends React.Component<Props, {}> {
                                     <Selector
                                           optionsArray={durationOptions}
                                           value={appState.selectedFilters.duration}
+                                          handleSelectorChange={
+                                                (newlySelectedDuration: DurationOption) => {
+                                                      setAppState(
+                                                            (prevState: AppState) => ({
+                                                                  selectedFilters: {
+                                                                        ...prevState.selectedFilters,
+                                                                        duration: newlySelectedDuration,
+                                                                  }
+                                                            })
+                                                      )
+                                                }
+                                          }
                                     />
                               </div>
 

@@ -18,27 +18,27 @@ interface Props {}
 export interface AppState {
      
       // FILTERS SELECTION AND RELATED VIEW-LOGIC
-      selectedFilters: FiltersSet,
-      displayedFilters: FiltersSet,
-      dataViewNeedsUpdating: boolean,
+      selectedFilters?: FiltersSet,
+      displayedFilters?: FiltersSet,
+      dataViewNeedsUpdating?: boolean,
 
       // SELECTED MEASURE 
-      selectedKpiTile: MeasureName,
+      selectedKpiTile?: MeasureName,
 
       // DEFINES WHICH CONTENT BOARDS ARE EXPANDED
-      measuresSummaryExpanded: boolean,
-      measuresInDetailExpanded: boolean,
-      KPITreesExpanded: boolean,
+      measuresSummaryExpanded?: boolean,
+      measuresInDetailExpanded?: boolean,
+      KPITreesExpanded?: boolean,
 
       // DEFINES WHICH CONTENT MODULES ARE EXPANDED
-      trendGraphExpanded: boolean,
-      splitBySubcategoriesExpanded: boolean,
-      splitByStoreFormatsExpanded: boolean,
-      splitByCustomerSegmentsExpanded: boolean,
-      splitByRegionsExpanded: boolean,
+      trendGraphExpanded?: boolean,
+      splitBySubcategoriesExpanded?: boolean,
+      splitByStoreFormatsExpanded?: boolean,
+      splitByCustomerSegmentsExpanded?: boolean,
+      splitByRegionsExpanded?: boolean,
       
       // MEASURE SELECTOR VISIBLE
-      measureSelectorContainerVisible: boolean,
+      measureSelectorContainerVisible?: boolean,
 }
 
 const initialState: AppState = {
@@ -108,7 +108,7 @@ class App extends React.Component<Props, AppState> {
                   <div className={s.App}>
                         <Sidebar 
                               appState={this.state}
-                              setAppState={this.setState}
+                              setAppState={this.setState.bind(this)}
                         />
                   </div>
             )
