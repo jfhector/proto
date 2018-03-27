@@ -6,19 +6,19 @@ import * as s from './Sidebar.css'
 import { DurationOption } from '../../../sharedTypes'
 import { durationOptions, getDatesOptions, getComparisonOptions, medicineSubcategories, regionOptions, storeFormatOptions, customerSegmentOptions } from '../../../data'
 
-// interface InnerSetStateFunction {
-//       (prevState: AppState, props?: Props): Partial<AppState>
-// }
+interface InnerSetStateFunction {
+      (prevState: AppState, props?: Props): Partial<AppState>
+}
 
-// interface SetAppState {
-//       (newState: Partial<AppState>): void,
-//       (innerSetStateFunction: InnerSetStateFunction): void,
-// }
+interface SetAppState {
+      (newState: Partial<AppState>): void,
+      (innerSetStateFunction: InnerSetStateFunction): void,
+}
 
 interface Props {
       appState: AppState,
       handleUpdateViewButtonClick?: React.MouseEventHandler<HTMLElement>,
-      setAppState: any,
+      setAppState: SetAppState,
 }
 
 export class Sidebar extends React.Component<Props, {}> {
