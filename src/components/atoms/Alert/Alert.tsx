@@ -32,7 +32,10 @@ export class Alert extends React.Component<Props, {}> {
                   <div 
                         className={classNames(
                               s.Alert,
-                              s[typeOption]
+                              s[typeOption],
+                              {
+                                    [s.visible]: visible
+                              }
                         )}
                         onClick={handleClick}
                   >

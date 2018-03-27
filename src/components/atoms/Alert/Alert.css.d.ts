@@ -1,4 +1,5 @@
 export const Alert: string;
+export const visible: string;
 export const primary: string;
 export const secondary: string;
 export const success: string;

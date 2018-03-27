@@ -27,8 +27,15 @@
       margin-right: 15px;
 }
 
+.alertContainer {
+      position: sticky;
+      top: -1px;
+      z-index: 2;
+}
+
 .alertLink {
       text-decoration: underline;
+      cursor: pointer;
 }
 
 .KpiTilesContainer {

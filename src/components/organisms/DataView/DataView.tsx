@@ -3,8 +3,8 @@ import * as React from 'react'
 import { AppState } from '../../../App'
 import * as s from './DataView.css'
 import { Button, Alert, CollapsibleContentBoard, KpiTile, Selector, CollapsibleContentModule } from '../..'
-import { measureOptions } from '../../../data';
-import { MeasureName } from '../../../sharedTypes';
+import { measureOptions } from '../../../data'
+import { MeasureName } from '../../../sharedTypes'
 
 const PROTOIMG_graph_salesValue = require('../../../assets/PROTOIMG_graph_salesValue.png')
 const PROTOIMG_graph_customers = require('../../../assets/PROTOIMG_graph_customers.png')
@@ -71,12 +71,27 @@ export class DataView extends React.Component<Props, {}> {
                               </div>
                         </div>
 
-                        <Alert
-                              typeOption='warning'
-                              visible={appState.dataViewNeedsUpdating}
+                        <div
+                              className={s.alertContainer}
                         >
-                              <b>This view doesn&apos;t reflect your new selection yet.&nbsp;</b> Click <span className={s.alertLink}>&apos;Update view&apos;&nbsp;</span> to refresh this view.
-                        </Alert>
+                              <Alert
+                                    typeOption='warning'
+                                    visible={appState.dataViewNeedsUpdating}
+                                    handleClick={
+                                          () => {
+                                                setAppState(
+                                                      (prevState: AppState) => ({
+                                                            displayedFilters: prevState.selectedFilters,
+                                                            dataViewNeedsUpdating: false,
+                                                      })
+                                                )
+                                          }
+                                    }
+                                    dismissable
+                              >
+                                    <b>This view doesn&apos;t reflect your new selection yet.&nbsp;</b> Click <span className={s.alertLink}>&apos;Update view&apos;&nbsp;</span> to refresh this view.
+                              </Alert>
+                        </div>
 
                         <CollapsibleContentBoard
                               title='Measures summary'
@@ -272,8 +287,134 @@ export class DataView extends React.Component<Props, {}> {
                               <CollapsibleContentModule
                                     title={`${selectedMeasure} • Trend`}
                                     displayedFilters={appState.displayedFilters}
+                                    expanded={appState.trendGraphExpanded}
+                                    handleCollapseButtonClick={
+                                          () => {
+                                                setAppState(
+                                                      (prevState: AppState) => ({
+                                                            trendGraphExpanded: !prevState.trendGraphExpanded
+                                                      })
+                                                )
+                                          }
+                                    }
                               >
-                                    Caca
+                                    <img 
+                                          src={
+                                                (function() {
+                                                      switch (appState.selectedMeasure) {
+                                                            case 'Sales value':
+                                                            case 'Basket penetration':
+                                                                  return PROTOIMG_graph_salesValue
+                                                            case 'Spend per customer':
+                                                            case 'Frequency of purchase':
+                                                            case 'Sales units':
+                                                                  return PROTOIMG_graph_spendPerCustomer
+                                                            case 'Customers':
+                                                            case 'Retailer visits':
+                                                                  return PROTOIMG_graph_customers
+                                                            case 'Spend per visit':
+                                                            case 'Units per visit':
+                                                                  return PROTOIMG_graph_spendPerVisit
+                                                            default: throw new Error('No switch case matched')
+                                                      }
+                                                })()
+                                          } 
+                                    />
+                              </CollapsibleContentModule>
+
+                              <CollapsibleContentModule
+                                    title={`${selectedMeasure} • Top 10 movers in ${appState.displayedFilters.subcategory}`}
+                                    displayedFilters={appState.displayedFilters}
+                                    expanded={appState.splitBySubcategoriesExpanded}
+                                    handleCollapseButtonClick={
+                                          () => {
+                                                setAppState(
+                                                      (prevState: AppState) => ({
+                                                            splitBySubcategoriesExpanded: !prevState.splitBySubcategoriesExpanded
+                                                      })
+                                                )
+                                          }
+                                    }
+                              >
+                                    <img 
+                                          src={
+                                                (function() {
+                                                      switch (appState.selectedMeasure) {
+                                                            case 'Sales value':
+                                                            case 'Basket penetration':
+                                                                  return PROTOIMG_table_subcategories_salesValue
+                                                            case 'Spend per customer':
+                                                            case 'Frequency of purchase':
+                                                            case 'Sales units':
+                                                                  return PROTOIMG_table_subcategories_spendPerCustomer
+                                                            case 'Customers':
+                                                            case 'Retailer visits':
+                                                                  return PROTOIMG_table_subcategories_customers
+                                                            case 'Spend per visit':
+                                                            case 'Units per visit':
+                                                                  return PROTOIMG_table_subcategories_spendPerVisit
+                                                            default: throw new Error('No switch case matched')
+                                                      }
+                                                })()
+                                          } 
+                                    />
+                              </CollapsibleContentModule>
+
+                              <CollapsibleContentModule
+                                    title={`${selectedMeasure} • Split by region`}
+                                    displayedFilters={appState.displayedFilters}
+                                    expanded={appState.splitByRegionsExpanded}
+                                    handleCollapseButtonClick={
+                                          () => {
+                                                setAppState(
+                                                      (prevState: AppState) => ({
+                                                            splitByRegionsExpanded: !prevState.splitByRegionsExpanded
+                                                      })
+                                                )
+                                          }
+                                    }
+                              >
+                                    <img 
+                                          src={PROTOIMG_table_regions_salesValue} 
+                                    />
+                              </CollapsibleContentModule>
+
+                              <CollapsibleContentModule
+                                    title={`${selectedMeasure} • Split by store format`}
+                                    displayedFilters={appState.displayedFilters}
+                                    expanded={appState.splitByStoreFormatsExpanded}
+                                    handleCollapseButtonClick={
+                                          () => {
+                                                setAppState(
+                                                      (prevState: AppState) => ({
+                                                            splitByStoreFormatsExpanded: !prevState.splitByStoreFormatsExpanded
+                                                      })
+                                                )
+                                          }
+                                    }
+                              >
+                                    <img 
+                                          src={PROTOIMG_table_storeFormats_salesValue} 
+                                    />
+                              </CollapsibleContentModule>
+
+                              <CollapsibleContentModule
+                                    title={`${selectedMeasure} • Split by customer segment`}
+                                    displayedFilters={appState.displayedFilters}
+                                    expanded={appState.splitByCustomerSegmentsExpanded}
+                                    handleCollapseButtonClick={
+                                          () => {
+                                                setAppState(
+                                                      (prevState: AppState) => ({
+                                                            splitByCustomerSegmentsExpanded: !prevState.splitByCustomerSegmentsExpanded
+                                                      })
+                                                )
+                                          }
+                                    }
+                              >
+                                    <img 
+                                          src={PROTOIMG_table_customerTypes_salesValue} 
+                                    />
                               </CollapsibleContentModule>
                         </CollapsibleContentBoard>
 

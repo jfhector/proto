@@ -5,8 +5,23 @@
       font-size: medium;
       line-height: 24px;
       text-align: left;
-      cursor: pointer;
       overflow: hidden;
+      transition: all 100ms ease-in-out, padding-left 1ms;
+}
+
+.visible > button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 12px 20px;
+      background-color: transparent;
+      border: initial;
+      line-height: 1;
+      font-size: x-large;
+      font-weight: bold;
+      color: inherit;
+      opacity: 0.5;
+      cursor: pointer;
 }
 
 /* typeOption PROP */
@@ -50,3 +65,16 @@
       color: var(--textColor_alert_dark);
       background-color: var(--backgroundColor_alert_dark);
 }
+
+/* visible BOOL PROP */
+
+.Alert:not(.visible) {
+      height: 0;
+      padding-top: 0;
+      padding-right: 0;
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border-width: 0;
+      font-size: 0;
+}
+
