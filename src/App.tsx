@@ -14,6 +14,10 @@ import {
 import * as s from './App.css'
 import { MeasureName, FiltersSet } from './sharedTypes'
 
+const PROTOIMG_nav_header = require('./assets/PROTOIMG_nav_header.png')
+const PROTOIMG_nav_tabs = require('./assets/PROTOIMG_nav_tabs.png')
+const PROTOIMG_nav_footer = require('./assets/PROTOIMG_nav_footer.png')
+
 interface Props {}
 
 export interface AppState {
@@ -84,6 +88,34 @@ class App extends React.Component<Props, AppState> {
             this.state = initialState
       }
 
+      componentDidMount() {
+            window.addEventListener(
+                  'scroll',
+                  this.conditionallySetMeasureSelectorContainerVisibleStateBasedOnScrollY
+            )
+      }
+
+      componentWillUnmount() {
+            window.removeEventListener(
+                  'scroll', 
+                  this.conditionallySetMeasureSelectorContainerVisibleStateBasedOnScrollY
+            )
+      }
+
+      conditionallySetMeasureSelectorContainerVisibleStateBasedOnScrollY = () => {
+            console.log(window.scrollY)
+
+            const scrollYThreshold: number =
+                  (!this.state.measuresSummaryExpanded && !this.state.KPITreesExpanded) ? 390
+                  : (this.state.measuresSummaryExpanded && !this.state.KPITreesExpanded) ? 723
+                  : (!this.state.measuresSummaryExpanded && this.state.KPITreesExpanded) ? 1409
+                  : 1743
+
+            this.setState({
+                  measureSelectorContainerVisible: (window.scrollY >= scrollYThreshold) ? true : false,
+            })
+      }
+
       render() {
             const {
                   selectedFilters,
@@ -106,18 +138,45 @@ class App extends React.Component<Props, AppState> {
             } = this.state
 
             return (
-                  <div className={s.App}>
-                        {/* <Sidebar 
-                              appState={this.state}
-                              // tslint:disable-next-line:jsx-no-bind
-                              setAppState={this.setState.bind(this)}
-                        /> */}
+                  <div>
+                        <header
+                              className={s.headerContainer}
+                        >
+                              <img src={PROTOIMG_nav_header} />
+                        </header>
 
-                        <DataView 
-                              appState={this.state}
-                              // tslint:disable-next-line:jsx-no-bind
-                              setAppState={this.setState.bind(this)}
-                        />
+                        <header
+                              className={s.tabsBarContainer}
+                        >
+                              <img src={PROTOIMG_nav_tabs} />
+                        </header>
+
+                        <main
+                              className={s.main}
+                        >
+                              <div
+                                    className={s.sideBarContainer}
+                              >
+                                    <Sidebar 
+                                          appState={this.state}
+                                          // tslint:disable-next-line:jsx-no-bind
+                                          setAppState={this.setState.bind(this)}
+                                    />
+                              </div>
+
+                              <DataView 
+                                    appState={this.state}
+                                    // tslint:disable-next-line:jsx-no-bind
+                                    setAppState={this.setState.bind(this)}
+                              />
+                        </main>
+
+                        <footer
+                              className={s.footer}
+                        >
+                              <img src={PROTOIMG_nav_footer} />
+                        </footer>
+
                   </div>
             )
       }

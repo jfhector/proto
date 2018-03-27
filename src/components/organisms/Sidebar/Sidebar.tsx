@@ -253,6 +253,7 @@ export class Sidebar extends React.Component<Props, {}> {
                                     () => {
                                           setAppState(
                                                 (prevState: AppState) => ({
+                                                      displayedFilters: prevState.selectedFilters,
                                                       dataViewNeedsUpdating: false,
                                                 })
                                           )
