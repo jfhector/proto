@@ -23,13 +23,17 @@ module.exports = {
                   },
                   {
                         test: /\.css$/,
-                        loader: 'typings-for-css-modules-loader',
+                        loader: 'typings-for-css-modules-loader', // USING THIS IN PLACE OF css-loader TO GET TYPESCRIPT VALIDATION ACROSS TSX AND CSS
                         exclude: /node-modules/,
                         query: {
                               modules: true,
                               namedExport: true,
                               localIdentName: '[local]-[hash:base64:5]'
                         }
+                  },
+                  {
+                        test: /\.(png|jpg|gif)$/,
+                        loader: 'file-loader',
                   }
             ]
       },

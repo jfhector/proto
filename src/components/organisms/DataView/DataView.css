@@ -26,3 +26,19 @@
 .viewTitleButtonsRow > button:first-child {
       margin-right: 15px;
 }
+
+.alertLink {
+      text-decoration: underline;
+}
+
+.KpiTilesContainer {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+}
+
+.kpiTreesSubtitle {
+      margin-bottom: 20px;
+      font-size: small;
+      color: var(--textColor_grey);
+}
