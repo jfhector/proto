@@ -123,6 +123,14 @@ export function getComparisonOptions(selectedDuration: DurationOption):
       }
 }
 
+export const regionOptions: RegionOption[] = [
+      'All regions', 
+      'North region', 
+      'Central region', 
+      'West region', 
+      'South region'
+]
+
 export const storeFormatOptions: StoreFormatOption[] = [
       'All store formats', 
       'Express stores', 
@@ -131,13 +139,6 @@ export const storeFormatOptions: StoreFormatOption[] = [
       'Online'
 ]
 
-export const regionOptions: RegionOption[] = [
-      'All regions', 
-      'North region', 
-      'Central region', 
-      'West region', 
-      'South region'
-]
 export const customerSegmentOptions: CustomerSegmentOption[] = [
       'All customer segments', 
       'Young single person', 

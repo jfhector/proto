@@ -1,3 +1,5 @@
+// FILTER OPTIONS AND FILTERSET
+
 export type DurationOption = 
       '52 weeks' | 
       '26 weeks' | 
@@ -99,7 +101,6 @@ type DermatologySubcategoryName =
       'H'
 type DermatologySubcategories = {
       [K in DermatologySubcategoryName]: {
-            displayName: K,
             children: null,
       }
 }
@@ -116,7 +117,6 @@ export type MedicineSubCategoryName =
       'HYPERTENSION'
 export type MedicineSubcategories = {
       [K in MedicineSubCategoryName]: {
-            displayName: K,
             children: null | DermatologySubcategories,
       }
 }
@@ -155,6 +155,8 @@ export interface FiltersSet {
       storeFormat: StoreFormatOption,
       customerSegment: CustomerSegmentOption,
 }
+
+// MEASURE NAMES AND MEASURE DATA
 
 export type MeasureName = 
       'Sales value' | 
