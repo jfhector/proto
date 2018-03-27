@@ -7,11 +7,11 @@ import { DurationOption } from '../../../sharedTypes'
 import { durationOptions, getDatesOptions, getComparisonOptions, medicineSubcategories, regionOptions, storeFormatOptions, customerSegmentOptions } from '../../../data'
 
 interface InnerSetStateFunction {
-      (prevState: AppState, props?: Props): Partial<AppState>
+      (prevState: AppState, props?: Props): AppState
 }
 
 interface SetAppState {
-      (newState: Partial<AppState>): void,
+      (newState: AppState): void,
       (innerSetStateFunction: InnerSetStateFunction): void,
 }
 
