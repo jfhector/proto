@@ -40,6 +40,14 @@ module.exports = {
       resolve: {
             extensions: ['.ts', '.tsx', '.js', '.jsx']
       },
-      plugins: [new HtmlWebpackPlugin(), new webpack.NamedModulesPlugin()],
+      plugins: [
+            new webpack.DefinePlugin({
+                  'process.env.NODE_ENV': '"production"'
+            }),
+            new HtmlWebpackPlugin({
+                  title: 'Prototype',
+            }), 
+            new webpack.NamedModulesPlugin(),
+      ],
       devtool: 'eval-source-map'
 }
