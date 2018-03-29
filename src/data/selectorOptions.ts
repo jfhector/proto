@@ -97,7 +97,8 @@ export function getDatesOptions(selectedDuration: DurationOption):
                   '12 Dec 2016 - 10 Dec 2017',
                   '05 Dec 2016 - 03 Dec 2017'
             ]
-            default: throw new Error('No switch case matched selectedDuration @ getDatesOptions')
+            default:
+                  const _exhaustiveCheck: never = selectedDuration
       }
 }
 
@@ -122,7 +123,8 @@ export function getComparisonOptions(selectedDuration: DurationOption):
                   'vs. previous 4 weeks',
                   'vs. last year',
             ]
-            default: throw new Error('No switch case matched selectedDuration @ getComparisonOptions')
+            default:
+                  const _exhaustiveCheck: never = selectedDuration
       }
 }
 

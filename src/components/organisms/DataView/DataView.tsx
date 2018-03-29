@@ -328,7 +328,8 @@ export class DataView extends React.Component<Props, {}> {
                                                             case 'Spend per visit':
                                                             case 'Units per visit':
                                                                   return PROTOIMG_graph_spendPerVisit
-                                                            default: throw new Error('No switch case matched')
+                                                            default: 
+                                                                  const _exhaustiveCheck: never = appState.selectedMeasure
                                                       }
                                                 })()
                                           } 
@@ -366,7 +367,8 @@ export class DataView extends React.Component<Props, {}> {
                                                             case 'Spend per visit':
                                                             case 'Units per visit':
                                                                   return PROTOIMG_table_subcategories_spendPerVisit
-                                                            default: throw new Error('No switch case matched')
+                                                            default:
+                                                                  const _exhaustiveCheck: never = appState.selectedMeasure
                                                       }
                                                 })()
                                           } 
