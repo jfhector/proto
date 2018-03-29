@@ -1,59 +1,59 @@
 import { MedicineSubcategories } from '../sharedTypes'
 
 export const medicineSubcategories: MedicineSubcategories = {
-      ['All product groups']: {
+      'All product groups': {
             children: null
       },
-      ['DERMATOLOGY']: {
+      'DERMATOLOGY': {
             children: {
-                  ['All product groups']: {
+                  'All product groups': {
                         children: null
                   },
-                  ['A']: {
+                  'A': {
                         children: null
                   },
-                  ['B']: {
+                  'B': {
                         children: null
                   },
-                  ['C']: {
+                  'C': {
                         children: null
                   },
-                  ['D']: {
+                  'D': {
                         children: null
                   },
-                  ['E']: {
+                  'E': {
                         children: null
                   },
-                  ['F']: {
+                  'F': {
                         children: null
                   },
-                  ['G']: {
+                  'G': {
                         children: null
                   },
-                  ['H']: {
+                  'H': {
                         children: null
                   },
             }
       },
-      ['GASTRIC HEALTH']: {
+      'GASTRIC HEALTH': {
             children: null
       },
-      ['INTESTINE HEALTH']: {
+      'INTESTINE HEALTH': {
             children: null
       },
-      ['CHOLESTEROL']: {
+      'CHOLESTEROL': {
             children: null
       },
-      ['CARDIOTHERAPY']: {
+      'CARDIOTHERAPY': {
             children: null
       },
-      ['ANTICOAGULANT']: {
+      'ANTICOAGULANT': {
             children: null
       },
-      ['WEIGHT CONTROL']: {
+      'WEIGHT CONTROL': {
             children: null
       },
-      ['HYPERTENSION']: {
+      'HYPERTENSION': {
             children: null
       },
 }
