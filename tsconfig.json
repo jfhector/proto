@@ -8,7 +8,8 @@
             "jsx": "react",
             "pretty": true,
             "noImplicitThis": true,
-            "alwaysStrict": true
+            "alwaysStrict": true,
+            "lib": ["dom", "dom.iterable", "scripthost", "es2017"]
             // "strictNullChecks": true,
       }
 }
