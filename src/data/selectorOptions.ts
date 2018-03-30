@@ -99,6 +99,7 @@ export function getDatesOptions(selectedDuration: DurationOption):
             ]
             default:
                   const _exhaustiveCheck: never = selectedDuration
+                  return _exhaustiveCheck
       }
 }
 
@@ -125,6 +126,7 @@ export function getComparisonOptions(selectedDuration: DurationOption):
             ]
             default:
                   const _exhaustiveCheck: never = selectedDuration
+                  return _exhaustiveCheck
       }
 }
 

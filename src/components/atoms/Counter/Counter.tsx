@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as s from './Counter.css'
-import classNames = require('classnames');
+import classNames = require('classnames')
 
 interface Props {
       big?: boolean

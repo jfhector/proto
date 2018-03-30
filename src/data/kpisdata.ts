@@ -5,6 +5,9 @@ type DataForAllMeasures = { [k in MeasureName]: MeasureData }
 
 export function getDataForMeasures(appState: AppState, measure: MeasureName): MeasureData {
 
+      // Type guards
+      if (typeof appState.displayedFilters === 'undefined') { throw new Error() }
+
       // Generate 5 options of MeasureData
       const dataForAllMeasuresBasedOnAppState0 = {
             ['Sales value']: {
@@ -310,5 +313,6 @@ export function getDataForMeasures(appState: AppState, measure: MeasureName): Me
                   return dataForAllMeasuresBasedOnAppState3[measure]
             default:
                   const _exhaustiveCheck: never = numberFrom0To4
+                  return _exhaustiveCheck
       }
 }

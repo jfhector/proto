@@ -73,7 +73,7 @@ export class CollapsibleContentBoard extends React.Component<Props, {}> {
                               <div
                                     className={s.rightNodeContainer}
                                     ref={
-                                          (element: HTMLElement) => {
+                                          (element: HTMLDivElement) => {
                                                 this.refToRightNodeContainer = element
                                           }
                                     }

@@ -35,6 +35,11 @@ const DataView: React.StatelessComponent<{
 
       let refToMeasureInDetailCollapsibleContentBoard: CollapsibleContentBoard
 
+      // TYPE GUARDS
+      if (typeof displayedFilters === 'undefined') { throw new Error() }
+      if (typeof appState.dataViewNeedsUpdating === 'undefined') { throw new Error() }
+      if (typeof appState.selectedMeasure === 'undefined') { throw new Error() }
+
       return (
             <div
                   className={s.DataView}
@@ -290,7 +295,7 @@ const DataView: React.StatelessComponent<{
                   >
                         <CollapsibleContentModule
                               title={`${selectedMeasure} • Trend`}
-                              displayedFilters={appState.displayedFilters}
+                              displayedFilters={displayedFilters}
                               expanded={appState.trendGraphExpanded}
                               handleCollapseButtonClick={
                                     () => {
@@ -328,8 +333,8 @@ const DataView: React.StatelessComponent<{
                         </CollapsibleContentModule>
 
                         <CollapsibleContentModule
-                              title={`${selectedMeasure} • Top 10 movers in ${appState.displayedFilters.subcategory}`}
-                              displayedFilters={appState.displayedFilters}
+                              title={`${selectedMeasure} • Top 10 movers in ${displayedFilters.subcategory}`}
+                              displayedFilters={displayedFilters}
                               expanded={appState.splitBySubcategoriesExpanded}
                               handleCollapseButtonClick={
                                     () => {
@@ -368,7 +373,7 @@ const DataView: React.StatelessComponent<{
 
                         <CollapsibleContentModule
                               title={`${selectedMeasure} • Split by region`}
-                              displayedFilters={appState.displayedFilters}
+                              displayedFilters={displayedFilters}
                               expanded={appState.splitByRegionsExpanded}
                               handleCollapseButtonClick={
                                     () => {
@@ -387,7 +392,7 @@ const DataView: React.StatelessComponent<{
 
                         <CollapsibleContentModule
                               title={`${selectedMeasure} • Split by store format`}
-                              displayedFilters={appState.displayedFilters}
+                              displayedFilters={displayedFilters}
                               expanded={appState.splitByStoreFormatsExpanded}
                               handleCollapseButtonClick={
                                     () => {
@@ -406,7 +411,7 @@ const DataView: React.StatelessComponent<{
 
                         <CollapsibleContentModule
                               title={`${selectedMeasure} • Split by customer segment`}
-                              displayedFilters={appState.displayedFilters}
+                              displayedFilters={displayedFilters}
                               expanded={appState.splitByCustomerSegmentsExpanded}
                               handleCollapseButtonClick={
                                     () => {
