@@ -1,30 +1,19 @@
 import React = require('react')
 import * as s from './CollapseButton.css'
 
-interface Props {
-      expanded?: boolean,
-      handleClick?: React.MouseEventHandler<HTMLElement>,
-}
+const CollapseButton: React.StatelessComponent<{
+      expanded?: boolean
+      handleClick?: React.MouseEventHandler<HTMLElement>
+}> = ({
+            expanded = false,
+            handleClick = () => { console.log('CollapseButton clicked') },
+}) => (
+      <div 
+            className={s.CollapseButton}
+            onClick={handleClick}
+      >
+            {expanded ? '\u2013' : '+'}
+      </div>
+)
 
-export class CollapseButton extends React.Component<Props, {}> {
-      static defaultProps = {
-            handleClick: () => { console.log('CollapseButton clicked') },
-            expanded: false,
-      }
-
-      render() {
-            const {
-                  expanded,
-                  handleClick,
-            } = this.props
-
-            return (
-                  <div 
-                        className={s.CollapseButton}
-                        onClick={handleClick}
-                  >
-                        {expanded ? '\u2013' : '+'}
-                  </div>
-            )
-      }
-}
+export { CollapseButton }

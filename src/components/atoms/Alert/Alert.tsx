@@ -2,54 +2,40 @@ import * as React from 'react'
 import * as s from './Alert.css'
 import classNames = require('classnames')
 
-interface Props {
+const Alert: React.StatelessComponent<{
       visible: boolean
       children: React.ReactNode
-
       typeOption?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark'
       dismissable?: boolean
       handleClick?: React.MouseEventHandler<HTMLElement>
-}
+}> = ({
+      visible = true,
+      children,
+      typeOption = 'primary',
+      dismissable = false,
+      handleClick = () => {console.log('Alert was clicked')},
+}) => (
+      <div 
+            className={classNames(
+                  s.Alert,
+                  s[typeOption],
+                  {
+                        [s.visible]: visible
+                  }
+            )}
+            onClick={handleClick}
+      >
+            {children}
 
-export class Alert extends React.Component<Props, {}> {
-      static defaultProps = {
-            visible: true,
-            typeOption: 'primary',
-            dismissable: false,
-            handleClick: () => {console.log('Alert was clicked')}
-      }
-
-      render() {
-            const {
-                  visible,
-                  children,
-                  typeOption,
-                  dismissable,
-                  handleClick
-            } = this.props
-
-            return (
-                  <div 
-                        className={classNames(
-                              s.Alert,
-                              s[typeOption],
-                              {
-                                    [s.visible]: visible
-                              }
-                        )}
-                        onClick={handleClick}
+            {dismissable &&
+                  <button
+                        type='button'
+                        onClick={() => {}}
                   >
-                        {children}
-            
-                        {dismissable &&
-                              <button
-                                    type='button'
-                                    onClick={() => {}}
-                              >
-                                    ×
-                              </button>
-                        }
-                  </div>
-            )
-      }
-}
+                        ×
+                  </button>
+            }
+      </div>
+)
+
+export { Alert }

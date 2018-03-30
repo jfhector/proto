@@ -4,82 +4,71 @@ import * as s from './CollapsibleContentModule.css'
 import { CollapseButton } from '../..'
 import classNames = require('classnames')
 
-interface Props {
-      title: string,
-      children: React.ReactNode,
-      expanded?: boolean,
-      displayedFilters?: FiltersSet,
-      handleCollapseButtonClick?: React.MouseEventHandler<HTMLElement>,
-}
+const CollapsibleContentModule: React.StatelessComponent<{
+      title: string
+      children: React.ReactNode
+      displayedFilters: FiltersSet
+      expanded?: boolean
+      handleCollapseButtonClick?: React.MouseEventHandler<HTMLElement>
+}> = ({
+      title,
+      children,
+      displayedFilters : {
+            duration,
+            dates,
+            comparison,
+            subcategory,
+            region,
+            storeFormat,
+            customerSegment,            
+      },
+      expanded = false,
+      handleCollapseButtonClick = () => {console.log('handleCollapseButtonClick')},
+}) => (
+      <div
+            className={classNames(
+                  s.CollapsibleContentModule,
+                  {
+                        [s.expanded]: expanded,
+                  }
+            )}
+      >
 
-export class CollapsibleContentModule extends React.Component<Props, {}> {
-      static defaultProps = {
-            expanded: false,
-            handleCollapseButtonClick: () => {console.log('handleCollapseButtonClick')},
-      }
+            <div
+                  className={s.collapseButtonContainer}
+            >
+                  <CollapseButton 
+                        expanded={expanded}
+                        handleClick={handleCollapseButtonClick}
+                  />
+                  
+            </div>
 
-      render() {
-            const {
-                  title,
-                  children,
-                  expanded,
-                  displayedFilters: {
-                        duration,
-                        dates,
-                        comparison,
-                        subcategory,
-                        region,
-                        storeFormat,
-                        customerSegment,
-                  },
-                  handleCollapseButtonClick,
-            } = this.props
+            <div
+                  className={s.title}
+            >
+                  {title}
+            </div>
 
-            return (
-                  <div
-                        className={classNames(
-                              s.CollapsibleContentModule,
-                              {
-                                    [s.expanded]: expanded,
-                              }
-                        )}
+            {expanded &&
+                  <div 
+                        className={s.subTitle}
                   >
+                        {`${duration} • ${dates} ${comparison}`}
+                        <br />
+                        {`${subcategory} • ${region} • ${storeFormat} • ${customerSegment}`}
+                  </div>      
+            }
 
-                        <div
-                              className={s.collapseButtonContainer}
-                        >
-                              <CollapseButton 
-                                    expanded={expanded}
-                                    handleClick={handleCollapseButtonClick}
-                              />
-                              
-                        </div>
-
-                        <div
-                              className={s.title}
-                        >
-                              {title}
-                        </div>
-
-                        {expanded &&
-                              <div 
-                                    className={s.subTitle}
-                              >
-                                    {`${duration} • ${dates} ${comparison}`}
-                                    <br />
-                                    {`${subcategory} • ${region} • ${storeFormat} • ${customerSegment}`}
-                              </div>      
-                        }
-
-                        {expanded &&
-                              <div
-                                    className={s.childrenContainer}
-                              >
-                                    {children}
-                              </div>
-                        }
-
+            {expanded &&
+                  <div
+                        className={s.childrenContainer}
+                  >
+                        {children}
                   </div>
-            )
-      }
-}
+            }
+
+      </div>
+)
+
+export { CollapsibleContentModule }

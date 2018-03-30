@@ -1,81 +1,67 @@
-import React = require('react')
+import * as React from 'react'
 import { CollapseButton } from '../..'
 import * as s from './CollapsibleContentBoard.css'
 import classNames = require('classnames')
 
-interface Props {
-      title: string,
-      children: React.ReactNode,
-      rightNode?: JSX.Element,
-      rightNodeIsSticky?: boolean,
-      rightNodeIsHighlighted?: boolean,
-      expanded?: boolean,
-      handleCollapseButtonClick?: React.MouseEventHandler<HTMLElement>,
-}
+const CollapsibleContentBoard: React.StatelessComponent<{
+      title: string
+      children: React.ReactNode
+      expanded?: boolean
+      rightNode?: JSX.Element
+      rightNodeIsSticky?: boolean
+      rightNodeIsHighlighted?: boolean
+      handleCollapseButtonClick?: React.MouseEventHandler<HTMLElement>
+}> = ({
+      title,
+      children,
+      expanded = false,
+      rightNode = null,
+      rightNodeIsSticky = false,
+      rightNodeIsHighlighted = false,
+      handleCollapseButtonClick = () => { console.log('Button clicked') }
+}) => (
+      <div
+            className={classNames(
+                  s.CollapsibleContentBoard,
+                  {
+                        [s.expanded]: expanded,
+                        [s.rightNodeIsSticky]: rightNodeIsSticky,
+                        [s.rightNodeIsHighlighted]: rightNodeIsHighlighted,
+                  }
+            )}
+      >
+            <div
+                  className={s.collapseButtonContainer}
+            >
+                  <CollapseButton
+                        expanded={expanded}
+                        handleClick={handleCollapseButtonClick}
+                  />
+            </div>
 
-export class CollapsibleContentBoard extends React.Component<Props, {}> {
-      static defaultProps = {
-            expanded: false,
-            handleCollapseButtonClick: () => { console.log('Button clicked') },
-            rightNode: false,
-            rightNodeIsSticky: false,
-            rightNodeIsHighlighted: false,
-      }
+            <div 
+                  className={s.title}
+            >
+                  {title}
+            </div>
 
-      render() {
-            const {
-                  title,
-                  children,
-                  rightNode,
-                  rightNodeIsSticky,
-                  rightNodeIsHighlighted,
-                  expanded,
-                  handleCollapseButtonClick,
-            } = this.props
-
-            return (
+            {expanded &&
                   <div
-                        className={classNames(
-                              s.CollapsibleContentBoard,
-                              {
-                                    [s.expanded]: expanded,
-                                    [s.rightNodeIsSticky]: rightNodeIsSticky,
-                                    [s.rightNodeIsHighlighted]: rightNodeIsHighlighted,
-                              }
-                        )}
+                        className={s.rightNodeContainer}
                   >
-                        <div
-                              className={s.collapseButtonContainer}
-                        >
-                              <CollapseButton
-                                    expanded={expanded}
-                                    handleClick={handleCollapseButtonClick}
-                              />
-                        </div>
-
-                        <div 
-                              className={s.title}
-                        >
-                              {title}
-                        </div>
-
-                        {expanded &&
-                              <div
-                                    className={s.rightNodeContainer}
-                              >
-                                    {rightNode && 'Selected measure: '}
-                                    {rightNode}
-                              </div>
-                        }
-
-                        {expanded &&
-                              <div
-                                    className={s.childrenContainer}
-                              >
-                                    {children}
-                              </div>
-                        }
+                        {rightNode && 'Selected measure: '}
+                        {rightNode}
                   </div>
-            )
-      }
-}
+            }
+
+            {expanded &&
+                  <div
+                        className={s.childrenContainer}
+                  >
+                        {children}
+                  </div>
+            }
+      </div>
+)
+
+export { CollapsibleContentBoard }
