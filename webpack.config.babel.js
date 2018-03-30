@@ -41,9 +41,9 @@ module.exports = {
             extensions: ['.ts', '.tsx', '.js', '.jsx']
       },
       plugins: [
-            new webpack.DefinePlugin({
-                  'process.env.NODE_ENV': '"production"'
-            }),
+            // new webpack.DefinePlugin({
+            //       'process.env.NODE_ENV': '"production"'
+            // }),
             new HtmlWebpackPlugin({
                   title: 'Prototype',
             }), 
