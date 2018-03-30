@@ -2,14 +2,16 @@
       "compilerOptions": {
             "outDir": "./dist/",
             "sourceMap": true,
-            "noImplicitAny": true,
             "module": "commonjs",
             "target": "es6",
             "jsx": "react",
             "pretty": true,
+            "lib": ["dom", "dom.iterable", "scripthost", "es2017"],
+            "noImplicitAny": true,
             "noImplicitThis": true,
             "alwaysStrict": true,
-            "lib": ["dom", "dom.iterable", "scripthost", "es2017"],
             "strictNullChecks": true,
+            // "strictFunctionTypes": true,
+            // "strictPropertyInitialization": true
       }
 }
