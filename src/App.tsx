@@ -107,13 +107,13 @@ class App extends React.Component<Props, AppState> {
       }
 
       conditionallySetMeasureSelectorContainerVisibleStateBasedOnScrollY = () => {
-            // console.log(window.scrollY)
+            console.log(window.scrollY)
 
             const scrollYThreshold: number =
                   (!this.state.measuresSummaryExpanded && !this.state.KPITreesExpanded) ? 390
                   : (this.state.measuresSummaryExpanded && !this.state.KPITreesExpanded) ? 723
                   : (!this.state.measuresSummaryExpanded && this.state.KPITreesExpanded) ? 1409
-                  : 1743
+                  : 1783
 
             this.setState({
                   measureSelectorContainerVisible: (window.scrollY >= scrollYThreshold) ? true : false,

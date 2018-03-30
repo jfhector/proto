@@ -7,7 +7,7 @@ const CollapsibleContentBoard: React.StatelessComponent<{
       title: string
       children: React.ReactNode
       expanded?: boolean
-      rightNode?: JSX.Element
+      rightNode?: React.ReactNode
       rightNodeIsSticky?: boolean
       rightNodeIsHighlighted?: boolean
       handleCollapseButtonClick?: React.MouseEventHandler<HTMLElement>
@@ -49,7 +49,7 @@ const CollapsibleContentBoard: React.StatelessComponent<{
                   <div
                         className={s.rightNodeContainer}
                   >
-                        {rightNode && 'Selected measure: '}
+                        {!!rightNode && 'Selected measure: '}
                         {rightNode}
                   </div>
             }
