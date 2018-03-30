@@ -83,9 +83,13 @@ const initialState: AppState = {
 }
 
 class App extends React.Component<Props, AppState> {
+      setAppState: typeof App.prototype.setState
+
       constructor(props: Props) {
             super(props)
             this.state = initialState
+
+            this.setAppState = this.setState.bind(this)
       }
 
       componentDidMount() {
@@ -159,15 +163,13 @@ class App extends React.Component<Props, AppState> {
                               >
                                     <Sidebar 
                                           appState={this.state}
-                                          // tslint:disable-next-line:jsx-no-bind
-                                          setAppState={this.setState.bind(this)}
+                                          setAppState={this.setAppState}
                                     />
                               </div>
 
                               <DataView 
                                     appState={this.state}
-                                    // tslint:disable-next-line:jsx-no-bind
-                                    setAppState={this.setState.bind(this)}
+                                    setAppState={this.setAppState}
                               />
                         </main>
 
