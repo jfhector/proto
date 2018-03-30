@@ -24,11 +24,11 @@ export class CollapsibleContentBoard extends React.Component<Props, {}> {
       
       refToRightNodeContainer: HTMLElement
 
-      scrollRightNodeContainerIntoView = (optionsObject: {
+      scrollRightNodeContainerIntoView = (optionsObject?: {
             behavior?: 'auto' | 'instant' | 'smooth'
             block?: 'start' | 'center' | 'end' | 'nearest'
             inline?: 'start' | 'center' | 'end' | 'nearest'
-      } | undefined) => {
+      }) => {
             this.refToRightNodeContainer.scrollIntoView(optionsObject)
       }
 
