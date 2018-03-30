@@ -33,6 +33,8 @@ const DataView: React.StatelessComponent<{
             selectedMeasure,
       } = appState
 
+      let refToMeasureInDetailCollapsibleContentBoard: CollapsibleContentBoard
+
       return (
             <div
                   className={s.DataView}
@@ -248,6 +250,11 @@ const DataView: React.StatelessComponent<{
                   </CollapsibleContentBoard>
 
                   <CollapsibleContentBoard
+                        ref={
+                              (component: CollapsibleContentBoard) => {
+                                    refToMeasureInDetailCollapsibleContentBoard = component
+                              }
+                        }
                         title='Measure in detail'
                         rightNodeIsSticky
                         rightNodeIsHighlighted={appState.measureSelectorContainerVisible}
@@ -271,18 +278,11 @@ const DataView: React.StatelessComponent<{
                                                       selectedMeasure: newlySelectedMeasure
                                                 })
 
-                                                const targetScrollY: number =
-                                                      (!appState.measuresSummaryExpanded && !appState.KPITreesExpanded) ? 353
-                                                      : (appState.measuresSummaryExpanded && !appState.KPITreesExpanded) ? 688
-                                                      : (!appState.measuresSummaryExpanded && appState.KPITreesExpanded) ? 1373
-                                                      : 1707
-
-                                                if (window.scrollY < targetScrollY) {
-                                                      window.scroll({
-                                                            top: targetScrollY,
-                                                            behavior: 'smooth',
-                                                      })
-                                                }
+                                                refToMeasureInDetailCollapsibleContentBoard.scrollRightNodeContainerIntoView({
+                                                      behavior: 'smooth',
+                                                      block: 'start',
+                                                      inline: 'nearest',
+                                                })
                                           }
                                     }
                               />
