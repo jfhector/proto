@@ -21,23 +21,6 @@ const PROTOIMG_table_storeFormats_salesValue = require('../../../assets/PROTOIMG
 
 const PROTOIMG_kpiTree = require('./../../../assets/PROTOIMG_kpiTree.png')
 
-// export class DataView extends React.Component<Props, {}> {
-//       render() {
-//             const {
-
-//             } = this.props
-
-//             const {
-//                   displayedFilters,
-//                   selectedMeasure,
-//             } = appState
-
-//             return (
-
-//             )
-//       }
-// }
-
 const DataView: React.StatelessComponent<{
       appState: AppState
       setAppState: typeof App.prototype.setState
