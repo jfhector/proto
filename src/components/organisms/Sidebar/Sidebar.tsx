@@ -1,16 +1,13 @@
 import React = require('react')
-import { AppState } from '../../../App'
+import { App, AppState } from '../../../App'
 import { Selector, Button } from '../..'
 import * as s from './Sidebar.css'
 import { DurationOption, DateOption, ComparisonOption, MedicineSubcategoryName, RegionOption, StoreFormatOption, CustomerSegmentOption } from '../../../sharedTypes'
 import { durationOptions, getDatesOptions, getComparisonOptions, medicineSubcategories, regionOptions, storeFormatOptions, customerSegmentOptions } from '../../../data'
 
 interface Props {
-      appState: AppState,
-      setAppState<K extends keyof AppState>(
-            state: ((prevState: Readonly<AppState>, props: Props) => (Pick<AppState, K> | AppState | null)) | (Pick<AppState, K> | AppState | null),
-            callback?: () => void
-      ): void,
+      appState: AppState
+      setAppState: typeof App.prototype.setState
 }
 
 export class Sidebar extends React.Component<Props, {}> {

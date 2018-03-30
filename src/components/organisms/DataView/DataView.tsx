@@ -1,6 +1,6 @@
 
 import * as React from 'react'
-import { AppState } from '../../../App'
+import { App, AppState } from '../../../App'
 import * as s from './DataView.css'
 import { Button, Alert, CollapsibleContentBoard, KpiTile, Selector, CollapsibleContentModule } from '../..'
 import { measureOptions } from '../../../data'
@@ -23,11 +23,8 @@ const PROTOIMG_table_storeFormats_salesValue = require('../../../assets/PROTOIMG
 const PROTOIMG_kpiTree = require('./../../../assets/PROTOIMG_kpiTree.png')
 
 interface Props {
-      appState: AppState,
-      setAppState<K extends keyof AppState>(
-            state: ((prevState: Readonly<AppState>, props: Props) => (Pick<AppState, K> | AppState | null)) | (Pick<AppState, K> | AppState | null),
-            callback?: () => void
-      ): void,
+      appState: AppState
+      setAppState: typeof App.prototype.setState
 }
 
 export class DataView extends React.Component<Props, {}> {

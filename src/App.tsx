@@ -184,4 +184,5 @@ class App extends React.Component<Props, AppState> {
       }
 }
 
+export { App }
 export default hot(module)(App)
