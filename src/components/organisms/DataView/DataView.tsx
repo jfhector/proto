@@ -1,6 +1,6 @@
 
 import * as React from 'react'
-import { App, AppState } from '../../../App'
+import App, { AppState } from '../../../App'
 import * as s from './DataView.css'
 import { Button, Alert, CollapsibleContentBoard, KpiTile, Selector, CollapsibleContentModule } from '../..'
 import { measureOptions } from '../../../data'

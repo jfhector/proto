@@ -1,5 +1,5 @@
 import React = require('react')
-import { App, AppState } from '../../../App'
+import App, { AppState } from '../../../App'
 import { Selector, Button } from '../..'
 import * as s from './Sidebar.css'
 import { DurationOption, DateOption, ComparisonOption, MedicineSubcategoryName, RegionOption, StoreFormatOption, CustomerSegmentOption } from '../../../sharedTypes'
