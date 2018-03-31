@@ -9,7 +9,7 @@ import {
       KpiTile,
       CollapsibleContentBoard,
       Sidebar,
-      DataView,
+      DataViewComponent,
 } from './components/'
 import * as s from './App.css'
 import { MeasureName, FiltersSet } from './sharedTypes'
@@ -167,7 +167,7 @@ class App extends React.Component<Props, AppState> {
                                     />
                               </div>
 
-                              <DataView 
+                              <DataViewComponent 
                                     appState={this.state}
                                     setAppState={this.setAppState}
                               />

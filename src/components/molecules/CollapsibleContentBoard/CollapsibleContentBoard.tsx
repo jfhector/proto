@@ -10,7 +10,7 @@ interface Props {
       rightNode?: React.ReactNode
       rightNodeIsSticky?: boolean
       rightNodeIsHighlighted?: boolean
-      handleCollapseButtonClick?: React.MouseEventHandler<HTMLElement>
+      handleCollapseButtonClick?: React.MouseEventHandler<HTMLDivElement>
 }
 
 export class CollapsibleContentBoard extends React.Component<Props, {}> {
@@ -22,9 +22,9 @@ export class CollapsibleContentBoard extends React.Component<Props, {}> {
             handleCollapseButtonClick: () => { console.log('Button clicked') }
       }
       
-      refToRightNodeContainer: HTMLElement
+      refToRightNodeContainer: HTMLDivElement
 
-      scrollRightNodeContainerIntoView: HTMLElement['scrollIntoView'] = (optionsObject) => {
+      scrollRightNodeContainerIntoView: HTMLDivElement['scrollIntoView'] = (optionsObject) => {
             this.refToRightNodeContainer.scrollIntoView(optionsObject)
       }
 

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import App, { AppState } from '../../../App'
-import * as s from './DataView.css'
+import * as s from './DataViewComponent.css'
 import { Button, Alert, CollapsibleContentBoard, KpiTile, Selector, CollapsibleContentModule } from '../..'
 import { measureOptions } from '../../../data'
 import { MeasureName } from '../../../sharedTypes'
@@ -26,7 +26,7 @@ interface Props {
       setAppState: typeof App.prototype.setState      
 }
 
-export class DataView extends React.Component<Props, {}> {
+export class DataViewComponent extends React.Component<Props, {}> {
       refToMeasureInDetailCollapsibleContentBoard: CollapsibleContentBoard      
 
       render() {
