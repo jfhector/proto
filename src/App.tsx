@@ -84,6 +84,7 @@ const initialState: AppState = {
 
 class App extends React.Component<Props, AppState> {
       setAppState: typeof App.prototype.setState
+      refToDataViewComponent: DataViewComponent
 
       constructor(props: Props) {
             super(props)
@@ -107,16 +108,10 @@ class App extends React.Component<Props, AppState> {
       }
 
       conditionallySetMeasureSelectorContainerVisibleStateBasedOnScrollY = () => {
-            // console.log(window.scrollY)
-
-            const scrollYThreshold: number =
-                  (!this.state.measuresSummaryExpanded && !this.state.KPITreesExpanded) ? 390
-                  : (this.state.measuresSummaryExpanded && !this.state.KPITreesExpanded) ? 723
-                  : (!this.state.measuresSummaryExpanded && this.state.KPITreesExpanded) ? 1409
-                  : 1783
+            let measureInDetailContentBoardRightNodeContainerBoundingClientRect = this.refToDataViewComponent.refToMeasureInDetailCollapsibleContentBoard.refToRightNodeContainer.getBoundingClientRect() as DOMRect
 
             this.setState({
-                  measureSelectorContainerVisible: (window.scrollY >= scrollYThreshold) ? true : false,
+                  measureSelectorContainerVisible: (measureInDetailContentBoardRightNodeContainerBoundingClientRect.top > 0) ? false : true,
             })
       }
 
@@ -170,6 +165,11 @@ class App extends React.Component<Props, AppState> {
                               <DataViewComponent 
                                     appState={this.state}
                                     setAppState={this.setAppState}
+                                    ref={
+                                          (component: DataViewComponent) => {
+                                                this.refToDataViewComponent = component
+                                          }
+                                    }
                               />
                         </main>
 
