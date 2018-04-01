@@ -3,58 +3,58 @@ import * as s from './Counter.css'
 import classNames = require('classnames')
 
 interface Props {
-      big?: boolean
+    big?: boolean
 }
 
 interface State {
-      count: number
+    count: number
 }
 
-export class Counter extends React.Component<Props, State> {      
-      static defaultProps = {
-            big: false,
-      }
+export class Counter extends React.Component<Props, State> {
+    static defaultProps = {
+        big: false,
+    }
 
-      interval: number
-      
-      constructor(props: Props) {
-            super(props)
-            this.state = {
-                  count: 0
-            }
-      }
+    interval: number
 
-      componentDidMount() {
-            this.interval = window.setInterval(
-                  () => this.setState(prevState => ({ count: prevState.count + 1 })),
-                  1000
-            )
-      }
+    constructor(props: Props) {
+        super(props)
+        this.state = {
+            count: 0
+        }
+    }
 
-      componentWillUnmount() {
-            clearInterval(this.interval)
-      }
+    componentDidMount() {
+        this.interval = window.setInterval(
+            () => this.setState(prevState => ({ count: prevState.count + 1 })),
+            1000
+        )
+    }
 
-      render() {
-            const {
-                  big,
-            } = this.props
+    componentWillUnmount() {
+        clearInterval(this.interval)
+    }
 
-            const {
-                  count,
-            } = this.state
+    render() {
+        const {
+            big,
+        } = this.props
 
-            return (
-                  <span 
-                        className={classNames(
-                              s.Counter,
-                              {
-                                    [s.big]: big
-                              }, 
-                        )}
-                  >
-                        {count}
-                  </span>
-            )
-      }
+        const {
+            count,
+        } = this.state
+
+        return (
+            <span
+                className={classNames(
+                    s.Counter,
+                    {
+                        [s.big]: big
+                    },
+                )}
+            >
+                {count}
+            </span>
+        )
+    }
 }

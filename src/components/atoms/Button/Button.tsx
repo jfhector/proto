@@ -3,49 +3,49 @@ import * as s from './Button.css'
 import classNames = require('classnames')
 
 interface Props {
-      children: React.ReactNode
-      disabled?: boolean
-      handleButtonClick?: React.MouseEventHandler<HTMLElement>
-      typeOption?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark'
-      sizeOption?: 'small' | 'medium' | 'large'
-      fullWidth?: boolean  
+    children: React.ReactNode
+    disabled?: boolean
+    handleButtonClick?: React.MouseEventHandler<HTMLElement>
+    typeOption?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark'
+    sizeOption?: 'small' | 'medium' | 'large'
+    fullWidth?: boolean
 }
 
 export class Button extends React.Component<Props, {}> {
-      static defaultProps = {
-            disabled: false,
-            handleButtonClick: () => {console.log('Button clicked')},
-            typeOption: 'primary',
-            sizeOption: 'medium',
-            fullWidth: false,
-      }
+    static defaultProps = {
+        disabled: false,
+        handleButtonClick: () => { console.log('Button clicked') },
+        typeOption: 'primary',
+        sizeOption: 'medium',
+        fullWidth: false,
+    }
 
-      render() {
-            const {
-                  disabled,
-                  handleButtonClick,
-                  typeOption,
-                  sizeOption,
-                  fullWidth,
-                  children,
-            } = this.props
+    render() {
+        const {
+            disabled,
+            handleButtonClick,
+            typeOption,
+            sizeOption,
+            fullWidth,
+            children,
+        } = this.props
 
-            return (
-                  <button 
-                        className={classNames(
-                              s.Button,
-                              s[typeOption!],
-                              s[sizeOption!],
-                              {
-                                    [s.fullWidth]: fullWidth,
-                                    [s.disabled]: disabled,
-                              }
-                        )}
-                        onClick={!disabled ? handleButtonClick : (() => { console.log('Button was clicked but is disabled') })}
-                  >
-                        {children}
-                  </button>                  
-            )
-      }
+        return (
+            <button
+                className={classNames(
+                    s.Button,
+                    s[typeOption!],
+                    s[sizeOption!],
+                    {
+                        [s.fullWidth]: fullWidth,
+                        [s.disabled]: disabled,
+                    }
+                )}
+                onClick={!disabled ? handleButtonClick : (() => { console.log('Button was clicked but is disabled') })}
+            >
+                {children}
+            </button>
+        )
+    }
 
 }
