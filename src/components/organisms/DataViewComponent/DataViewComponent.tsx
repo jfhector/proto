@@ -23,7 +23,6 @@ const PROTOIMG_kpiTree = require('./../../../assets/PROTOIMG_kpiTree.png')
 
 interface Props {
       appState: AppState
-      setAppState: typeof App.prototype.setState
       actions: typeof App.prototype.actions     
 }
 
@@ -33,7 +32,6 @@ export class DataViewComponent extends React.Component<Props, {}> {
       render() {
             const {
                   appState,
-                  setAppState,
                   actions,
             } = this.props
 
@@ -171,8 +169,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                                     <div
                                           className={s.kpiTreesSubtitle}
                                     >
-                                          {`${displayedFilters.duration} • ${displayedFilters.dates} ${displayedFilters.comparison}`}
-                                          <br/>
+                                          {`${displayedFilters.duration} • ${displayedFilters.dates} ${displayedFilters.comparison}`} <br/>
                                           {`${displayedFilters.subcategory} • ${displayedFilters.region} • ${displayedFilters.storeFormat} • ${displayedFilters.customerSegment}`}
                                     </div>
                               }
@@ -197,19 +194,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                                     <Selector
                                           optionsArray={measureOptions}
                                           value={appState.selectedMeasure}
-                                          handleSelectorChange={
-                                                (newlySelectedMeasure: MeasureName) => {
-                                                      setAppState({
-                                                            selectedMeasure: newlySelectedMeasure
-                                                      })
-
-                                                      this.refToMeasureInDetailCollapsibleContentBoard.scrollRightNodeContainerIntoView({
-                                                            behavior: 'smooth',
-                                                            block: 'start',
-                                                            inline: 'nearest',
-                                                      })
-                                                }
-                                          }
+                                          handleSelectorChange={actions.handleFloatingMeasureSelectorChange}
                                     />
                               }
                         >

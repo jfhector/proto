@@ -243,6 +243,16 @@ class App extends React.Component<Props, AppState> {
                   this.setState({
                         selectedMeasure: newlySelectedMeasure
                   })
+            },
+            handleFloatingMeasureSelectorChange: (newlySelectedMeasure: MeasureName) => {
+                  this.setState({
+                        selectedMeasure: newlySelectedMeasure
+                  })
+                  // this.refToMeasureInDetailCollapsibleContentBoard.scrollRightNodeContainerIntoView({
+                  //       behavior: 'smooth',
+                  //       block: 'start',
+                  //       inline: 'nearest',
+                  // })
             }
       }
 
@@ -317,7 +327,6 @@ class App extends React.Component<Props, AppState> {
 
                               <DataViewComponent 
                                     appState={this.state}
-                                    setAppState={this.setAppState}
                                     actions={this.actions}
                                     ref={
                                           (component: DataViewComponent) => {
