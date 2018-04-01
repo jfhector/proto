@@ -50,7 +50,7 @@ export class Sidebar extends React.Component<Props, {}> {
                                     <Selector
                                           optionsArray={durationOptions}
                                           value={selectedFilters.duration}
-                                          handleSelectorChange={actions.changeSelectedDuration}
+                                          handleSelectorChange={actions.selectionChanges.changeSelectedDuration}
                                     />
                               </div>
 
@@ -60,7 +60,7 @@ export class Sidebar extends React.Component<Props, {}> {
                                     <Selector
                                           optionsArray={getDatesOptions(selectedFilters.duration)}
                                           value={selectedFilters.dates}
-                                          handleSelectorChange={actions.changeSelectedDates}
+                                          handleSelectorChange={actions.selectionChanges.changeSelectedDates}
                                     />
                               </div>
 
@@ -70,7 +70,7 @@ export class Sidebar extends React.Component<Props, {}> {
                                     <Selector
                                           optionsArray={getComparisonOptions(selectedFilters.duration)}
                                           value={selectedFilters.comparison}
-                                          handleSelectorChange={actions.changeSelectedComparison}
+                                          handleSelectorChange={actions.selectionChanges.changeSelectedComparison}
                                     />
                               </div>
                         </div>
@@ -131,7 +131,7 @@ export class Sidebar extends React.Component<Props, {}> {
                                     <Selector
                                           optionsArray={Object.keys(medicineSubcategories)}
                                           value={selectedFilters.subcategory}
-                                          handleSelectorChange={actions.changeSelectedSubcategory}
+                                          handleSelectorChange={actions.selectionChanges.changeSelectedSubcategory}
                                     />
                               </div>
 
@@ -141,7 +141,7 @@ export class Sidebar extends React.Component<Props, {}> {
                                     <Selector
                                           optionsArray={regionOptions}
                                           value={selectedFilters.region}
-                                          handleSelectorChange={actions.changeSelectedRegion}
+                                          handleSelectorChange={actions.selectionChanges.changeSelectedRegion}
                                     />
                               </div>
 
@@ -151,7 +151,7 @@ export class Sidebar extends React.Component<Props, {}> {
                                     <Selector
                                           optionsArray={storeFormatOptions}
                                           value={selectedFilters.storeFormat}
-                                          handleSelectorChange={actions.changeSelectedStoreFormat}
+                                          handleSelectorChange={actions.selectionChanges.changeSelectedStoreFormat}
                                     />
                               </div>
 
@@ -161,7 +161,7 @@ export class Sidebar extends React.Component<Props, {}> {
                                     <Selector
                                           optionsArray={customerSegmentOptions}
                                           value={selectedFilters.customerSegment}
-                                          handleSelectorChange={actions.changeSelectedCustomerSegment}
+                                          handleSelectorChange={actions.selectionChanges.changeSelectedCustomerSegment}
                                     />
                               </div>
                         </div>

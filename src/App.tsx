@@ -105,83 +105,100 @@ class App extends React.Component<Props, AppState> {
                         })
                   )
             },
-            changeSelectedDuration: (newlySelectedDuration: DurationOption) => {
-                  this.setState(
-                        (prevState: AppState) => ({
-                              selectedFilters: {
-                                    ...prevState.selectedFilters,
-                                    duration: newlySelectedDuration,
-                                    comparison: getComparisonOptions(newlySelectedDuration)[0]
-                              },
-                              dataViewNeedsUpdating: true,
-                        } as AppState)
-                  )
-            },
-            changeSelectedDates: (newlySelectedDates: DateOption) => {
-                  this.setState(
-                        (prevState: AppState) => ({
-                              selectedFilters: {
-                                    ...prevState.selectedFilters,
-                                    dates: newlySelectedDates
-                              },
-                              dataViewNeedsUpdating: true,
-                        } as AppState)
-                  )
-            },
-            changeSelectedComparison: (newlySelectedComparison: ComparisonOption) => {
-                  this.setState(
-                        (prevState: AppState) => ({
-                              selectedFilters: {
-                                    ...prevState.selectedFilters,
-                                    comparison: newlySelectedComparison,
-                              },
-                              dataViewNeedsUpdating: true,
-                        } as AppState)
-                  )
-            },
-            changeSelectedSubcategory: (newlySelectedSubcategory: MedicineSubcategoryName) => {
-                  this.setState(
-                        (prevState: AppState) => ({
-                              selectedFilters: {
-                                    ...prevState.selectedFilters,
-                                    subcategory: newlySelectedSubcategory,
-                              },
-                              dataViewNeedsUpdating: true,
-                        } as AppState)
-                  )
-            },
-            changeSelectedRegion: (newlySelectedRegion: RegionOption) => {
-                  this.setState(
-                        (prevState: AppState) => ({
-                              selectedFilters: {
-                                    ...prevState.selectedFilters,
-                                    region: newlySelectedRegion,
-                              },
-                              dataViewNeedsUpdating: true,
-                        } as AppState)
-                  )
-            },
-            changeSelectedStoreFormat: (newlySelectedStoreFormat: StoreFormatOption) => {
-                  this.setState(
-                        (prevState: AppState) => ({
-                              selectedFilters: {
-                                    ...prevState.selectedFilters,
-                                    storeFormat: newlySelectedStoreFormat,
-                              },
-                              dataViewNeedsUpdating: true,
-                        } as AppState)
-                  )
-            },
-            changeSelectedCustomerSegment: (newlySelectedCustomerSegment: CustomerSegmentOption) => {
-                  this.setState(
-                        (prevState: AppState) => ({
-                              selectedFilters: {
-                                    ...prevState.selectedFilters,
-                                    customerSegment: newlySelectedCustomerSegment,
-                              },
-                              dataViewNeedsUpdating: true,
-                        } as AppState)
-                  )
+            selectionChanges: {
+                  changeSelectedDuration: (newlySelectedDuration: DurationOption) => {
+                        this.setState(
+                              (prevState: AppState) => ({
+                                    selectedFilters: {
+                                          ...prevState.selectedFilters,
+                                          duration: newlySelectedDuration,
+                                          comparison: getComparisonOptions(newlySelectedDuration)[0]
+                                    },
+                                    dataViewNeedsUpdating: true,
+                              } as AppState)
+                        )
+                  },
+                  changeSelectedDates: (newlySelectedDates: DateOption) => {
+                        this.setState(
+                              (prevState: AppState) => ({
+                                    selectedFilters: {
+                                          ...prevState.selectedFilters,
+                                          dates: newlySelectedDates
+                                    },
+                                    dataViewNeedsUpdating: true,
+                              } as AppState)
+                        )
+                  },
+                  changeSelectedComparison: (newlySelectedComparison: ComparisonOption) => {
+                        this.setState(
+                              (prevState: AppState) => ({
+                                    selectedFilters: {
+                                          ...prevState.selectedFilters,
+                                          comparison: newlySelectedComparison,
+                                    },
+                                    dataViewNeedsUpdating: true,
+                              } as AppState)
+                        )
+                  },
+                  changeSelectedSubcategory: (newlySelectedSubcategory: MedicineSubcategoryName) => {
+                        this.setState(
+                              (prevState: AppState) => ({
+                                    selectedFilters: {
+                                          ...prevState.selectedFilters,
+                                          subcategory: newlySelectedSubcategory,
+                                    },
+                                    dataViewNeedsUpdating: true,
+                              } as AppState)
+                        )
+                  },
+                  changeSelectedRegion: (newlySelectedRegion: RegionOption) => {
+                        this.setState(
+                              (prevState: AppState) => ({
+                                    selectedFilters: {
+                                          ...prevState.selectedFilters,
+                                          region: newlySelectedRegion,
+                                    },
+                                    dataViewNeedsUpdating: true,
+                              } as AppState)
+                        )
+                  },
+                  changeSelectedStoreFormat: (newlySelectedStoreFormat: StoreFormatOption) => {
+                        this.setState(
+                              (prevState: AppState) => ({
+                                    selectedFilters: {
+                                          ...prevState.selectedFilters,
+                                          storeFormat: newlySelectedStoreFormat,
+                                    },
+                                    dataViewNeedsUpdating: true,
+                              } as AppState)
+                        )
+                  },
+                  changeSelectedCustomerSegment: (newlySelectedCustomerSegment: CustomerSegmentOption) => {
+                        this.setState(
+                              (prevState: AppState) => ({
+                                    selectedFilters: {
+                                          ...prevState.selectedFilters,
+                                          customerSegment: newlySelectedCustomerSegment,
+                                    },
+                                    dataViewNeedsUpdating: true,
+                              } as AppState)
+                        )
+                  },
+                  changeSelectedMeasure: (newlySelectedMeasure: MeasureName) => {
+                        this.setState({
+                              selectedMeasure: newlySelectedMeasure
+                        })
+                  },
+                  handleFloatingMeasureSelectorChange: (newlySelectedMeasure: MeasureName) => {
+                        this.setState({
+                              selectedMeasure: newlySelectedMeasure
+                        })
+                        // this.refToMeasureInDetailCollapsibleContentBoard.scrollRightNodeContainerIntoView({
+                        //       behavior: 'smooth',
+                        //       block: 'start',
+                        //       inline: 'nearest',
+                        // })
+                  }
             },
             expansionToggles: {
                   toggleMeasuresSummaryExpanded: () => {
@@ -241,21 +258,6 @@ class App extends React.Component<Props, AppState> {
                         )
                   },
             },
-            changeSelectedMeasure: (newlySelectedMeasure: MeasureName) => {
-                  this.setState({
-                        selectedMeasure: newlySelectedMeasure
-                  })
-            },
-            handleFloatingMeasureSelectorChange: (newlySelectedMeasure: MeasureName) => {
-                  this.setState({
-                        selectedMeasure: newlySelectedMeasure
-                  })
-                  // this.refToMeasureInDetailCollapsibleContentBoard.scrollRightNodeContainerIntoView({
-                  //       behavior: 'smooth',
-                  //       block: 'start',
-                  //       inline: 'nearest',
-                  // })
-            }
       }
 
       componentDidMount() {

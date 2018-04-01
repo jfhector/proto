@@ -99,63 +99,63 @@ export class DataViewComponent extends React.Component<Props, {}> {
                                           measure='Sales value'
                                           appState={appState}
                                           selected={appState.selectedMeasure === 'Sales value'}
-                                          handleKpiTileClick={actions.changeSelectedMeasure}
+                                          handleKpiTileClick={actions.selectionChanges.changeSelectedMeasure}
                                     />
 
                                     <KpiTile 
                                           measure='Sales units'
                                           appState={appState}
                                           selected={appState.selectedMeasure === 'Sales units'}
-                                          handleKpiTileClick={actions.changeSelectedMeasure}
+                                          handleKpiTileClick={actions.selectionChanges.changeSelectedMeasure}
                                     />
 
                                     <KpiTile 
                                           measure='Customers'
                                           appState={appState}
                                           selected={appState.selectedMeasure === 'Customers'}
-                                          handleKpiTileClick={actions.changeSelectedMeasure}
+                                          handleKpiTileClick={actions.selectionChanges.changeSelectedMeasure}
                                     />
 
                                     <KpiTile 
                                           measure='Spend per customer'
                                           appState={appState}
                                           selected={appState.selectedMeasure === 'Spend per customer'}
-                                          handleKpiTileClick={actions.changeSelectedMeasure}
+                                          handleKpiTileClick={actions.selectionChanges.changeSelectedMeasure}
                                     />
 
                                     <KpiTile 
                                           measure='Retailer visits'
                                           appState={appState}
                                           selected={appState.selectedMeasure === 'Retailer visits'}
-                                          handleKpiTileClick={actions.changeSelectedMeasure}
+                                          handleKpiTileClick={actions.selectionChanges.changeSelectedMeasure}
                                     />
 
                                     <KpiTile 
                                           measure='Spend per visit'
                                           appState={appState}
                                           selected={appState.selectedMeasure === 'Spend per visit'}
-                                          handleKpiTileClick={actions.changeSelectedMeasure}
+                                          handleKpiTileClick={actions.selectionChanges.changeSelectedMeasure}
                                     />
 
                                     <KpiTile 
                                           measure='Units per visit'
                                           appState={appState}
                                           selected={appState.selectedMeasure === 'Units per visit'}
-                                          handleKpiTileClick={actions.changeSelectedMeasure}
+                                          handleKpiTileClick={actions.selectionChanges.changeSelectedMeasure}
                                     />
 
                                     <KpiTile 
                                           measure='Basket penetration'
                                           appState={appState}
                                           selected={appState.selectedMeasure === 'Basket penetration'}
-                                          handleKpiTileClick={actions.changeSelectedMeasure}
+                                          handleKpiTileClick={actions.selectionChanges.changeSelectedMeasure}
                                     />
 
                                     <KpiTile 
                                           measure='Frequency of purchase'
                                           appState={appState}
                                           selected={appState.selectedMeasure === 'Frequency of purchase'}
-                                          handleKpiTileClick={actions.changeSelectedMeasure}
+                                          handleKpiTileClick={actions.selectionChanges.changeSelectedMeasure}
                                     />
                               </div>
                         </CollapsibleContentBoard>
@@ -194,7 +194,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                                     <Selector
                                           optionsArray={measureOptions}
                                           value={appState.selectedMeasure}
-                                          handleSelectorChange={actions.handleFloatingMeasureSelectorChange}
+                                          handleSelectorChange={actions.selectionChanges.handleFloatingMeasureSelectorChange}
                                     />
                               }
                         >
