@@ -48,7 +48,7 @@ export interface AppState {
 }
 
 class App extends React.Component<Props, AppState> {
-      refToDataViewComponent: DataViewComponent
+      refToFloatingMeasureSelectorContainingDiv: HTMLDivElement
 
       state: AppState = {
             selectedFilters: {
@@ -96,11 +96,11 @@ class App extends React.Component<Props, AppState> {
                   )
             },
             conditionallySetMeasureSelectorContainerVisibleStateBasedOnScrollY: () => {
-                  let measureInDetailContentBoardRightNodeContainerBoundingClientRect = this.refToDataViewComponent.refToMeasureInDetailCollapsibleContentBoard.refToRightNodeContainer.getBoundingClientRect() as DOMRect
+                  // let measureInDetailContentBoardRightNodeContainerBoundingClientRect = this.refToDataViewComponent.refToMeasureInDetailCollapsibleContentBoard.refToRightNodeContainer.getBoundingClientRect() as DOMRect
       
-                  this.setState({
-                        measureSelectorContainerVisible: (measureInDetailContentBoardRightNodeContainerBoundingClientRect.top > 0) ? false : true,
-                  })
+                  // this.setState({
+                  //       measureSelectorContainerVisible: (measureInDetailContentBoardRightNodeContainerBoundingClientRect.top > 0) ? false : true,
+                  // })
             },
             selectionChanges: {
                   changeSelectedDuration: (newlySelectedDuration: DurationOption) => {
@@ -190,11 +190,11 @@ class App extends React.Component<Props, AppState> {
                         this.setState({
                               selectedMeasure: newlySelectedMeasure
                         })
-                        // this.refToMeasureInDetailCollapsibleContentBoard.scrollRightNodeContainerIntoView({
-                        //       behavior: 'smooth',
-                        //       block: 'start',
-                        //       inline: 'nearest',
-                        // })
+                        this.refToFloatingMeasureSelectorContainingDiv.scrollIntoView({
+                              behavior: 'smooth',
+                              block: 'start',
+                              inline: 'nearest',
+                        })
                   }
             },
             expansionToggles: {
@@ -321,9 +321,9 @@ class App extends React.Component<Props, AppState> {
                               <DataViewComponent 
                                     appState={this.state}
                                     actions={this.actions}
-                                    ref={
-                                          (component: DataViewComponent) => {
-                                                this.refToDataViewComponent = component
+                                    floatingMeasureSelectorContainingDivRefAssignmentCallback={
+                                          (element: HTMLDivElement) => {
+                                                this.refToFloatingMeasureSelectorContainingDiv = element
                                           }
                                     }
                               />

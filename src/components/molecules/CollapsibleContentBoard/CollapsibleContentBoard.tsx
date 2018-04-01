@@ -11,6 +11,7 @@ interface Props {
       rightNodeIsSticky?: boolean
       rightNodeIsHighlighted?: boolean
       handleCollapseButtonClick?: React.MouseEventHandler<HTMLDivElement>
+      floatingMeasureSelectorContainingDivRefAssignmentCallback?: any
 }
 
 export class CollapsibleContentBoard extends React.Component<Props, {}> {
@@ -20,12 +21,6 @@ export class CollapsibleContentBoard extends React.Component<Props, {}> {
             rightNodeIsSticky: false,
             rightNodeIsHighlighted: false,
             handleCollapseButtonClick: () => { console.log('Button clicked') }
-      }
-      
-      refToRightNodeContainer: HTMLDivElement
-
-      scrollRightNodeContainerIntoView: HTMLDivElement['scrollIntoView'] = (optionsObject) => {
-            this.refToRightNodeContainer.scrollIntoView(optionsObject)
       }
 
       render() {
@@ -37,6 +32,7 @@ export class CollapsibleContentBoard extends React.Component<Props, {}> {
                   rightNodeIsSticky,
                   rightNodeIsHighlighted,
                   handleCollapseButtonClick,
+                  floatingMeasureSelectorContainingDivRefAssignmentCallback,
             } = this.props
       
             return (
@@ -68,11 +64,7 @@ export class CollapsibleContentBoard extends React.Component<Props, {}> {
                         {expanded &&
                               <div
                                     className={s.rightNodeContainer}
-                                    ref={
-                                          (element: HTMLDivElement) => {
-                                                this.refToRightNodeContainer = element
-                                          }
-                                    }
+                                    ref={floatingMeasureSelectorContainingDivRefAssignmentCallback}
                               >
                                     {!!rightNode && 'Selected measure: '}
                                     {rightNode}

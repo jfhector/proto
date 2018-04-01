@@ -23,7 +23,8 @@ const PROTOIMG_kpiTree = require('./../../../assets/PROTOIMG_kpiTree.png')
 
 interface Props {
       appState: AppState
-      actions: typeof App.prototype.actions     
+      actions: typeof App.prototype.actions
+      floatingMeasureSelectorContainingDivRefAssignmentCallback: any
 }
 
 export class DataViewComponent extends React.Component<Props, {}> {
@@ -33,6 +34,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
             const {
                   appState,
                   actions,
+                  floatingMeasureSelectorContainingDivRefAssignmentCallback,
             } = this.props
 
             const {
@@ -190,6 +192,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                               rightNodeIsHighlighted={appState.measureSelectorContainerVisible}
                               expanded={appState.measuresInDetailExpanded}
                               handleCollapseButtonClick={actions.expansionToggles.toggleMeasureInDetailExpanded}
+                              floatingMeasureSelectorContainingDivRefAssignmentCallback={floatingMeasureSelectorContainingDivRefAssignmentCallback}
                               rightNode={
                                     <Selector
                                           optionsArray={measureOptions}
