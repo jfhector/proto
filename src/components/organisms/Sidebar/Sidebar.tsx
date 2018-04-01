@@ -7,7 +7,8 @@ import { durationOptions, getDatesOptions, getComparisonOptions, medicineSubcate
 
 interface Props {
       appState: AppState
-      setAppState: typeof App.prototype.setState  
+      setAppState: typeof App.prototype.setState
+      actions: typeof App.prototype.actions
 }
 
 export class Sidebar extends React.Component<Props, {}> {
@@ -15,6 +16,7 @@ export class Sidebar extends React.Component<Props, {}> {
             const {
                   appState,
                   setAppState,
+                  actions,
             } = this.props
 
             const {
@@ -254,16 +256,7 @@ export class Sidebar extends React.Component<Props, {}> {
                         <Button
                               fullWidth
                               disabled={!dataViewNeedsUpdating}
-                              handleButtonClick={
-                                    () => {
-                                          setAppState(
-                                                (prevState: AppState) => ({
-                                                      displayedFilters: prevState.selectedFilters,
-                                                      dataViewNeedsUpdating: false,
-                                                })
-                                          )
-                                    }
-                              }
+                              handleButtonClick={actions.updateView}
                         >
                                     Update view
                         </Button>

@@ -86,11 +86,24 @@ class App extends React.Component<Props, AppState> {
       setAppState: typeof App.prototype.setState
       refToDataViewComponent: DataViewComponent
 
-      constructor(props: Props) {
-            super(props)
-            this.state = initialState
+      // constructor(props: Props) {
+      //       super(props)
+      //       this.state = initialState
 
-            this.setAppState = this.setState.bind(this)
+      //       this.setAppState = this.setState.bind(this)
+      // }
+
+      state = initialState
+
+      actions = {
+            updateView: () => {
+                  this.setState(
+                        (prevState: AppState) => ({
+                              displayedFilters: prevState.selectedFilters,
+                              dataViewNeedsUpdating: false,
+                        })
+                  )
+            }
       }
 
       componentDidMount() {
@@ -159,6 +172,7 @@ class App extends React.Component<Props, AppState> {
                                     <Sidebar 
                                           appState={this.state}
                                           setAppState={this.setAppState}
+                                          actions={this.actions}
                                     />
                               </div>
 
