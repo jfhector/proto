@@ -47,42 +47,6 @@ export interface AppState {
       measureSelectorContainerVisible?: boolean,
 }
 
-const initialState: AppState = {
-      selectedFilters: {
-            duration: '4 weeks',
-            dates: '25 Dec 2017 - 21 Jan 2018',
-            comparison: 'vs. previous 4 weeks',
-            subcategory: 'All product groups',
-            storeFormat: 'All store formats',
-            customerSegment: 'All customer segments',
-            region: 'All regions',
-      },
-      displayedFilters: {
-            duration: '4 weeks',
-            dates: '25 Dec 2017 - 21 Jan 2018',
-            comparison: 'vs. previous 4 weeks',
-            subcategory: 'All product groups',
-            storeFormat: 'All store formats',
-            customerSegment: 'All customer segments',
-            region: 'All regions'
-      },
-      dataViewNeedsUpdating: false,
-
-      selectedMeasure: 'Sales value',
-
-      measuresSummaryExpanded: true,
-      measuresInDetailExpanded: true,
-      KPITreesExpanded: false,
-
-      trendGraphExpanded: false,
-      splitBySubcategoryExpanded: false,
-      splitByStoreFormatExpanded: false,
-      splitByCustomerSegmentExpanded: false,
-      splitByRegionExpanded: false,
-      
-      measureSelectorContainerVisible: false,
-}
-
 class App extends React.Component<Props, AppState> {
       setAppState: typeof App.prototype.setState
       refToDataViewComponent: DataViewComponent
@@ -94,7 +58,41 @@ class App extends React.Component<Props, AppState> {
       //       this.setAppState = this.setState.bind(this)
       // }
 
-      state = initialState
+      state: AppState = {
+            selectedFilters: {
+                  duration: '4 weeks',
+                  dates: '25 Dec 2017 - 21 Jan 2018',
+                  comparison: 'vs. previous 4 weeks',
+                  subcategory: 'All product groups',
+                  storeFormat: 'All store formats',
+                  customerSegment: 'All customer segments',
+                  region: 'All regions',
+            },
+            displayedFilters: {
+                  duration: '4 weeks',
+                  dates: '25 Dec 2017 - 21 Jan 2018',
+                  comparison: 'vs. previous 4 weeks',
+                  subcategory: 'All product groups',
+                  storeFormat: 'All store formats',
+                  customerSegment: 'All customer segments',
+                  region: 'All regions'
+            },
+            dataViewNeedsUpdating: false,
+      
+            selectedMeasure: 'Sales value',
+      
+            measuresSummaryExpanded: true,
+            measuresInDetailExpanded: true,
+            KPITreesExpanded: false,
+      
+            trendGraphExpanded: false,
+            splitBySubcategoryExpanded: false,
+            splitByStoreFormatExpanded: false,
+            splitByCustomerSegmentExpanded: false,
+            splitByRegionExpanded: false,
+            
+            measureSelectorContainerVisible: false,
+      }
 
       actions = {
             updateView: () => {
@@ -104,6 +102,13 @@ class App extends React.Component<Props, AppState> {
                               dataViewNeedsUpdating: false,
                         })
                   )
+            },
+            conditionallySetMeasureSelectorContainerVisibleStateBasedOnScrollY: () => {
+                  let measureInDetailContentBoardRightNodeContainerBoundingClientRect = this.refToDataViewComponent.refToMeasureInDetailCollapsibleContentBoard.refToRightNodeContainer.getBoundingClientRect() as DOMRect
+      
+                  this.setState({
+                        measureSelectorContainerVisible: (measureInDetailContentBoardRightNodeContainerBoundingClientRect.top > 0) ? false : true,
+                  })
             },
             selectionChanges: {
                   changeSelectedDuration: (newlySelectedDuration: DurationOption) => {
@@ -263,23 +268,15 @@ class App extends React.Component<Props, AppState> {
       componentDidMount() {
             window.addEventListener(
                   'scroll',
-                  this.conditionallySetMeasureSelectorContainerVisibleStateBasedOnScrollY
+                  this.actions.conditionallySetMeasureSelectorContainerVisibleStateBasedOnScrollY
             )
       }
 
       componentWillUnmount() {
             window.removeEventListener(
                   'scroll', 
-                  this.conditionallySetMeasureSelectorContainerVisibleStateBasedOnScrollY
+                  this.actions.conditionallySetMeasureSelectorContainerVisibleStateBasedOnScrollY
             )
-      }
-
-      conditionallySetMeasureSelectorContainerVisibleStateBasedOnScrollY = () => {
-            let measureInDetailContentBoardRightNodeContainerBoundingClientRect = this.refToDataViewComponent.refToMeasureInDetailCollapsibleContentBoard.refToRightNodeContainer.getBoundingClientRect() as DOMRect
-
-            this.setState({
-                  measureSelectorContainerVisible: (measureInDetailContentBoardRightNodeContainerBoundingClientRect.top > 0) ? false : true,
-            })
       }
 
       render() {
