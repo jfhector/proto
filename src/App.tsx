@@ -48,15 +48,7 @@ export interface AppState {
 }
 
 class App extends React.Component<Props, AppState> {
-      setAppState: typeof App.prototype.setState
       refToDataViewComponent: DataViewComponent
-
-      // constructor(props: Props) {
-      //       super(props)
-      //       this.state = initialState
-
-      //       this.setAppState = this.setState.bind(this)
-      // }
 
       state: AppState = {
             selectedFilters: {
