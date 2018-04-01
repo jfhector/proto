@@ -12,7 +12,8 @@ import {
       DataViewComponent,
 } from './components/'
 import * as s from './App.css'
-import { MeasureName, FiltersSet } from './sharedTypes'
+import { MeasureName, FiltersSet, DateOption, ComparisonOption, MedicineSubcategoryName, RegionOption, StoreFormatOption, CustomerSegmentOption, DurationOption } from './sharedTypes'
+import { getComparisonOptions } from './data';
 
 const PROTOIMG_nav_header = require('./assets/PROTOIMG_nav_header.png')
 const PROTOIMG_nav_tabs = require('./assets/PROTOIMG_nav_tabs.png')
@@ -103,7 +104,85 @@ class App extends React.Component<Props, AppState> {
                               dataViewNeedsUpdating: false,
                         })
                   )
-            }
+            },
+            changeSelectedDuration: (newlySelectedDuration: DurationOption) => {
+                  this.setState(
+                        (prevState: AppState) => ({
+                              selectedFilters: {
+                                    ...prevState.selectedFilters,
+                                    duration: newlySelectedDuration,
+                                    comparison: getComparisonOptions(newlySelectedDuration)[0]
+                              },
+                              dataViewNeedsUpdating: true,
+                        } as AppState)
+                  )
+            },
+            changeSelectedDates: (newlySelectedDates: DateOption) => {
+                  this.setState(
+                        (prevState: AppState) => ({
+                              selectedFilters: {
+                                    ...prevState.selectedFilters,
+                                    dates: newlySelectedDates
+                              },
+                              dataViewNeedsUpdating: true,
+                        } as AppState)
+                  )
+            },
+            changeSelectedComparison: (newlySelectedComparison: ComparisonOption) => {
+                  this.setState(
+                        (prevState: AppState) => ({
+                              selectedFilters: {
+                                    ...prevState.selectedFilters,
+                                    comparison: newlySelectedComparison,
+                              },
+                              dataViewNeedsUpdating: true,
+                        } as AppState)
+                  )
+            },
+            changeSelectedSubcategory: (newlySelectedSubcategory: MedicineSubcategoryName) => {
+                  this.setState(
+                        (prevState: AppState) => ({
+                              selectedFilters: {
+                                    ...prevState.selectedFilters,
+                                    subcategory: newlySelectedSubcategory,
+                              },
+                              dataViewNeedsUpdating: true,
+                        } as AppState)
+                  )
+            },
+            changeSelectedRegion: (newlySelectedRegion: RegionOption) => {
+                  this.setState(
+                        (prevState: AppState) => ({
+                              selectedFilters: {
+                                    ...prevState.selectedFilters,
+                                    region: newlySelectedRegion,
+                              },
+                              dataViewNeedsUpdating: true,
+                        } as AppState)
+                  )
+            },
+            changeSelectedStoreFormat: (newlySelectedStoreFormat: StoreFormatOption) => {
+                  this.setState(
+                        (prevState: AppState) => ({
+                              selectedFilters: {
+                                    ...prevState.selectedFilters,
+                                    storeFormat: newlySelectedStoreFormat,
+                              },
+                              dataViewNeedsUpdating: true,
+                        } as AppState)
+                  )
+            },
+            changeSelectedCustomerSegment: (newlySelectedCustomerSegment: CustomerSegmentOption) => {
+                  this.setState(
+                        (prevState: AppState) => ({
+                              selectedFilters: {
+                                    ...prevState.selectedFilters,
+                                    customerSegment: newlySelectedCustomerSegment,
+                              },
+                              dataViewNeedsUpdating: true,
+                        } as AppState)
+                  )
+            },
       }
 
       componentDidMount() {

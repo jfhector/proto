@@ -52,20 +52,7 @@ export class Sidebar extends React.Component<Props, {}> {
                                     <Selector
                                           optionsArray={durationOptions}
                                           value={selectedFilters.duration}
-                                          handleSelectorChange={
-                                                (newlySelectedDuration: DurationOption) => {
-                                                      setAppState(
-                                                            (prevState: AppState) => ({
-                                                                  selectedFilters: {
-                                                                        ...prevState.selectedFilters,
-                                                                        duration: newlySelectedDuration,
-                                                                        comparison: getComparisonOptions(newlySelectedDuration)[0]
-                                                                  },
-                                                                  dataViewNeedsUpdating: true,
-                                                            } as AppState)
-                                                      )
-                                                }
-                                          }
+                                          handleSelectorChange={actions.changeSelectedDuration}
                                     />
                               </div>
 
@@ -75,19 +62,7 @@ export class Sidebar extends React.Component<Props, {}> {
                                     <Selector
                                           optionsArray={getDatesOptions(selectedFilters.duration)}
                                           value={selectedFilters.dates}
-                                          handleSelectorChange={
-                                                (newlySelectedDates: DateOption) => {
-                                                      setAppState(
-                                                            (prevState: AppState) => ({
-                                                                  selectedFilters: {
-                                                                        ...prevState.selectedFilters,
-                                                                        dates: newlySelectedDates
-                                                                  },
-                                                                  dataViewNeedsUpdating: true,
-                                                            } as AppState)
-                                                      )
-                                                }
-                                          }
+                                          handleSelectorChange={actions.changeSelectedDates}
                                     />
                               </div>
 
@@ -97,19 +72,7 @@ export class Sidebar extends React.Component<Props, {}> {
                                     <Selector
                                           optionsArray={getComparisonOptions(selectedFilters.duration)}
                                           value={selectedFilters.comparison}
-                                          handleSelectorChange={
-                                                (newlySelectedComparison: ComparisonOption) => {
-                                                      setAppState(
-                                                            (prevState: AppState) => ({
-                                                                  selectedFilters: {
-                                                                        ...prevState.selectedFilters,
-                                                                        comparison: newlySelectedComparison,
-                                                                  },
-                                                                  dataViewNeedsUpdating: true,
-                                                            } as AppState)
-                                                      )
-                                                }
-                                          }
+                                          handleSelectorChange={actions.changeSelectedComparison}
                                     />
                               </div>
                         </div>
@@ -170,19 +133,7 @@ export class Sidebar extends React.Component<Props, {}> {
                                     <Selector
                                           optionsArray={Object.keys(medicineSubcategories)}
                                           value={selectedFilters.subcategory}
-                                          handleSelectorChange={
-                                                (newlySelectedSubcategory: MedicineSubcategoryName) => {
-                                                      setAppState(
-                                                            (prevState: AppState) => ({
-                                                                  selectedFilters: {
-                                                                        ...prevState.selectedFilters,
-                                                                        subcategory: newlySelectedSubcategory,
-                                                                  },
-                                                                  dataViewNeedsUpdating: true,
-                                                            } as AppState)
-                                                      )
-                                                }
-                                          }
+                                          handleSelectorChange={actions.changeSelectedSubcategory}
                                     />
                               </div>
 
@@ -192,19 +143,7 @@ export class Sidebar extends React.Component<Props, {}> {
                                     <Selector
                                           optionsArray={regionOptions}
                                           value={selectedFilters.region}
-                                          handleSelectorChange={
-                                                (newlySelectedRegion: RegionOption) => {
-                                                      setAppState(
-                                                            (prevState: AppState) => ({
-                                                                  selectedFilters: {
-                                                                        ...prevState.selectedFilters,
-                                                                        region: newlySelectedRegion,
-                                                                  },
-                                                                  dataViewNeedsUpdating: true,
-                                                            } as AppState)
-                                                      )
-                                                }
-                                          }
+                                          handleSelectorChange={actions.changeSelectedRegion}
                                     />
                               </div>
 
@@ -214,19 +153,7 @@ export class Sidebar extends React.Component<Props, {}> {
                                     <Selector
                                           optionsArray={storeFormatOptions}
                                           value={selectedFilters.storeFormat}
-                                          handleSelectorChange={
-                                                (newlySelectedStoreFormat: StoreFormatOption) => {
-                                                      setAppState(
-                                                            (prevState: AppState) => ({
-                                                                  selectedFilters: {
-                                                                        ...prevState.selectedFilters,
-                                                                        storeFormat: newlySelectedStoreFormat,
-                                                                  },
-                                                                  dataViewNeedsUpdating: true,
-                                                            } as AppState)
-                                                      )
-                                                }
-                                          }
+                                          handleSelectorChange={actions.changeSelectedStoreFormat}
                                     />
                               </div>
 
@@ -236,19 +163,7 @@ export class Sidebar extends React.Component<Props, {}> {
                                     <Selector
                                           optionsArray={customerSegmentOptions}
                                           value={selectedFilters.customerSegment}
-                                          handleSelectorChange={
-                                                (newlySelectedCustomerSegment: CustomerSegmentOption) => {
-                                                      setAppState(
-                                                            (prevState: AppState) => ({
-                                                                  selectedFilters: {
-                                                                        ...prevState.selectedFilters,
-                                                                        customerSegment: newlySelectedCustomerSegment,
-                                                                  },
-                                                                  dataViewNeedsUpdating: true,
-                                                            } as AppState)
-                                                      )
-                                                }
-                                          }
+                                          handleSelectorChange={actions.changeSelectedCustomerSegment}
                                     />
                               </div>
                         </div>
