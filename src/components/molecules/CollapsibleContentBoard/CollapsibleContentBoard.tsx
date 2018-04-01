@@ -2,6 +2,7 @@ import * as React from 'react'
 import { CollapseButton } from '../..'
 import * as s from './CollapsibleContentBoard.css'
 import classNames = require('classnames')
+import App from '../../../App'
 
 interface Props {
       title: string
@@ -11,7 +12,7 @@ interface Props {
       rightNodeIsSticky?: boolean
       rightNodeIsHighlighted?: boolean
       handleCollapseButtonClick?: React.MouseEventHandler<HTMLDivElement>
-      floatingMeasureSelectorContainingDivRefAssignmentCallback?: any
+      refAssignmentFunctions?: typeof App.prototype.refAssignmentFunctions
 }
 
 export class CollapsibleContentBoard extends React.Component<Props, {}> {
@@ -32,7 +33,7 @@ export class CollapsibleContentBoard extends React.Component<Props, {}> {
                   rightNodeIsSticky,
                   rightNodeIsHighlighted,
                   handleCollapseButtonClick,
-                  floatingMeasureSelectorContainingDivRefAssignmentCallback,
+                  refAssignmentFunctions,
             } = this.props
       
             return (
@@ -61,12 +62,12 @@ export class CollapsibleContentBoard extends React.Component<Props, {}> {
                               {title}
                         </div>
 
-                        {expanded &&
+                        {!!rightNode && !!refAssignmentFunctions && expanded &&
                               <div
                                     className={s.rightNodeContainer}
-                                    ref={floatingMeasureSelectorContainingDivRefAssignmentCallback}
+                                    ref={refAssignmentFunctions.refAssignmentFunctionforRefToFloatingMeasureSelectorContainingDiv}
                               >
-                                    {!!rightNode && 'Selected measure: '}
+                                    Selected measure:
                                     {rightNode}
                               </div>
                         }

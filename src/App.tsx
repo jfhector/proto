@@ -86,6 +86,12 @@ class App extends React.Component<Props, AppState> {
             measureSelectorContainerVisible: false,
       }
 
+      refAssignmentFunctions = {
+            refAssignmentFunctionforRefToFloatingMeasureSelectorContainingDiv: (element: HTMLDivElement) => {
+                  this.refToFloatingMeasureSelectorContainingDiv = element
+            }
+      }
+
       actions = {
             updateView: () => {
                   this.setState(
@@ -321,11 +327,7 @@ class App extends React.Component<Props, AppState> {
                               <DataViewComponent 
                                     appState={this.state}
                                     actions={this.actions}
-                                    floatingMeasureSelectorContainingDivRefAssignmentCallback={
-                                          (element: HTMLDivElement) => {
-                                                this.refToFloatingMeasureSelectorContainingDiv = element
-                                          }
-                                    }
+                                    refAssignmentFunctions={this.refAssignmentFunctions}
                               />
                         </main>
 
