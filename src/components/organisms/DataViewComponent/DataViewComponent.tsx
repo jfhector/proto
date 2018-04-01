@@ -90,7 +90,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                         <CollapsibleContentBoard
                               title='Measures summary'
                               expanded={appState.measuresSummaryExpanded}
-                              handleCollapseButtonClick={actions.toggleMeasuresSummaryExpanded}
+                              handleCollapseButtonClick={actions.expansionToggles.toggleMeasuresSummaryExpanded}
                         >
                               <div
                                     className={s.KpiTilesContainer}
@@ -163,7 +163,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                         <CollapsibleContentBoard
                               title='KPI tree'
                               expanded={appState.KPITreesExpanded}
-                              handleCollapseButtonClick={actions.toggleKPITreesExpanded}
+                              handleCollapseButtonClick={actions.expansionToggles.toggleKPITreesExpanded}
                         >
                               {appState.KPITreesExpanded &&
                                     <div
@@ -189,7 +189,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                               rightNodeIsSticky
                               rightNodeIsHighlighted={appState.measureSelectorContainerVisible}
                               expanded={appState.measuresInDetailExpanded}
-                              handleCollapseButtonClick={actions.toggleMeasureInDetailExpanded}
+                              handleCollapseButtonClick={actions.expansionToggles.toggleMeasureInDetailExpanded}
                               rightNode={
                                     <Selector
                                           optionsArray={measureOptions}
@@ -202,7 +202,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                                     title={`${selectedMeasure} • Trend`}
                                     displayedFilters={displayedFilters}
                                     expanded={appState.trendGraphExpanded}
-                                    handleCollapseButtonClick={actions.toggleTrendGraphExpanded}
+                                    handleCollapseButtonClick={actions.expansionToggles.toggleTrendGraphExpanded}
                               >
                                     <img 
                                           src={
@@ -233,7 +233,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                                     title={`${selectedMeasure} • Top 10 movers in ${displayedFilters.subcategory}`}
                                     displayedFilters={displayedFilters}
                                     expanded={appState.splitBySubcategoryExpanded}
-                                    handleCollapseButtonClick={actions.toggleSplitBySubcategoryExpanded}
+                                    handleCollapseButtonClick={actions.expansionToggles.toggleSplitBySubcategoryExpanded}
                               >
                                     <img 
                                           src={
@@ -264,7 +264,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                                     title={`${selectedMeasure} • Split by region`}
                                     displayedFilters={displayedFilters}
                                     expanded={appState.splitByRegionExpanded}
-                                    handleCollapseButtonClick={actions.toggleSplitByRegionExpanded}
+                                    handleCollapseButtonClick={actions.expansionToggles.toggleSplitByRegionExpanded}
                               >
                                     <img 
                                           src={PROTOIMG_table_regions_salesValue} 
@@ -275,7 +275,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                                     title={`${selectedMeasure} • Split by store format`}
                                     displayedFilters={displayedFilters}
                                     expanded={appState.splitByStoreFormatExpanded}
-                                    handleCollapseButtonClick={actions.toggleSplitByStoreFormatExpanded}
+                                    handleCollapseButtonClick={actions.expansionToggles.toggleSplitByStoreFormatExpanded}
                               >
                                     <img 
                                           src={PROTOIMG_table_storeFormats_salesValue} 
@@ -286,7 +286,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                                     title={`${selectedMeasure} • Split by customer segment`}
                                     displayedFilters={displayedFilters}
                                     expanded={appState.splitByCustomerSegmentExpanded}
-                                    handleCollapseButtonClick={actions.toggleSplitByCustomerSegmentExpanded}
+                                    handleCollapseButtonClick={actions.expansionToggles.toggleSplitByCustomerSegmentExpanded}
                               >
                                     <img 
                                           src={PROTOIMG_table_customerTypes_salesValue} 

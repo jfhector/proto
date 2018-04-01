@@ -183,61 +183,63 @@ class App extends React.Component<Props, AppState> {
                         } as AppState)
                   )
             },
-            toggleMeasuresSummaryExpanded: () => {
-                  this.setState(
-                        (prevState: AppState) => ({
-                              measuresSummaryExpanded: !prevState.measuresSummaryExpanded,
-                        })
-                  )
-            },
-            toggleKPITreesExpanded: () => {
-                  this.setState(
-                        (prevState: AppState) => ({
-                              KPITreesExpanded: !prevState.KPITreesExpanded
-                        })
-                  )
-            },
-            toggleMeasureInDetailExpanded: () => {
-                  this.setState(
-                        (prevState: AppState) => ({
-                              measuresInDetailExpanded: !prevState.measuresInDetailExpanded,
-                        })
-                  )
-            },
-            toggleTrendGraphExpanded: () => {
-                  this.setState(
-                        (prevState: AppState) => ({
-                              trendGraphExpanded: !prevState.trendGraphExpanded
-                        })
-                  )
-            },
-            toggleSplitBySubcategoryExpanded: () => {
-                  this.setState(
-                        (prevState: AppState) => ({
-                              splitBySubcategoryExpanded: !prevState.splitBySubcategoryExpanded
-                        })
-                  )
-            },
-            toggleSplitByRegionExpanded: () => {
-                  this.setState(
-                        (prevState: AppState) => ({
-                              splitByRegionExpanded: !prevState.splitByRegionExpanded
-                        })
-                  )
-            },
-            toggleSplitByStoreFormatExpanded: () => {
-                  this.setState(
-                        (prevState: AppState) => ({
-                              splitByStoreFormatExpanded: !prevState.splitByStoreFormatExpanded
-                        })
-                  )
-            },
-            toggleSplitByCustomerSegmentExpanded: () => {
-                  this.setState(
-                        (prevState: AppState) => ({
-                              splitByCustomerSegmentExpanded: !prevState.splitByCustomerSegmentExpanded
-                        })
-                  )
+            expansionToggles: {
+                  toggleMeasuresSummaryExpanded: () => {
+                        this.setState(
+                              (prevState: AppState) => ({
+                                    measuresSummaryExpanded: !prevState.measuresSummaryExpanded,
+                              })
+                        )
+                  },
+                  toggleKPITreesExpanded: () => {
+                        this.setState(
+                              (prevState: AppState) => ({
+                                    KPITreesExpanded: !prevState.KPITreesExpanded
+                              })
+                        )
+                  },
+                  toggleMeasureInDetailExpanded: () => {
+                        this.setState(
+                              (prevState: AppState) => ({
+                                    measuresInDetailExpanded: !prevState.measuresInDetailExpanded,
+                              })
+                        )
+                  },
+                  toggleTrendGraphExpanded: () => {
+                        this.setState(
+                              (prevState: AppState) => ({
+                                    trendGraphExpanded: !prevState.trendGraphExpanded
+                              })
+                        )
+                  },
+                  toggleSplitBySubcategoryExpanded: () => {
+                        this.setState(
+                              (prevState: AppState) => ({
+                                    splitBySubcategoryExpanded: !prevState.splitBySubcategoryExpanded
+                              })
+                        )
+                  },
+                  toggleSplitByRegionExpanded: () => {
+                        this.setState(
+                              (prevState: AppState) => ({
+                                    splitByRegionExpanded: !prevState.splitByRegionExpanded
+                              })
+                        )
+                  },
+                  toggleSplitByStoreFormatExpanded: () => {
+                        this.setState(
+                              (prevState: AppState) => ({
+                                    splitByStoreFormatExpanded: !prevState.splitByStoreFormatExpanded
+                              })
+                        )
+                  },
+                  toggleSplitByCustomerSegmentExpanded: () => {
+                        this.setState(
+                              (prevState: AppState) => ({
+                                    splitByCustomerSegmentExpanded: !prevState.splitByCustomerSegmentExpanded
+                              })
+                        )
+                  },
             },
             changeSelectedMeasure: (newlySelectedMeasure: MeasureName) => {
                   this.setState({
