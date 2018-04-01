@@ -101,117 +101,63 @@ export class DataViewComponent extends React.Component<Props, {}> {
                                           measure='Sales value'
                                           appState={appState}
                                           selected={appState.selectedMeasure === 'Sales value'}
-                                          handleKpiTileClick={
-                                                (nameOfAssociatedMeasure) => {
-                                                      setAppState({
-                                                            selectedMeasure: nameOfAssociatedMeasure
-                                                      })
-                                                }
-                                          }
+                                          handleKpiTileClick={actions.changeSelectedMeasure}
                                     />
 
                                     <KpiTile 
                                           measure='Sales units'
                                           appState={appState}
                                           selected={appState.selectedMeasure === 'Sales units'}
-                                          handleKpiTileClick={
-                                                (nameOfAssociatedMeasure) => {
-                                                      setAppState({
-                                                            selectedMeasure: nameOfAssociatedMeasure
-                                                      })
-                                                }
-                                          }
+                                          handleKpiTileClick={actions.changeSelectedMeasure}
                                     />
 
                                     <KpiTile 
                                           measure='Customers'
                                           appState={appState}
                                           selected={appState.selectedMeasure === 'Customers'}
-                                          handleKpiTileClick={
-                                                (nameOfAssociatedMeasure) => {
-                                                      setAppState({
-                                                            selectedMeasure: nameOfAssociatedMeasure
-                                                      })
-                                                }
-                                          }
+                                          handleKpiTileClick={actions.changeSelectedMeasure}
                                     />
 
                                     <KpiTile 
                                           measure='Spend per customer'
                                           appState={appState}
                                           selected={appState.selectedMeasure === 'Spend per customer'}
-                                          handleKpiTileClick={
-                                                (nameOfAssociatedMeasure) => {
-                                                      setAppState({
-                                                            selectedMeasure: nameOfAssociatedMeasure
-                                                      })
-                                                }
-                                          }
+                                          handleKpiTileClick={actions.changeSelectedMeasure}
                                     />
 
                                     <KpiTile 
                                           measure='Retailer visits'
                                           appState={appState}
                                           selected={appState.selectedMeasure === 'Retailer visits'}
-                                          handleKpiTileClick={
-                                                (nameOfAssociatedMeasure) => {
-                                                      setAppState({
-                                                            selectedMeasure: nameOfAssociatedMeasure
-                                                      })
-                                                }
-                                          }
+                                          handleKpiTileClick={actions.changeSelectedMeasure}
                                     />
 
                                     <KpiTile 
                                           measure='Spend per visit'
                                           appState={appState}
                                           selected={appState.selectedMeasure === 'Spend per visit'}
-                                          handleKpiTileClick={
-                                                (nameOfAssociatedMeasure) => {
-                                                      setAppState({
-                                                            selectedMeasure: nameOfAssociatedMeasure
-                                                      })
-                                                }
-                                          }
+                                          handleKpiTileClick={actions.changeSelectedMeasure}
                                     />
 
                                     <KpiTile 
                                           measure='Units per visit'
                                           appState={appState}
                                           selected={appState.selectedMeasure === 'Units per visit'}
-                                          handleKpiTileClick={
-                                                (nameOfAssociatedMeasure) => {
-                                                      setAppState({
-                                                            selectedMeasure: nameOfAssociatedMeasure
-                                                      })
-                                                }
-                                          }
+                                          handleKpiTileClick={actions.changeSelectedMeasure}
                                     />
 
                                     <KpiTile 
                                           measure='Basket penetration'
                                           appState={appState}
                                           selected={appState.selectedMeasure === 'Basket penetration'}
-                                          handleKpiTileClick={
-                                                (nameOfAssociatedMeasure) => {
-                                                      setAppState({
-                                                            selectedMeasure: nameOfAssociatedMeasure
-                                                      })
-                                                }
-                                          }
+                                          handleKpiTileClick={actions.changeSelectedMeasure}
                                     />
 
                                     <KpiTile 
                                           measure='Frequency of purchase'
                                           appState={appState}
                                           selected={appState.selectedMeasure === 'Frequency of purchase'}
-                                          handleKpiTileClick={
-                                                (nameOfAssociatedMeasure) => {
-                                                      setAppState({
-                                                            selectedMeasure: nameOfAssociatedMeasure
-                                                      })
-                                                }
-                                          }
+                                          handleKpiTileClick={actions.changeSelectedMeasure}
                                     />
                               </div>
                         </CollapsibleContentBoard>

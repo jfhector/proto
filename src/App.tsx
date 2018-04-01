@@ -238,6 +238,11 @@ class App extends React.Component<Props, AppState> {
                               splitByCustomerSegmentExpanded: !prevState.splitByCustomerSegmentExpanded
                         })
                   )
+            },
+            changeSelectedMeasure: (newlySelectedMeasure: MeasureName) => {
+                  this.setState({
+                        selectedMeasure: newlySelectedMeasure
+                  })
             }
       }
 
