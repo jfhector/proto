@@ -84,7 +84,7 @@ const initialState: AppState = {
 }
 
 class App extends React.Component<Props, AppState> {
-      setAppState: typeof App.prototype.setState
+      // setAppState: typeof App.prototype.setState
       refToDataViewComponent: DataViewComponent
 
       // constructor(props: Props) {
@@ -257,6 +257,7 @@ class App extends React.Component<Props, AppState> {
                               <DataViewComponent 
                                     appState={this.state}
                                     setAppState={this.setAppState}
+                                    actions={this.actions}
                                     ref={
                                           (component: DataViewComponent) => {
                                                 this.refToDataViewComponent = component

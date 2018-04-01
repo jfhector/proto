@@ -23,7 +23,8 @@ const PROTOIMG_kpiTree = require('./../../../assets/PROTOIMG_kpiTree.png')
 
 interface Props {
       appState: AppState
-      setAppState: typeof App.prototype.setState      
+      setAppState: typeof App.prototype.setState
+      actions: typeof App.prototype.actions     
 }
 
 export class DataViewComponent extends React.Component<Props, {}> {
@@ -33,6 +34,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
             const {
                   appState,
                   setAppState,
+                  actions,
             } = this.props
 
             const {
@@ -80,16 +82,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                               <Alert
                                     typeOption='warning'
                                     visible={appState.dataViewNeedsUpdating}
-                                    handleClick={
-                                          () => {
-                                                setAppState(
-                                                      (prevState: AppState) => ({
-                                                            displayedFilters: prevState.selectedFilters,
-                                                            dataViewNeedsUpdating: false,
-                                                      })
-                                                )
-                                          }
-                                    }
+                                    handleClick={actions.updateView}
                                     dismissable
                               >
                                     <b>This view doesn&apos;t reflect your new selection yet.&nbsp;</b> Click <span className={s.alertLink}>&apos;Update view&apos;&nbsp;</span> to refresh this view.
