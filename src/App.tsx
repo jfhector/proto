@@ -84,7 +84,7 @@ const initialState: AppState = {
 }
 
 class App extends React.Component<Props, AppState> {
-      // setAppState: typeof App.prototype.setState
+      setAppState: typeof App.prototype.setState
       refToDataViewComponent: DataViewComponent
 
       // constructor(props: Props) {
@@ -183,6 +183,62 @@ class App extends React.Component<Props, AppState> {
                         } as AppState)
                   )
             },
+            toggleMeasuresSummaryExpanded: () => {
+                  this.setState(
+                        (prevState: AppState) => ({
+                              measuresSummaryExpanded: !prevState.measuresSummaryExpanded,
+                        })
+                  )
+            },
+            toggleKPITreesExpanded: () => {
+                  this.setState(
+                        (prevState: AppState) => ({
+                              KPITreesExpanded: !prevState.KPITreesExpanded
+                        })
+                  )
+            },
+            toggleMeasureInDetailExpanded: () => {
+                  this.setState(
+                        (prevState: AppState) => ({
+                              measuresInDetailExpanded: !prevState.measuresInDetailExpanded,
+                        })
+                  )
+            },
+            toggleTrendGraphExpanded: () => {
+                  this.setState(
+                        (prevState: AppState) => ({
+                              trendGraphExpanded: !prevState.trendGraphExpanded
+                        })
+                  )
+            },
+            toggleSplitBySubcategoriesExpanded: () => {
+                  this.setState(
+                        (prevState: AppState) => ({
+                              splitBySubcategoriesExpanded: !prevState.splitBySubcategoriesExpanded
+                        })
+                  )
+            },
+            toggleSplitByRegionExpanded: () => {
+                  this.setState(
+                        (prevState: AppState) => ({
+                              splitByRegionsExpanded: !prevState.splitByRegionsExpanded
+                        })
+                  )
+            },
+            toggleSplitByStoreFormatExpanded: () => {
+                  this.setState(
+                        (prevState: AppState) => ({
+                              splitByStoreFormatsExpanded: !prevState.splitByStoreFormatsExpanded
+                        })
+                  )
+            },
+            toggleSplitByCustomerSegmentExpanded: () => {
+                  this.setState(
+                        (prevState: AppState) => ({
+                              splitByCustomerSegmentsExpanded: !prevState.splitByCustomerSegmentsExpanded
+                        })
+                  )
+            }
       }
 
       componentDidMount() {
