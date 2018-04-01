@@ -102,11 +102,11 @@ class App extends React.Component<Props, AppState> {
             )
         },
         conditionallySetMeasureSelectorContainerVisibleStateBasedOnScrollY: () => {
-            // let measureInDetailContentBoardRightNodeContainerBoundingClientRect = this.refToDataViewComponent.refToMeasureInDetailCollapsibleContentBoard.refToRightNodeContainer.getBoundingClientRect() as DOMRect
-
-            // this.setState({
-            //       measureSelectorContainerVisible: (measureInDetailContentBoardRightNodeContainerBoundingClientRect.top > 0) ? false : true,
-            // })
+            this.setState({
+                  measureSelectorContainerVisible: (
+                    (this.refToFloatingMeasureSelectorContainingDiv.getBoundingClientRect() as DOMRect).top > 0
+                  ) ? false : true,
+            })
         },
         selectionChanges: {
             changeSelectedDuration: (newlySelectedDuration: DurationOption) => {
