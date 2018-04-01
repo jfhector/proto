@@ -301,8 +301,8 @@ export class DataViewComponent extends React.Component<Props, {}> {
                               <CollapsibleContentModule
                                     title={`${selectedMeasure} • Top 10 movers in ${displayedFilters.subcategory}`}
                                     displayedFilters={displayedFilters}
-                                    expanded={appState.splitBySubcategoriesExpanded}
-                                    handleCollapseButtonClick={actions.toggleSplitBySubcategoriesExpanded}
+                                    expanded={appState.splitBySubcategoryExpanded}
+                                    handleCollapseButtonClick={actions.toggleSplitBySubcategoryExpanded}
                               >
                                     <img 
                                           src={
@@ -332,7 +332,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                               <CollapsibleContentModule
                                     title={`${selectedMeasure} • Split by region`}
                                     displayedFilters={displayedFilters}
-                                    expanded={appState.splitByRegionsExpanded}
+                                    expanded={appState.splitByRegionExpanded}
                                     handleCollapseButtonClick={actions.toggleSplitByRegionExpanded}
                               >
                                     <img 
@@ -343,7 +343,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                               <CollapsibleContentModule
                                     title={`${selectedMeasure} • Split by store format`}
                                     displayedFilters={displayedFilters}
-                                    expanded={appState.splitByStoreFormatsExpanded}
+                                    expanded={appState.splitByStoreFormatExpanded}
                                     handleCollapseButtonClick={actions.toggleSplitByStoreFormatExpanded}
                               >
                                     <img 
@@ -354,7 +354,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                               <CollapsibleContentModule
                                     title={`${selectedMeasure} • Split by customer segment`}
                                     displayedFilters={displayedFilters}
-                                    expanded={appState.splitByCustomerSegmentsExpanded}
+                                    expanded={appState.splitByCustomerSegmentExpanded}
                                     handleCollapseButtonClick={actions.toggleSplitByCustomerSegmentExpanded}
                               >
                                     <img 

@@ -38,10 +38,10 @@ export interface AppState {
 
       // DEFINES WHICH CONTENT MODULES ARE EXPANDED
       trendGraphExpanded?: boolean,
-      splitBySubcategoriesExpanded?: boolean,
-      splitByStoreFormatsExpanded?: boolean,
-      splitByCustomerSegmentsExpanded?: boolean,
-      splitByRegionsExpanded?: boolean,
+      splitBySubcategoryExpanded?: boolean,
+      splitByRegionExpanded?: boolean,
+      splitByStoreFormatExpanded?: boolean,
+      splitByCustomerSegmentExpanded?: boolean,
       
       // MEASURE SELECTOR VISIBLE
       measureSelectorContainerVisible?: boolean,
@@ -75,10 +75,10 @@ const initialState: AppState = {
       KPITreesExpanded: false,
 
       trendGraphExpanded: false,
-      splitBySubcategoriesExpanded: false,
-      splitByStoreFormatsExpanded: false,
-      splitByCustomerSegmentsExpanded: false,
-      splitByRegionsExpanded: false,
+      splitBySubcategoryExpanded: false,
+      splitByStoreFormatExpanded: false,
+      splitByCustomerSegmentExpanded: false,
+      splitByRegionExpanded: false,
       
       measureSelectorContainerVisible: false,
 }
@@ -211,31 +211,31 @@ class App extends React.Component<Props, AppState> {
                         })
                   )
             },
-            toggleSplitBySubcategoriesExpanded: () => {
+            toggleSplitBySubcategoryExpanded: () => {
                   this.setState(
                         (prevState: AppState) => ({
-                              splitBySubcategoriesExpanded: !prevState.splitBySubcategoriesExpanded
+                              splitBySubcategoryExpanded: !prevState.splitBySubcategoryExpanded
                         })
                   )
             },
             toggleSplitByRegionExpanded: () => {
                   this.setState(
                         (prevState: AppState) => ({
-                              splitByRegionsExpanded: !prevState.splitByRegionsExpanded
+                              splitByRegionExpanded: !prevState.splitByRegionExpanded
                         })
                   )
             },
             toggleSplitByStoreFormatExpanded: () => {
                   this.setState(
                         (prevState: AppState) => ({
-                              splitByStoreFormatsExpanded: !prevState.splitByStoreFormatsExpanded
+                              splitByStoreFormatExpanded: !prevState.splitByStoreFormatExpanded
                         })
                   )
             },
             toggleSplitByCustomerSegmentExpanded: () => {
                   this.setState(
                         (prevState: AppState) => ({
-                              splitByCustomerSegmentsExpanded: !prevState.splitByCustomerSegmentsExpanded
+                              splitByCustomerSegmentExpanded: !prevState.splitByCustomerSegmentExpanded
                         })
                   )
             }
@@ -276,10 +276,10 @@ class App extends React.Component<Props, AppState> {
                   KPITreesExpanded,
             
                   trendGraphExpanded,
-                  splitBySubcategoriesExpanded,
-                  splitByStoreFormatsExpanded,
-                  splitByCustomerSegmentsExpanded,
-                  splitByRegionsExpanded,
+                  splitBySubcategoryExpanded,
+                  splitByStoreFormatExpanded,
+                  splitByCustomerSegmentExpanded,
+                  splitByRegionExpanded,
                   
                   measureSelectorContainerVisible,
             } = this.state
