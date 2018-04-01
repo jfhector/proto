@@ -13,7 +13,7 @@ import {
 } from './components/'
 import * as s from './App.css'
 import { MeasureName, FiltersSet, DateOption, ComparisonOption, MedicineSubcategoryName, RegionOption, StoreFormatOption, CustomerSegmentOption, DurationOption } from './sharedTypes'
-import { getComparisonOptions } from './data';
+import { getComparisonOptions } from './data'
 
 const PROTOIMG_nav_header = require('./assets/PROTOIMG_nav_header.png')
 const PROTOIMG_nav_tabs = require('./assets/PROTOIMG_nav_tabs.png')
@@ -250,7 +250,6 @@ class App extends React.Component<Props, AppState> {
                               >
                                     <Sidebar 
                                           appState={this.state}
-                                          setAppState={this.setAppState}
                                           actions={this.actions}
                                     />
                               </div>

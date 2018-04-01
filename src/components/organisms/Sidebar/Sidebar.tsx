@@ -7,7 +7,6 @@ import { durationOptions, getDatesOptions, getComparisonOptions, medicineSubcate
 
 interface Props {
       appState: AppState
-      setAppState: typeof App.prototype.setState
       actions: typeof App.prototype.actions
 }
 
@@ -15,7 +14,6 @@ export class Sidebar extends React.Component<Props, {}> {
       render() {
             const {
                   appState,
-                  setAppState,
                   actions,
             } = this.props
 
