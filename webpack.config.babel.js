@@ -30,5 +30,12 @@ module.exports = {
       resolve: {
             extensions: ['.ts', '.tsx', '.js', '.jsx']
       },
-      plugins: [new HtmlWebpackPlugin(), new webpack.NamedModulesPlugin()]
+      plugins: [
+            new HtmlWebpackPlugin({
+                  hash: true,
+                  title: 'My Awesome App',
+                  template: './src/index.html',
+            }),
+            new webpack.NamedModulesPlugin()
+      ]
 }
