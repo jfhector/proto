@@ -15,6 +15,15 @@ module.exports = {
                         test: /\.tsx?$/,
                         use: ['babel-loader', 'awesome-typescript-loader'],
                         exclude: /node-modules/,
+                  },
+                  {
+                        test: /\.(png|jpg|gif)$/,
+                        use: [
+                              {
+                                    loader: 'file-loader',
+                                    options: {}
+                              }
+                        ]
                   }
             ]
       },
