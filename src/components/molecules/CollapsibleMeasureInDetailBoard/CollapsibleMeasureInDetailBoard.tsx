@@ -4,7 +4,7 @@ import * as s from './CollapsibleMeasureInDetailBoard.css'
 import classNames = require('classnames')
 import App, { AppState } from '../../../App'
 import { MeasureName } from '../../../sharedTypes'
-import { getDataForMeasures } from '../../../data';
+import { getDataForMeasures } from '../../../data'
 
 interface Props {
     children: React.ReactNode
@@ -100,18 +100,6 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
                     </div>
                 </div>
                 
-
-
-
-
-
-
-
-
-
-
-
-
                 {measuresInDetailExpanded &&
                     <div
                         className={s.childrenContainer}

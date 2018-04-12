@@ -104,7 +104,7 @@ class App extends React.Component<Props, AppState> {
         conditionallySetMeasureSelectorContainerVisibleStateBasedOnScrollY: () => {
             this.setState({
                   measureSelectorContainerVisible: (
-                    (this.refToFloatingMeasureSelectorContainingDiv.getBoundingClientRect() as DOMRect).top > 0
+                    (this.refToMeasureInDetailBoardHeaderContainingDiv.getBoundingClientRect() as DOMRect).top > 0
                   ) ? false : true,
             })
         },
@@ -192,16 +192,6 @@ class App extends React.Component<Props, AppState> {
                     selectedMeasure: newlySelectedMeasure
                 })
             },
-            handleFloatingMeasureSelectorChange: (newlySelectedMeasure: MeasureName) => {
-                this.setState({
-                    selectedMeasure: newlySelectedMeasure
-                })
-                this.refToFloatingMeasureSelectorContainingDiv.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start',
-                    inline: 'nearest',
-                })
-            }
         },
         expansionToggles: {
             toggleMeasuresSummaryExpanded: () => {

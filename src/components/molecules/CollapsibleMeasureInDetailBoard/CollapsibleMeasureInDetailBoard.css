@@ -108,10 +108,10 @@
 
 .headerContainerVisible .headerContainer {
     box-shadow: 0 2px 4px var(--shadowColor_default);
-    /* border: 1px solid var(--borderColor_aroundWhiteOrLightestGrey); */
     background-color: #fffe;
+    /* border: 1px solid var(--borderColor_aroundWhiteOrLightestGrey); */
     /* border-top: none; */
-    animation: flash 800ms;
+    animation: flash 200ms;
 }
 
 @keyframes flash {

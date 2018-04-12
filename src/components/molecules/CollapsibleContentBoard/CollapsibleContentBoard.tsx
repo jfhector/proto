@@ -8,9 +8,6 @@ interface Props {
     title: string
     children: React.ReactNode
     expanded?: boolean
-    rightNode?: React.ReactNode
-    rightNodeIsSticky?: boolean
-    rightNodeIsHighlighted?: boolean
     handleCollapseButtonClick?: React.MouseEventHandler<HTMLDivElement>
     refAssignmentFunctions?: typeof App.prototype.refAssignmentFunctions
 }
@@ -29,9 +26,6 @@ export class CollapsibleContentBoard extends React.Component<Props, {}> {
             title,
             children,
             expanded,
-            rightNode,
-            rightNodeIsSticky,
-            rightNodeIsHighlighted,
             handleCollapseButtonClick,
             refAssignmentFunctions,
         } = this.props
@@ -42,8 +36,6 @@ export class CollapsibleContentBoard extends React.Component<Props, {}> {
                     s.CollapsibleContentBoard,
                     {
                         [s.expanded]: expanded,
-                        [s.rightNodeIsSticky]: rightNodeIsSticky,
-                        [s.rightNodeIsHighlighted]: rightNodeIsHighlighted,
                     }
                 )}
             >
@@ -61,16 +53,6 @@ export class CollapsibleContentBoard extends React.Component<Props, {}> {
                 >
                     {title}
                 </div>
-
-                {!!rightNode && !!refAssignmentFunctions && expanded &&
-                    <div
-                        className={s.rightNodeContainer}
-                        ref={refAssignmentFunctions.refAssignmentFunctionforRefToFloatingMeasureSelectorContainingDiv}
-                    >
-                        Selected measure:
-                        {rightNode}
-                    </div>
-                }
 
                 {expanded &&
                     <div
