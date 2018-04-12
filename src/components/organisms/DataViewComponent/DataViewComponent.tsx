@@ -1,7 +1,7 @@
 import * as React from 'react'
 import App, { AppState } from '../../../App'
 import * as s from './DataViewComponent.css'
-import { Button, Alert, CollapsibleContentBoard, KpiTile, Selector, CollapsibleContentModule } from '../..'
+import { Button, Alert, CollapsibleContentBoard, CollapsibleMeasureInDetailBoard, KpiTile, Selector, CollapsibleContentModule } from '../..'
 import { measureOptions } from '../../../data'
 import { MeasureName } from '../../../sharedTypes'
 
@@ -180,7 +180,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                     />
                 </CollapsibleContentBoard>
 
-                <CollapsibleContentBoard
+                <CollapsibleMeasureInDetailBoard
                     title='Measure in detail'
                     rightNodeIsSticky
                     rightNodeIsHighlighted={appState.measureSelectorContainerVisible}
@@ -289,7 +289,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                             src={PROTOIMG_table_customerTypes_salesValue}
                         />
                     </CollapsibleContentModule>
-                </CollapsibleContentBoard>
+                </CollapsibleMeasureInDetailBoard>
 
                 <img src={PROTOIMG_graph_salesValue} style={{ 'visibility': 'hidden', 'width': 0, 'height': 0, 'overflow': 'hidden' }} />
                 <img src={PROTOIMG_graph_customers} style={{ 'visibility': 'hidden', 'width': 0, 'height': 0, 'overflow': 'hidden' }} />
