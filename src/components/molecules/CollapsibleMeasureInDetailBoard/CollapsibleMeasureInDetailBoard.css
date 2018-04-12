@@ -1,0 +1,92 @@
+.CollapsibleContentBoard {
+      padding-top: 15px;
+      margin-bottom: 20px;
+      display: grid;
+      grid-template-columns: auto auto 1fr auto;
+      grid-template-areas:
+            "buttonArea       titleArea         spacer            rightNodeArea"
+            "childrenArea     childrenArea      childrenArea      childrenArea";
+      border: 1px solid var(--borderColor_aroundWhiteOrLightestGrey);
+      border-radius: 5px;
+      background-color: white;
+      height: 60px;
+}
+
+.collapseButtonContainer {
+      grid-area: buttonArea;
+      align-self: center;
+      margin-left: 20px;
+      margin-right: 20px;
+}
+
+.title {
+      grid-area: titleArea;
+      align-self: center;
+      font-size: x-large;
+      font-weight: bold;
+}
+
+.rightNodeContainer {
+      padding-left: 20px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      width: 410px;
+      grid-area: rightNodeArea;
+      align-self: center;
+      border: 1px solid white;
+      border-top: none;
+      border-radius: 0 0 5px 5px;
+      background-color: #fffe;
+      font-size: small;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+}
+
+.rightNodeContainer > select {
+      margin-right: 20px;
+}
+
+.childrenContainer {
+      grid-area: childrenArea;
+      margin: 20px 20px 0 20px;
+}
+
+/* expanded BOOL PROP */
+
+.expanded {
+      height: auto;
+      padding-bottom: 20px;
+}
+
+/* rightNodeIsSticky BOOL PROP */
+
+.rightNodeIsSticky .rightNodeContainer {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+}
+
+/* rightNodeIsHighlighted BOOL PROP */
+
+.rightNodeIsHighlighted .rightNodeContainer {
+      box-shadow: 0 2px 4px var(--shadowColor_default);
+      border: 1px solid var(--borderColor_aroundWhiteOrLightestGrey);
+      border-top: none;
+      animation: flash 800ms;
+}
+
+@keyframes flash {
+      from {
+            box-shadow: 0 0 0 white;
+            border: 1px solid white;
+            border-top: none;
+      }
+
+      to {
+            box-shadow: 0 2px 4px var(--shadowColor_default);
+            border: 1px solid var(--borderColor_aroundWhiteOrLightestGrey);
+            border-top: none;
+      }
+}
