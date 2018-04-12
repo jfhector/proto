@@ -12,7 +12,7 @@ interface Props {
     rightNodeIsSticky?: boolean
     rightNodeIsHighlighted?: boolean
     handleCollapseButtonClick?: React.MouseEventHandler<HTMLDivElement>
-    refAssignmentFunctions?: typeof App.prototype.refAssignmentFunctions
+    refAssignmentFunctions: typeof App.prototype.refAssignmentFunctions
 }
 
 export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> {
@@ -48,6 +48,13 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
                 )}
             >
                 <div
+                    className={s.header}
+                    ref={refAssignmentFunctions.refAssignmentFunctionforRefToMeasureInDetailBoardHeaderContainingDiv}
+                >
+                    Header
+                </div>
+                
+                <div
                     className={s.collapseButtonContainer}
                 >
                     <CollapseButton
@@ -62,15 +69,15 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
                     {title}
                 </div>
 
-                {!!rightNode && !!refAssignmentFunctions && expanded &&
-                    <div
-                        className={s.rightNodeContainer}
-                        ref={refAssignmentFunctions.refAssignmentFunctionforRefToFloatingMeasureSelectorContainingDiv}
-                    >
-                        Selected measure:
-                        {rightNode}
-                    </div>
-                }
+
+
+
+
+
+
+
+
+
 
                 {expanded &&
                     <div

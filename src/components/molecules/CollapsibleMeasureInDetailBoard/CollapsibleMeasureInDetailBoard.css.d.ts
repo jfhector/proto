@@ -1,4 +1,5 @@
 export const CollapsibleContentBoard: string;
+export const header: string;
 export const collapseButtonContainer: string;
 export const title: string;
 export const rightNodeContainer: string;

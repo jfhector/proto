@@ -2,14 +2,18 @@
       padding-top: 15px;
       margin-bottom: 20px;
       display: grid;
-      grid-template-columns: auto auto 1fr auto;
+      grid-template-columns: 1fr;
       grid-template-areas:
-            "buttonArea       titleArea         spacer            rightNodeArea"
-            "childrenArea     childrenArea      childrenArea      childrenArea";
+            "headerArea"
+            "childrenArea";
       border: 1px solid var(--borderColor_aroundWhiteOrLightestGrey);
       border-radius: 5px;
       background-color: white;
       height: 60px;
+}
+
+.header {
+    grid-area: headerArea;
 }
 
 .collapseButtonContainer {
@@ -47,6 +51,21 @@
 .rightNodeContainer > select {
       margin-right: 20px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .childrenContainer {
       grid-area: childrenArea;

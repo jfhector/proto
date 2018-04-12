@@ -48,7 +48,7 @@ export interface AppState {
 }
 
 class App extends React.Component<Props, AppState> {
-    refToFloatingMeasureSelectorContainingDiv: HTMLDivElement
+    refToMeasureInDetailBoardHeaderContainingDiv: HTMLDivElement
 
     state: AppState = {
         selectedFilters: {
@@ -87,8 +87,8 @@ class App extends React.Component<Props, AppState> {
     }
 
     refAssignmentFunctions = {
-        refAssignmentFunctionforRefToFloatingMeasureSelectorContainingDiv: (element: HTMLDivElement) => {
-            this.refToFloatingMeasureSelectorContainingDiv = element
+        refAssignmentFunctionforRefToMeasureInDetailBoardHeaderContainingDiv: (element: HTMLDivElement) => {
+            this.refToMeasureInDetailBoardHeaderContainingDiv = element
         }
     }
 
