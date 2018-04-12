@@ -1,111 +1,149 @@
 .CollapsibleContentBoard {
-      padding-top: 15px;
-      margin-bottom: 20px;
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-areas:
-            "headerArea"
-            "childrenArea";
-      border: 1px solid var(--borderColor_aroundWhiteOrLightestGrey);
-      border-radius: 5px;
-      background-color: white;
-      height: 60px;
+    padding-top: 15px;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "headerArea"
+        "childrenArea";
+    border: 1px solid var(--borderColor_aroundWhiteOrLightestGrey);
+    border-radius: 5px;
+    background-color: white;
+    height: 60px;
 }
 
-.header {
+.headerContainer {
     grid-area: headerArea;
+    display: grid;
+    grid-template-columns: auto auto auto 1fr auto;
+    grid-template-areas: "buttonArea    titleArea   caretArea   .   measureValueArea";
 }
 
 .collapseButtonContainer {
-      grid-area: buttonArea;
-      align-self: center;
-      margin-left: 20px;
-      margin-right: 20px;
+    grid-area: buttonArea;
+    align-self: center;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .title {
-      grid-area: titleArea;
-      align-self: center;
-      font-size: x-large;
-      font-weight: bold;
+    grid-area: titleArea;
+    align-self: center;
+    font-size: x-large;
+    font-weight: bold;
 }
 
-.rightNodeContainer {
-      padding-left: 20px;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      width: 410px;
-      grid-area: rightNodeArea;
-      align-self: center;
-      border: 1px solid white;
-      border-top: none;
-      border-radius: 0 0 5px 5px;
-      background-color: #fffe;
-      font-size: small;
-      font-weight: bold;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
+.caret {
+    grid-area: caretArea;
+    align-self: center;
+    font-size: x-large;
+    font-weight: bold;
 }
 
-.rightNodeContainer > select {
-      margin-right: 20px;
+.measureValueContainer {
+    grid-area: measureValueArea;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-areas: "measureValueArea  measureValueChangeArea  measurePercentChangeArea";
+    margin-right: 20px;
+    align-self: center;
+    font-size: large;
+    font-weight: bold;
 }
 
+.measureValueContainer .measureValue {
+    grid-area: measureValueArea;
+    align-self: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
 
+.measureValueContainer .measureValueChange {
+    grid-area: measureValueChangeArea;
+    align-self: inherit;
+    font-size: medium;
+    font-weight: inherit;
+    margin-left: 20px;
+    color: var(--textColor_negative);
+}
 
+.measuredChangedUpwards .measureValueChange {
+    color: var(--textColor_positive);
+}
 
+.measureValueContainer .measurePercentChange {
+    grid-area: measurePercentChangeArea;
+    align-self: inherit;
+    font-size: medium;
+    font-weight: inherit;
+    margin-left: 20px;
+    color: var(--textColor_negative);
+}
 
-
-
-
-
-
-
-
-
-
-
+.measuredChangedUpwards .measurePercentChange {
+    color: var(--textColor_positive);
+}
 
 .childrenContainer {
-      grid-area: childrenArea;
-      margin: 20px 20px 0 20px;
+    grid-area: childrenArea;
+    margin: 20px 20px 0 20px;
+}
+
+
+
+
+/* .rightNodeContainer {
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 410px;
+    grid-area: rightNodeArea;
+    align-self: center;
+    border: 1px solid white;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    background-color: #fffe;
+    font-size: small;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 }
 
 /* expanded BOOL PROP */
 
 .expanded {
-      height: auto;
-      padding-bottom: 20px;
+    height: auto;
+    padding-bottom: 20px;
 }
 
-/* rightNodeIsSticky BOOL PROP */
+/* headerIsSticky BOOL PROP */
 
-.rightNodeIsSticky .rightNodeContainer {
-      position: sticky;
-      top: 0;
-      z-index: 1;
-}
+/* .headerIsSticky .rightNodeContainer {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+} */
 
 /* rightNodeIsHighlighted BOOL PROP */
 
-.rightNodeIsHighlighted .rightNodeContainer {
-      box-shadow: 0 2px 4px var(--shadowColor_default);
-      border: 1px solid var(--borderColor_aroundWhiteOrLightestGrey);
-      border-top: none;
-      animation: flash 800ms;
+/* .rightNodeIsHighlighted .rightNodeContainer {
+    box-shadow: 0 2px 4px var(--shadowColor_default);
+    border: 1px solid var(--borderColor_aroundWhiteOrLightestGrey);
+    border-top: none;
+    animation: flash 800ms;
 }
 
 @keyframes flash {
-      from {
-            box-shadow: 0 0 0 white;
-            border: 1px solid white;
-            border-top: none;
-      }
+    from {
+        box-shadow: 0 0 0 white;
+        border: 1px solid white;
+        border-top: none;
+    }
 
-      to {
-            box-shadow: 0 2px 4px var(--shadowColor_default);
-            border: 1px solid var(--borderColor_aroundWhiteOrLightestGrey);
-            border-top: none;
-      }
-}
+    to {
+        box-shadow: 0 2px 4px var(--shadowColor_default);
+        border: 1px solid var(--borderColor_aroundWhiteOrLightestGrey);
+        border-top: none;
+    }
+} */

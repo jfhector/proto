@@ -2,15 +2,14 @@ import * as React from 'react'
 import { CollapseButton } from '../..'
 import * as s from './CollapsibleMeasureInDetailBoard.css'
 import classNames = require('classnames')
-import App from '../../../App'
+import App, { AppState } from '../../../App'
+import { MeasureName } from '../../../sharedTypes'
+import { getDataForMeasures } from '../../../data';
 
 interface Props {
-    title: string
     children: React.ReactNode
-    expanded?: boolean
-    rightNode?: React.ReactNode
-    rightNodeIsSticky?: boolean
-    rightNodeIsHighlighted?: boolean
+    appState: AppState
+    headerIsSticky?: boolean
     handleCollapseButtonClick?: React.MouseEventHandler<HTMLDivElement>
     refAssignmentFunctions: typeof App.prototype.refAssignmentFunctions
 }
@@ -26,48 +25,81 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
 
     render() {
         const {
-            title,
             children,
-            expanded,
-            rightNode,
-            rightNodeIsSticky,
-            rightNodeIsHighlighted,
+            appState,
+            headerIsSticky,
             handleCollapseButtonClick,
             refAssignmentFunctions,
         } = this.props
+
+        const {
+            measuresInDetailExpanded,
+            selectedMeasure,
+            measureSelectorContainerVisible,
+        } = appState
+
+        let dataForSelectedMeasure = getDataForMeasures(appState, appState.selectedMeasure!)
 
         return (
             <div
                 className={classNames(
                     s.CollapsibleContentBoard,
                     {
-                        [s.expanded]: expanded,
-                        [s.rightNodeIsSticky]: rightNodeIsSticky,
-                        [s.rightNodeIsHighlighted]: rightNodeIsHighlighted,
+                        [s.expanded]: measuresInDetailExpanded,
+                        [s.measuredChangedUpwards]: dataForSelectedMeasure.changedUpwards
+                        // [s.headerIsSticky]: headerIsSticky,
+                        // [s.headerIsHighlighted]: headerIsHighlighted,
                     }
                 )}
             >
                 <div
-                    className={s.header}
+                    className={s.headerContainer}
                     ref={refAssignmentFunctions.refAssignmentFunctionforRefToMeasureInDetailBoardHeaderContainingDiv}
                 >
-                    Header
+                    <div
+                        className={s.collapseButtonContainer}
+                    >
+                        <CollapseButton
+                            expanded={measuresInDetailExpanded}
+                            handleClick={handleCollapseButtonClick}
+                        />
+                    </div>
+
+                    <div
+                        className={s.title}
+                    >
+                        {appState.selectedMeasure}
+                    </div>
+
+                    <div
+                        className={s.caret}
+                    >
+                        \/
+                    </div>
+
+                    <div
+                        className={s.measureValueContainer}
+                    >
+                        <div
+                            className={s.measureValue}
+                        >
+                            {dataForSelectedMeasure.value}
+                        </div>
+
+                        <div
+                            className={s.measureValueChange}
+                        >
+                            {dataForSelectedMeasure.valueChange}
+                        </div>
+
+                        <div
+                            className={s.measurePercentChange}
+                        >
+                            {dataForSelectedMeasure.percentChange}
+                        </div>
+                    </div>
                 </div>
                 
-                <div
-                    className={s.collapseButtonContainer}
-                >
-                    <CollapseButton
-                        expanded={expanded}
-                        handleClick={handleCollapseButtonClick}
-                    />
-                </div>
-
-                <div
-                    className={s.title}
-                >
-                    {title}
-                </div>
 
 
 
@@ -79,7 +111,8 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
 
 
 
-                {expanded &&
+
+                {measuresInDetailExpanded &&
                     <div
                         className={s.childrenContainer}
                     >
