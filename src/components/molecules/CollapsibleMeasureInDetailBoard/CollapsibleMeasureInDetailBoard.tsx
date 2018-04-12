@@ -6,6 +6,8 @@ import App, { AppState } from '../../../App'
 import { MeasureName } from '../../../sharedTypes'
 import { getDataForMeasures } from '../../../data'
 
+const PROTOIMG_selectorCaret = require('../../../assets/PROTOIMG_selectorCaret.png')
+
 interface Props {
     children: React.ReactNode
     appState: AppState
@@ -74,7 +76,9 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
                     <div
                         className={s.caret}
                     >
-                        \/
+                        <img 
+                            src={PROTOIMG_selectorCaret}
+                        />
                     </div>
 
                     <div

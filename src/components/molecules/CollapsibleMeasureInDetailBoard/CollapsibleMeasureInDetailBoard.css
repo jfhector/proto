@@ -17,6 +17,7 @@
     display: grid;
     grid-template-columns: auto auto auto 1fr auto;
     grid-template-areas: "buttonArea    titleArea   caretArea   .   measureValueArea";
+    height: 40px;
 }
 
 .collapseButtonContainer {
@@ -38,6 +39,8 @@
     align-self: center;
     font-size: x-large;
     font-weight: bold;
+    margin-left: 5px;
+    margin-top: 7px;
 }
 
 .measureValueContainer {
@@ -46,23 +49,20 @@
     grid-template-columns: auto auto auto;
     grid-template-areas: "measureValueArea  measureValueChangeArea  measurePercentChangeArea";
     margin-right: 20px;
-    align-self: center;
-    font-size: large;
-    font-weight: bold;
 }
 
 .measureValueContainer .measureValue {
     grid-area: measureValueArea;
-    align-self: inherit;
-    font-size: inherit;
-    font-weight: inherit;
+    align-self: center;
+    font-size: medium;
+    font-weight: 500;
 }
 
 .measureValueContainer .measureValueChange {
     grid-area: measureValueChangeArea;
-    align-self: inherit;
+    align-self: center;
     font-size: medium;
-    font-weight: inherit;
+    font-weight: 500;
     margin-left: 20px;
     color: var(--textColor_negative);
 }
@@ -73,9 +73,9 @@
 
 .measureValueContainer .measurePercentChange {
     grid-area: measurePercentChangeArea;
-    align-self: inherit;
+    align-self: center;
     font-size: medium;
-    font-weight: inherit;
+    font-weight: 500;
     margin-left: 20px;
     color: var(--textColor_negative);
 }
