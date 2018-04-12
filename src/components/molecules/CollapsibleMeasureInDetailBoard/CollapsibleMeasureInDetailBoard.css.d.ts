@@ -10,3 +10,6 @@ export const measuredChangedUpwards: string;
 export const measurePercentChange: string;
 export const childrenContainer: string;
 export const expanded: string;
+export const headerIsSticky: string;
+export const headerContainerVisible: string;
+export const flash: string;
