@@ -79,6 +79,7 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
                         <img 
                             src={PROTOIMG_selectorCaret}
                         />
+
                     </div>
 
                     <div
