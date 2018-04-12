@@ -28,7 +28,6 @@ interface Props {
 }
 
 export class DataViewComponent extends React.Component<Props, {}> {
-    refToMeasureInDetailCollapsibleContentBoard: CollapsibleContentBoard
 
     render() {
         const {
@@ -182,11 +181,6 @@ export class DataViewComponent extends React.Component<Props, {}> {
                 </CollapsibleContentBoard>
 
                 <CollapsibleContentBoard
-                    ref={
-                        (component: CollapsibleContentBoard) => {
-                            this.refToMeasureInDetailCollapsibleContentBoard = component
-                        }
-                    }
                     title='Measure in detail'
                     rightNodeIsSticky
                     rightNodeIsHighlighted={appState.measureSelectorContainerVisible}
