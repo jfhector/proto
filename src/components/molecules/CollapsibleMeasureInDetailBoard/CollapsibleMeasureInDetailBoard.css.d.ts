@@ -11,6 +11,7 @@ export const measurePercentChange: string;
 export const measureSelectorContainer: string;
 export const selectorPointyTop: string;
 export const childrenContainer: string;
+export const backdropToCatchClicksAwayFromMeasureSelector: string;
 export const expanded: string;
 export const headerIsSticky: string;
 export const headerContainerVisible: string;

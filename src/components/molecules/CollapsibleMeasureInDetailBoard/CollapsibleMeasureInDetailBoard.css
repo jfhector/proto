@@ -90,6 +90,7 @@
 
 .headerContainer .measureSelectorContainer {
     visibility: hidden;
+    z-index: 5;
     position: absolute;
     top: 54px;
     left: 40px;
@@ -120,6 +121,16 @@
 .childrenContainer {
     grid-area: childrenArea;
     margin: 10px 20px 0 20px;
+}
+
+.headerContainer .backdropToCatchClicksAwayFromMeasureSelector {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: transparent;
+    position: fixed;
+    z-index: 4;
 }
 
 /* expanded BOOL PROP */

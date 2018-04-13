@@ -118,6 +118,13 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
                             className={s.selectorPointyTop}
                         />
                     </div>
+
+                    {appState.measureSelectorVisible &&
+                        <div
+                            className={s.backdropToCatchClicksAwayFromMeasureSelector}
+                            onClick={actions.toggleMeasureSelectorVisible}
+                        />
+                    }
                 </div>
                 
                 {measuresInDetailExpanded &&
