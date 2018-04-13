@@ -48,7 +48,7 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
                     s.CollapsibleContentBoard,
                     {
                         [s.expanded]: measuresInDetailExpanded,
-                        [s.measuredChangedUpwards]: dataForSelectedMeasure.changedUpwards,
+                        [s.measureChangedUpwards]: dataForSelectedMeasure.changedUpwards,
                         [s.headerIsSticky]: headerIsSticky,
                         [s.headerContainerVisible]: appState.measureSelectorContainerVisible,
                     }
@@ -103,6 +103,12 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
                             {dataForSelectedMeasure.percentChange}
                         </div>
                     </div>
+
+                    {/* <div
+                        // className={s.measureSelectorContainer}
+                    >
+                        Caca
+                    </div> */}
                 </div>
                 
                 {measuresInDetailExpanded &&

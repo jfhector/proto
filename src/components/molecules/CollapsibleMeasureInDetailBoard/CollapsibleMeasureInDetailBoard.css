@@ -1,5 +1,5 @@
 .CollapsibleContentBoard {
-    padding-top: 15px;
+    padding-top: 4px;
     margin-bottom: 20px;
     display: grid;
     grid-template-columns: 1fr;
@@ -18,16 +18,17 @@
     grid-template-columns: auto auto auto 1fr auto;
     grid-template-areas: "buttonArea    titleArea   caretArea   .   measureValueArea";
     height: 50px;
+    overflow: visible;
 }
 
-.collapseButtonContainer {
+.headerContainer .collapseButtonContainer {
     grid-area: buttonArea;
     align-self: center;
     margin-left: 20px;
     margin-right: 20px;
 }
 
-.title {
+.headerContainer .title {
     grid-area: titleArea;
     align-self: center;
     font-size: x-large;
@@ -35,7 +36,7 @@
     cursor: pointer;
 }
 
-.caret {
+.headerContainer .caret {
     grid-area: caretArea;
     align-self: center;
     font-size: x-large;
@@ -45,7 +46,7 @@
     cursor: pointer;
 }
 
-.measureValueContainer {
+.headerContainer .measureValueContainer {
     grid-area: measureValueArea;
     display: grid;
     grid-template-columns: auto auto auto;
@@ -53,14 +54,14 @@
     margin-right: 20px;
 }
 
-.measureValueContainer .measureValue {
+.headerContainer .measureValueContainer .measureValue {
     grid-area: measureValueArea;
     align-self: center;
     font-size: medium;
     font-weight: 500;
 }
 
-.measureValueContainer .measureValueChange {
+.headerContainer .measureValueContainer .measureValueChange {
     grid-area: measureValueChangeArea;
     align-self: center;
     font-size: medium;
@@ -69,11 +70,11 @@
     color: var(--textColor_negative);
 }
 
-.measuredChangedUpwards .measureValueChange {
+.measureChangedUpwards .headerContainer .measureValueContainer .measureValueChange .measureValueChange {
     color: var(--textColor_positive);
 }
 
-.measureValueContainer .measurePercentChange {
+.headerContainer .measureValueContainer .measurePercentChange {
     grid-area: measurePercentChangeArea;
     align-self: center;
     font-size: medium;
@@ -82,7 +83,7 @@
     color: var(--textColor_negative);
 }
 
-.measuredChangedUpwards .measurePercentChange {
+.measureChangedUpwards .headerContainer .measureValueContainer .measurePercentChange {
     color: var(--textColor_positive);
 }
 

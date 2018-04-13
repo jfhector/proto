@@ -6,7 +6,7 @@ export const caret: string;
 export const measureValueContainer: string;
 export const measureValue: string;
 export const measureValueChange: string;
-export const measuredChangedUpwards: string;
+export const measureChangedUpwards: string;
 export const measurePercentChange: string;
 export const childrenContainer: string;
 export const expanded: string;
