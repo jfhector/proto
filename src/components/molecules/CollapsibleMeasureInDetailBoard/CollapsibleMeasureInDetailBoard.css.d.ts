@@ -10,6 +10,7 @@ export const measureChangedUpwards: string;
 export const measurePercentChange: string;
 export const measureSelectorContainer: string;
 export const selectorPointyTop: string;
+export const selectableMeasureName: string;
 export const childrenContainer: string;
 export const backdropToCatchClicksAwayFromMeasureSelector: string;
 export const expanded: string;

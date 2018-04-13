@@ -5,6 +5,7 @@ import classNames = require('classnames')
 import App, { AppState } from '../../../App'
 import { MeasureName } from '../../../sharedTypes'
 import { getDataForMeasures } from '../../../data'
+import { measureNames } from '../../../data/measureNames';
 
 const PROTOIMG_selectorCaret = require('../../../assets/PROTOIMG_selectorCaret.png')
 
@@ -112,7 +113,19 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
                     <div
                         className={s.measureSelectorContainer}
                     >
-                        Caca
+                        {
+                            measureNames.map(
+                                (measureName: MeasureName) => (
+                                    <div
+                                        className={s.selectableMeasureName}
+                                        key={`${measureName}Div`}
+                                        onClick={actions.selectionChanges.changeSelectedMeasure(measureName)}
+                                    >
+                                        {measureName}
+                                    </div>
+                                )
+                            )
+                        }
 
                         <div
                             className={s.selectorPointyTop}

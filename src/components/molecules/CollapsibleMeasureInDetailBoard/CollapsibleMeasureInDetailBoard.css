@@ -97,8 +97,9 @@
     background-color: #fffe;
     border-radius: 5px;
     border: 1px solid var(--borderColor_aroundWhiteOrLightestGrey);
-    width: 270px;
-    padding: 20px;
+    width: max-content;
+    padding-top: 10px;
+    padding-bottom: 10px;
     font-size: x-large;
     font-weight: bold;
     min-height: 100px;
@@ -116,6 +117,16 @@
     top: -8px;
     left: 50px;
     transform: rotateZ(45deg);
+}
+
+.headerContainer .measureSelectorContainer .selectableMeasureName {
+    line-height: 1.5;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.headerContainer .measureSelectorContainer .selectableMeasureName:hover {
+    background-color: var(--backgroundColor_backgrounds_athensGray);
 }
 
 .childrenContainer {
