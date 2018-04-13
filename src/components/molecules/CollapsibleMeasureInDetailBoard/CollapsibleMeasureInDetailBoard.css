@@ -87,6 +87,33 @@
     color: var(--textColor_positive);
 }
 
+.headerContainer .measureSelectorContainer {
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid var(--borderColor_aroundWhiteOrLightestGrey);
+    width: 270px;
+    padding: 20px;
+    font-size: large;
+    font-weight: bold;
+    min-height: 100px;
+}
+
+.headerContainer .measureSelectorContainer .selectorPointyTop {
+    background-color: white;
+    border: 1px solid var(--borderColor_aroundWhiteOrLightestGrey);
+    border-right-color: white;
+    border-bottom-color: white;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: -8px;
+    left: 50px;
+    transform: rotateZ(45deg);
+}
+
 .childrenContainer {
     grid-area: childrenArea;
     margin: 10px 20px 0 20px;

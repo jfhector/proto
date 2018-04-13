@@ -8,6 +8,8 @@ export const measureValue: string;
 export const measureValueChange: string;
 export const measureChangedUpwards: string;
 export const measurePercentChange: string;
+export const measureSelectorContainer: string;
+export const selectorPointyTop: string;
 export const childrenContainer: string;
 export const expanded: string;
 export const headerIsSticky: string;

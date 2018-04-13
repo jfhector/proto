@@ -104,11 +104,15 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
                         </div>
                     </div>
 
-                    {/* <div
-                        // className={s.measureSelectorContainer}
+                    <div
+                        className={s.measureSelectorContainer}
                     >
                         Caca
-                    </div> */}
+
+                        <div
+                            className={s.selectorPointyTop}
+                        />
+                    </div>
                 </div>
                 
                 {measuresInDetailExpanded &&
