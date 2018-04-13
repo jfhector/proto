@@ -14,6 +14,7 @@ interface Props {
     headerIsSticky?: boolean
     handleCollapseButtonClick?: React.MouseEventHandler<HTMLDivElement>
     refAssignmentFunctions: typeof App.prototype.refAssignmentFunctions
+    actions: typeof App.prototype.actions
 }
 
 export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> {
@@ -32,6 +33,7 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
             headerIsSticky,
             handleCollapseButtonClick,
             refAssignmentFunctions,
+            actions,
         } = this.props
 
         const {
@@ -70,12 +72,14 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
 
                     <div
                         className={s.title}
+                        onClick={actions.toggleMeasureSelectorVisible}
                     >
                         {appState.selectedMeasure}
                     </div>
 
                     <div
                         className={s.caret}
+                        onClick={actions.toggleMeasureSelectorVisible}
                     >
                         <img 
                             src={PROTOIMG_selectorCaret}

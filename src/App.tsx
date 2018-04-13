@@ -105,12 +105,20 @@ class App extends React.Component<Props, AppState> {
                 })
             )
         },
-        conditionallySetMeasureSelectorContainerVisibleStateBasedOnScrollY: () => {
+        conditionallySetMeasureInDetailBoardHeaderVisibleStateBasedOnScrollY: () => {
             this.setState({
                   measureInDetailBoardHeaderVisible: (
                     (this.refToMeasureInDetailBoardHeaderContainingDiv.getBoundingClientRect() as DOMRect).top > 0
                   ) ? false : true,
             })
+        },
+        toggleMeasureSelectorVisible: () => {
+            // console.log('toggleMeasureSelectorVisible ran')
+            this.setState(
+                (prevState: AppState) => ({
+                    measureSelectorVisible: !prevState.measureSelectorVisible
+                })
+            )
         },
         selectionChanges: {
             changeSelectedDuration: (newlySelectedDuration: DurationOption) => {
@@ -260,14 +268,14 @@ class App extends React.Component<Props, AppState> {
     componentDidMount() {
         window.addEventListener(
             'scroll',
-            this.actions.conditionallySetMeasureSelectorContainerVisibleStateBasedOnScrollY
+            this.actions.conditionallySetMeasureInDetailBoardHeaderVisibleStateBasedOnScrollY
         )
     }
 
     componentWillUnmount() {
         window.removeEventListener(
             'scroll',
-            this.actions.conditionallySetMeasureSelectorContainerVisibleStateBasedOnScrollY
+            this.actions.conditionallySetMeasureInDetailBoardHeaderVisibleStateBasedOnScrollY
         )
     }
 

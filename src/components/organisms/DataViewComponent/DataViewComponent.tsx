@@ -185,6 +185,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                     appState={appState}
                     handleCollapseButtonClick={actions.expansionToggles.toggleMeasureInDetailExpanded}
                     refAssignmentFunctions={refAssignmentFunctions}
+                    actions={actions}
                 >
                     <CollapsibleContentModule
                         title='Trend'
