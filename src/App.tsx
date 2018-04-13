@@ -43,8 +43,11 @@ export interface AppState {
     splitByStoreFormatExpanded?: boolean,
     splitByCustomerSegmentExpanded?: boolean,
 
+    // MEASURE IN DETAIL HEADER VISIBLE
+    measureInDetailBoardHeaderVisible?: boolean,
+
     // MEASURE SELECTOR VISIBLE
-    measureSelectorContainerVisible?: boolean,
+    measureSelectorVisible?: boolean,
 }
 
 class App extends React.Component<Props, AppState> {
@@ -83,7 +86,8 @@ class App extends React.Component<Props, AppState> {
         splitByCustomerSegmentExpanded: false,
         splitByRegionExpanded: false,
 
-        measureSelectorContainerVisible: false,
+        measureInDetailBoardHeaderVisible: false,
+        measureSelectorVisible: false,
     }
 
     refAssignmentFunctions = {
@@ -103,7 +107,7 @@ class App extends React.Component<Props, AppState> {
         },
         conditionallySetMeasureSelectorContainerVisibleStateBasedOnScrollY: () => {
             this.setState({
-                  measureSelectorContainerVisible: (
+                  measureInDetailBoardHeaderVisible: (
                     (this.refToMeasureInDetailBoardHeaderContainingDiv.getBoundingClientRect() as DOMRect).top > 0
                   ) ? false : true,
             })
@@ -285,7 +289,7 @@ class App extends React.Component<Props, AppState> {
             splitByCustomerSegmentExpanded,
             splitByRegionExpanded,
 
-            measureSelectorContainerVisible,
+            measureInDetailBoardHeaderVisible,
         } = this.state
 
         return (

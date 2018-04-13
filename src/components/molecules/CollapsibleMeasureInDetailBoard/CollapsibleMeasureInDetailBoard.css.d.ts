@@ -15,3 +15,4 @@ export const expanded: string;
 export const headerIsSticky: string;
 export const headerContainerVisible: string;
 export const flash: string;
+export const measureSelectorVisible: string;

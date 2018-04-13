@@ -88,21 +88,23 @@
 }
 
 .headerContainer .measureSelectorContainer {
+    visibility: hidden;
     position: absolute;
-    top: 50px;
-    left: 20px;
-    background-color: white;
+    top: 54px;
+    left: 40px;
+    background-color: #fffe;
     border-radius: 5px;
     border: 1px solid var(--borderColor_aroundWhiteOrLightestGrey);
     width: 270px;
     padding: 20px;
-    font-size: large;
+    font-size: x-large;
     font-weight: bold;
     min-height: 100px;
+    box-shadow: 0 2px 4px var(--shadowColor_default);
 }
 
 .headerContainer .measureSelectorContainer .selectorPointyTop {
-    background-color: white;
+    background-color: #fffe;
     border: 1px solid var(--borderColor_aroundWhiteOrLightestGrey);
     border-right-color: white;
     border-bottom-color: white;
@@ -158,4 +160,10 @@
         /* border-top: none; */
         background-color: #fffe;
     }
+}
+
+/* measureSelectorVisible BOOL PROP */
+
+.measureSelectorVisible .headerContainer .measureSelectorContainer {
+    visibility: visible;
 }

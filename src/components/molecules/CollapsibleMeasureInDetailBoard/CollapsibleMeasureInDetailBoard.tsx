@@ -37,7 +37,7 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
         const {
             measuresInDetailExpanded,
             selectedMeasure,
-            measureSelectorContainerVisible,
+            measureInDetailBoardHeaderVisible,
         } = appState
 
         let dataForSelectedMeasure = getDataForMeasures(appState, appState.selectedMeasure!)
@@ -50,7 +50,8 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
                         [s.expanded]: measuresInDetailExpanded,
                         [s.measureChangedUpwards]: dataForSelectedMeasure.changedUpwards,
                         [s.headerIsSticky]: headerIsSticky,
-                        [s.headerContainerVisible]: appState.measureSelectorContainerVisible,
+                        [s.headerContainerVisible]: appState.measureInDetailBoardHeaderVisible,
+                        [s.measureSelectorVisible]: appState.measureSelectorVisible
                     }
                 )}
             >
