@@ -119,7 +119,10 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
                                     <div
                                         className={s.selectableMeasureName}
                                         key={`${measureName}Div`}
-                                        onClick={actions.selectionChanges.changeSelectedMeasure(measureName)}
+                                        onClick={() => {
+                                            actions.selectionChanges.changeSelectedMeasure(measureName)
+                                            actions.toggleMeasureSelectorVisible()
+                                        }}
                                     >
                                         {measureName}
                                     </div>
