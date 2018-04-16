@@ -89,7 +89,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                 </div>
 
                 <CollapsibleContentBoard
-                    title='Measures summary'
+                    title='Performance overview'
                     expanded={appState.measuresSummaryExpanded}
                     handleCollapseButtonClick={actions.expansionToggles.toggleMeasuresSummaryExpanded}
                 >
