@@ -15,8 +15,8 @@
 .headerContainer {
     grid-area: headerArea;
     display: grid;
-    grid-template-columns: auto auto auto 1fr auto;
-    grid-template-areas: "buttonArea    titleArea   .   measureValueArea";
+    grid-template-columns: auto auto 1fr auto;
+    grid-template-areas: "buttonArea    titleArea   .   selectorContainerArea";
     height: 50px;
     overflow: visible;
 }
@@ -38,7 +38,16 @@
 }
 
 .headerContainer .selectorContainer {
-    background-color: red;
+    grid-area: selectorContainerArea;
+    margin-right: 20px;
+    align-self: center;
+}
+
+.headerContainer .selectorContainer .selectMeasureLabel {
+    font-size: small;
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 10px;
 }
 
 .childrenContainer {

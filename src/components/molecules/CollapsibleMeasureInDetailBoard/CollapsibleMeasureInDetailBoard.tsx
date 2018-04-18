@@ -78,10 +78,15 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
                     <div
                         className={s.selectorContainer}
                     >
+                        <div
+                            className={s.selectMeasureLabel}
+                        >
+                            Selected measure:
+                        </div>
                         <Selector
-                            optionsArray={}
-                            value={}
-                            handleSelectorChange={}
+                            optionsArray={measureNames}
+                            value={`${selectedMeasure}`}
+                            handleSelectorChange={actions.selectionChanges.changeSelectedMeasure}
                         />
                     </div>
                 </div>
