@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { CollapseButton } from '../..'
+import { CollapseButton, Selector } from '../../'
 import * as s from './CollapsibleMeasureInDetailBoard.css'
 import classNames = require('classnames')
 import App, { AppState } from '../../../App'
@@ -49,7 +49,6 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
                     s.CollapsibleContentBoard,
                     {
                         [s.expanded]: measuresInDetailExpanded,
-                        [s.measureChangedUpwards]: dataForSelectedMeasure.changedUpwards,
                         [s.headerIsSticky]: headerIsSticky,
                         [s.headerContainerVisible]: appState.measureInDetailBoardHeaderVisible,
                         [s.measureSelectorVisible]: appState.measureSelectorVisible
@@ -74,6 +73,16 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
                         onClick={actions.toggleMeasureSelectorVisible}
                     >
                         Measure in detail
+                    </div>
+
+                    <div
+                        className={s.selectorContainer}
+                    >
+                        <Selector
+                            optionsArray={}
+                            value={}
+                            handleSelectorChange={}
+                        />
                     </div>
                 </div>
                 
