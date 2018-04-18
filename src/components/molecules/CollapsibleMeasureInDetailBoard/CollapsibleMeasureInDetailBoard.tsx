@@ -5,9 +5,7 @@ import classNames = require('classnames')
 import App, { AppState } from '../../../App'
 import { MeasureName } from '../../../sharedTypes'
 import { getDataForMeasures } from '../../../data'
-import { measureNames } from '../../../data/measureNames';
-
-const PROTOIMG_selectorCaret = require('../../../assets/PROTOIMG_selectorCaret.png')
+import { measureNames } from '../../../data/measureNames'
 
 interface Props {
     children: React.ReactNode
@@ -75,64 +73,7 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
                         className={s.title}
                         onClick={actions.toggleMeasureSelectorVisible}
                     >
-                        {appState.selectedMeasure}
-                    </div>
-
-                    <div
-                        className={s.caret}
-                        onClick={actions.toggleMeasureSelectorVisible}
-                    >
-                        <img 
-                            src={PROTOIMG_selectorCaret}
-                        />
-
-                    </div>
-
-                    <div
-                        className={s.measureValueContainer}
-                    >
-                        <div
-                            className={s.measureValue}
-                        >
-                            {dataForSelectedMeasure.value}
-                        </div>
-
-                        <div
-                            className={s.measureValueChange}
-                        >
-                            {dataForSelectedMeasure.valueChange}
-                        </div>
-
-                        <div
-                            className={s.measurePercentChange}
-                        >
-                            {dataForSelectedMeasure.percentChange}
-                        </div>
-                    </div>
-
-                    <div
-                        className={s.measureSelectorContainer}
-                    >
-                        {
-                            measureNames.map(
-                                (measureName: MeasureName) => (
-                                    <div
-                                        className={s.selectableMeasureName}
-                                        key={`${measureName}Div`}
-                                        onClick={() => {
-                                            actions.selectionChanges.changeSelectedMeasure(measureName)
-                                            actions.toggleMeasureSelectorVisible()
-                                        }}
-                                    >
-                                        {measureName}
-                                    </div>
-                                )
-                            )
-                        }
-
-                        <div
-                            className={s.selectorPointyTop}
-                        />
+                        Measure in detail
                     </div>
 
                     {appState.measureSelectorVisible &&
