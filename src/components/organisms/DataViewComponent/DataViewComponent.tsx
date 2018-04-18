@@ -188,7 +188,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                     actions={actions}
                 >
                     <CollapsibleContentModule
-                        title={`${selectedMeasure} : Trend`}
+                        title='Trend'
                         displayedFilters={displayedFilters}
                         expanded={appState.trendGraphExpanded}
                         handleCollapseButtonClick={actions.expansionToggles.toggleTrendGraphExpanded}
@@ -219,7 +219,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                     </CollapsibleContentModule>
 
                     <CollapsibleContentModule
-                        title={`${selectedMeasure} : Top 10 movers in ${displayedFilters.subcategory}`}
+                        title={`Top 10 movers in ${displayedFilters.subcategory}`}
                         displayedFilters={displayedFilters}
                         expanded={appState.splitBySubcategoryExpanded}
                         handleCollapseButtonClick={actions.expansionToggles.toggleSplitBySubcategoryExpanded}
@@ -250,7 +250,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                     </CollapsibleContentModule>
 
                     <CollapsibleContentModule
-                        title={`${selectedMeasure} : Split by region`}
+                        title='Split by region'
                         displayedFilters={displayedFilters}
                         expanded={appState.splitByRegionExpanded}
                         handleCollapseButtonClick={actions.expansionToggles.toggleSplitByRegionExpanded}
@@ -261,7 +261,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                     </CollapsibleContentModule>
 
                     <CollapsibleContentModule
-                        title={`${selectedMeasure} : Split by store format`}
+                        title='Split by store format'
                         displayedFilters={displayedFilters}
                         expanded={appState.splitByStoreFormatExpanded}
                         handleCollapseButtonClick={actions.expansionToggles.toggleSplitByStoreFormatExpanded}
@@ -272,7 +272,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                     </CollapsibleContentModule>
 
                     <CollapsibleContentModule
-                        title={`${selectedMeasure} : Split by customer segment`}
+                        title='Split by customer segment'
                         displayedFilters={displayedFilters}
                         expanded={appState.splitByCustomerSegmentExpanded}
                         handleCollapseButtonClick={actions.expansionToggles.toggleSplitByCustomerSegmentExpanded}
