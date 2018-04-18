@@ -75,7 +75,7 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
                         className={s.title}
                         onClick={actions.toggleMeasureSelectorVisible}
                     >
-                        {appState.selectedMeasure} in detail
+                        {appState.selectedMeasure}
                     </div>
 
                     <div
