@@ -45,9 +45,6 @@ export interface AppState {
 
     // MEASURE IN DETAIL HEADER VISIBLE
     measureInDetailBoardHeaderVisible?: boolean,
-
-    // MEASURE SELECTOR VISIBLE
-    measureSelectorVisible?: boolean,
 }
 
 class App extends React.Component<Props, AppState> {
@@ -87,7 +84,6 @@ class App extends React.Component<Props, AppState> {
         splitByRegionExpanded: false,
 
         measureInDetailBoardHeaderVisible: false,
-        measureSelectorVisible: false,
     }
 
     refAssignmentFunctions = {
@@ -111,14 +107,6 @@ class App extends React.Component<Props, AppState> {
                     (this.refToMeasureInDetailBoardHeaderContainingDiv.getBoundingClientRect() as DOMRect).top > 0
                   ) ? false : true,
             })
-        },
-        toggleMeasureSelectorVisible: () => {
-            // console.log('toggleMeasureSelectorVisible ran')
-            this.setState(
-                (prevState: AppState) => ({
-                    measureSelectorVisible: !prevState.measureSelectorVisible
-                })
-            )
         },
         selectionChanges: {
             changeSelectedDuration: (newlySelectedDuration: DurationOption) => {
