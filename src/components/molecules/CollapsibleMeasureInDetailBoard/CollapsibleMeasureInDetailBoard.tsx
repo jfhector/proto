@@ -50,8 +50,7 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
                     {
                         [s.expanded]: measuresInDetailExpanded,
                         [s.headerIsSticky]: headerIsSticky,
-                        [s.headerContainerVisible]: appState.measureInDetailBoardHeaderVisible,
-                        [s.measureSelectorVisible]: appState.measureSelectorVisible
+                        [s.headerContainerVisible]: appState.measureInDetailBoardHeaderVisible
                     }
                 )}
             >
@@ -70,7 +69,6 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
 
                     <div
                         className={s.title}
-                        onClick={actions.toggleMeasureSelectorVisible}
                     >
                         Measure in detail
                     </div>

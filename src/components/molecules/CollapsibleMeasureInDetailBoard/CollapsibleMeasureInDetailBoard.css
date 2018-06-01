@@ -75,29 +75,23 @@
 .headerContainerVisible .headerContainer {
     box-shadow: 0 2px 4px var(--shadowColor_default);
     background-color: #fffe;
-    /* border: 1px solid var(--borderColor_aroundWhiteOrLightestGrey); */
-    /* border-top: none; */
     animation: flash 200ms;
 }
 
 @keyframes flash {
     from {
         box-shadow: 0 0 0 white;
-        /* border: 1px solid white; */
-        /* border-top: none; */
         background-color: transparent;
     }
 
     to {
         box-shadow: 0 2px 4px var(--shadowColor_default);
-        /* border: 1px solid var(--borderColor_aroundWhiteOrLightestGrey); */
-        /* border-top: none; */
         background-color: #fffe;
     }
 }
 
 /* measureSelectorVisible BOOL PROP */
 
-.measureSelectorVisible .headerContainer .measureSelectorContainer {
+/* .measureSelectorVisible .headerContainer .measureSelectorContainer {
     visibility: visible;
-}
+} */
