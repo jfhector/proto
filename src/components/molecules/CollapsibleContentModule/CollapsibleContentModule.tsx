@@ -3,6 +3,7 @@ import { FiltersSet } from '../../../sharedTypes'
 import * as s from './CollapsibleContentModule.css'
 import { CollapseButton } from '../..'
 import classNames = require('classnames')
+import { AppState } from '../../../App'
 
 interface Props {
     title: string
@@ -10,6 +11,7 @@ interface Props {
     displayedFilters: FiltersSet
     expanded?: boolean
     handleCollapseButtonClick?: React.MouseEventHandler<HTMLElement>
+    appState: AppState
 }
 
 export class CollapsibleContentModule extends React.Component<Props, {}> {
@@ -25,7 +27,12 @@ export class CollapsibleContentModule extends React.Component<Props, {}> {
             displayedFilters,
             expanded,
             handleCollapseButtonClick,
+            appState,
         } = this.props
+
+        const {
+            selectedMeasure
+        } = appState
 
         const {
             duration,
@@ -67,7 +74,7 @@ export class CollapsibleContentModule extends React.Component<Props, {}> {
                     <div
                         className={s.subTitle}
                     >
-                        {`${duration} • ${dates} ${comparison}`}
+                        {`${selectedMeasure} • ${duration} • ${dates} ${comparison}`}
                         <br />
                         {`${subcategory} • ${region} • ${storeFormat} • ${customerSegment}`}
                     </div>

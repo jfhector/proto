@@ -9,6 +9,7 @@ export * from './atoms/Selector/Selector'
 export * from './molecules/KpiTile/KpiTile'
 export * from './molecules/CollapsibleContentModule/CollapsibleContentModule'
 export * from './molecules/CollapsibleContentBoard/CollapsibleContentBoard'
+export * from './molecules/CollapsibleMeasureInDetailBoard/CollapsibleMeasureInDetailBoard'
 
 // ORGANISMS
 export * from './organisms/Sidebar/Sidebar'

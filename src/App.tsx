@@ -43,12 +43,12 @@ export interface AppState {
     splitByStoreFormatExpanded?: boolean,
     splitByCustomerSegmentExpanded?: boolean,
 
-    // MEASURE SELECTOR VISIBLE
-    measureSelectorContainerVisible?: boolean,
+    // MEASURE IN DETAIL HEADER VISIBLE
+    measureInDetailBoardHeaderVisible?: boolean,
 }
 
 class App extends React.Component<Props, AppState> {
-    refToFloatingMeasureSelectorContainingDiv: HTMLDivElement
+    refToMeasureInDetailBoardHeaderContainingDiv: HTMLDivElement
 
     state: AppState = {
         selectedFilters: {
@@ -83,12 +83,12 @@ class App extends React.Component<Props, AppState> {
         splitByCustomerSegmentExpanded: false,
         splitByRegionExpanded: false,
 
-        measureSelectorContainerVisible: false,
+        measureInDetailBoardHeaderVisible: false,
     }
 
     refAssignmentFunctions = {
-        refAssignmentFunctionforRefToFloatingMeasureSelectorContainingDiv: (element: HTMLDivElement) => {
-            this.refToFloatingMeasureSelectorContainingDiv = element
+        refAssignmentFunctionforRefToMeasureInDetailBoardHeaderContainingDiv: (element: HTMLDivElement) => {
+            this.refToMeasureInDetailBoardHeaderContainingDiv = element
         }
     }
 
@@ -101,10 +101,10 @@ class App extends React.Component<Props, AppState> {
                 })
             )
         },
-        conditionallySetMeasureSelectorContainerVisibleStateBasedOnScrollY: () => {
+        conditionallySetMeasureInDetailBoardHeaderVisibleStateBasedOnScrollY: () => {
             this.setState({
-                  measureSelectorContainerVisible: (
-                    (this.refToFloatingMeasureSelectorContainingDiv.getBoundingClientRect() as DOMRect).top > 0
+                  measureInDetailBoardHeaderVisible: (
+                    (this.refToMeasureInDetailBoardHeaderContainingDiv.getBoundingClientRect() as DOMRect).top > 0
                   ) ? false : true,
             })
         },
@@ -192,16 +192,6 @@ class App extends React.Component<Props, AppState> {
                     selectedMeasure: newlySelectedMeasure
                 })
             },
-            handleFloatingMeasureSelectorChange: (newlySelectedMeasure: MeasureName) => {
-                this.setState({
-                    selectedMeasure: newlySelectedMeasure
-                })
-                this.refToFloatingMeasureSelectorContainingDiv.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start',
-                    inline: 'nearest',
-                })
-            }
         },
         expansionToggles: {
             toggleMeasuresSummaryExpanded: () => {
@@ -266,14 +256,14 @@ class App extends React.Component<Props, AppState> {
     componentDidMount() {
         window.addEventListener(
             'scroll',
-            this.actions.conditionallySetMeasureSelectorContainerVisibleStateBasedOnScrollY
+            this.actions.conditionallySetMeasureInDetailBoardHeaderVisibleStateBasedOnScrollY
         )
     }
 
     componentWillUnmount() {
         window.removeEventListener(
             'scroll',
-            this.actions.conditionallySetMeasureSelectorContainerVisibleStateBasedOnScrollY
+            this.actions.conditionallySetMeasureInDetailBoardHeaderVisibleStateBasedOnScrollY
         )
     }
 
@@ -295,7 +285,7 @@ class App extends React.Component<Props, AppState> {
             splitByCustomerSegmentExpanded,
             splitByRegionExpanded,
 
-            measureSelectorContainerVisible,
+            measureInDetailBoardHeaderVisible,
         } = this.state
 
         return (

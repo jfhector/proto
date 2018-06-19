@@ -20,6 +20,7 @@
 }
 
 .sideBarContainer {
+      position: -webkit-sticky;
       position: sticky;
       top: 20px;
       height: max-content;
