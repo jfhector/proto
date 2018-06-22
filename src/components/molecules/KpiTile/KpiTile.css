@@ -1,65 +1,65 @@
 .KpiTile {
-      width: 265px;
-      height: 95px;
-      display: grid;
-      grid-template-areas:
-            "measureName measureName"
-            "measureValue measureValue"
-            "valueChange percentChange";
-      margin-bottom: 15px;
-      padding: 10px;
-      border-radius: 3px;
-      background-color: var(--backgroundColor_backgrounds_fbfbfc);
-      border: 1px solid var(--borderColor_aroundWhiteOrLightestGrey);
-      cursor: pointer;
+    width: 265px;
+    height: 95px;
+    display: grid;
+    grid-template-areas:
+        "measureName measureName"
+        "measureValue measureValue"
+        "valueChange percentChange";
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 3px;
+    background-color: var(--backgroundColor_backgrounds_fbfbfc);
+    border: 1px solid var(--borderColor_aroundWhiteOrLightestGrey);
+    cursor: pointer;
 }
 
 .KpiTile:hover:not(.selected) {
-      border: 2px solid var(--borderColor_button_info);
+    border: 2px solid var(--borderColor_button_info);
 }
 
 .measureName {
-      grid-area: measureName;
-      font-size: medium;
-      color: var(--textColor_button_outlineButton_info);
+    grid-area: measureName;
+    font-size: medium;
+    color: var(--textColor_button_outlineButton_info);
 }
 
 .measureValue {
-      grid-area: measureValue;
-      align-self: center;
-      font-size: large;
-      font-weight: bold;
+    grid-area: measureValue;
+    align-self: center;
+    font-size: large;
+    font-weight: bold;
 }
 
 .changeMeasure {
-      font-size: medium;
-      font-weight: bold;
-      color: var(--textColor_negative);
-      align-self: end;
+    font-size: medium;
+    font-weight: bold;
+    color: var(--textColor_negative);
+    align-self: end;
 }
 
 .valueChange {
-      grid-area: valueChange;
+    grid-area: valueChange;
 }
 
 .percentChange {
-      grid-area: percentChange;
-      justify-self: end;
+    grid-area: percentChange;
+    justify-self: end;
 }
 
 /* selected BOOL PROP */
 
 .selected {
-      border: 3px solid var(--borderColor_button_info);
-      cursor: default;
+    border: 3px solid var(--borderColor_button_info);
+    cursor: default;
 }
 
 .selected .measureName {
-      color: var(--textColor_default);
+    color: var(--textColor_default);
 }
 
 /* changedUpwards BOOL */
 
 .changedUpwards .changeMeasure {
-      color: var(--textColor_positive);
+    color: var(--textColor_positive);
 }

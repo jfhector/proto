@@ -1,40 +1,40 @@
 .Sidebar {
-      width: 272px;
-      padding: 20px;
-      border: 1px solid var(--borderColor_aroundWhiteOrLightestGrey);
-      border-radius: 5px;
-      background-color: white;
+    width: 272px;
+    padding: 20px;
+    border: 1px solid var(--borderColor_aroundWhiteOrLightestGrey);
+    border-radius: 5px;
+    background-color: white;
 }
 
 .title {
-      margin-bottom: 16px;
-      font-size: large;
-      font-weight: bold;
+    margin-bottom: 16px;
+    font-size: large;
+    font-weight: bold;
 }
 
 .selectorGroupContainer {
-      margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .selectorGroupTitle {
-      margin-bottom: 6px;
-      font-size: medium;
+    margin-bottom: 6px;
+    font-size: medium;
 }
 
 .selectorContainer {
-      margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .radiosAndLabels > input {
-      width: 15px;
-      height: 15px;
+    width: 15px;
+    height: 15px;
 }
 
 .radiosAndLabels > label {
-      font-size: small;
-      margin-left: 5px;
+    font-size: small;
+    margin-left: 5px;
 }
 
 .radiosAndLabels > label:first-of-type {
-      margin-right: 17px;
+    margin-right: 17px;
 }

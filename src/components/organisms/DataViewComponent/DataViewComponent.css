@@ -1,51 +1,51 @@
 .DataView {
-      margin-left: 20px;
-      width: 865px;
-      min-height: 800px;
+    margin-left: 20px;
+    width: 865px;
+    min-height: 800px;
 }
 
 .viewTitleRow {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 .viewTitle {
-      margin-left: 20px;
-      font-size: xx-large;
-      font-weight: 300;
+    margin-left: 20px;
+    font-size: xx-large;
+    font-weight: 300;
 }
 
 .viewTitleButtonsRow {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .viewTitleButtonsRow > button:first-child {
-      margin-right: 15px;
+    margin-right: 15px;
 }
 
 .alertContainer {
-      position: sticky;
-      top: -1px;
-      z-index: 2;
+    position: sticky;
+    top: -1px;
+    z-index: 2;
 }
 
 .alertLink {
-      text-decoration: underline;
-      cursor: pointer;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .KpiTilesContainer {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .kpiTreesSubtitle {
-      margin-bottom: 20px;
-      font-size: small;
-      color: var(--textColor_grey);
+    margin-bottom: 20px;
+    font-size: small;
+    color: var(--textColor_grey);
 }

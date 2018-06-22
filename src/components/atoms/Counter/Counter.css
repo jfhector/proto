@@ -1,10 +1,10 @@
 .Counter {
-      color: var(--color_positive);
-      background-color: red;
-      font-size: 32px;
+    color: var(--color_positive);
+    background-color: red;
+    font-size: 32px;
 }
 
 .big {
-      font-size: 72px;
-      font-weight: 700;
+    font-size: 72px;
+    font-weight: 700;
 }
