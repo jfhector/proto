@@ -1,6 +1,3 @@
-// In this file, define all models used throughout the app (unless they are local to 1 component, eg Props)
-// Do this as a first, planning step, as a way to define a single source of truth
-// Then, by adopting these types, you are forced to ensure that your data complies to these models. And then there are errors or inconsistencies, you use this a the source of truth
 
 // FILTER OPTIONS AND FILTERSET
 

@@ -25,7 +25,7 @@ export interface AppState {
 
     // FILTERS SELECTION AND RELATED VIEW-LOGIC
     selectedFilters?: FiltersSet,
-    displayedFilters?: FiltersSet,
+    displayedFilters?: FiltersSet,                                  // TO DO: Make this FilterSet definition local to this file, rather than importing it from sharedTypes. No other file needs it
     dataViewNeedsUpdating?: boolean,
 
     // SELECTED MEASURE 
@@ -48,7 +48,8 @@ export interface AppState {
 }
 
 class App extends React.Component<Props, AppState> {
-    refToMeasureInDetailBoardHeaderContainingDiv: HTMLDivElement
+
+    // State
 
     state: AppState = {
         selectedFilters: {
@@ -86,11 +87,17 @@ class App extends React.Component<Props, AppState> {
         measureInDetailBoardHeaderVisible: false,
     }
 
+    // Refs
+
+    refToMeasureInDetailBoardHeaderContainingDiv: HTMLDivElement     // TODO: Improvement: refs should be a property on `App` that contains an object, within which refs are placed (rather than having different properties for different refs)
+
     refAssignmentFunctions = {
         refAssignmentFunctionforRefToMeasureInDetailBoardHeaderContainingDiv: (element: HTMLDivElement) => {
             this.refToMeasureInDetailBoardHeaderContainingDiv = element
         }
     }
+
+    // Actions
 
     actions = {
         updateView: () => {
@@ -253,6 +260,8 @@ class App extends React.Component<Props, AppState> {
         },
     }
 
+    // Event listeners
+
     componentDidMount() {
         window.addEventListener(
             'scroll',
@@ -266,6 +275,8 @@ class App extends React.Component<Props, AppState> {
             this.actions.conditionallySetMeasureInDetailBoardHeaderVisibleStateBasedOnScrollY
         )
     }
+
+    // Render
 
     render() {
         const {

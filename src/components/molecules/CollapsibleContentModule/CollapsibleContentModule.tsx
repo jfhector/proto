@@ -8,7 +8,7 @@ import { AppState } from '../../../App'
 interface Props {
     title: string
     children: React.ReactNode
-    displayedFilters: FiltersSet
+    displayedFilters: FiltersSet            // TO DO: REPLACE THIS WITH appState: AppState, so that I don't need to import a 'FilterSet' type (and can get rid of this type definition)
     expanded?: boolean
     handleCollapseButtonClick?: React.MouseEventHandler<HTMLElement>
     appState: AppState
@@ -42,7 +42,7 @@ export class CollapsibleContentModule extends React.Component<Props, {}> {
             region,
             storeFormat,
             customerSegment,
-        } = displayedFilters
+        } = displayedFilters            // TO DO: REPLACE THIS WITH appState: AppState, so that I don't need to import a 'FilterSet' type (and can get rid of this type definition)
 
         return (
             <div
