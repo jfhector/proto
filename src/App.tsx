@@ -63,7 +63,7 @@ class App extends React.Component<Props, AppState> {
 
     // Refs
 
-    refToMeasureInDetailBoardHeaderContainingDiv: HTMLDivElement     // TODO: Improvement: refs should be a property on `App` that contains an object, within which refs are placed (rather than having different properties for different refs)
+    refToMeasureInDetailBoardHeaderContainingDiv: HTMLDivElement
 
     refAssignmentFunctions = {
         refAssignmentFunctionforRefToMeasureInDetailBoardHeaderContainingDiv: (element: HTMLDivElement) => {

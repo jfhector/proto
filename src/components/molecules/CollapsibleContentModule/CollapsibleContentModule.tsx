@@ -7,11 +7,15 @@ import classNames = require('classnames')
 interface Props {
     title: string
     children: React.ReactNode
-    displayedFilters: FiltersSet
-    expanded?: boolean
     handleCollapseButtonClick?: React.MouseEventHandler<HTMLElement>
+    displayedFilters: FiltersSet
     appState: AppState
+    
+    // Instance specific data extracted from appState at the parent level
+    expanded?: boolean
 }
+
+
 
 export class CollapsibleContentModule extends React.Component<Props, {}> {
     static defaultProps = {
