@@ -4,7 +4,6 @@ import * as s from './CollapsibleMeasureInDetailBoard.css'
 import classNames = require('classnames')
 import App from '../../../App'
 import { AppState, Actions, MeasureName } from '../../../sharedTypes'
-import { getDataForMeasures } from '../../../data'
 import { measureNames } from '../../../data/measureNames'
 
 interface Props {

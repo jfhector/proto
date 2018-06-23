@@ -198,3 +198,5 @@ export interface MeasureData {
       percentChange: string
       changedUpwards: boolean
 }
+
+export type KpisDataForAllMeasures = {[K in MeasureName]: MeasureData}

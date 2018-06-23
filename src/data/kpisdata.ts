@@ -1,11 +1,9 @@
-import { AppState, MeasureData, MeasureName } from '../sharedTypes'
+import { AppState, KpisDataForAllMeasures } from '../sharedTypes'
 
-type DataForAllMeasures = {[k in MeasureName]: MeasureData }
+export function getKpisDataForAllMeasuresFor(appState: AppState): KpisDataForAllMeasures {
 
-export function getDataForMeasures(appState: AppState, measure: MeasureName): MeasureData {
-
-    // Type guards
-    if (typeof appState.displayedFilters === 'undefined') { throw new Error() }
+    // // Type guards
+    // if (typeof appState.displayedFilters === 'undefined') { throw new Error() }          // Is this useful?
 
     // Generate 5 options of MeasureData
     const dataForAllMeasuresBasedOnAppState0 = {
@@ -296,20 +294,20 @@ export function getDataForMeasures(appState: AppState, measure: MeasureName): Me
     // Deterministically derive an integer from 0 to 4 from appState
     const numberThatIsDifferentForDifferentValuesOfDisplayedFilters = Object.values(appState.displayedFilters).join().length + Number.parseInt(appState.displayedFilters.duration) + Number.parseInt(appState.displayedFilters.dates)
     const numberFrom0To4 = numberThatIsDifferentForDifferentValuesOfDisplayedFilters % 5
-    if (!(numberFrom0To4 === 0 || numberFrom0To4 === 1 || numberFrom0To4 === 2 || numberFrom0To4 === 3 || numberFrom0To4 === 4)) { throw new Error('numberFrom0To3 wasn\'t 0, 1, 2 or 3') }
+    if (!(numberFrom0To4 === 0 || numberFrom0To4 === 1 || numberFrom0To4 === 2 || numberFrom0To4 === 3 || numberFrom0To4 === 4)) { throw new Error('numberFrom0To3 wasn\'t 0, 1, 2, 3 or 4') }
 
     // Switch on this number to return one of the data sets above
     switch (numberFrom0To4) {
         case 0:
-            return dataForAllMeasuresBasedOnAppState0[measure]
+            return dataForAllMeasuresBasedOnAppState0
         case 1:
-            return dataForAllMeasuresBasedOnAppState1[measure]
+            return dataForAllMeasuresBasedOnAppState1
         case 2:
-            return dataForAllMeasuresBasedOnAppState2[measure]
+            return dataForAllMeasuresBasedOnAppState2
         case 3:
-            return dataForAllMeasuresBasedOnAppState3[measure]
+            return dataForAllMeasuresBasedOnAppState3
         case 4:
-            return dataForAllMeasuresBasedOnAppState3[measure]
+            return dataForAllMeasuresBasedOnAppState3
         default:
             const _exhaustiveCheck: never = numberFrom0To4
             return _exhaustiveCheck

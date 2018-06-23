@@ -1,16 +1,13 @@
 import * as React from 'react'
-import { getDataForMeasures } from '../../../data'
 import * as s from './KpiTile.css'
-import { AppState, MeasureName } from '../../../sharedTypes'
+import { AppState, MeasureName, MeasureData } from '../../../sharedTypes'
 import classNames = require('classnames')
 
 interface Props {
     measure: MeasureName
     
-    // Connecting this component
-    appState: AppState
-    
     // Instance-specific data extracted from appState upsteam
+    kpisData: MeasureData,
     selected?: boolean
 
     // Instance-specific function extracted from appState upsteam
@@ -26,7 +23,7 @@ export class KpiTile extends React.Component<Props, {}> {
     render() {
         const {
             measure,
-            appState,
+            kpisData,
             selected,
             handleKpiTileClick,
         } = this.props
@@ -37,7 +34,7 @@ export class KpiTile extends React.Component<Props, {}> {
                     s.KpiTile,
                     {
                         [s.selected]: selected,
-                        [s.changedUpwards]: getDataForMeasures(appState, measure).changedUpwards,
+                        [s.changedUpwards]: kpisData.changedUpwards,
                     }
                 )}
                 onClick={() => handleKpiTileClick!(measure)}
@@ -51,7 +48,7 @@ export class KpiTile extends React.Component<Props, {}> {
                 <div
                     className={s.measureValue}
                 >
-                    {getDataForMeasures(appState, measure).value}
+                    {kpisData.value}
                 </div>
 
                 <div
@@ -60,7 +57,7 @@ export class KpiTile extends React.Component<Props, {}> {
                         s.valueChange
                     )}
                 >
-                    {getDataForMeasures(appState, measure).valueChange}
+                    {kpisData.valueChange}
                 </div>
 
                 <div
@@ -69,7 +66,7 @@ export class KpiTile extends React.Component<Props, {}> {
                         s.percentChange
                     )}
                 >
-                    {getDataForMeasures(appState, measure).percentChange}
+                    {kpisData.percentChange}
                 </div>
             </div>
         )
