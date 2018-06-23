@@ -1,7 +1,7 @@
 import * as React from 'react'
 import App from '../../../App'
 import * as s from './DataViewComponent.css'
-import { Button, Alert, CollapsibleContentBoard, CollapsibleMeasureInDetailBoard, KpiTile, Selector, CollapsibleContentModule } from '../..'
+import { Button, Alert, CollapsibleContentBoard, CollapsibleMeasureInDetailBoard, KpiTile, Selector, CollapsibleContentModule, DataSubtitle } from '../..'
 import { measureOptions, getKpisDataForAllMeasuresFor } from '../../../data'
 import { AppState, Actions, MeasureName } from '../../../sharedTypes'
 
@@ -196,6 +196,10 @@ export class DataViewComponent extends React.Component<Props, {}> {
                         expanded={appState.trendGraphExpanded}
                         handleCollapseButtonClick={actions.expansionToggles.toggleTrendGraphExpanded}
                     >
+                        <DataSubtitle
+                            selectedMeasure={appState.selectedMeasure}
+                            displayedFilters={appState.displayedFilters}
+                        />
                         <img
                             src={
                                 (function () {

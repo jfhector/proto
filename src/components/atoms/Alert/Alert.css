@@ -9,6 +9,18 @@
     transition: all 100ms ease-in-out, padding-left 1ms;
 }
 
+/* visible BOOL PROP */
+
+.Alert:not(.visible) {
+    height: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-width: 0;
+    font-size: 0;
+}
+
 .visible > button {
     position: absolute;
     top: 0;
@@ -64,16 +76,4 @@
 .dark {
     color: var(--textColor_alert_dark);
     background-color: var(--backgroundColor_alert_dark);
-}
-
-/* visible BOOL PROP */
-
-.Alert:not(.visible) {
-    height: 0;
-    padding-top: 0;
-    padding-right: 0;
-    padding-bottom: 0;
-    margin-bottom: 0;
-    border-width: 0;
-    font-size: 0;
 }
