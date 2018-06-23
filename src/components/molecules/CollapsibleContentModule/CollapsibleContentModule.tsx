@@ -78,16 +78,6 @@ export class CollapsibleContentModule extends React.Component<Props, {}> {
 
                 {expanded &&
                     <div
-                        className={s.subTitle}
-                    >
-                        {`${selectedMeasure} • ${duration} • ${dates} ${comparison}`}
-                        <br />
-                        {`${subcategory} • ${region} • ${storeFormat} • ${customerSegment}`}
-                    </div>
-                }
-
-                {expanded &&
-                    <div
                         className={s.childrenContainer}
                     >
                         {children}

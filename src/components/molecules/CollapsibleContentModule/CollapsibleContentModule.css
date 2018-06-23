@@ -5,7 +5,6 @@
     grid-template-columns: auto 1fr;
     grid-template-areas:
         "buttonArea       titleArea"
-        "_                subTitleArea"
         "childrenArea     childrenArea";
     border: 1px solid var(--borderColor_aroundWhiteOrLightestGrey);
     border-radius: 3px;
@@ -24,13 +23,6 @@
     margin-bottom: 5px;
     font-size: large;
     font-weight: bold;
-}
-
-.subTitle {
-    grid-area: subTitleArea;
-    margin-bottom: 25px;
-    font-size: small;
-    color: var(--color_paleSky);
 }
 
 .childrenContainer {

@@ -25,11 +25,12 @@
     grid-area: buttonArea;
     align-self: center;
     margin-left: 20px;
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 .headerContainer .title {
     grid-area: titleArea;
+    margin-bottom: 5px;
     align-self: center;
     font-size: x-large;
     font-weight: bold;

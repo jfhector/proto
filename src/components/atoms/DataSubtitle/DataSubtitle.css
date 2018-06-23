@@ -1,5 +1,6 @@
 .DataSubtitle {
     margin-bottom: 25px;
+    margin-left: 30px;
     font-size: small;
     color: var(--color_paleSky);
 }

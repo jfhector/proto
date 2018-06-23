@@ -95,6 +95,10 @@ export class DataViewComponent extends React.Component<Props, {}> {
                     expanded={appState.measuresSummaryExpanded}
                     handleCollapseButtonClick={actions.expansionToggles.toggleMeasuresSummaryExpanded}
                 >
+                    <DataSubtitle
+                            selectedMeasure={appState.selectedMeasure}
+                            displayedFilters={appState.displayedFilters}
+                    />
                     <div
                         className={s.KpiTilesContainer}
                     >
@@ -168,15 +172,10 @@ export class DataViewComponent extends React.Component<Props, {}> {
                     expanded={appState.KPITreesExpanded}
                     handleCollapseButtonClick={actions.expansionToggles.toggleKPITreesExpanded}
                 >
-                    {appState.KPITreesExpanded &&
-                        <div
-                            className={s.kpiTreesSubtitle}
-                        >
-                            {`${displayedFilters.duration} • ${displayedFilters.dates} ${displayedFilters.comparison}`} <br />
-                            {`${displayedFilters.subcategory} • ${displayedFilters.region} • ${displayedFilters.storeFormat} • ${displayedFilters.customerSegment}`}
-                        </div>
-                    }
-
+                    <DataSubtitle
+                            selectedMeasure={appState.selectedMeasure}
+                            displayedFilters={appState.displayedFilters}
+                    />
                     <img
                         src={PROTOIMG_kpiTree}
                     />
@@ -232,6 +231,10 @@ export class DataViewComponent extends React.Component<Props, {}> {
                         expanded={appState.splitBySubcategoryExpanded}
                         handleCollapseButtonClick={actions.expansionToggles.toggleSplitBySubcategoryExpanded}
                     >
+                        <DataSubtitle
+                            selectedMeasure={appState.selectedMeasure}
+                            displayedFilters={appState.displayedFilters}
+                        />
                         <img
                             src={
                                 (function () {
@@ -264,6 +267,10 @@ export class DataViewComponent extends React.Component<Props, {}> {
                         expanded={appState.splitByRegionExpanded}
                         handleCollapseButtonClick={actions.expansionToggles.toggleSplitByRegionExpanded}
                     >
+                        <DataSubtitle
+                            selectedMeasure={appState.selectedMeasure}
+                            displayedFilters={appState.displayedFilters}
+                        />
                         <img
                             src={PROTOIMG_table_regions_salesValue}
                         />
@@ -276,6 +283,10 @@ export class DataViewComponent extends React.Component<Props, {}> {
                         expanded={appState.splitByStoreFormatExpanded}
                         handleCollapseButtonClick={actions.expansionToggles.toggleSplitByStoreFormatExpanded}
                     >
+                        <DataSubtitle
+                            selectedMeasure={appState.selectedMeasure}
+                            displayedFilters={appState.displayedFilters}
+                        />
                         <img
                             src={PROTOIMG_table_storeFormats_salesValue}
                         />
@@ -288,6 +299,10 @@ export class DataViewComponent extends React.Component<Props, {}> {
                         expanded={appState.splitByCustomerSegmentExpanded}
                         handleCollapseButtonClick={actions.expansionToggles.toggleSplitByCustomerSegmentExpanded}
                     >
+                        <DataSubtitle
+                            selectedMeasure={appState.selectedMeasure}
+                            displayedFilters={appState.displayedFilters}
+                        />
                         <img
                             src={PROTOIMG_table_customerTypes_salesValue}
                         />
