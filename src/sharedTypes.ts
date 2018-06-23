@@ -2,6 +2,34 @@
 // Indirectional imports:
 import { categoryHierarchy } from './data/categoryHierarchy'
 
+// APP STATE
+
+export interface AppState {
+
+    // FILTERS SELECTION AND RELATED VIEW-LOGIC
+    selectedFilters?: FiltersSet,
+    displayedFilters?: FiltersSet,
+    dataViewNeedsUpdating?: boolean,
+
+    // SELECTED MEASURE 
+    selectedMeasure?: MeasureName,
+
+    // DEFINES WHICH CONTENT BOARDS ARE EXPANDED
+    measuresSummaryExpanded?: boolean,
+    measuresInDetailExpanded?: boolean,
+    KPITreesExpanded?: boolean,
+
+    // DEFINES WHICH CONTENT MODULES ARE EXPANDED
+    trendGraphExpanded?: boolean,
+    splitBySubcategoryExpanded?: boolean,
+    splitByRegionExpanded?: boolean,
+    splitByStoreFormatExpanded?: boolean,
+    splitByCustomerSegmentExpanded?: boolean,
+
+    // MEASURE IN DETAIL HEADER VISIBLE
+    measureInDetailBoardHeaderVisible?: boolean,
+}
+
 // ANALYSIS PERIOD AND COMPARISON PERIOD
 
 export type DurationOption = 

@@ -1,8 +1,7 @@
 import * as React from 'react'
 import { getDataForMeasures } from '../../../data'
 import * as s from './KpiTile.css'
-import { MeasureName } from '../../../sharedTypes'
-import { AppState } from '../../../App'
+import { AppState, MeasureName } from '../../../sharedTypes'
 import classNames = require('classnames')
 
 interface Props {

@@ -12,40 +12,14 @@ import {
     DataViewComponent,
 } from './components/'
 import * as s from './App.css'
-import { MeasureName, FiltersSet, DateOption, ComparisonOption, MedicineSubcategoryName, RegionOption, StoreFormatOption, CustomerSegmentOption, DurationOption } from './sharedTypes'
+import { AppState, MeasureName, DateOption, ComparisonOption, MedicineSubcategoryName, RegionOption, StoreFormatOption, CustomerSegmentOption, DurationOption } from './sharedTypes'
 import { getComparisonOptions } from './data'
 
 const PROTOIMG_nav_header = require('./assets/PROTOIMG_nav_header.png')
 const PROTOIMG_nav_tabs = require('./assets/PROTOIMG_nav_tabs.png')
 const PROTOIMG_nav_footer = require('./assets/PROTOIMG_nav_footer.png')
 
-interface Props { }
-
-export interface AppState {
-
-    // FILTERS SELECTION AND RELATED VIEW-LOGIC
-    selectedFilters?: FiltersSet,
-    displayedFilters?: FiltersSet,                                  // TO DO: Make this FilterSet definition local to this file, rather than importing it from sharedTypes. No other file needs it
-    dataViewNeedsUpdating?: boolean,
-
-    // SELECTED MEASURE 
-    selectedMeasure?: MeasureName,
-
-    // DEFINES WHICH CONTENT BOARDS ARE EXPANDED
-    measuresSummaryExpanded?: boolean,
-    measuresInDetailExpanded?: boolean,
-    KPITreesExpanded?: boolean,
-
-    // DEFINES WHICH CONTENT MODULES ARE EXPANDED
-    trendGraphExpanded?: boolean,
-    splitBySubcategoryExpanded?: boolean,
-    splitByRegionExpanded?: boolean,
-    splitByStoreFormatExpanded?: boolean,
-    splitByCustomerSegmentExpanded?: boolean,
-
-    // MEASURE IN DETAIL HEADER VISIBLE
-    measureInDetailBoardHeaderVisible?: boolean,
-}
+interface Props {}
 
 class App extends React.Component<Props, AppState> {
 

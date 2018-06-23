@@ -2,8 +2,8 @@ import * as React from 'react'
 import { CollapseButton, Selector } from '../../'
 import * as s from './CollapsibleMeasureInDetailBoard.css'
 import classNames = require('classnames')
-import App, { AppState } from '../../../App'
-import { MeasureName } from '../../../sharedTypes'
+import App from '../../../App'
+import { AppState, MeasureName } from '../../../sharedTypes'
 import { getDataForMeasures } from '../../../data'
 import { measureNames } from '../../../data/measureNames'
 

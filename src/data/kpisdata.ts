@@ -1,5 +1,4 @@
-import { AppState } from '../App'
-import { MeasureData, MeasureName } from '../sharedTypes'
+import { AppState, MeasureData, MeasureName } from '../sharedTypes'
 
 type DataForAllMeasures = {[k in MeasureName]: MeasureData }
 

@@ -1,14 +1,13 @@
 import * as React from 'react'
-import { FiltersSet } from '../../../sharedTypes'
+import { AppState, FiltersSet } from '../../../sharedTypes'
 import * as s from './CollapsibleContentModule.css'
 import { CollapseButton } from '../..'
 import classNames = require('classnames')
-import { AppState } from '../../../App'
 
 interface Props {
     title: string
     children: React.ReactNode
-    displayedFilters: FiltersSet            // TO DO: REPLACE THIS WITH appState: AppState, so that I don't need to import a 'FilterSet' type (and can get rid of this type definition)
+    displayedFilters: FiltersSet
     expanded?: boolean
     handleCollapseButtonClick?: React.MouseEventHandler<HTMLElement>
     appState: AppState
@@ -42,7 +41,7 @@ export class CollapsibleContentModule extends React.Component<Props, {}> {
             region,
             storeFormat,
             customerSegment,
-        } = displayedFilters            // TO DO: REPLACE THIS WITH appState: AppState, so that I don't need to import a 'FilterSet' type (and can get rid of this type definition)
+        } = displayedFilters            // TODO: REPLACE THIS WITH appState: AppState, so that I don't need to import a 'FilterSet' type (and can get rid of this type definition)
 
         return (
             <div

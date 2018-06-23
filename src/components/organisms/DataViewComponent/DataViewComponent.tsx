@@ -1,9 +1,9 @@
 import * as React from 'react'
-import App, { AppState } from '../../../App'
+import App from '../../../App'
 import * as s from './DataViewComponent.css'
 import { Button, Alert, CollapsibleContentBoard, CollapsibleMeasureInDetailBoard, KpiTile, Selector, CollapsibleContentModule } from '../..'
 import { measureOptions } from '../../../data'
-import { MeasureName } from '../../../sharedTypes'
+import { AppState, MeasureName } from '../../../sharedTypes'
 
 const PROTOIMG_graph_salesValue = require('../../../assets/PROTOIMG_graph_salesValue.png')
 const PROTOIMG_graph_customers = require('../../../assets/PROTOIMG_graph_customers.png')

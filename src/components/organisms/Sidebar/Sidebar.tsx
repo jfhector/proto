@@ -1,8 +1,8 @@
 import React = require('react')
-import App, { AppState } from '../../../App'
+import App from '../../../App'
 import { Selector, Button } from '../..'
 import * as s from './Sidebar.css'
-import { DurationOption, ComparisonOption, RegionOption, StoreFormatOption, CustomerSegmentOption } from '../../../sharedTypes'
+import { AppState, DurationOption, ComparisonOption, RegionOption, StoreFormatOption, CustomerSegmentOption } from '../../../sharedTypes'
 import { durationOptions, getDatesOptions, getComparisonOptions, categoryHierarchy, regionOptions, storeFormatOptions, customerSegmentOptions } from '../../../data'
 
 interface Props {
