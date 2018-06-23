@@ -6,8 +6,14 @@ import classNames = require('classnames')
 
 interface Props {
     measure: MeasureName
+    
+    // Connecting this component
     appState: AppState
+    
+    // Instance-specific data extracted from appState upsteam
     selected?: boolean
+
+    // Instance-specific function extracted from appState upsteam
     handleKpiTileClick?: (measure: MeasureName) => void
 }
 

@@ -3,10 +3,14 @@ import * as s from './Alert.css'
 import classNames = require('classnames')
 
 interface Props {
-    visible: boolean
     children: React.ReactNode
     typeOption?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark'
     dismissable?: boolean
+    
+    // State data selected from appState upstream
+    visible: boolean
+
+    // Instance-specific function extracted from actions upstream
     handleClick?: React.MouseEventHandler<HTMLElement>
 }
 

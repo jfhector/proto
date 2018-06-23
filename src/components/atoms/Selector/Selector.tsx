@@ -4,12 +4,14 @@ import * as s from './Selector.css'
 interface Props {
     optionsArray: string[]
     value: string
+
+    // Instance-specific function extraction from actions upstream
     handleSelectorChange?: (newSelection: string) => void
 }
 
 export class Selector extends React.Component<Props, {}> {
     static defaultProps = {
-        handleSelectorChange: () => { },
+        handleSelectorChange: () => {},
     }
 
     render() {

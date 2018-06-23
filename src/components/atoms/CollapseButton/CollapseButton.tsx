@@ -2,7 +2,10 @@ import React = require('react')
 import * as s from './CollapseButton.css'
 
 interface Props {
+    // Instance-specific data extracted from appState upsteam
     expanded?: boolean
+
+    // Instance-specific function extracted from actions upstream
     handleClick?: React.MouseEventHandler<HTMLElement>
 }
 

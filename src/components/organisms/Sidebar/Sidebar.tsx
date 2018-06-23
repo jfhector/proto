@@ -6,6 +6,8 @@ import { AppState, Actions, DurationOption, ComparisonOption, RegionOption, Stor
 import { durationOptions, getDatesOptions, getComparisonOptions, categoryHierarchy, regionOptions, storeFormatOptions, customerSegmentOptions } from '../../../data'
 
 interface Props {
+
+    // Connecting the component
     appState: AppState
     actions: Actions
 }

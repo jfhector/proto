@@ -7,9 +7,14 @@ import App from '../../../App'
 interface Props {
     title: string
     children: React.ReactNode
+    
+    // Instance-specific data extracted from appState upsteam
     expanded?: boolean
+    
+    // Instance specific function extracted from actions upstream
     handleCollapseButtonClick?: React.MouseEventHandler<HTMLDivElement>
-    refAssignmentFunctions?: typeof App.prototype.refAssignmentFunctions
+
+    refAssignmentFunctions?: typeof App.prototype.refAssignmentFunctions        // TODO: Type to be refactored
 }
 
 export class CollapsibleContentBoard extends React.Component<Props, {}> {

@@ -22,9 +22,11 @@ const PROTOIMG_table_storeFormats_salesValue = require('../../../assets/PROTOIMG
 const PROTOIMG_kpiTree = require('./../../../assets/PROTOIMG_kpiTree.png')
 
 interface Props {
+    // Connecting the component
     appState: AppState
     actions: Actions
-    refAssignmentFunctions: typeof App.prototype.refAssignmentFunctions
+
+    refAssignmentFunctions: typeof App.prototype.refAssignmentFunctions             // TODO Type to be refactored
 }
 
 export class DataViewComponent extends React.Component<Props, {}> {
@@ -190,7 +192,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                     <CollapsibleContentModule
                         title='Trend'
                         appState={appState}
-                        displayedFilters={displayedFilters}
+                        // displayedFilters={displayedFilters}
                         expanded={appState.trendGraphExpanded}
                         handleCollapseButtonClick={actions.expansionToggles.toggleTrendGraphExpanded}
                     >
@@ -221,7 +223,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
 
                     <CollapsibleContentModule
                         title={`Top 10 movers in ${displayedFilters.subcategory}`}
-                        displayedFilters={displayedFilters}
+                        // displayedFilters={displayedFilters}
                         appState={appState}
                         expanded={appState.splitBySubcategoryExpanded}
                         handleCollapseButtonClick={actions.expansionToggles.toggleSplitBySubcategoryExpanded}
@@ -254,7 +256,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                     <CollapsibleContentModule
                         title='Split by region'
                         appState={appState}
-                        displayedFilters={displayedFilters}
+                        // displayedFilters={displayedFilters}
                         expanded={appState.splitByRegionExpanded}
                         handleCollapseButtonClick={actions.expansionToggles.toggleSplitByRegionExpanded}
                     >
@@ -266,7 +268,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                     <CollapsibleContentModule
                         title='Split by store format'
                         appState={appState}
-                        displayedFilters={displayedFilters}
+                        // displayedFilters={displayedFilters}
                         expanded={appState.splitByStoreFormatExpanded}
                         handleCollapseButtonClick={actions.expansionToggles.toggleSplitByStoreFormatExpanded}
                     >
@@ -278,7 +280,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                     <CollapsibleContentModule
                         title='Split by customer segment'
                         appState={appState}
-                        displayedFilters={displayedFilters}
+                        // displayedFilters={displayedFilters}
                         expanded={appState.splitByCustomerSegmentExpanded}
                         handleCollapseButtonClick={actions.expansionToggles.toggleSplitByCustomerSegmentExpanded}
                     >

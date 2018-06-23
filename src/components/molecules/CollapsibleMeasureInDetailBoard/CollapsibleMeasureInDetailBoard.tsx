@@ -9,11 +9,16 @@ import { measureNames } from '../../../data/measureNames'
 
 interface Props {
     children: React.ReactNode
+    headerIsSticky?: boolean
+
+    // Connecting the component
     appState: AppState
     actions: Actions
-    headerIsSticky?: boolean
+
+    // Instance-specific function extracted from actions upstream
     handleCollapseButtonClick?: React.MouseEventHandler<HTMLDivElement>
-    refAssignmentFunctions: typeof App.prototype.refAssignmentFunctions
+    
+    refAssignmentFunctions: typeof App.prototype.refAssignmentFunctions         // TODO: State to be refactored
 }
 
 export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> {
@@ -40,8 +45,6 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
             selectedMeasure,
             measureInDetailBoardHeaderVisible,
         } = appState
-
-        let dataForSelectedMeasure = getDataForMeasures(appState, appState.selectedMeasure!)
 
         return (
             <div

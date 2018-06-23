@@ -5,10 +5,12 @@ import classNames = require('classnames')
 interface Props {
     children: React.ReactNode
     disabled?: boolean
-    handleButtonClick?: React.MouseEventHandler<HTMLElement>
+    fullWidth?: boolean
     typeOption?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark'
     sizeOption?: 'small' | 'medium' | 'large'
-    fullWidth?: boolean
+
+    // Instance-specific function extracted from actions upstream
+    handleButtonClick?: React.MouseEventHandler<HTMLElement>
 }
 
 export class Button extends React.Component<Props, {}> {
