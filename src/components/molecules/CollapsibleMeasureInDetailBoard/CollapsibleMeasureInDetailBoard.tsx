@@ -11,8 +11,12 @@ interface Props {
     headerIsSticky?: boolean
     
     // Connecting the component
-    appState: AppState
     actions: Actions
+
+    // Instance-specific data extracted from appState upstream
+    selectedMeasure: MeasureName
+    expanded: boolean
+    headerVisible: boolean
     
     // Instance-specific function extracted from actions upstream
     handleCollapseButtonClick?: React.MouseEventHandler<HTMLDivElement>
@@ -35,28 +39,24 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
     render() {
         const {
             children,
-            appState,
             headerIsSticky,
             handleCollapseButtonClick,
             actions,
             refAssignmentFunctionforRefToMeasureInDetailBoardHeaderContainingDiv,
             isCorrectInstanceForRefToMeasureInDetailBoardHeaderContainingDiv,
-        } = this.props
-
-        const {
-            measuresInDetailExpanded,
+            headerVisible,
             selectedMeasure,
-            measureInDetailBoardHeaderVisible,
-        } = appState
+            expanded
+        } = this.props
 
         return (
             <div
                 className={classNames(
                     s.CollapsibleContentBoard,
                     {
-                        [s.expanded]: measuresInDetailExpanded,
+                        [s.expanded]: expanded,
                         [s.headerIsSticky]: headerIsSticky,
-                        [s.headerContainerVisible]: appState.measureInDetailBoardHeaderVisible
+                        [s.headerContainerVisible]: headerVisible
                     }
                 )}
             >
@@ -68,7 +68,7 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
                         className={s.collapseButtonContainer}
                     >
                         <CollapseButton
-                            expanded={measuresInDetailExpanded}
+                            expanded={expanded}
                             handleClick={handleCollapseButtonClick}
                         />
                     </div>
@@ -95,7 +95,7 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
                     </div>
                 </div>
                 
-                {measuresInDetailExpanded &&
+                {expanded &&
                     <div
                         className={s.childrenContainer}
                     >

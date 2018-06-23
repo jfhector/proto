@@ -183,7 +183,9 @@ export class DataViewComponent extends React.Component<Props, {}> {
 
                 <CollapsibleMeasureInDetailBoard
                     headerIsSticky
-                    appState={appState}
+                    selectedMeasure={appState.selectedMeasure}
+                    expanded={appState.measuresInDetailExpanded}
+                    headerVisible={appState.measureInDetailBoardHeaderVisible}
                     handleCollapseButtonClick={actions.expansionToggles.toggleMeasureInDetailExpanded}
                     actions={actions}
                     refAssignmentFunctionforRefToMeasureInDetailBoardHeaderContainingDiv={
