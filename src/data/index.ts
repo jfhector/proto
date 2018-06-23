@@ -1,3 +1,3 @@
 export * from './kpisdata'
-export * from './categoryHierarchyData'
+export * from './categoryHierarchy'
 export * from './selectorOptions'

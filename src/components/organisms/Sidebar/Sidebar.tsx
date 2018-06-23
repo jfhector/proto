@@ -3,7 +3,7 @@ import App, { AppState } from '../../../App'
 import { Selector, Button } from '../..'
 import * as s from './Sidebar.css'
 import { DurationOption, ComparisonOption, RegionOption, StoreFormatOption, CustomerSegmentOption } from '../../../sharedTypes'
-import { durationOptions, getDatesOptions, getComparisonOptions, medicineSubcategories, regionOptions, storeFormatOptions, customerSegmentOptions } from '../../../data'
+import { durationOptions, getDatesOptions, getComparisonOptions, categoryHierarchy, regionOptions, storeFormatOptions, customerSegmentOptions } from '../../../data'
 
 interface Props {
     appState: AppState
@@ -129,7 +129,7 @@ export class Sidebar extends React.Component<Props, {}> {
                         className={s.selectorContainer}
                     >
                         <Selector
-                            optionsArray={Object.keys(medicineSubcategories)}
+                            optionsArray={Object.keys(categoryHierarchy['MEDICINE'])}
                             value={selectedFilters.subcategory}
                             handleSelectorChange={actions.selectionChanges.changeSelectedSubcategory}
                         />

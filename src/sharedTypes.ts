@@ -1,5 +1,8 @@
 
-// FILTER OPTIONS AND FILTERSET
+// Indirectional imports:
+import { categoryHierarchy } from './data/categoryHierarchy'
+
+// ANALYSIS PERIOD AND COMPARISON PERIOD
 
 export type DurationOption = 
       '52 weeks' | 
@@ -102,37 +105,11 @@ export type ComparisonOption =
       ComparisonOptionAvailableFor26WeekDuration |
       ComparisonOptionAvailableFor52WeekDuration
 
-type DermatologySubcategoryName = 
-      'All product groups' | 
-      'A' | 
-      'B' | 
-      'C' | 
-      'D' | 
-      'E' | 
-      'F' | 
-      'G' | 
-      'H'
-type DermatologySubcategories = {
-      [K in DermatologySubcategoryName]: {
-            children: null,
-      }
-}
+// PRODUCT CATEGORY
 
-export type MedicineSubcategoryName = 
-      'All product groups' | 
-      'DERMATOLOGY' | 
-      'GASTRIC HEALTH' | 
-      'INTESTINE HEALTH' | 
-      'CHOLESTEROL' | 
-      'CARDIOTHERAPY' | 
-      'ANTICOAGULANT' | 
-      'WEIGHT CONTROL' | 
-      'HYPERTENSION'
-export type MedicineSubcategories = {
-      [K in MedicineSubcategoryName]: {
-            children: null | DermatologySubcategories,
-      }
-}
+export type MedicineSubcategoryName = keyof typeof categoryHierarchy['MEDICINE']
+
+// FILTERS
 
 export type StoreFormatOption = 
       'All store formats' | 
