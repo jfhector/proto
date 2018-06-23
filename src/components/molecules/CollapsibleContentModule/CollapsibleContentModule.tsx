@@ -7,19 +7,22 @@ import classNames = require('classnames')
 interface Props {
     title: string
     children: React.ReactNode
-    handleCollapseButtonClick?: React.MouseEventHandler<HTMLElement>
-    displayedFilters: FiltersSet
+
+    // Connecting the component
     appState: AppState
     
-    // Instance specific data extracted from appState at the parent level
+    // Instance specific data extracted from appState upstream
     expanded?: boolean
+    
+    // Instance specific function extracted from actions upstream
+    handleCollapseButtonClick?: React.MouseEventHandler<HTMLElement>
 }
 
 
 
 export class CollapsibleContentModule extends React.Component<Props, {}> {
     static defaultProps = {
-        expanded: false,
+        expanded: true,
         handleCollapseButtonClick: () => { console.log('handleCollapseButtonClick') },
     }
 
@@ -27,14 +30,14 @@ export class CollapsibleContentModule extends React.Component<Props, {}> {
         const {
             title,
             children,
-            displayedFilters,
             expanded,
             handleCollapseButtonClick,
             appState,
         } = this.props
 
         const {
-            selectedMeasure
+            selectedMeasure,
+            displayedFilters,
         } = appState
 
         const {
@@ -45,7 +48,7 @@ export class CollapsibleContentModule extends React.Component<Props, {}> {
             region,
             storeFormat,
             customerSegment,
-        } = displayedFilters            // TODO: REPLACE THIS WITH appState: AppState, so that I don't need to import a 'FilterSet' type (and can get rid of this type definition)
+        } = displayedFilters
 
         return (
             <div
