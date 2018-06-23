@@ -9,15 +9,17 @@ import { measureNames } from '../../../data/measureNames'
 interface Props {
     children: React.ReactNode
     headerIsSticky?: boolean
-
+    
     // Connecting the component
     appState: AppState
     actions: Actions
-
+    
     // Instance-specific function extracted from actions upstream
     handleCollapseButtonClick?: React.MouseEventHandler<HTMLDivElement>
     
-    refAssignmentFunctions: typeof App.prototype.refAssignmentFunctions         // TODO: State to be refactored
+    // Ref assignment
+    refAssignmentFunctionforRefToMeasureInDetailBoardHeaderContainingDiv: (element: HTMLDivElement) => void
+    isCorrectInstanceForRefToMeasureInDetailBoardHeaderContainingDiv: boolean
 }
 
 export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> {
@@ -26,7 +28,8 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
         rightNode: false,
         rightNodeIsSticky: false,
         rightNodeIsHighlighted: false,
-        handleCollapseButtonClick: () => { console.log('Button clicked') }
+        handleCollapseButtonClick: () => { console.log('Button clicked') },
+        isCorrectInstanceForRefToMeasureInDetailBoardHeaderContainingDiv: false
     }
 
     render() {
@@ -35,8 +38,9 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
             appState,
             headerIsSticky,
             handleCollapseButtonClick,
-            refAssignmentFunctions,
             actions,
+            refAssignmentFunctionforRefToMeasureInDetailBoardHeaderContainingDiv,
+            isCorrectInstanceForRefToMeasureInDetailBoardHeaderContainingDiv,
         } = this.props
 
         const {
@@ -58,7 +62,7 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
             >
                 <div
                     className={s.headerContainer}
-                    ref={refAssignmentFunctions.refAssignmentFunctionforRefToMeasureInDetailBoardHeaderContainingDiv}
+                    ref={isCorrectInstanceForRefToMeasureInDetailBoardHeaderContainingDiv ? refAssignmentFunctionforRefToMeasureInDetailBoardHeaderContainingDiv : undefined}
                 >
                     <div
                         className={s.collapseButtonContainer}
