@@ -1,6 +1,7 @@
 
 // Indirectional imports:
 import { categoryHierarchy } from './data/categoryHierarchy'
+import App from './App'
 
 // APP STATE
 
@@ -29,6 +30,10 @@ export interface AppState {
     // MEASURE IN DETAIL HEADER VISIBLE
     measureInDetailBoardHeaderVisible?: boolean,
 }
+
+// ACTIONS
+
+export type Actions = typeof App.prototype.actions
 
 // ANALYSIS PERIOD AND COMPARISON PERIOD
 

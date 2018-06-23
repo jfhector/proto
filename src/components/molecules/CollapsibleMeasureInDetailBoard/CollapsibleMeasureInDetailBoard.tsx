@@ -3,17 +3,17 @@ import { CollapseButton, Selector } from '../../'
 import * as s from './CollapsibleMeasureInDetailBoard.css'
 import classNames = require('classnames')
 import App from '../../../App'
-import { AppState, MeasureName } from '../../../sharedTypes'
+import { AppState, Actions, MeasureName } from '../../../sharedTypes'
 import { getDataForMeasures } from '../../../data'
 import { measureNames } from '../../../data/measureNames'
 
 interface Props {
     children: React.ReactNode
     appState: AppState
+    actions: Actions
     headerIsSticky?: boolean
     handleCollapseButtonClick?: React.MouseEventHandler<HTMLDivElement>
     refAssignmentFunctions: typeof App.prototype.refAssignmentFunctions
-    actions: typeof App.prototype.actions
 }
 
 export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> {

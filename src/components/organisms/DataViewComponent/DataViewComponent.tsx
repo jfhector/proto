@@ -3,7 +3,7 @@ import App from '../../../App'
 import * as s from './DataViewComponent.css'
 import { Button, Alert, CollapsibleContentBoard, CollapsibleMeasureInDetailBoard, KpiTile, Selector, CollapsibleContentModule } from '../..'
 import { measureOptions } from '../../../data'
-import { AppState, MeasureName } from '../../../sharedTypes'
+import { AppState, Actions, MeasureName } from '../../../sharedTypes'
 
 const PROTOIMG_graph_salesValue = require('../../../assets/PROTOIMG_graph_salesValue.png')
 const PROTOIMG_graph_customers = require('../../../assets/PROTOIMG_graph_customers.png')
@@ -23,7 +23,7 @@ const PROTOIMG_kpiTree = require('./../../../assets/PROTOIMG_kpiTree.png')
 
 interface Props {
     appState: AppState
-    actions: typeof App.prototype.actions
+    actions: Actions
     refAssignmentFunctions: typeof App.prototype.refAssignmentFunctions
 }
 

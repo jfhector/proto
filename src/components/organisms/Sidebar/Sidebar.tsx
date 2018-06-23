@@ -2,12 +2,12 @@ import React = require('react')
 import App from '../../../App'
 import { Selector, Button } from '../..'
 import * as s from './Sidebar.css'
-import { AppState, DurationOption, ComparisonOption, RegionOption, StoreFormatOption, CustomerSegmentOption } from '../../../sharedTypes'
+import { AppState, Actions, DurationOption, ComparisonOption, RegionOption, StoreFormatOption, CustomerSegmentOption } from '../../../sharedTypes'
 import { durationOptions, getDatesOptions, getComparisonOptions, categoryHierarchy, regionOptions, storeFormatOptions, customerSegmentOptions } from '../../../data'
 
 interface Props {
     appState: AppState
-    actions: typeof App.prototype.actions
+    actions: Actions
 }
 
 export class Sidebar extends React.Component<Props, {}> {
