@@ -8,7 +8,7 @@ export * from './atoms/DataSubtitle/DataSubtitle'
 // MOLECULES
 export * from './molecules/KpiTile/KpiTile'
 export * from './molecules/CollapsibleContentModule/CollapsibleContentModule'
-export * from './molecules/CollapsibleMeasureInDetailBoard/CollapsibleMeasureInDetailBoard'
+export * from './molecules/CollapsibleContentBoard/CollapsibleContentBoard'
 
 // ORGANISMS
 export * from './organisms/Sidebar/Sidebar'

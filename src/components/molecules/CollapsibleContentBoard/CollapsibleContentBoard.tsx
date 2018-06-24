@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { CollapseButton } from '../../'
-import * as s from './CollapsibleMeasureInDetailBoard.css'
+import * as s from './CollapsibleContentBoard.css'
 import classNames = require('classnames')
 
 interface Props {
@@ -20,7 +20,7 @@ interface Props {
     refAssignmentFunctionforHeaderContainingDiv?: (element: HTMLDivElement) => void                    // TODO: DOCUMENT
 }
 
-export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> {
+export class CollapsibleContentBoard extends React.Component<Props, {}> {
     static defaultProps = {
         expanded: false,
         rightNode: null,
