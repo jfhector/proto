@@ -1,15 +1,13 @@
 import * as React from 'react'
-import { CollapseButton, Selector } from '../../'
+import { CollapseButton } from '../../'
 import * as s from './CollapsibleMeasureInDetailBoard.css'
 import classNames = require('classnames')
-import App from '../../../App'
 import { MeasureName } from '../../../sharedTypes'
 
 interface Props {
     children: React.ReactNode
     headerIsSticky?: boolean
     rightNode?: React.ReactNode
-    // rightNode?: JSX.IntrinsicElements
 
     // Instance-specific data extracted from appState upstream
     selectedMeasure: MeasureName
@@ -41,11 +39,9 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
             children,
             headerIsSticky,
             handleCollapseButtonClick,
-            handleSelectedMeasureChange,
             refAssignmentFunctionforRefToMeasureInDetailBoardHeaderContainingDiv,
             isCorrectInstanceForRefToMeasureInDetailBoardHeaderContainingDiv,
             headerHighlighted,
-            selectedMeasure,
             expanded,
             rightNode
         } = this.props
