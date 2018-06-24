@@ -6,3 +6,4 @@ export const alertContainer: string;
 export const alertLink: string;
 export const KpiTilesContainer: string;
 export const kpiTreesSubtitle: string;
+export const measureInDetailBoardRightNodeLabel: string;

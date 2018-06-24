@@ -4,12 +4,12 @@ import * as s from './CollapsibleMeasureInDetailBoard.css'
 import classNames = require('classnames')
 import App from '../../../App'
 import { MeasureName } from '../../../sharedTypes'
-import { measureNames } from '../../../data/measureNames'
 
 interface Props {
     children: React.ReactNode
     headerIsSticky?: boolean
     rightNode?: React.ReactNode
+    // rightNode?: JSX.IntrinsicElements
 
     // Instance-specific data extracted from appState upstream
     selectedMeasure: MeasureName
@@ -46,7 +46,8 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
             isCorrectInstanceForRefToMeasureInDetailBoardHeaderContainingDiv,
             headerHighlighted,
             selectedMeasure,
-            expanded
+            expanded,
+            rightNode
         } = this.props
 
         return (
@@ -82,16 +83,7 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
                     <div
                         className={s.rightNodeContainer}
                     >
-                        <div
-                            className={s.selectMeasureLabel}
-                        >
-                            Selected measure:
-                        </div>
-                        <Selector
-                            optionsArray={measureNames}
-                            value={`${selectedMeasure}`}
-                            handleSelectorChange={handleSelectedMeasureChange}
-                        />
+                        {rightNode}
                     </div>
                 </div>
                 

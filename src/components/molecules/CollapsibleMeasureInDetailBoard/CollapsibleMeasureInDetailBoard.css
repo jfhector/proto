@@ -44,13 +44,6 @@
     align-self: center;
 }
 
-.headerContainer .rightNodeContainer .selectMeasureLabel {
-    font-size: small;
-    font-weight: bold;
-    display: inline-block;
-    margin-right: 10px;
-}
-
 .childrenContainer {
     grid-area: childrenArea;
     margin: 10px 20px 0 20px;

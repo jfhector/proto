@@ -28,6 +28,10 @@ export class DataViewComponent extends React.Component<Props, {}> {
             selectedMeasure,
         } = appState
 
+        const {
+            changeSelectedMeasure
+        } = actions.selectionChanges
+
         // TYPE GUARDS
         if (typeof displayedFilters === 'undefined') { throw new Error() }
         if (typeof appState.dataViewNeedsUpdating === 'undefined') { throw new Error() }
@@ -177,6 +181,20 @@ export class DataViewComponent extends React.Component<Props, {}> {
                         refAssignmentFunctions.refAssignmentFunctionforRefToMeasureInDetailBoardHeaderContainingDiv
                     }
                     isCorrectInstanceForRefToMeasureInDetailBoardHeaderContainingDiv
+                    rightNode={
+                        <> 
+                            <div
+                                className={s.measureInDetailBoardRightNodeLabel}
+                            >
+                                Selected measure:
+                            </div>
+                            <Selector
+                                optionsArray={measureOptions}
+                                value={`${selectedMeasure}`}
+                                handleSelectorChange={changeSelectedMeasure}
+                            />
+                        </>
+                    }
                 >
                     <CollapsibleContentModule
                         title='Trend'

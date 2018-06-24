@@ -49,3 +49,10 @@
     font-size: small;
     color: var(--textColor_grey);
 }
+
+.measureInDetailBoardRightNodeLabel {
+    font-size: small;
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 10px;
+}
