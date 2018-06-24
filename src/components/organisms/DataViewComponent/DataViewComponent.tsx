@@ -79,15 +79,11 @@ export class DataViewComponent extends React.Component<Props, {}> {
                     </Alert>
                 </div>
 
-                <CollapsibleContentBoard
+                <CollapsibleMeasureInDetailBoard
                     title='Performance overview'
                     expanded={appState.measuresSummaryExpanded}
                     handleCollapseButtonClick={actions.expansionToggles.toggleMeasuresSummaryExpanded}
                 >
-                    <DataSubtitle
-                            selectedMeasure={appState.selectedMeasure}
-                            displayedFilters={appState.displayedFilters}
-                    />
                     <div
                         className={s.KpiTilesContainer}
                     >
@@ -154,9 +150,9 @@ export class DataViewComponent extends React.Component<Props, {}> {
                             handleKpiTileClick={actions.selectionChanges.changeSelectedMeasure}
                         />
                     </div>
-                </CollapsibleContentBoard>
+                </CollapsibleMeasureInDetailBoard>
 
-                <CollapsibleContentBoard
+                <CollapsibleMeasureInDetailBoard
                     title='KPI tree'
                     expanded={appState.KPITreesExpanded}
                     handleCollapseButtonClick={actions.expansionToggles.toggleKPITreesExpanded}
@@ -168,7 +164,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                     <img
                         src={PROTOIMG_kpiTree}
                     />
-                </CollapsibleContentBoard>
+                </CollapsibleMeasureInDetailBoard>
 
                 <CollapsibleMeasureInDetailBoard
                     title='Measure in detail'
