@@ -8,7 +8,6 @@ export * from './atoms/DataSubtitle/DataSubtitle'
 // MOLECULES
 export * from './molecules/KpiTile/KpiTile'
 export * from './molecules/CollapsibleContentModule/CollapsibleContentModule'
-export * from './molecules/CollapsibleContentBoard/CollapsibleContentBoard'
 export * from './molecules/CollapsibleMeasureInDetailBoard/CollapsibleMeasureInDetailBoard'
 
 // ORGANISMS
