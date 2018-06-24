@@ -1,24 +1,10 @@
 import * as React from 'react'
 import { hot } from 'react-hot-loader'
-import {
-    Button,
-    Alert,
-    CollapseButton,
-    Selector,
-    CollapsibleContentModule,
-    KpiTile,
-    CollapsibleContentBoard,
-    Sidebar,
-    DataViewComponent,
-} from './components/'
 import * as s from './App.css'
+import { Sidebar, DataViewComponent } from './components/'
 import { AppState, MeasureName, DateOption, ComparisonOption, MedicineSubcategoryName, RegionOption, StoreFormatOption, CustomerSegmentOption, DurationOption } from './sharedTypes'
 import { getComparisonOptions } from './data'
-import { AssetsLoader } from './assets'
-
-const PROTOIMG_nav_header = require('./assets/PROTOIMG_nav_header.png')
-const PROTOIMG_nav_tabs = require('./assets/PROTOIMG_nav_tabs.png')
-const PROTOIMG_nav_footer = require('./assets/PROTOIMG_nav_footer.png')
+import { AssetsLoader, PROTOIMG_nav_header, PROTOIMG_nav_tabs, PROTOIMG_nav_footer } from './assets'
 
 interface Props {}
 

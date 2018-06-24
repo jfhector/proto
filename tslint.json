@@ -31,8 +31,8 @@
             "jsx-no-multiline-js": false,
             "label-position": true,
             "max-line-length": [
-                  true,
-                  240
+                  false,
+                  360
             ],
             "member-ordering": [
                   true,

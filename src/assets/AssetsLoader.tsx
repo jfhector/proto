@@ -8,9 +8,9 @@ export const PROTOIMG_graph_spendPerVisit = require('./PROTOIMG_graph_spendPerVi
 
 export const PROTOIMG_kpiTree = require('./PROTOIMG_kpiTree.png')
 
-export const PROTOIMG_nav_footer = require('./PROTOIMG_nav_footer')
-export const PROTOIMG_nav_header = require('./PROTOIMG_nav_header')
-export const PROTOIMG_nav_tabs = require('./PROTOIMG_nav_tabs')
+export const PROTOIMG_nav_footer = require('./PROTOIMG_nav_footer.png')
+export const PROTOIMG_nav_header = require('./PROTOIMG_nav_header.png')
+export const PROTOIMG_nav_tabs = require('./PROTOIMG_nav_tabs.png')
 
 export const PROTOIMG_table_customerTypes_salesValue = require('./PROTOIMG_table_customerTypes_salesValue.png')
 export const PROTOIMG_table_regions_salesValue = require('./PROTOIMG_table_regions_salesValue.png')

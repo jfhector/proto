@@ -4,23 +4,7 @@ import * as s from './DataViewComponent.css'
 import { Button, Alert, CollapsibleContentBoard, CollapsibleMeasureInDetailBoard, KpiTile, Selector, CollapsibleContentModule, DataSubtitle } from '../..'
 import { measureOptions, getKpisDataForAllMeasuresFor } from '../../../data'
 import { AppState, Actions, MeasureName } from '../../../sharedTypes'
-
-const PROTOIMG_graph_salesValue = require('../../../assets/PROTOIMG_graph_salesValue.png')
-const PROTOIMG_graph_customers = require('../../../assets/PROTOIMG_graph_customers.png')
-const PROTOIMG_graph_spendPerCustomer = require('../../../assets/PROTOIMG_graph_spendPerCustomer.png')
-// const PROTOIMG_graph_spendPerVisit = require('../../../assets/PROTOIMG_graph_spendPerVisit.png')'
-import { PROTOIMG_graph_spendPerVisit } from './../../../assets/'
-
-const PROTOIMG_table_subcategories_customers = require('../../../assets/PROTOIMG_table_subcategories_customers.png')
-const PROTOIMG_table_subcategories_salesValue = require('../../../assets/PROTOIMG_table_subcategories_salesValue.png')
-const PROTOIMG_table_subcategories_spendPerCustomer = require('../../../assets/PROTOIMG_table_subcategories_spendPerCustomer.png')
-const PROTOIMG_table_subcategories_spendPerVisit = require('../../../assets/PROTOIMG_table_subcategories_spendPerVisit.png')
-
-const PROTOIMG_table_customerTypes_salesValue = require('../../../assets/PROTOIMG_table_customerTypes_salesValue.png')
-const PROTOIMG_table_regions_salesValue = require('../../../assets/PROTOIMG_table_regions_salesValue.png')
-const PROTOIMG_table_storeFormats_salesValue = require('../../../assets/PROTOIMG_table_storeFormats_salesValue.png')
-
-const PROTOIMG_kpiTree = require('./../../../assets/PROTOIMG_kpiTree.png')
+import { PROTOIMG_graph_salesValue, PROTOIMG_graph_customers, PROTOIMG_graph_spendPerCustomer, PROTOIMG_graph_spendPerVisit, PROTOIMG_table_subcategories_customers, PROTOIMG_table_subcategories_salesValue, PROTOIMG_table_subcategories_spendPerCustomer, PROTOIMG_table_subcategories_spendPerVisit, PROTOIMG_table_customerTypes_salesValue, PROTOIMG_table_regions_salesValue, PROTOIMG_table_storeFormats_salesValue, PROTOIMG_kpiTree } from './../../../assets/'
 
 interface Props {
     // Connecting the component
