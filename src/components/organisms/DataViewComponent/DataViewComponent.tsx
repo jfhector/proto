@@ -187,7 +187,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                     expanded={appState.measuresInDetailExpanded}
                     headerVisible={appState.measureInDetailBoardHeaderVisible}
                     handleCollapseButtonClick={actions.expansionToggles.toggleMeasureInDetailExpanded}
-                    actions={actions}
+                    handleSelectedMeasureChange={actions.selectionChanges.changeSelectedMeasure}
                     refAssignmentFunctionforRefToMeasureInDetailBoardHeaderContainingDiv={
                         refAssignmentFunctions.refAssignmentFunctionforRefToMeasureInDetailBoardHeaderContainingDiv
                     }

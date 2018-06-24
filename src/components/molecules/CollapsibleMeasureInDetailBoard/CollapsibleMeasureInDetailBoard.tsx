@@ -3,15 +3,12 @@ import { CollapseButton, Selector } from '../../'
 import * as s from './CollapsibleMeasureInDetailBoard.css'
 import classNames = require('classnames')
 import App from '../../../App'
-import { AppState, Actions, MeasureName } from '../../../sharedTypes'
+import { MeasureName } from '../../../sharedTypes'
 import { measureNames } from '../../../data/measureNames'
 
 interface Props {
     children: React.ReactNode
     headerIsSticky?: boolean
-    
-    // Connecting the component
-    actions: Actions
 
     // Instance-specific data extracted from appState upstream
     selectedMeasure: MeasureName
@@ -20,6 +17,7 @@ interface Props {
     
     // Instance-specific function extracted from actions upstream
     handleCollapseButtonClick?: React.MouseEventHandler<HTMLDivElement>
+    handleSelectedMeasureChange: (newlySelectedMeasure: MeasureName) => void
     
     // Ref assignment
     refAssignmentFunctionforRefToMeasureInDetailBoardHeaderContainingDiv: (element: HTMLDivElement) => void
@@ -41,7 +39,7 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
             children,
             headerIsSticky,
             handleCollapseButtonClick,
-            actions,
+            handleSelectedMeasureChange,
             refAssignmentFunctionforRefToMeasureInDetailBoardHeaderContainingDiv,
             isCorrectInstanceForRefToMeasureInDetailBoardHeaderContainingDiv,
             headerVisible,
@@ -90,7 +88,7 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
                         <Selector
                             optionsArray={measureNames}
                             value={`${selectedMeasure}`}
-                            handleSelectorChange={actions.selectionChanges.changeSelectedMeasure}
+                            handleSelectorChange={handleSelectedMeasureChange}
                         />
                     </div>
                 </div>
