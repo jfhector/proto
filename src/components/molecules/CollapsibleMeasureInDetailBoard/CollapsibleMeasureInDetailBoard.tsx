@@ -13,16 +13,16 @@ interface Props {
 
     // Instance-specific data extracted from appState upstream
     selectedMeasure: MeasureName
-    expanded: boolean
-    headerHighlighted: boolean
+    expanded?: boolean
+    headerHighlighted?: boolean
     
     // Instance-specific function extracted from actions upstream
-    handleCollapseButtonClick?: React.MouseEventHandler<HTMLDivElement>
     handleSelectedMeasureChange: (newlySelectedMeasure: MeasureName) => void
+    handleCollapseButtonClick?: React.MouseEventHandler<HTMLDivElement>
     
     // Ref assignment
     refAssignmentFunctionforRefToMeasureInDetailBoardHeaderContainingDiv?: (element: HTMLDivElement) => void
-    isCorrectInstanceForRefToMeasureInDetailBoardHeaderContainingDiv: boolean
+    isCorrectInstanceForRefToMeasureInDetailBoardHeaderContainingDiv?: boolean
 }
 
 export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> {
