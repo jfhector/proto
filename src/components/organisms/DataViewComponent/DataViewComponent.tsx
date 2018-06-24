@@ -172,9 +172,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                     expanded={appState.measuresInDetailExpanded}
                     headerHighlighted={appState.measureInDetailBoardHeaderVisible}
                     handleCollapseButtonClick={actions.expansionToggles.toggleMeasureInDetailExpanded}
-                    refAssignmentFunctionforHeaderContainingDiv={
-                        refAssignmentFunctions.refAssignmentFunctionforRefToMeasureInDetailBoardHeaderContainingDiv
-                    }
+                    refAssignmentFunctionforHeaderContainingDiv={refAssignmentFunctions.forMeasureInDetailBoardHeaderContainingDiv}
                     rightNode={
                         <> 
                             <span

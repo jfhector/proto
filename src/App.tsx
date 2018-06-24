@@ -53,7 +53,7 @@ class App extends React.Component<Props, AppState> {
     refToMeasureInDetailBoardHeaderContainingDiv: HTMLDivElement
 
     refAssignmentFunctions = {
-        refAssignmentFunctionforRefToMeasureInDetailBoardHeaderContainingDiv: (element: HTMLDivElement) => {
+        forMeasureInDetailBoardHeaderContainingDiv: (element: HTMLDivElement) => {
             this.refToMeasureInDetailBoardHeaderContainingDiv = element
         }
     }
