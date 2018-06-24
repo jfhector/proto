@@ -8,7 +8,8 @@ import { AppState, Actions, MeasureName } from '../../../sharedTypes'
 const PROTOIMG_graph_salesValue = require('../../../assets/PROTOIMG_graph_salesValue.png')
 const PROTOIMG_graph_customers = require('../../../assets/PROTOIMG_graph_customers.png')
 const PROTOIMG_graph_spendPerCustomer = require('../../../assets/PROTOIMG_graph_spendPerCustomer.png')
-const PROTOIMG_graph_spendPerVisit = require('../../../assets/PROTOIMG_graph_spendPerVisit.png')
+// const PROTOIMG_graph_spendPerVisit = require('../../../assets/PROTOIMG_graph_spendPerVisit.png')'
+import { PROTOIMG_graph_spendPerVisit } from './../../../assets/'
 
 const PROTOIMG_table_subcategories_customers = require('../../../assets/PROTOIMG_table_subcategories_customers.png')
 const PROTOIMG_table_subcategories_salesValue = require('../../../assets/PROTOIMG_table_subcategories_salesValue.png')
