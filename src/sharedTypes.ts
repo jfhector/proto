@@ -35,6 +35,10 @@ export interface AppState {
 
 export type Actions = typeof App.prototype.actions
 
+// REF ASSIGNMENT FUNCTIONS
+
+export type RefAssignmentFunctions = typeof App.prototype.refAssignmentFunctions
+
 // ANALYSIS PERIOD AND COMPARISON PERIOD
 
 export type DurationOption = 

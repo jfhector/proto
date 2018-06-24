@@ -17,7 +17,7 @@ interface Props {
     handleCollapseButtonClick?: React.MouseEventHandler<HTMLDivElement>
     
     // Ref assignment
-    refAssignmentFunctionforHeaderContainingDiv?: (element: HTMLDivElement) => void                    // TODO: DOCUMENT
+    refAssignmentFunctionforHeaderContainingDiv?: (element: HTMLDivElement) => void
 }
 
 export class CollapsibleContentBoard extends React.Component<Props, {}> {
@@ -27,7 +27,7 @@ export class CollapsibleContentBoard extends React.Component<Props, {}> {
         headerIsSticky: false,
         headerHighlighted: false,
         handleCollapseButtonClick: () => { console.log('Button clicked') },
-        refAssignmentFunctionforHeaderContainingDiv: undefined,                                         // TODO: DOCUMENT
+        refAssignmentFunctionforHeaderContainingDiv: undefined,
     }
 
     render() {
