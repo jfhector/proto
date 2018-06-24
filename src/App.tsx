@@ -19,6 +19,23 @@ const PROTOIMG_nav_header = require('./assets/PROTOIMG_nav_header.png')
 const PROTOIMG_nav_tabs = require('./assets/PROTOIMG_nav_tabs.png')
 const PROTOIMG_nav_footer = require('./assets/PROTOIMG_nav_footer.png')
 
+// Assets for pre-loading
+const PROTOIMG_graph_salesValue = require('./assets/PROTOIMG_graph_salesValue.png')
+const PROTOIMG_graph_customers = require('./assets/PROTOIMG_graph_customers.png')
+const PROTOIMG_graph_spendPerCustomer = require('./assets/PROTOIMG_graph_spendPerCustomer.png')
+const PROTOIMG_graph_spendPerVisit = require('./assets/PROTOIMG_graph_spendPerVisit.png')
+
+const PROTOIMG_table_subcategories_customers = require('./assets/PROTOIMG_table_subcategories_customers.png')
+const PROTOIMG_table_subcategories_salesValue = require('./assets/PROTOIMG_table_subcategories_salesValue.png')
+const PROTOIMG_table_subcategories_spendPerCustomer = require('./assets/PROTOIMG_table_subcategories_spendPerCustomer.png')
+const PROTOIMG_table_subcategories_spendPerVisit = require('./assets/PROTOIMG_table_subcategories_spendPerVisit.png')
+
+const PROTOIMG_table_customerTypes_salesValue = require('./assets/PROTOIMG_table_customerTypes_salesValue.png')
+const PROTOIMG_table_regions_salesValue = require('./assets/PROTOIMG_table_regions_salesValue.png')
+const PROTOIMG_table_storeFormats_salesValue = require('./assets/PROTOIMG_table_storeFormats_salesValue.png')
+
+const PROTOIMG_kpiTree = require('./assets/PROTOIMG_kpiTree.png')
+
 interface Props {}
 
 class App extends React.Component<Props, AppState> {
@@ -312,6 +329,25 @@ class App extends React.Component<Props, AppState> {
                     <img src={PROTOIMG_nav_footer} />
                 </footer>
 
+                <div
+                    className={s.assetsPreLoader}
+                >
+                    <img src={PROTOIMG_graph_salesValue}/>
+                    <img src={PROTOIMG_graph_customers}/>
+                    <img src={PROTOIMG_graph_spendPerCustomer}/>
+                    <img src={PROTOIMG_graph_spendPerVisit}/>
+
+                    <img src={PROTOIMG_table_subcategories_customers}/>
+                    <img src={PROTOIMG_table_subcategories_salesValue}/>
+                    <img src={PROTOIMG_table_subcategories_spendPerCustomer}/>
+                    <img src={PROTOIMG_table_subcategories_spendPerVisit}/>
+
+                    <img src={PROTOIMG_table_customerTypes_salesValue}/>
+                    <img src={PROTOIMG_table_regions_salesValue}/>
+                    <img src={PROTOIMG_table_storeFormats_salesValue}/>
+
+                    <img src={PROTOIMG_kpiTree}/>
+                </div>
             </div>
         )
     }

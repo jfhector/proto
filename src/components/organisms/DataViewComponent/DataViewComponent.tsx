@@ -308,22 +308,6 @@ export class DataViewComponent extends React.Component<Props, {}> {
                         />
                     </CollapsibleContentModule>
                 </CollapsibleMeasureInDetailBoard>
-
-                <img src={PROTOIMG_graph_salesValue} style={{ 'visibility': 'hidden', 'width': 0, 'height': 0, 'overflow': 'hidden' }} />
-                <img src={PROTOIMG_graph_customers} style={{ 'visibility': 'hidden', 'width': 0, 'height': 0, 'overflow': 'hidden' }} />
-                <img src={PROTOIMG_graph_spendPerCustomer} style={{ 'visibility': 'hidden', 'width': 0, 'height': 0, 'overflow': 'hidden' }} />
-                <img src={PROTOIMG_graph_spendPerVisit} style={{ 'visibility': 'hidden', 'width': 0, 'height': 0, 'overflow': 'hidden' }} />
-
-                <img src={PROTOIMG_table_subcategories_customers} style={{ 'visibility': 'hidden', 'width': 0, 'height': 0, 'overflow': 'hidden' }} />
-                <img src={PROTOIMG_table_subcategories_salesValue} style={{ 'visibility': 'hidden', 'width': 0, 'height': 0, 'overflow': 'hidden' }} />
-                <img src={PROTOIMG_table_subcategories_spendPerCustomer} style={{ 'visibility': 'hidden', 'width': 0, 'height': 0, 'overflow': 'hidden' }} />
-                <img src={PROTOIMG_table_subcategories_spendPerVisit} style={{ 'visibility': 'hidden', 'width': 0, 'height': 0, 'overflow': 'hidden' }} />
-
-                <img src={PROTOIMG_table_customerTypes_salesValue} style={{ 'visibility': 'hidden', 'width': 0, 'height': 0, 'overflow': 'hidden' }} />
-                <img src={PROTOIMG_table_regions_salesValue} style={{ 'visibility': 'hidden', 'width': 0, 'height': 0, 'overflow': 'hidden' }} />
-                <img src={PROTOIMG_table_storeFormats_salesValue} style={{ 'visibility': 'hidden', 'width': 0, 'height': 0, 'overflow': 'hidden' }} />
-
-                <img src={PROTOIMG_kpiTree} style={{ 'visibility': 'hidden', 'width': 0, 'height': 0, 'overflow': 'hidden' }} />
             </div>
         )
     }
