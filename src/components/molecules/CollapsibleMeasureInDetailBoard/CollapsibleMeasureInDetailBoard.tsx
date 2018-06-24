@@ -2,20 +2,18 @@ import * as React from 'react'
 import { CollapseButton } from '../../'
 import * as s from './CollapsibleMeasureInDetailBoard.css'
 import classNames = require('classnames')
-import { MeasureName } from '../../../sharedTypes'
 
 interface Props {
+    title: string
     children: React.ReactNode
     headerIsSticky?: boolean
     rightNode?: React.ReactNode
 
     // Instance-specific data extracted from appState upstream
-    selectedMeasure: MeasureName
     expanded?: boolean
     headerHighlighted?: boolean
     
     // Instance-specific function extracted from actions upstream
-    handleSelectedMeasureChange: (newlySelectedMeasure: MeasureName) => void
     handleCollapseButtonClick?: React.MouseEventHandler<HTMLDivElement>
     
     // Ref assignment
@@ -36,6 +34,7 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
 
     render() {
         const {
+            title,
             children,
             headerIsSticky,
             handleCollapseButtonClick,
@@ -73,7 +72,7 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
                     <div
                         className={s.title}
                     >
-                        Measure in detail
+                        {title}
                     </div>
 
                     <div
