@@ -9,29 +9,31 @@ import { measureNames } from '../../../data/measureNames'
 interface Props {
     children: React.ReactNode
     headerIsSticky?: boolean
+    rightNode?: React.ReactNode
 
     // Instance-specific data extracted from appState upstream
     selectedMeasure: MeasureName
     expanded: boolean
-    headerVisible: boolean
+    headerHighlighted: boolean
     
     // Instance-specific function extracted from actions upstream
     handleCollapseButtonClick?: React.MouseEventHandler<HTMLDivElement>
     handleSelectedMeasureChange: (newlySelectedMeasure: MeasureName) => void
     
     // Ref assignment
-    refAssignmentFunctionforRefToMeasureInDetailBoardHeaderContainingDiv: (element: HTMLDivElement) => void
+    refAssignmentFunctionforRefToMeasureInDetailBoardHeaderContainingDiv?: (element: HTMLDivElement) => void
     isCorrectInstanceForRefToMeasureInDetailBoardHeaderContainingDiv: boolean
 }
 
 export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> {
     static defaultProps = {
         expanded: false,
-        rightNode: false,
-        rightNodeIsSticky: false,
-        rightNodeIsHighlighted: false,
+        rightNode: null,
+        headerIsSticky: false,
+        headerHighlighted: false,
         handleCollapseButtonClick: () => { console.log('Button clicked') },
-        isCorrectInstanceForRefToMeasureInDetailBoardHeaderContainingDiv: false
+        refAssignmentFunctionforRefToMeasureInDetailBoardHeaderContainingDiv: undefined,
+        isCorrectInstanceForRefToMeasureInDetailBoardHeaderContainingDiv: false,
     }
 
     render() {
@@ -42,7 +44,7 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
             handleSelectedMeasureChange,
             refAssignmentFunctionforRefToMeasureInDetailBoardHeaderContainingDiv,
             isCorrectInstanceForRefToMeasureInDetailBoardHeaderContainingDiv,
-            headerVisible,
+            headerHighlighted,
             selectedMeasure,
             expanded
         } = this.props
@@ -54,7 +56,7 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
                     {
                         [s.expanded]: expanded,
                         [s.headerIsSticky]: headerIsSticky,
-                        [s.headerContainerVisible]: headerVisible
+                        [s.headerContainerVisible]: headerHighlighted
                     }
                 )}
             >
@@ -78,7 +80,7 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
                     </div>
 
                     <div
-                        className={s.selectorContainer}
+                        className={s.rightNodeContainer}
                     >
                         <div
                             className={s.selectMeasureLabel}

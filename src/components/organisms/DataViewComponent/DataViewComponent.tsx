@@ -170,7 +170,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                     headerIsSticky
                     selectedMeasure={appState.selectedMeasure}
                     expanded={appState.measuresInDetailExpanded}
-                    headerVisible={appState.measureInDetailBoardHeaderVisible}
+                    headerHighlighted={appState.measureInDetailBoardHeaderVisible}
                     handleCollapseButtonClick={actions.expansionToggles.toggleMeasureInDetailExpanded}
                     handleSelectedMeasureChange={actions.selectionChanges.changeSelectedMeasure}
                     refAssignmentFunctionforRefToMeasureInDetailBoardHeaderContainingDiv={

@@ -16,7 +16,7 @@
     grid-area: headerArea;
     display: grid;
     grid-template-columns: auto auto 1fr auto;
-    grid-template-areas: "buttonArea    titleArea   .   selectorContainerArea";
+    grid-template-areas: "buttonArea    titleArea   .   rightNodeContainerArea";
     height: 50px;
     overflow: visible;
 }
@@ -38,13 +38,13 @@
     user-select: none;
 }
 
-.headerContainer .selectorContainer {
-    grid-area: selectorContainerArea;
+.headerContainer .rightNodeContainer {
+    grid-area: rightNodeContainerArea;
     margin-right: 20px;
     align-self: center;
 }
 
-.headerContainer .selectorContainer .selectMeasureLabel {
+.headerContainer .rightNodeContainer .selectMeasureLabel {
     font-size: small;
     font-weight: bold;
     display: inline-block;
