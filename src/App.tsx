@@ -14,7 +14,7 @@ import {
 import * as s from './App.css'
 import { AppState, MeasureName, DateOption, ComparisonOption, MedicineSubcategoryName, RegionOption, StoreFormatOption, CustomerSegmentOption, DurationOption } from './sharedTypes'
 import { getComparisonOptions } from './data'
-import { AssetsPreLoader } from './assets'
+import { AssetsLoader } from './assets'
 
 const PROTOIMG_nav_header = require('./assets/PROTOIMG_nav_header.png')
 const PROTOIMG_nav_tabs = require('./assets/PROTOIMG_nav_tabs.png')
@@ -313,7 +313,7 @@ class App extends React.Component<Props, AppState> {
                     <img src={PROTOIMG_nav_footer} />
                 </footer>
 
-                <AssetsPreLoader />
+                <AssetsLoader />
             </div>
         )
     }

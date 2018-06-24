@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as s from './AssetsPreLoader.css'
+import * as s from './AssetsLoader.css'
 
 // Assets for pre-loading
 const PROTOIMG_graph_salesValue = require('./PROTOIMG_graph_salesValue.png')
@@ -18,8 +18,10 @@ const PROTOIMG_table_storeFormats_salesValue = require('./PROTOIMG_table_storeFo
 
 const PROTOIMG_kpiTree = require('./PROTOIMG_kpiTree.png')
 
-export class AssetsPreLoader extends React.Component<{}, {}> {
+export class AssetsLoader extends React.Component<{}, {}> {
     render() {
+
+        // Pre-loading all assets
         return (
             <div
                 className={s.AssetsPreLoader}

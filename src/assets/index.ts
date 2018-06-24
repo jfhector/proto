@@ -1,1 +1,1 @@
-export * from './AssetsPreLoader'
+export * from './AssetsLoader'
