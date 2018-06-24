@@ -17,8 +17,7 @@ interface Props {
     handleCollapseButtonClick?: React.MouseEventHandler<HTMLDivElement>
     
     // Ref assignment
-    refAssignmentFunctionforRefToMeasureInDetailBoardHeaderContainingDiv?: (element: HTMLDivElement) => void
-    isCorrectInstanceForRefToMeasureInDetailBoardHeaderContainingDiv?: boolean
+    refAssignmentFunctionforHeaderContainingDiv?: (element: HTMLDivElement) => void
 }
 
 export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> {
@@ -28,8 +27,7 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
         headerIsSticky: false,
         headerHighlighted: false,
         handleCollapseButtonClick: () => { console.log('Button clicked') },
-        refAssignmentFunctionforRefToMeasureInDetailBoardHeaderContainingDiv: undefined,
-        isCorrectInstanceForRefToMeasureInDetailBoardHeaderContainingDiv: false,
+        refAssignmentFunctionforHeaderContainingDiv: undefined,
     }
 
     render() {
@@ -38,8 +36,7 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
             children,
             headerIsSticky,
             handleCollapseButtonClick,
-            refAssignmentFunctionforRefToMeasureInDetailBoardHeaderContainingDiv,
-            isCorrectInstanceForRefToMeasureInDetailBoardHeaderContainingDiv,
+            refAssignmentFunctionforHeaderContainingDiv,
             headerHighlighted,
             expanded,
             rightNode
@@ -58,7 +55,7 @@ export class CollapsibleMeasureInDetailBoard extends React.Component<Props, {}> 
             >
                 <div
                     className={s.headerContainer}
-                    ref={isCorrectInstanceForRefToMeasureInDetailBoardHeaderContainingDiv ? refAssignmentFunctionforRefToMeasureInDetailBoardHeaderContainingDiv : undefined}
+                    ref={refAssignmentFunctionforHeaderContainingDiv}
                 >
                     <div
                         className={s.collapseButtonContainer}
