@@ -31,10 +31,3 @@
     justify-content: center;
     background-color: var(--color_tuatara);
 }
-
-.assetsPreLoader {
-    visibility: hidden;
-    width: 0;
-    height: 0;
-    overflow: hidden;
-}
