@@ -183,11 +183,11 @@ export class DataViewComponent extends React.Component<Props, {}> {
                     isCorrectInstanceForRefToMeasureInDetailBoardHeaderContainingDiv
                     rightNode={
                         <> 
-                            <div
+                            <span
                                 className={s.measureInDetailBoardRightNodeLabel}
                             >
                                 Selected measure:
-                            </div>
+                            </span>
                             <Selector
                                 optionsArray={measureOptions}
                                 value={`${selectedMeasure}`}
