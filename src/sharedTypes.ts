@@ -1,7 +1,7 @@
 
 // Indirectional imports:
 import App from './App'
-import { categoryHierarchy, durationOptions, storeFormatOptions } from './data'
+import { categoryHierarchy, durationOptions, storeFormatOptions, regionOptions, customerSegmentOptions, measureOptions } from './data'
 
 // APP STATE
 
@@ -141,27 +141,22 @@ export type ComparisonOption =
       ComparisonOptionAvailableFor26WeekDuration |
       ComparisonOptionAvailableFor52WeekDuration
 
-// PRODUCT CATEGORY
+
+
+
+
+
+
+
+// SELECTOR OPTIONS
 
 export type MedicineSubcategoryName = keyof typeof categoryHierarchy['MEDICINE']
 
-// FILTERS
-
 export type StoreFormatOption = keyof typeof storeFormatOptions
 
-export type RegionOption = 
-      'All regions' | 
-      'North region' | 
-      'Central region' | 
-      'West region' | 
-      'South region'
+export type RegionOption = keyof typeof regionOptions
 
-export type CustomerSegmentOption = 
-      'All customer segments' | 
-      'Young single person' | 
-      'Family with young children' | 
-      'Post family' | 
-      'Older person'
+export type CustomerSegmentOption = keyof typeof customerSegmentOptions
 
 export interface FiltersSet {
       duration: DurationOption,
@@ -177,18 +172,15 @@ export interface FiltersSet {
       customerSegment: CustomerSegmentOption,
 }
 
-// MEASURE NAMES AND MEASURE DATA
+export type MeasureName = keyof typeof measureOptions
 
-export type MeasureName = 
-      'Sales value' | 
-      'Spend per customer' | 
-      'Customers' | 
-      'Retailer visits' | 
-      'Spend per visit' | 
-      'Units per visit' | 
-      'Basket penetration' | 
-      'Frequency of purchase' | 
-      'Sales units'
+
+
+
+
+
+
+// MEASURE DATA
 
 export interface MeasureData {
       value: string

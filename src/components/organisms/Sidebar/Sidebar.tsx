@@ -136,7 +136,7 @@ export class Sidebar extends React.Component<Props, {}> {
                         className={s.selectorContainer}
                     >
                         <Selector
-                            optionsArray={regionOptions}
+                            optionsArray={Object.keys(regionOptions)}
                             value={appState.selectedFilters.region}
                             handleSelectorChange={actions.changeSelected.region}
                         />
@@ -156,7 +156,7 @@ export class Sidebar extends React.Component<Props, {}> {
                         className={s.selectorContainer}
                     >
                         <Selector
-                            optionsArray={customerSegmentOptions}
+                            optionsArray={Object.keys(customerSegmentOptions)}
                             value={appState.selectedFilters.customerSegment}
                             handleSelectorChange={actions.changeSelected.customerSegment}
                         />

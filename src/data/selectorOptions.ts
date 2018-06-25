@@ -138,30 +138,30 @@ export const storeFormatOptions = {
     'Online': undefined
 }
 
-export const regionOptions: RegionOption[] = [
-    'All regions',
-    'North region',
-    'Central region',
-    'West region',
-    'South region'
-]
+export const regionOptions = {
+    'All regions': undefined,
+    'North region': undefined,
+    'Central region': undefined,
+    'West region': undefined,
+    'South region': undefined,
+}
 
-export const customerSegmentOptions: CustomerSegmentOption[] = [
-    'All customer segments',
-    'Young single person',
-    'Family with young children',
-    'Post family',
-    'Older person'
-]
+export const customerSegmentOptions = {
+    'All customer segments': undefined,
+    'Young single person': undefined,
+    'Family with young children': undefined,
+    'Post family': undefined,
+    'Older person': undefined,
+}
 
-export const measureOptions: MeasureName[] = [
-    'Sales value',
-    'Spend per customer',
-    'Customers',
-    'Retailer visits',
-    'Spend per visit',
-    'Units per visit',
-    'Basket penetration',
-    'Frequency of purchase',
-    'Sales units'
-]
+export const measureOptions = {
+    'Sales value': undefined,
+    'Spend per customer': undefined,
+    'Customers': undefined,
+    'Retailer visits': undefined,
+    'Spend per visit': undefined,
+    'Units per visit': undefined,
+    'Basket penetration': undefined,
+    'Frequency of purchase': undefined,
+    'Sales units': undefined,
+}

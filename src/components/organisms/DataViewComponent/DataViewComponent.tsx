@@ -171,7 +171,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                                 Selected measure:
                             </span>
                             <Selector
-                                optionsArray={measureOptions}
+                                optionsArray={Object.keys(measureOptions)}
                                 value={`${appState.selectedMeasure}`}
                                 handleSelectorChange={actions.changeSelected.measure}
                             />
