@@ -16,12 +16,12 @@ import {
     MeasureName
 } from '../sharedTypes'
 
-export const durationOptions: DurationOption[] = [
-    '4 weeks',
-    '12 weeks',
-    '26 weeks',
-    '52 weeks',
-]
+export const durationOptions = {
+    '4 weeks': {},
+    '12 weeks': {},
+    '26 weeks': {},
+    '52 weeks': {}
+}
 
 export function getDatesOptions(selectedDuration: DurationOption):
     DateOptionAvailableFor4WeekDuration[] |

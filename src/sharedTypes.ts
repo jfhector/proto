@@ -1,7 +1,7 @@
 
 // Indirectional imports:
-import { categoryHierarchy } from './data/categoryHierarchy'
 import App from './App'
+import { categoryHierarchy, durationOptions } from './data'
 
 // APP STATE
 
@@ -44,11 +44,7 @@ export type RefAssignmentFunctions = typeof App.prototype.refAssignmentFunctions
 
 // ANALYSIS PERIOD AND COMPARISON PERIOD
 
-export type DurationOption = 
-      '52 weeks' | 
-      '26 weeks' | 
-      '12 weeks' | 
-      '4 weeks'
+export type DurationOption = keyof typeof durationOptions
 
 export type DateOptionAvailableFor4WeekDuration = 
       '12 Feb 2018 - 11 Mar 2018' | 
