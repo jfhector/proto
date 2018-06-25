@@ -2,7 +2,7 @@ import * as React from 'react'
 import { hot } from 'react-hot-loader'
 import * as s from './App.css'
 import { Sidebar, DataViewComponent } from './components/'
-import { AppState, MeasureName, DateOption, ComparisonOption, MedicineSubcategoryName, RegionOption, StoreFormatOption, CustomerSegmentOption, DurationOption } from './sharedTypes'
+import { AppState, MeasureOption, DateOption, ComparisonOption, MedicineSubcategoryName, RegionOption, StoreFormatOption, CustomerSegmentOption, DurationOption } from './sharedTypes'
 import { getComparisonOptions } from './data'
 import { AssetsLoader, PROTOIMG_nav_header, PROTOIMG_nav_tabs, PROTOIMG_nav_footer } from './assets'
 
@@ -157,7 +157,7 @@ class App extends React.Component<Props, AppState> {
                     } as AppState)
                 )
             },
-            measure: (newlySelectedMeasure: MeasureName) => {
+            measure: (newlySelectedMeasure: MeasureOption) => {
                 this.setState({
                     selectedMeasure: newlySelectedMeasure
                 })

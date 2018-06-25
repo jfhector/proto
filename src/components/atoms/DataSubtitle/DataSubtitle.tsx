@@ -1,11 +1,11 @@
 import * as React from 'react'
 import * as s from './DataSubtitle.css'
-import { AppState, MeasureName, FiltersSet } from '../../../sharedTypes'
+import { AppState, MeasureOption, FiltersSet } from '../../../sharedTypes'
 import classNames = require('classnames')
 
 interface Props {
     displayedFilters: FiltersSet,
-    selectedMeasure: MeasureName,
+    selectedMeasure: MeasureOption,
 }
 
 export class DataSubtitle extends React.Component<Props, {}> {

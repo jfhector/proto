@@ -1,17 +1,17 @@
 import * as React from 'react'
 import * as s from './KpiTile.css'
-import { AppState, MeasureName, MeasureData } from '../../../sharedTypes'
+import { AppState, MeasureOption, MeasureData } from '../../../sharedTypes'
 import classNames = require('classnames')
 
 interface Props {
-    measure: MeasureName
+    measure: MeasureOption
     
     // Instance-specific data extracted from appState upsteam
     kpisData: MeasureData,
     selected?: boolean
 
     // Instance-specific function extracted from appState upsteam
-    handleKpiTileClick?: (measure: MeasureName) => void
+    handleKpiTileClick?: (measure: MeasureOption) => void
 }
 
 export class KpiTile extends React.Component<Props, {}> {

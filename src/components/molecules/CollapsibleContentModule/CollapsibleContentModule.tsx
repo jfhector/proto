@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { FiltersSet, MeasureName } from '../../../sharedTypes'
+import { FiltersSet, MeasureOption } from '../../../sharedTypes'
 import * as s from './CollapsibleContentModule.css'
 import { CollapseButton } from '../..'
 import classNames = require('classnames')

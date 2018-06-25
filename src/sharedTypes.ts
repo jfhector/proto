@@ -15,7 +15,7 @@ export interface AppState {
     dataViewNeedsUpdating: boolean,
 
     // SELECTED MEASURE 
-    selectedMeasure: MeasureName,
+    selectedMeasure: MeasureOption,
 
     // DEFINES WHICH CONTENT BOARDS AND MODULES ARE EXPANDED
     expanded: {
@@ -172,7 +172,7 @@ export interface FiltersSet {
       customerSegment: CustomerSegmentOption,
 }
 
-export type MeasureName = keyof typeof measureOptions
+export type MeasureOption = keyof typeof measureOptions
 
 
 
@@ -189,4 +189,4 @@ export interface MeasureData {
       changedUpwards: boolean
 }
 
-export type KpisDataForAllMeasures = {[K in MeasureName]: MeasureData}
+export type KpisDataForAllMeasures = {[K in MeasureOption]: MeasureData}

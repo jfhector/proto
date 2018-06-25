@@ -13,7 +13,7 @@ import {
     DateOptionAvailableFor12WeekDuration,
     DateOptionAvailableFor26WeekDuration,
     DateOptionAvailableFor52WeekDuration,
-    MeasureName
+    MeasureOption
 } from '../sharedTypes'
 
 export const durationOptions = {
