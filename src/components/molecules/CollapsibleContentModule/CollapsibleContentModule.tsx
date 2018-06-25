@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { FiltersSet, MeasureOption } from '../../../sharedTypes'
 import * as s from './CollapsibleContentModule.css'
 import { CollapseButton } from '../..'
 import classNames = require('classnames')
@@ -10,13 +9,10 @@ interface Props {
     
     // Instance specific data extracted from appState upstream
     expanded?: boolean
-    displayedFilters: FiltersSet
     
     // Instance specific function extracted from actions upstream
     handleCollapseButtonClick?: React.MouseEventHandler<HTMLElement>
 }
-
-
 
 export class CollapsibleContentModule extends React.Component<Props, {}> {
     static defaultProps = {
@@ -30,18 +26,7 @@ export class CollapsibleContentModule extends React.Component<Props, {}> {
             children,
             expanded,
             handleCollapseButtonClick,
-            displayedFilters,
         } = this.props
-
-        const {
-            duration,
-            dates,
-            comparison,
-            subcategory,
-            region,
-            storeFormat,
-            customerSegment,
-        } = displayedFilters
 
         return (
             <div
@@ -52,7 +37,6 @@ export class CollapsibleContentModule extends React.Component<Props, {}> {
                     }
                 )}
             >
-
                 <div
                     className={s.collapseButtonContainer}
                 >
@@ -60,7 +44,6 @@ export class CollapsibleContentModule extends React.Component<Props, {}> {
                         expanded={expanded}
                         handleClick={handleCollapseButtonClick}
                     />
-
                 </div>
 
                 <div
@@ -76,9 +59,7 @@ export class CollapsibleContentModule extends React.Component<Props, {}> {
                         {children}
                     </div>
                 }
-
             </div>
         )
-
     }
 }

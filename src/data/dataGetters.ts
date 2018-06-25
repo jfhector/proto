@@ -1,5 +1,5 @@
-import { DurationOption, DateOptionsObject, ComparisonOptionAvailableFor4WeekDuration, ComparisonOptionAvailableFor12WeekDuration, ComparisonOptionAvailableFor26WeekDuration, ComparisonOptionAvailableFor52WeekDuration } from '../sharedTypes'
-import { dateOptionsFor4WeekDuration, dateOptionsFor12WeekDuration, dateOptionsFor26WeekDuration, dateOptionsFor52WeekDuration } from './selectorOptions'
+import { DurationOption, DateOptionsObject, ComparisonOptionsObject } from '../sharedTypes'
+import { dateOptionsFor4WeekDuration, dateOptionsFor12WeekDuration, dateOptionsFor26WeekDuration, dateOptionsFor52WeekDuration, comparisonOptionsFor52WeekDuration, comparisonOptionsFor4WeekDuration, comparisonOptionsFor26WeekDuration, comparisonOptionsFor12WeekDuration } from './'
 
 export function datesOptionsFor(selectedDuration: DurationOption): DateOptionsObject {
     switch (selectedDuration) {
@@ -17,27 +17,16 @@ export function datesOptionsFor(selectedDuration: DurationOption): DateOptionsOb
     }
 }
 
-export function comparisonOptionsFor(selectedDuration: DurationOption):
-    ComparisonOptionAvailableFor4WeekDuration[] |
-    ComparisonOptionAvailableFor12WeekDuration[] |
-    ComparisonOptionAvailableFor26WeekDuration[] |
-    ComparisonOptionAvailableFor52WeekDuration[] {
+export function comparisonOptionsFor(selectedDuration: DurationOption): ComparisonOptionsObject {
     switch (selectedDuration) {
-        case '52 weeks': return [
-            'vs. previous 52 weeks'
-        ]
-        case '26 weeks': return [
-            'vs. previous 26 weeks',
-            'vs. last year',
-        ]
-        case '12 weeks': return [
-            'vs. previous 12 weeks',
-            'vs. last year',
-        ]
-        case '4 weeks': return [
-            'vs. previous 4 weeks',
-            'vs. last year',
-        ]
+        case '52 weeks': 
+            return comparisonOptionsFor52WeekDuration
+        case '26 weeks': 
+            return comparisonOptionsFor26WeekDuration
+        case '12 weeks': 
+            return comparisonOptionsFor12WeekDuration
+        case '4 weeks': 
+            return comparisonOptionsFor4WeekDuration
         default:
             const _exhaustiveCheck: never = selectedDuration
             return _exhaustiveCheck

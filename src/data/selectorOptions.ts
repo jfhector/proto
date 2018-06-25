@@ -1,13 +1,3 @@
-
-import {
-    DurationOption,
-    ComparisonOptionAvailableFor4WeekDuration,
-    ComparisonOptionAvailableFor12WeekDuration,
-    ComparisonOptionAvailableFor26WeekDuration,
-    ComparisonOptionAvailableFor52WeekDuration,
-    DateOptionsObject,
-} from '../sharedTypes'
-
 export const durationOptions = {
     '4 weeks': undefined,
     '12 weeks': undefined,
@@ -85,6 +75,26 @@ export const dateOptionsFor52WeekDuration = {
     '19 Dec 2016 - 17 Dec 2017': undefined,
     '12 Dec 2016 - 10 Dec 2017': undefined,
     '05 Dec 2016 - 03 Dec 2017': undefined,
+}
+
+export const comparisonOptionsFor4WeekDuration = {
+    'vs. previous 4 weeks': undefined,
+    'vs. last year': undefined
+}
+
+export const comparisonOptionsFor12WeekDuration = {
+    'vs. previous 12 weeks': undefined,
+    'vs. last year': undefined
+}
+
+export const comparisonOptionsFor26WeekDuration = {
+    'vs. previous 26 weeks': undefined,
+    'vs. last year': undefined
+}
+
+export const comparisonOptionsFor52WeekDuration = {
+    'vs. previous 52 weeks': undefined,
+    'vs. last year': undefined
 }
 
 export const storeFormatOptions = {

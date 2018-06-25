@@ -180,7 +180,6 @@ export class DataViewComponent extends React.Component<Props, {}> {
                 >
                     <CollapsibleContentModule
                         title='Trend'
-                        displayedFilters={appState.displayedFilters}
                         expanded={appState.expanded.trendGraphModule}
                         handleCollapseButtonClick={actions.toggleExpansion.trendGraph}
                     >
@@ -215,7 +214,6 @@ export class DataViewComponent extends React.Component<Props, {}> {
 
                     <CollapsibleContentModule
                         title={`Top 10 movers in ${appState.displayedFilters.subcategory}`}
-                        displayedFilters={appState.displayedFilters}
                         expanded={appState.expanded.splitBySubcategoryModule}
                         handleCollapseButtonClick={actions.toggleExpansion.splitBySubcategory}
                     >
@@ -250,7 +248,6 @@ export class DataViewComponent extends React.Component<Props, {}> {
 
                     <CollapsibleContentModule
                         title='Split by region'
-                        displayedFilters={appState.displayedFilters}
                         expanded={appState.expanded.splitByRegionModule}
                         handleCollapseButtonClick={actions.toggleExpansion.splitByRegion}
                     >
@@ -265,7 +262,6 @@ export class DataViewComponent extends React.Component<Props, {}> {
 
                     <CollapsibleContentModule
                         title='Split by store format'
-                        displayedFilters={appState.displayedFilters}
                         expanded={appState.expanded.splitByStoreFormatModule}
                         handleCollapseButtonClick={actions.toggleExpansion.splitByStoreFormat}
                     >
@@ -280,7 +276,6 @@ export class DataViewComponent extends React.Component<Props, {}> {
 
                     <CollapsibleContentModule
                         title='Split by customer segment'
-                        displayedFilters={appState.displayedFilters}
                         expanded={appState.expanded.splitByCustomerSegmentModule}
                         handleCollapseButtonClick={actions.toggleExpansion.splitByCustomerSegment}
                     >

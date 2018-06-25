@@ -65,7 +65,7 @@ export class Sidebar extends React.Component<Props, {}> {
                         className={s.selectorContainer}
                     >
                         <Selector
-                            optionsArray={comparisonOptionsFor(appState.selectedFilters.duration)}
+                            optionsArray={Object.keys(comparisonOptionsFor(appState.selectedFilters.duration))}
                             value={appState.selectedFilters.comparison}
                             handleSelectorChange={actions.changeSelected.comparison}
                         />

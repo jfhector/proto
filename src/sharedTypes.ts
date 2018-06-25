@@ -1,7 +1,5 @@
-
-// Indirectional imports:
 import App from './App'
-import { categoryHierarchy, durationOptions, storeFormatOptions, regionOptions, customerSegmentOptions, measureOptions, dateOptionsFor4WeekDuration, dateOptionsFor12WeekDuration, dateOptionsFor26WeekDuration, dateOptionsFor52WeekDuration } from './data'
+import { categoryHierarchy, durationOptions, storeFormatOptions, regionOptions, customerSegmentOptions, measureOptions, dateOptionsFor4WeekDuration, dateOptionsFor12WeekDuration, dateOptionsFor26WeekDuration, dateOptionsFor52WeekDuration, comparisonOptionsFor4WeekDuration, comparisonOptionsFor12WeekDuration, comparisonOptionsFor26WeekDuration, comparisonOptionsFor52WeekDuration } from './data'
 
 // APP STATE
 
@@ -42,19 +40,11 @@ export type Actions = typeof App.prototype.actions
 
 export type RefAssignmentFunctions = typeof App.prototype.refAssignmentFunctions
 
-// ANALYSIS PERIOD AND COMPARISON PERIOD
+// DURATION OPTIONS
 
 export type DurationOption = keyof typeof durationOptions
 
-type DateOptionFor4WeekDuration = keyof typeof dateOptionsFor4WeekDuration
-type DateOptionFor12WeekDuration = keyof typeof dateOptionsFor12WeekDuration
-type DateOptionFor26WeekDuration = keyof typeof dateOptionsFor26WeekDuration
-type DateOptionFor52WeekDuration = keyof typeof dateOptionsFor52WeekDuration
-export type DateOption = 
-      DateOptionFor4WeekDuration |
-      DateOptionFor12WeekDuration |
-      DateOptionFor26WeekDuration | 
-      DateOptionFor52WeekDuration
+// DATE OPTIONS
 
 type DateOptionsObjectFor4WeekDuration = typeof dateOptionsFor4WeekDuration
 type DateOptionsObjectFor12WeekDuration = typeof dateOptionsFor12WeekDuration
@@ -66,26 +56,37 @@ export type DateOptionsObject =
     DateOptionsObjectFor26WeekDuration |
     DateOptionsObjectFor52WeekDuration
 
-export type ComparisonOptionAvailableFor4WeekDuration = 
-      'vs. last year' 
-      | 'vs. previous 4 weeks'
+type DateOptionFor4WeekDuration = keyof DateOptionsObjectFor4WeekDuration
+type DateOptionFor12WeekDuration = keyof DateOptionsObjectFor12WeekDuration
+type DateOptionFor26WeekDuration = keyof DateOptionsObjectFor26WeekDuration
+type DateOptionFor52WeekDuration = keyof DateOptionsObjectFor52WeekDuration
+export type DateOption = 
+      DateOptionFor4WeekDuration |
+      DateOptionFor12WeekDuration |
+      DateOptionFor26WeekDuration | 
+      DateOptionFor52WeekDuration
 
-export type ComparisonOptionAvailableFor12WeekDuration = 
-      'vs. last year' | 
-      'vs. previous 12 weeks'
+// COMPARISON OPTIONS
 
-export type ComparisonOptionAvailableFor26WeekDuration = 
-      'vs. last year' | 
-      'vs. previous 26 weeks'
+type ComparisonOptionsObjectFor4WeekDuration = typeof comparisonOptionsFor4WeekDuration
+type ComparisonOptionsObjectFor12WeekDuration = typeof comparisonOptionsFor12WeekDuration
+type ComparisonOptionsObjectFor26WeekDuration = typeof comparisonOptionsFor26WeekDuration
+type ComparisonOptionsObjectFor52WeekDuration = typeof comparisonOptionsFor52WeekDuration
+export type ComparisonOptionsObject =
+    ComparisonOptionsObjectFor4WeekDuration |
+    ComparisonOptionsObjectFor12WeekDuration |
+    ComparisonOptionsObjectFor26WeekDuration |
+    ComparisonOptionsObjectFor52WeekDuration
 
-export type ComparisonOptionAvailableFor52WeekDuration = 
-      'vs. previous 52 weeks'
-
+type ComparisonOptionFor4WeekDuration = keyof ComparisonOptionsObjectFor4WeekDuration
+type ComparisonOptionFor12WeekDuration = keyof ComparisonOptionsObjectFor12WeekDuration
+type ComparisonOptionFor26WeekDuration = keyof ComparisonOptionsObjectFor26WeekDuration
+type ComparisonOptionFor52WeekDuration = keyof ComparisonOptionsObjectFor52WeekDuration
 export type ComparisonOption =
-      ComparisonOptionAvailableFor4WeekDuration |
-      ComparisonOptionAvailableFor12WeekDuration |
-      ComparisonOptionAvailableFor26WeekDuration |
-      ComparisonOptionAvailableFor52WeekDuration
+    ComparisonOptionFor4WeekDuration |
+    ComparisonOptionFor12WeekDuration |
+    ComparisonOptionFor26WeekDuration |
+    ComparisonOptionFor52WeekDuration
 
 
 
@@ -105,17 +106,13 @@ export type RegionOption = keyof typeof regionOptions
 export type CustomerSegmentOption = keyof typeof customerSegmentOptions
 
 export interface FiltersSet {
-      duration: DurationOption,
-      dates: string,
-      comparison: 
-            ComparisonOptionAvailableFor4WeekDuration | 
-            ComparisonOptionAvailableFor12WeekDuration | 
-            ComparisonOptionAvailableFor26WeekDuration | 
-            ComparisonOptionAvailableFor52WeekDuration,
-      subcategory: MedicineSubcategoryName,
-      region: RegionOption,
-      storeFormat: StoreFormatOption,
-      customerSegment: CustomerSegmentOption,
+      duration: DurationOption
+      dates: DateOption
+      comparison: ComparisonOption
+      subcategory: MedicineSubcategoryName
+      region: RegionOption
+      storeFormat: StoreFormatOption
+      customerSegment: CustomerSegmentOption
 }
 
 export type MeasureOption = keyof typeof measureOptions

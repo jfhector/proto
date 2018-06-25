@@ -82,10 +82,11 @@ class App extends React.Component<Props, AppState> {
             duration: (newlySelectedDuration: DurationOption) => {
                 this.setState(
                     (prevState: AppState) => ({
+                        ...prevState,
                         selectedFilters: {
                             ...prevState.selectedFilters,
                             duration: newlySelectedDuration,
-                            comparison: comparisonOptionsFor(newlySelectedDuration)[0]
+                            comparison: Object.keys(comparisonOptionsFor(newlySelectedDuration))[0]
                         },
                         dataViewNeedsUpdating: true,
                     } as AppState)
