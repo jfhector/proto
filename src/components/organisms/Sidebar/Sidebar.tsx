@@ -55,7 +55,7 @@ export class Sidebar extends React.Component<Props, {}> {
                         className={s.selectorContainer}
                     >
                         <Selector
-                            optionsArray={getDatesOptions(appState.selectedFilters.duration)}
+                            optionsArray={Object.keys(getDatesOptions(appState.selectedFilters.duration))}
                             value={appState.selectedFilters.dates}
                             handleSelectorChange={actions.changeSelected.dates}
                         />
