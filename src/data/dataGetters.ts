@@ -1,7 +1,7 @@
 import { DurationOption, DateOptionsObject, ComparisonOptionAvailableFor4WeekDuration, ComparisonOptionAvailableFor12WeekDuration, ComparisonOptionAvailableFor26WeekDuration, ComparisonOptionAvailableFor52WeekDuration } from '../sharedTypes'
 import { dateOptionsFor4WeekDuration, dateOptionsFor12WeekDuration, dateOptionsFor26WeekDuration, dateOptionsFor52WeekDuration } from './selectorOptions'
 
-export function getDatesOptions(selectedDuration: DurationOption): DateOptionsObject {
+export function datesOptionsFor(selectedDuration: DurationOption): DateOptionsObject {
     switch (selectedDuration) {
         case '4 weeks': 
             return dateOptionsFor4WeekDuration
@@ -17,7 +17,7 @@ export function getDatesOptions(selectedDuration: DurationOption): DateOptionsOb
     }
 }
 
-export function getComparisonOptions(selectedDuration: DurationOption):
+export function comparisonOptionsFor(selectedDuration: DurationOption):
     ComparisonOptionAvailableFor4WeekDuration[] |
     ComparisonOptionAvailableFor12WeekDuration[] |
     ComparisonOptionAvailableFor26WeekDuration[] |

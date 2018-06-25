@@ -3,7 +3,7 @@ import { hot } from 'react-hot-loader'
 import * as s from './App.css'
 import { Sidebar, DataViewComponent } from './components/'
 import { AppState, MeasureOption, DateOption, ComparisonOption, MedicineSubcategoryName, RegionOption, StoreFormatOption, CustomerSegmentOption, DurationOption } from './sharedTypes'
-import { getComparisonOptions } from './data'
+import { comparisonOptionsFor } from './data'
 import { AssetsLoader, PROTOIMG_nav_header, PROTOIMG_nav_tabs, PROTOIMG_nav_footer } from './assets'
 
 interface Props {}
@@ -85,7 +85,7 @@ class App extends React.Component<Props, AppState> {
                         selectedFilters: {
                             ...prevState.selectedFilters,
                             duration: newlySelectedDuration,
-                            comparison: getComparisonOptions(newlySelectedDuration)[0]
+                            comparison: comparisonOptionsFor(newlySelectedDuration)[0]
                         },
                         dataViewNeedsUpdating: true,
                     } as AppState)

@@ -3,7 +3,7 @@ import App from '../../../App'
 import { Selector, Button } from '../..'
 import * as s from './Sidebar.css'
 import { AppState, Actions, DurationOption, ComparisonOption, RegionOption, StoreFormatOption, CustomerSegmentOption } from '../../../sharedTypes'
-import { durationOptions, getDatesOptions, getComparisonOptions, categoryHierarchy, regionOptions, storeFormatOptions, customerSegmentOptions } from '../../../data'
+import { durationOptions, datesOptionsFor, comparisonOptionsFor, categoryHierarchy, regionOptions, storeFormatOptions, customerSegmentOptions } from '../../../data'
 
 interface Props {
 
@@ -55,7 +55,7 @@ export class Sidebar extends React.Component<Props, {}> {
                         className={s.selectorContainer}
                     >
                         <Selector
-                            optionsArray={Object.keys(getDatesOptions(appState.selectedFilters.duration))}
+                            optionsArray={Object.keys(datesOptionsFor(appState.selectedFilters.duration))}
                             value={appState.selectedFilters.dates}
                             handleSelectorChange={actions.changeSelected.dates}
                         />
@@ -65,7 +65,7 @@ export class Sidebar extends React.Component<Props, {}> {
                         className={s.selectorContainer}
                     >
                         <Selector
-                            optionsArray={getComparisonOptions(appState.selectedFilters.duration)}
+                            optionsArray={comparisonOptionsFor(appState.selectedFilters.duration)}
                             value={appState.selectedFilters.comparison}
                             handleSelectorChange={actions.changeSelected.comparison}
                         />
