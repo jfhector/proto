@@ -52,7 +52,7 @@ export class Sidebar extends React.Component<Props, {}> {
                         <Selector
                             optionsArray={durationOptions}
                             value={selectedFilters.duration}
-                            handleSelectorChange={actions.selectionChanges.changeSelectedDuration}
+                            handleSelectorChange={actions.changeSelected.duration}
                         />
                     </div>
 
@@ -62,7 +62,7 @@ export class Sidebar extends React.Component<Props, {}> {
                         <Selector
                             optionsArray={getDatesOptions(selectedFilters.duration)}
                             value={selectedFilters.dates}
-                            handleSelectorChange={actions.selectionChanges.changeSelectedDates}
+                            handleSelectorChange={actions.changeSelected.dates}
                         />
                     </div>
 
@@ -72,7 +72,7 @@ export class Sidebar extends React.Component<Props, {}> {
                         <Selector
                             optionsArray={getComparisonOptions(selectedFilters.duration)}
                             value={selectedFilters.comparison}
-                            handleSelectorChange={actions.selectionChanges.changeSelectedComparison}
+                            handleSelectorChange={actions.changeSelected.comparison}
                         />
                     </div>
                 </div>
@@ -133,7 +133,7 @@ export class Sidebar extends React.Component<Props, {}> {
                         <Selector
                             optionsArray={Object.keys(categoryHierarchy['MEDICINE'])}
                             value={selectedFilters.subcategory}
-                            handleSelectorChange={actions.selectionChanges.changeSelectedSubcategory}
+                            handleSelectorChange={actions.changeSelected.subcategory}
                         />
                     </div>
 
@@ -143,7 +143,7 @@ export class Sidebar extends React.Component<Props, {}> {
                         <Selector
                             optionsArray={regionOptions}
                             value={selectedFilters.region}
-                            handleSelectorChange={actions.selectionChanges.changeSelectedRegion}
+                            handleSelectorChange={actions.changeSelected.region}
                         />
                     </div>
 
@@ -153,7 +153,7 @@ export class Sidebar extends React.Component<Props, {}> {
                         <Selector
                             optionsArray={storeFormatOptions}
                             value={selectedFilters.storeFormat}
-                            handleSelectorChange={actions.selectionChanges.changeSelectedStoreFormat}
+                            handleSelectorChange={actions.changeSelected.storeFormat}
                         />
                     </div>
 
@@ -163,7 +163,7 @@ export class Sidebar extends React.Component<Props, {}> {
                         <Selector
                             optionsArray={customerSegmentOptions}
                             value={selectedFilters.customerSegment}
-                            handleSelectorChange={actions.selectionChanges.changeSelectedCustomerSegment}
+                            handleSelectorChange={actions.changeSelected.customerSegment}
                         />
                     </div>
                 </div>

@@ -161,9 +161,6 @@ class App extends React.Component<Props, AppState> {
                 })
             },
         },
-
-        // EXPANSION TOGGLES
-
         toggleExpansion: {
             measuresSummary: () => {
                 this.setState(

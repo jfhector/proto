@@ -27,10 +27,6 @@ export class DataViewComponent extends React.Component<Props, {}> {
             selectedMeasure,
         } = appState
 
-        const {
-            changeSelectedMeasure
-        } = actions.selectionChanges
-
         // TYPE GUARDS
         if (typeof displayedFilters === 'undefined') { throw new Error() }
         if (typeof appState.dataViewNeedsUpdating === 'undefined') { throw new Error() }
@@ -81,7 +77,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                 <CollapsibleContentBoard
                     title='Performance overview'
                     expanded={appState.measuresSummaryExpanded}
-                    handleCollapseButtonClick={actions.expansionToggles.toggleMeasuresSummaryExpanded}
+                    handleCollapseButtonClick={actions.toggleExpansion.measuresSummary}
                 >
                     <div
                         className={s.KpiTilesContainer}
@@ -90,63 +86,63 @@ export class DataViewComponent extends React.Component<Props, {}> {
                             measure='Sales value'
                             kpisData={getKpisDataForAllMeasuresFor(appState)['Sales value']}
                             selected={appState.selectedMeasure === 'Sales value'}
-                            handleKpiTileClick={actions.selectionChanges.changeSelectedMeasure}
+                            handleKpiTileClick={actions.changeSelected.measure}
                         />
 
                         <KpiTile
                             measure='Sales units'
                             kpisData={getKpisDataForAllMeasuresFor(appState)['Sales units']}
                             selected={appState.selectedMeasure === 'Sales units'}
-                            handleKpiTileClick={actions.selectionChanges.changeSelectedMeasure}
+                            handleKpiTileClick={actions.changeSelected.measure}
                         />
 
                         <KpiTile
                             measure='Customers'
                             kpisData={getKpisDataForAllMeasuresFor(appState)['Customers']}
                             selected={appState.selectedMeasure === 'Customers'}
-                            handleKpiTileClick={actions.selectionChanges.changeSelectedMeasure}
+                            handleKpiTileClick={actions.changeSelected.measure}
                         />
 
                         <KpiTile
                             measure='Spend per customer'
                             kpisData={getKpisDataForAllMeasuresFor(appState)['Spend per customer']}
                             selected={appState.selectedMeasure === 'Spend per customer'}
-                            handleKpiTileClick={actions.selectionChanges.changeSelectedMeasure}
+                            handleKpiTileClick={actions.changeSelected.measure}
                         />
 
                         <KpiTile
                             measure='Retailer visits'
                             kpisData={getKpisDataForAllMeasuresFor(appState)['Retailer visits']}
                             selected={appState.selectedMeasure === 'Retailer visits'}
-                            handleKpiTileClick={actions.selectionChanges.changeSelectedMeasure}
+                            handleKpiTileClick={actions.changeSelected.measure}
                         />
 
                         <KpiTile
                             measure='Spend per visit'
                             kpisData={getKpisDataForAllMeasuresFor(appState)['Spend per visit']}
                             selected={appState.selectedMeasure === 'Spend per visit'}
-                            handleKpiTileClick={actions.selectionChanges.changeSelectedMeasure}
+                            handleKpiTileClick={actions.changeSelected.measure}
                         />
 
                         <KpiTile
                             measure='Units per visit'
                             kpisData={getKpisDataForAllMeasuresFor(appState)['Units per visit']}
                             selected={appState.selectedMeasure === 'Units per visit'}
-                            handleKpiTileClick={actions.selectionChanges.changeSelectedMeasure}
+                            handleKpiTileClick={actions.changeSelected.measure}
                         />
 
                         <KpiTile
                             measure='Basket penetration'
                             kpisData={getKpisDataForAllMeasuresFor(appState)['Basket penetration']}
                             selected={appState.selectedMeasure === 'Basket penetration'}
-                            handleKpiTileClick={actions.selectionChanges.changeSelectedMeasure}
+                            handleKpiTileClick={actions.changeSelected.measure}
                         />
 
                         <KpiTile
                             measure='Frequency of purchase'
                             kpisData={getKpisDataForAllMeasuresFor(appState)['Frequency of purchase']}
                             selected={appState.selectedMeasure === 'Frequency of purchase'}
-                            handleKpiTileClick={actions.selectionChanges.changeSelectedMeasure}
+                            handleKpiTileClick={actions.changeSelected.measure}
                         />
                     </div>
                 </CollapsibleContentBoard>
@@ -154,7 +150,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                 <CollapsibleContentBoard
                     title='KPI tree'
                     expanded={appState.KPITreesExpanded}
-                    handleCollapseButtonClick={actions.expansionToggles.toggleKPITreesExpanded}
+                    handleCollapseButtonClick={actions.toggleExpansion.kpisTrees}
                 >
                     <DataSubtitle
                             selectedMeasure={appState.selectedMeasure}
@@ -170,7 +166,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                     headerIsSticky
                     expanded={appState.measuresInDetailExpanded}
                     headerHighlighted={appState.measureInDetailBoardHeaderVisible}
-                    handleCollapseButtonClick={actions.expansionToggles.toggleMeasureInDetailExpanded}
+                    handleCollapseButtonClick={actions.toggleExpansion.measureInDetail}
                     refAssignmentFunctionforHeaderContainingDiv={refAssignmentFunctions.forMeasureInDetailBoardHeaderContainingDiv}
                     rightNode={
                         <> 
@@ -182,7 +178,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                             <Selector
                                 optionsArray={measureOptions}
                                 value={`${selectedMeasure}`}
-                                handleSelectorChange={changeSelectedMeasure}
+                                handleSelectorChange={actions.changeSelected.measure}
                             />
                         </>
                     }
@@ -191,7 +187,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                         title='Trend'
                         displayedFilters={displayedFilters}
                         expanded={appState.trendGraphExpanded}
-                        handleCollapseButtonClick={actions.expansionToggles.toggleTrendGraphExpanded}
+                        handleCollapseButtonClick={actions.toggleExpansion.trendGraph}
                     >
                         <DataSubtitle
                             selectedMeasure={appState.selectedMeasure}
@@ -226,7 +222,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                         title={`Top 10 movers in ${displayedFilters.subcategory}`}
                         displayedFilters={displayedFilters}
                         expanded={appState.splitBySubcategoryExpanded}
-                        handleCollapseButtonClick={actions.expansionToggles.toggleSplitBySubcategoryExpanded}
+                        handleCollapseButtonClick={actions.toggleExpansion.splitBySubcategory}
                     >
                         <DataSubtitle
                             selectedMeasure={appState.selectedMeasure}
@@ -261,7 +257,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                         title='Split by region'
                         displayedFilters={displayedFilters}
                         expanded={appState.splitByRegionExpanded}
-                        handleCollapseButtonClick={actions.expansionToggles.toggleSplitByRegionExpanded}
+                        handleCollapseButtonClick={actions.toggleExpansion.splitByRegion}
                     >
                         <DataSubtitle
                             selectedMeasure={appState.selectedMeasure}
@@ -276,7 +272,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                         title='Split by store format'
                         displayedFilters={displayedFilters}
                         expanded={appState.splitByStoreFormatExpanded}
-                        handleCollapseButtonClick={actions.expansionToggles.toggleSplitByStoreFormatExpanded}
+                        handleCollapseButtonClick={actions.toggleExpansion.splitByStoreFormat}
                     >
                         <DataSubtitle
                             selectedMeasure={appState.selectedMeasure}
@@ -291,7 +287,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                         title='Split by customer segment'
                         displayedFilters={displayedFilters}
                         expanded={appState.splitByCustomerSegmentExpanded}
-                        handleCollapseButtonClick={actions.expansionToggles.toggleSplitByCustomerSegmentExpanded}
+                        handleCollapseButtonClick={actions.toggleExpansion.splitByCustomerSegment}
                     >
                         <DataSubtitle
                             selectedMeasure={appState.selectedMeasure}
