@@ -3,7 +3,7 @@ import { categoryHierarchy, durationOptions, storeFormatOptions, regionOptions, 
 
 // APP STATE
 
-export interface FiltersSet {
+export type FiltersSet = {
     duration: DurationOption
     dates: DateOption
     comparison: ComparisonOption
@@ -13,7 +13,7 @@ export interface FiltersSet {
     customerSegment: CustomerSegmentOption
 }
 
-export interface AppState {
+export type AppState = {
 
     // FILTERS SELECTION
     selectedFilters: FiltersSet,
@@ -112,7 +112,7 @@ export type MeasureOption = keyof typeof measureOptions
 
 // MEASURE DATA
 
-export interface MeasureData {
+export type MeasureData = {
       value: string
       valueChange: string
       percentChange: string
