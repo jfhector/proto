@@ -3,7 +3,6 @@ import { hot } from 'react-hot-loader'
 import * as s from './App.css'
 import { Sidebar, DataViewComponent } from './components/'
 import { AppState, MeasureOption, DateOption, ComparisonOption, MedicineSubcategoryOption, RegionOption, StoreFormatOption, CustomerSegmentOption, DurationOption } from './sharedTypes'
-import { comparisonOptionsFor } from './data'
 import { AssetsLoader, PROTOIMG_nav_header, PROTOIMG_nav_tabs, PROTOIMG_nav_footer } from './assets'
 
 interface Props {}
