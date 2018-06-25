@@ -266,26 +266,6 @@ class App extends React.Component<Props, AppState> {
     // Render
 
     render() {
-        const {
-            selectedFilters,
-            displayedFilters,
-            dataViewNeedsUpdating,
-
-            selectedMeasure,
-
-            measuresSummaryExpanded,
-            measuresInDetailExpanded,
-            KPITreesExpanded,
-
-            trendGraphExpanded,
-            splitBySubcategoryExpanded,
-            splitByStoreFormatExpanded,
-            splitByCustomerSegmentExpanded,
-            splitByRegionExpanded,
-
-            measureInDetailBoardHeaderVisible,
-        } = this.state
-
         return (
             <div>
                 <header

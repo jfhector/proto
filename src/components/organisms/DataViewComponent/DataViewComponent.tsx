@@ -22,14 +22,8 @@ export class DataViewComponent extends React.Component<Props, {}> {
             refAssignmentFunctions,
         } = this.props
 
-        const {
-            displayedFilters,
-            selectedMeasure,
-            expanded,
-        } = appState
-
         // TYPE GUARDS
-        if (typeof displayedFilters === 'undefined') { throw new Error() }
+        if (typeof appState.displayedFilters === 'undefined') { throw new Error() }
         if (typeof appState.dataViewNeedsUpdating === 'undefined') { throw new Error() }
         if (typeof appState.selectedMeasure === 'undefined') { throw new Error() }
 
@@ -178,7 +172,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                             </span>
                             <Selector
                                 optionsArray={measureOptions}
-                                value={`${selectedMeasure}`}
+                                value={`${appState.selectedMeasure}`}
                                 handleSelectorChange={actions.changeSelected.measure}
                             />
                         </>
@@ -186,7 +180,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                 >
                     <CollapsibleContentModule
                         title='Trend'
-                        displayedFilters={displayedFilters}
+                        displayedFilters={appState.displayedFilters}
                         expanded={appState.expanded.trendGraphModule}
                         handleCollapseButtonClick={actions.toggleExpansion.trendGraph}
                     >
@@ -220,8 +214,8 @@ export class DataViewComponent extends React.Component<Props, {}> {
                     </CollapsibleContentModule>
 
                     <CollapsibleContentModule
-                        title={`Top 10 movers in ${displayedFilters.subcategory}`}
-                        displayedFilters={displayedFilters}
+                        title={`Top 10 movers in ${appState.displayedFilters.subcategory}`}
+                        displayedFilters={appState.displayedFilters}
                         expanded={appState.expanded.splitBySubcategoryModule}
                         handleCollapseButtonClick={actions.toggleExpansion.splitBySubcategory}
                     >
@@ -256,7 +250,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
 
                     <CollapsibleContentModule
                         title='Split by region'
-                        displayedFilters={displayedFilters}
+                        displayedFilters={appState.displayedFilters}
                         expanded={appState.expanded.splitByRegionModule}
                         handleCollapseButtonClick={actions.toggleExpansion.splitByRegion}
                     >
@@ -271,7 +265,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
 
                     <CollapsibleContentModule
                         title='Split by store format'
-                        displayedFilters={displayedFilters}
+                        displayedFilters={appState.displayedFilters}
                         expanded={appState.expanded.splitByStoreFormatModule}
                         handleCollapseButtonClick={actions.toggleExpansion.splitByStoreFormat}
                     >
@@ -286,7 +280,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
 
                     <CollapsibleContentModule
                         title='Split by customer segment'
-                        displayedFilters={displayedFilters}
+                        displayedFilters={appState.displayedFilters}
                         expanded={appState.expanded.splitByCustomerSegmentModule}
                         handleCollapseButtonClick={actions.toggleExpansion.splitByCustomerSegment}
                     >

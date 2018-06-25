@@ -19,13 +19,8 @@ export class Sidebar extends React.Component<Props, {}> {
             actions,
         } = this.props
 
-        const {
-            selectedFilters,
-            dataViewNeedsUpdating,
-        } = appState
-
         // TYPE GUARDS
-        if (typeof selectedFilters === 'undefined') { throw new Error() }
+        if (typeof appState.selectedFilters === 'undefined') { throw new Error() }
 
         return (
             <div
@@ -51,7 +46,7 @@ export class Sidebar extends React.Component<Props, {}> {
                     >
                         <Selector
                             optionsArray={durationOptions}
-                            value={selectedFilters.duration}
+                            value={appState.selectedFilters.duration}
                             handleSelectorChange={actions.changeSelected.duration}
                         />
                     </div>
@@ -60,8 +55,8 @@ export class Sidebar extends React.Component<Props, {}> {
                         className={s.selectorContainer}
                     >
                         <Selector
-                            optionsArray={getDatesOptions(selectedFilters.duration)}
-                            value={selectedFilters.dates}
+                            optionsArray={getDatesOptions(appState.selectedFilters.duration)}
+                            value={appState.selectedFilters.dates}
                             handleSelectorChange={actions.changeSelected.dates}
                         />
                     </div>
@@ -70,8 +65,8 @@ export class Sidebar extends React.Component<Props, {}> {
                         className={s.selectorContainer}
                     >
                         <Selector
-                            optionsArray={getComparisonOptions(selectedFilters.duration)}
-                            value={selectedFilters.comparison}
+                            optionsArray={getComparisonOptions(appState.selectedFilters.duration)}
+                            value={appState.selectedFilters.comparison}
                             handleSelectorChange={actions.changeSelected.comparison}
                         />
                     </div>
@@ -132,7 +127,7 @@ export class Sidebar extends React.Component<Props, {}> {
                     >
                         <Selector
                             optionsArray={Object.keys(categoryHierarchy['MEDICINE'])}
-                            value={selectedFilters.subcategory}
+                            value={appState.selectedFilters.subcategory}
                             handleSelectorChange={actions.changeSelected.subcategory}
                         />
                     </div>
@@ -142,7 +137,7 @@ export class Sidebar extends React.Component<Props, {}> {
                     >
                         <Selector
                             optionsArray={regionOptions}
-                            value={selectedFilters.region}
+                            value={appState.selectedFilters.region}
                             handleSelectorChange={actions.changeSelected.region}
                         />
                     </div>
@@ -152,7 +147,7 @@ export class Sidebar extends React.Component<Props, {}> {
                     >
                         <Selector
                             optionsArray={storeFormatOptions}
-                            value={selectedFilters.storeFormat}
+                            value={appState.selectedFilters.storeFormat}
                             handleSelectorChange={actions.changeSelected.storeFormat}
                         />
                     </div>
@@ -162,7 +157,7 @@ export class Sidebar extends React.Component<Props, {}> {
                     >
                         <Selector
                             optionsArray={customerSegmentOptions}
-                            value={selectedFilters.customerSegment}
+                            value={appState.selectedFilters.customerSegment}
                             handleSelectorChange={actions.changeSelected.customerSegment}
                         />
                     </div>
@@ -170,7 +165,7 @@ export class Sidebar extends React.Component<Props, {}> {
 
                 <Button
                     fullWidth
-                    disabled={!dataViewNeedsUpdating}
+                    disabled={!appState.dataViewNeedsUpdating}
                     handleButtonClick={actions.updateView}
                 >
                     Update view
