@@ -88,49 +88,6 @@ export const dateOptionsFor52WeekDuration = {
     '05 Dec 2016 - 03 Dec 2017': undefined,
 }
 
-export function getDatesOptions(selectedDuration: DurationOption): DateOptionsObject {
-    switch (selectedDuration) {
-        case '4 weeks': 
-            return dateOptionsFor4WeekDuration
-        case '12 weeks': 
-            return dateOptionsFor12WeekDuration
-        case '26 weeks': 
-            return dateOptionsFor26WeekDuration
-        case '52 weeks': 
-            return dateOptionsFor52WeekDuration
-        default:
-            const _exhaustiveCheck: never = selectedDuration
-            return _exhaustiveCheck
-    }
-}
-
-export function getComparisonOptions(selectedDuration: DurationOption):
-    ComparisonOptionAvailableFor4WeekDuration[] |
-    ComparisonOptionAvailableFor12WeekDuration[] |
-    ComparisonOptionAvailableFor26WeekDuration[] |
-    ComparisonOptionAvailableFor52WeekDuration[] {
-    switch (selectedDuration) {
-        case '52 weeks': return [
-            'vs. previous 52 weeks'
-        ]
-        case '26 weeks': return [
-            'vs. previous 26 weeks',
-            'vs. last year',
-        ]
-        case '12 weeks': return [
-            'vs. previous 12 weeks',
-            'vs. last year',
-        ]
-        case '4 weeks': return [
-            'vs. previous 4 weeks',
-            'vs. last year',
-        ]
-        default:
-            const _exhaustiveCheck: never = selectedDuration
-            return _exhaustiveCheck
-    }
-}
-
 export const storeFormatOptions = {
     'All store formats': undefined,
     'Express stores': undefined,
