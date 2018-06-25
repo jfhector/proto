@@ -25,6 +25,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
         const {
             displayedFilters,
             selectedMeasure,
+            expanded,
         } = appState
 
         // TYPE GUARDS
@@ -76,7 +77,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
 
                 <CollapsibleContentBoard
                     title='Performance overview'
-                    expanded={appState.measuresSummaryExpanded}
+                    expanded={appState.expanded.measuresSummaryBoard}
                     handleCollapseButtonClick={actions.toggleExpansion.measuresSummary}
                 >
                     <div
@@ -149,7 +150,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
 
                 <CollapsibleContentBoard
                     title='KPI tree'
-                    expanded={appState.KPITreesExpanded}
+                    expanded={appState.expanded.kpisTreesBoard}
                     handleCollapseButtonClick={actions.toggleExpansion.kpisTrees}
                 >
                     <DataSubtitle
@@ -164,7 +165,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                 <CollapsibleContentBoard
                     title='Measure in detail'
                     headerIsSticky
-                    expanded={appState.measuresInDetailExpanded}
+                    expanded={appState.expanded.measuresInDetailBoard}
                     headerHighlighted={appState.measureInDetailBoardHeaderVisible}
                     handleCollapseButtonClick={actions.toggleExpansion.measureInDetail}
                     refAssignmentFunctionforHeaderContainingDiv={refAssignmentFunctions.forMeasureInDetailBoardHeaderContainingDiv}
@@ -186,7 +187,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                     <CollapsibleContentModule
                         title='Trend'
                         displayedFilters={displayedFilters}
-                        expanded={appState.trendGraphExpanded}
+                        expanded={appState.expanded.trendGraphModule}
                         handleCollapseButtonClick={actions.toggleExpansion.trendGraph}
                     >
                         <DataSubtitle
@@ -221,7 +222,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                     <CollapsibleContentModule
                         title={`Top 10 movers in ${displayedFilters.subcategory}`}
                         displayedFilters={displayedFilters}
-                        expanded={appState.splitBySubcategoryExpanded}
+                        expanded={appState.expanded.splitBySubcategoryModule}
                         handleCollapseButtonClick={actions.toggleExpansion.splitBySubcategory}
                     >
                         <DataSubtitle
@@ -256,7 +257,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                     <CollapsibleContentModule
                         title='Split by region'
                         displayedFilters={displayedFilters}
-                        expanded={appState.splitByRegionExpanded}
+                        expanded={appState.expanded.splitByRegionModule}
                         handleCollapseButtonClick={actions.toggleExpansion.splitByRegion}
                     >
                         <DataSubtitle
@@ -271,7 +272,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                     <CollapsibleContentModule
                         title='Split by store format'
                         displayedFilters={displayedFilters}
-                        expanded={appState.splitByStoreFormatExpanded}
+                        expanded={appState.expanded.splitByStoreFormatModule}
                         handleCollapseButtonClick={actions.toggleExpansion.splitByStoreFormat}
                     >
                         <DataSubtitle
@@ -286,7 +287,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                     <CollapsibleContentModule
                         title='Split by customer segment'
                         displayedFilters={displayedFilters}
-                        expanded={appState.splitByCustomerSegmentExpanded}
+                        expanded={appState.expanded.splitByCustomerSegmentModule}
                         handleCollapseButtonClick={actions.toggleExpansion.splitByCustomerSegment}
                     >
                         <DataSubtitle

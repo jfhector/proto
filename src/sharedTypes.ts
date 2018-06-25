@@ -7,25 +7,28 @@ import App from './App'
 
 export interface AppState {
 
-    // FILTERS SELECTION AND RELATED VIEW-LOGIC
+    // FILTERS SELECTION
     selectedFilters: FiltersSet,
     displayedFilters: FiltersSet,
+
+    // VIEW UPDATE LOGIC
     dataViewNeedsUpdating: boolean,
 
     // SELECTED MEASURE 
     selectedMeasure: MeasureName,
 
-    // DEFINES WHICH CONTENT BOARDS ARE EXPANDED
-    measuresSummaryExpanded: boolean,
-    measuresInDetailExpanded: boolean,
-    KPITreesExpanded: boolean,
-
-    // DEFINES WHICH CONTENT MODULES ARE EXPANDED
-    trendGraphExpanded: boolean,
-    splitBySubcategoryExpanded: boolean,
-    splitByRegionExpanded: boolean,
-    splitByStoreFormatExpanded: boolean,
-    splitByCustomerSegmentExpanded: boolean,
+    // DEFINES WHICH CONTENT BOARDS AND MODULES ARE EXPANDED
+    expanded: {
+        measuresSummaryBoard: boolean,
+        measuresInDetailBoard: boolean,
+        kpisTreesBoard: boolean,
+    
+        trendGraphModule: boolean,
+        splitBySubcategoryModule: boolean,
+        splitByRegionModule: boolean,
+        splitByStoreFormatModule: boolean,
+        splitByCustomerSegmentModule: boolean,
+    },
 
     // MEASURE IN DETAIL HEADER VISIBLE
     measureInDetailBoardHeaderVisible: boolean,

@@ -35,15 +35,17 @@ class App extends React.Component<Props, AppState> {
 
         selectedMeasure: 'Sales value',
 
-        measuresSummaryExpanded: true,
-        measuresInDetailExpanded: true,
-        KPITreesExpanded: false,
+        expanded: {
+            measuresSummaryBoard: true,
+            measuresInDetailBoard: true,
+            kpisTreesBoard: false,
 
-        trendGraphExpanded: false,
-        splitBySubcategoryExpanded: false,
-        splitByStoreFormatExpanded: false,
-        splitByCustomerSegmentExpanded: false,
-        splitByRegionExpanded: false,
+            trendGraphModule: false,
+            splitBySubcategoryModule: false,
+            splitByStoreFormatModule: false,
+            splitByCustomerSegmentModule: false,
+            splitByRegionModule: false,
+        },
 
         measureInDetailBoardHeaderVisible: false,
     }
@@ -165,56 +167,80 @@ class App extends React.Component<Props, AppState> {
             measuresSummary: () => {
                 this.setState(
                     (prevState: AppState) => ({
-                        measuresSummaryExpanded: !prevState.measuresSummaryExpanded,
+                        expanded: {
+                            ...prevState.expanded,
+                            measuresSummaryBoard: !prevState.expanded.measuresSummaryBoard,
+                        }
                     })
                 )
             },
             kpisTrees: () => {
                 this.setState(
                     (prevState: AppState) => ({
-                        KPITreesExpanded: !prevState.KPITreesExpanded
+                        expanded: {
+                            ...prevState.expanded,
+                            kpisTreesBoard: !prevState.expanded.kpisTreesBoard
+                        }
                     })
                 )
             },
             measureInDetail: () => {
                 this.setState(
                     (prevState: AppState) => ({
-                        measuresInDetailExpanded: !prevState.measuresInDetailExpanded,
+                        expanded: {
+                            ...prevState.expanded,
+                            measuresInDetailBoard: !prevState.expanded.measuresInDetailBoard,
+                        }
                     })
                 )
             },
             trendGraph: () => {
                 this.setState(
                     (prevState: AppState) => ({
-                        trendGraphExpanded: !prevState.trendGraphExpanded
+                        expanded: {
+                            ...prevState.expanded,
+                            trendGraphModule: !prevState.expanded.trendGraphModule
+                        }
                     })
                 )
             },
             splitBySubcategory: () => {
                 this.setState(
                     (prevState: AppState) => ({
-                        splitBySubcategoryExpanded: !prevState.splitBySubcategoryExpanded
+                        expanded: {
+                            ...prevState.expanded,
+                            splitBySubcategoryModule: !prevState.expanded.splitBySubcategoryModule
+                        }
                     })
                 )
             },
             splitByRegion: () => {
                 this.setState(
                     (prevState: AppState) => ({
-                        splitByRegionExpanded: !prevState.splitByRegionExpanded
+                        expanded: {
+                            ...prevState.expanded,
+                            splitByRegionModule: !prevState.expanded.splitByRegionModule
+                        }
                     })
                 )
             },
             splitByStoreFormat: () => {
                 this.setState(
                     (prevState: AppState) => ({
-                        splitByStoreFormatExpanded: !prevState.splitByStoreFormatExpanded
+                        expanded: {
+                            ...prevState.expanded,
+                            splitByStoreFormatModule: !prevState.expanded.splitByStoreFormatModule
+                        }
                     })
                 )
             },
             splitByCustomerSegment: () => {
                 this.setState(
                     (prevState: AppState) => ({
-                        splitByCustomerSegmentExpanded: !prevState.splitByCustomerSegmentExpanded
+                        expanded: {
+                            ...prevState.expanded,
+                            splitByCustomerSegmentModule: !prevState.expanded.splitByCustomerSegmentModule
+                        }
                     })
                 )
             },
