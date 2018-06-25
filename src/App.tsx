@@ -2,7 +2,7 @@ import * as React from 'react'
 import { hot } from 'react-hot-loader'
 import * as s from './App.css'
 import { Sidebar, DataViewComponent } from './components/'
-import { AppState, MeasureOption, DateOption, ComparisonOption, MedicineSubcategoryName, RegionOption, StoreFormatOption, CustomerSegmentOption, DurationOption } from './sharedTypes'
+import { AppState, MeasureOption, DateOption, ComparisonOption, MedicineSubcategoryOption, RegionOption, StoreFormatOption, CustomerSegmentOption, DurationOption } from './sharedTypes'
 import { comparisonOptionsFor } from './data'
 import { AssetsLoader, PROTOIMG_nav_header, PROTOIMG_nav_tabs, PROTOIMG_nav_footer } from './assets'
 
@@ -10,7 +10,7 @@ interface Props {}
 
 class App extends React.Component<Props, AppState> {
 
-    // State
+    // STATE
 
     state: AppState = {
         selectedFilters: {
@@ -50,7 +50,7 @@ class App extends React.Component<Props, AppState> {
         measureInDetailBoardHeaderVisible: false,
     }
 
-    // Refs
+    // REFS
 
     refToMeasureInDetailBoardHeaderContainingDiv: HTMLDivElement
 
@@ -60,7 +60,7 @@ class App extends React.Component<Props, AppState> {
         }
     }
 
-    // Actions
+    // ACTIONS
 
     actions = {
         updateView: () => {
@@ -114,7 +114,7 @@ class App extends React.Component<Props, AppState> {
                     } as AppState)
                 )
             },
-            subcategory: (newlySelectedSubcategory: MedicineSubcategoryName) => {
+            subcategory: (newlySelectedSubcategory: MedicineSubcategoryOption) => {
                 this.setState(
                     (prevState: AppState) => ({
                         selectedFilters: {

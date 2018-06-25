@@ -7,7 +7,7 @@ export interface FiltersSet {
     duration: DurationOption
     dates: DateOption
     comparison: ComparisonOption
-    subcategory: MedicineSubcategoryName
+    subcategory: MedicineSubcategoryOption
     region: RegionOption
     storeFormat: StoreFormatOption
     customerSegment: CustomerSegmentOption
@@ -100,7 +100,7 @@ export type ComparisonOption =
 
 // OTHER SELECTOR OPTIONS
 
-export type MedicineSubcategoryName = keyof typeof categoryHierarchy['MEDICINE']
+export type MedicineSubcategoryOption = keyof typeof categoryHierarchy['MEDICINE']
 
 export type StoreFormatOption = keyof typeof storeFormatOptions
 
