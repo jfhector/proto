@@ -2,7 +2,7 @@ import * as React from 'react'
 import App from '../../../App'
 import * as s from './DataViewComponent.css'
 import { Button, Alert, CollapsibleContentBoard, KpiTile, Selector, CollapsibleContentModule, DataSubtitle } from '../..'
-import { measureOptions, getKpisDataForAllMeasuresFor } from '../../../data'
+import { measureOptions, kpisDataForAllMeasuresFor } from '../../../data'
 import { AppState, Actions, RefAssignmentFunctions } from '../../../sharedTypes'
 import { PROTOIMG_graph_salesValue, PROTOIMG_graph_customers, PROTOIMG_graph_spendPerCustomer, PROTOIMG_graph_spendPerVisit, PROTOIMG_table_subcategories_customers, PROTOIMG_table_subcategories_salesValue, PROTOIMG_table_subcategories_spendPerCustomer, PROTOIMG_table_subcategories_spendPerVisit, PROTOIMG_table_customerTypes_salesValue, PROTOIMG_table_regions_salesValue, PROTOIMG_table_storeFormats_salesValue, PROTOIMG_kpiTree } from './../../../assets/'
 
@@ -79,63 +79,63 @@ export class DataViewComponent extends React.Component<Props, {}> {
                     >
                         <KpiTile
                             measure='Sales value'
-                            kpisData={getKpisDataForAllMeasuresFor(appState)['Sales value']}
+                            kpisData={kpisDataForAllMeasuresFor(appState)['Sales value']}
                             selected={appState.selectedMeasure === 'Sales value'}
                             handleKpiTileClick={actions.changeSelected.measure}
                         />
 
                         <KpiTile
                             measure='Sales units'
-                            kpisData={getKpisDataForAllMeasuresFor(appState)['Sales units']}
+                            kpisData={kpisDataForAllMeasuresFor(appState)['Sales units']}
                             selected={appState.selectedMeasure === 'Sales units'}
                             handleKpiTileClick={actions.changeSelected.measure}
                         />
 
                         <KpiTile
                             measure='Customers'
-                            kpisData={getKpisDataForAllMeasuresFor(appState)['Customers']}
+                            kpisData={kpisDataForAllMeasuresFor(appState)['Customers']}
                             selected={appState.selectedMeasure === 'Customers'}
                             handleKpiTileClick={actions.changeSelected.measure}
                         />
 
                         <KpiTile
                             measure='Spend per customer'
-                            kpisData={getKpisDataForAllMeasuresFor(appState)['Spend per customer']}
+                            kpisData={kpisDataForAllMeasuresFor(appState)['Spend per customer']}
                             selected={appState.selectedMeasure === 'Spend per customer'}
                             handleKpiTileClick={actions.changeSelected.measure}
                         />
 
                         <KpiTile
                             measure='Retailer visits'
-                            kpisData={getKpisDataForAllMeasuresFor(appState)['Retailer visits']}
+                            kpisData={kpisDataForAllMeasuresFor(appState)['Retailer visits']}
                             selected={appState.selectedMeasure === 'Retailer visits'}
                             handleKpiTileClick={actions.changeSelected.measure}
                         />
 
                         <KpiTile
                             measure='Spend per visit'
-                            kpisData={getKpisDataForAllMeasuresFor(appState)['Spend per visit']}
+                            kpisData={kpisDataForAllMeasuresFor(appState)['Spend per visit']}
                             selected={appState.selectedMeasure === 'Spend per visit'}
                             handleKpiTileClick={actions.changeSelected.measure}
                         />
 
                         <KpiTile
                             measure='Units per visit'
-                            kpisData={getKpisDataForAllMeasuresFor(appState)['Units per visit']}
+                            kpisData={kpisDataForAllMeasuresFor(appState)['Units per visit']}
                             selected={appState.selectedMeasure === 'Units per visit'}
                             handleKpiTileClick={actions.changeSelected.measure}
                         />
 
                         <KpiTile
                             measure='Basket penetration'
-                            kpisData={getKpisDataForAllMeasuresFor(appState)['Basket penetration']}
+                            kpisData={kpisDataForAllMeasuresFor(appState)['Basket penetration']}
                             selected={appState.selectedMeasure === 'Basket penetration'}
                             handleKpiTileClick={actions.changeSelected.measure}
                         />
 
                         <KpiTile
                             measure='Frequency of purchase'
-                            kpisData={getKpisDataForAllMeasuresFor(appState)['Frequency of purchase']}
+                            kpisData={kpisDataForAllMeasuresFor(appState)['Frequency of purchase']}
                             selected={appState.selectedMeasure === 'Frequency of purchase'}
                             handleKpiTileClick={actions.changeSelected.measure}
                         />

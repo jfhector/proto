@@ -1,5 +1,5 @@
-import { DurationOption, DateOptionsObject, ComparisonOptionsObject } from '../sharedTypes'
-import { dateOptionsFor4WeekDuration, dateOptionsFor12WeekDuration, dateOptionsFor26WeekDuration, dateOptionsFor52WeekDuration, comparisonOptionsFor52WeekDuration, comparisonOptionsFor4WeekDuration, comparisonOptionsFor26WeekDuration, comparisonOptionsFor12WeekDuration } from './'
+import { DurationOption, DateOptionsObject, ComparisonOptionsObject, AppState, KpisDataForAllMeasures } from '../sharedTypes'
+import { dateOptionsFor4WeekDuration, dateOptionsFor12WeekDuration, dateOptionsFor26WeekDuration, dateOptionsFor52WeekDuration, comparisonOptionsFor52WeekDuration, comparisonOptionsFor4WeekDuration, comparisonOptionsFor26WeekDuration, comparisonOptionsFor12WeekDuration, dataForAllMeasuresBasedOnAppState0, dataForAllMeasuresBasedOnAppState1, dataForAllMeasuresBasedOnAppState2, dataForAllMeasuresBasedOnAppState3, dataForAllMeasuresBasedOnAppState4 } from './'
 
 export function datesOptionsFor(selectedDuration: DurationOption): DateOptionsObject {
     switch (selectedDuration) {
@@ -29,6 +29,31 @@ export function comparisonOptionsFor(selectedDuration: DurationOption): Comparis
             return comparisonOptionsFor4WeekDuration
         default:
             const _exhaustiveCheck: never = selectedDuration
+            return _exhaustiveCheck
+    }
+}
+
+export function kpisDataForAllMeasuresFor(appState: AppState): KpisDataForAllMeasures {
+
+    // Deterministically derive an integer from 0 to 4 from appState
+    const numberThatIsDifferentForDifferentValuesOfDisplayedFilters = Object.values(appState.displayedFilters).join().length + Number.parseInt(appState.displayedFilters.duration) + Number.parseInt(appState.displayedFilters.dates)
+    const numberFrom0To4 = numberThatIsDifferentForDifferentValuesOfDisplayedFilters % 5
+    if (!(numberFrom0To4 === 0 || numberFrom0To4 === 1 || numberFrom0To4 === 2 || numberFrom0To4 === 3 || numberFrom0To4 === 4)) { throw new Error('numberFrom0To3 wasn\'t 0, 1, 2, 3 or 4') }
+
+    // Switch on this number to return one of the data sets above
+    switch (numberFrom0To4) {
+        case 0:
+            return dataForAllMeasuresBasedOnAppState0
+        case 1:
+            return dataForAllMeasuresBasedOnAppState1
+        case 2:
+            return dataForAllMeasuresBasedOnAppState2
+        case 3:
+            return dataForAllMeasuresBasedOnAppState3
+        case 4:
+            return dataForAllMeasuresBasedOnAppState4
+        default:
+            const _exhaustiveCheck: never = numberFrom0To4
             return _exhaustiveCheck
     }
 }
