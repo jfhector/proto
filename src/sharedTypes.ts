@@ -3,6 +3,16 @@ import { categoryHierarchy, durationOptions, storeFormatOptions, regionOptions, 
 
 // APP STATE
 
+export interface FiltersSet {
+    duration: DurationOption
+    dates: DateOption
+    comparison: ComparisonOption
+    subcategory: MedicineSubcategoryName
+    region: RegionOption
+    storeFormat: StoreFormatOption
+    customerSegment: CustomerSegmentOption
+}
+
 export interface AppState {
 
     // FILTERS SELECTION
@@ -61,10 +71,10 @@ type DateOptionFor12WeekDuration = keyof DateOptionsObjectFor12WeekDuration
 type DateOptionFor26WeekDuration = keyof DateOptionsObjectFor26WeekDuration
 type DateOptionFor52WeekDuration = keyof DateOptionsObjectFor52WeekDuration
 export type DateOption = 
-      DateOptionFor4WeekDuration |
-      DateOptionFor12WeekDuration |
-      DateOptionFor26WeekDuration | 
-      DateOptionFor52WeekDuration
+    DateOptionFor4WeekDuration |
+    DateOptionFor12WeekDuration |
+    DateOptionFor26WeekDuration | 
+    DateOptionFor52WeekDuration
 
 // COMPARISON OPTIONS
 
@@ -88,14 +98,7 @@ export type ComparisonOption =
     ComparisonOptionFor26WeekDuration |
     ComparisonOptionFor52WeekDuration
 
-
-
-
-
-
-
-
-// SELECTOR OPTIONS
+// OTHER SELECTOR OPTIONS
 
 export type MedicineSubcategoryName = keyof typeof categoryHierarchy['MEDICINE']
 
@@ -105,23 +108,7 @@ export type RegionOption = keyof typeof regionOptions
 
 export type CustomerSegmentOption = keyof typeof customerSegmentOptions
 
-export interface FiltersSet {
-      duration: DurationOption
-      dates: DateOption
-      comparison: ComparisonOption
-      subcategory: MedicineSubcategoryName
-      region: RegionOption
-      storeFormat: StoreFormatOption
-      customerSegment: CustomerSegmentOption
-}
-
 export type MeasureOption = keyof typeof measureOptions
-
-
-
-
-
-
 
 // MEASURE DATA
 
