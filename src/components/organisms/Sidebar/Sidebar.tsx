@@ -146,7 +146,7 @@ export class Sidebar extends React.Component<Props, {}> {
                         className={s.selectorContainer}
                     >
                         <Selector
-                            optionsArray={storeFormatOptions}
+                            optionsArray={Object.keys(storeFormatOptions)}
                             value={appState.selectedFilters.storeFormat}
                             handleSelectorChange={actions.changeSelected.storeFormat}
                         />

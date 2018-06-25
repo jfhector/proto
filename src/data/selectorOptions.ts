@@ -17,10 +17,10 @@ import {
 } from '../sharedTypes'
 
 export const durationOptions = {
-    '4 weeks': {},
-    '12 weeks': {},
-    '26 weeks': {},
-    '52 weeks': {}
+    '4 weeks': undefined,
+    '12 weeks': undefined,
+    '26 weeks': undefined,
+    '52 weeks': undefined
 }
 
 export function getDatesOptions(selectedDuration: DurationOption):
@@ -130,20 +130,20 @@ export function getComparisonOptions(selectedDuration: DurationOption):
     }
 }
 
+export const storeFormatOptions = {
+    'All store formats': undefined,
+    'Express stores': undefined,
+    'Metro stores': undefined,
+    'Extra stores': undefined,
+    'Online': undefined
+}
+
 export const regionOptions: RegionOption[] = [
     'All regions',
     'North region',
     'Central region',
     'West region',
     'South region'
-]
-
-export const storeFormatOptions: StoreFormatOption[] = [
-    'All store formats',
-    'Express stores',
-    'Metro stores',
-    'Extra stores',
-    'Online'
 ]
 
 export const customerSegmentOptions: CustomerSegmentOption[] = [

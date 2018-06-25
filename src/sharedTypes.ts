@@ -1,7 +1,7 @@
 
 // Indirectional imports:
 import App from './App'
-import { categoryHierarchy, durationOptions } from './data'
+import { categoryHierarchy, durationOptions, storeFormatOptions } from './data'
 
 // APP STATE
 
@@ -147,12 +147,7 @@ export type MedicineSubcategoryName = keyof typeof categoryHierarchy['MEDICINE']
 
 // FILTERS
 
-export type StoreFormatOption = 
-      'All store formats' | 
-      'Express stores' | 
-      'Metro stores' | 
-      'Extra stores' | 
-      'Online'
+export type StoreFormatOption = keyof typeof storeFormatOptions
 
 export type RegionOption = 
       'All regions' | 
