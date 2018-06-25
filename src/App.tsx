@@ -76,8 +76,8 @@ class App extends React.Component<Props, AppState> {
                   ) ? false : true,
             })
         },
-        selectionChanges: {
-            changeSelectedDuration: (newlySelectedDuration: DurationOption) => {
+        changeSelected: {
+            duration: (newlySelectedDuration: DurationOption) => {
                 this.setState(
                     (prevState: AppState) => ({
                         selectedFilters: {
@@ -89,7 +89,7 @@ class App extends React.Component<Props, AppState> {
                     } as AppState)
                 )
             },
-            changeSelectedDates: (newlySelectedDates: DateOption) => {
+            dates: (newlySelectedDates: DateOption) => {
                 this.setState(
                     (prevState: AppState) => ({
                         selectedFilters: {
@@ -100,7 +100,7 @@ class App extends React.Component<Props, AppState> {
                     } as AppState)
                 )
             },
-            changeSelectedComparison: (newlySelectedComparison: ComparisonOption) => {
+            comparison: (newlySelectedComparison: ComparisonOption) => {
                 this.setState(
                     (prevState: AppState) => ({
                         selectedFilters: {
@@ -111,7 +111,7 @@ class App extends React.Component<Props, AppState> {
                     } as AppState)
                 )
             },
-            changeSelectedSubcategory: (newlySelectedSubcategory: MedicineSubcategoryName) => {
+            subcategory: (newlySelectedSubcategory: MedicineSubcategoryName) => {
                 this.setState(
                     (prevState: AppState) => ({
                         selectedFilters: {
@@ -122,7 +122,7 @@ class App extends React.Component<Props, AppState> {
                     } as AppState)
                 )
             },
-            changeSelectedRegion: (newlySelectedRegion: RegionOption) => {
+            region: (newlySelectedRegion: RegionOption) => {
                 this.setState(
                     (prevState: AppState) => ({
                         selectedFilters: {
@@ -133,7 +133,7 @@ class App extends React.Component<Props, AppState> {
                     } as AppState)
                 )
             },
-            changeSelectedStoreFormat: (newlySelectedStoreFormat: StoreFormatOption) => {
+            storeFormat: (newlySelectedStoreFormat: StoreFormatOption) => {
                 this.setState(
                     (prevState: AppState) => ({
                         selectedFilters: {
@@ -144,7 +144,7 @@ class App extends React.Component<Props, AppState> {
                     } as AppState)
                 )
             },
-            changeSelectedCustomerSegment: (newlySelectedCustomerSegment: CustomerSegmentOption) => {
+            customerSegment: (newlySelectedCustomerSegment: CustomerSegmentOption) => {
                 this.setState(
                     (prevState: AppState) => ({
                         selectedFilters: {
@@ -155,63 +155,66 @@ class App extends React.Component<Props, AppState> {
                     } as AppState)
                 )
             },
-            changeSelectedMeasure: (newlySelectedMeasure: MeasureName) => {
+            measure: (newlySelectedMeasure: MeasureName) => {
                 this.setState({
                     selectedMeasure: newlySelectedMeasure
                 })
             },
         },
-        expansionToggles: {
-            toggleMeasuresSummaryExpanded: () => {
+
+        // EXPANSION TOGGLES
+
+        toggleExpansion: {
+            measuresSummary: () => {
                 this.setState(
                     (prevState: AppState) => ({
                         measuresSummaryExpanded: !prevState.measuresSummaryExpanded,
                     })
                 )
             },
-            toggleKPITreesExpanded: () => {
+            kpisTrees: () => {
                 this.setState(
                     (prevState: AppState) => ({
                         KPITreesExpanded: !prevState.KPITreesExpanded
                     })
                 )
             },
-            toggleMeasureInDetailExpanded: () => {
+            measureInDetail: () => {
                 this.setState(
                     (prevState: AppState) => ({
                         measuresInDetailExpanded: !prevState.measuresInDetailExpanded,
                     })
                 )
             },
-            toggleTrendGraphExpanded: () => {
+            trendGraph: () => {
                 this.setState(
                     (prevState: AppState) => ({
                         trendGraphExpanded: !prevState.trendGraphExpanded
                     })
                 )
             },
-            toggleSplitBySubcategoryExpanded: () => {
+            splitBySubcategory: () => {
                 this.setState(
                     (prevState: AppState) => ({
                         splitBySubcategoryExpanded: !prevState.splitBySubcategoryExpanded
                     })
                 )
             },
-            toggleSplitByRegionExpanded: () => {
+            splitByRegion: () => {
                 this.setState(
                     (prevState: AppState) => ({
                         splitByRegionExpanded: !prevState.splitByRegionExpanded
                     })
                 )
             },
-            toggleSplitByStoreFormatExpanded: () => {
+            splitByStoreFormat: () => {
                 this.setState(
                     (prevState: AppState) => ({
                         splitByStoreFormatExpanded: !prevState.splitByStoreFormatExpanded
                     })
                 )
             },
-            toggleSplitByCustomerSegmentExpanded: () => {
+            splitByCustomerSegment: () => {
                 this.setState(
                     (prevState: AppState) => ({
                         splitByCustomerSegmentExpanded: !prevState.splitByCustomerSegmentExpanded
