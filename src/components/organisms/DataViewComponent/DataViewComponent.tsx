@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as s from './DataViewComponent.css'
+import * as styles from './DataViewComponent.css'
 import { Button, Alert, CollapsibleContentBoard, KpiTile, Selector, CollapsibleContentModule, DataSubtitle } from '../..'
 import { measureOptions, kpisDataForAllMeasuresFor } from '../../../data'
 import { AppState, Actions, RefAssignmentFunctions, MeasureOption } from '../../../sharedTypes'
@@ -19,19 +19,19 @@ export class DataViewComponent extends React.Component<Props, {}> {
 
         return (
             <div
-                className={s.DataView}
+                className={styles.DataView}
             >
                 <div
-                    className={s.viewTitleRow}
+                    className={styles.viewTitleRow}
                 >
                     <div
-                        className={s.viewTitle}
+                        className={styles.viewTitle}
                     >
                         Untitled view
                     </div>
 
                     <div
-                        className={s.viewTitleButtonsRow}
+                        className={styles.viewTitleButtonsRow}
                     >
                         <Button
                             typeOption='secondary'
@@ -47,7 +47,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                 </div>
 
                 <div
-                    className={s.alertContainer}
+                    className={styles.alertContainer}
                 >
                     <Alert
                         typeOption='warning'
@@ -55,7 +55,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                         handleClick={props.actions.updateView}
                         dismissable
                     >
-                        <b>This view doesn&apos;t reflect your new selection yet.&nbsp;</b> Click <span className={s.alertLink}>&apos;Update view&apos;&nbsp;</span> to refresh this view.
+                        <b>This view doesn&apos;t reflect your new selection yet.&nbsp;</b> Click <span className={styles.alertLink}>&apos;Update view&apos;&nbsp;</span> to refresh this view.
                     </Alert>
                 </div>
 
@@ -65,7 +65,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                     handleCollapseButtonClick={props.actions.toggleExpansion.measuresSummary}
                 >
                     <div
-                        className={s.KpiTilesContainer}
+                        className={styles.KpiTilesContainer}
                     >
                         {
                             Object.keys(measureOptions).map((measureOption: MeasureOption) =>
@@ -105,7 +105,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                     rightNode={
                         <> 
                             <span
-                                className={s.measureInDetailBoardRightNodeLabel}
+                                className={styles.measureInDetailBoardRightNodeLabel}
                             >
                                 Selected measure:
                             </span>

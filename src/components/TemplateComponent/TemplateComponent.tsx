@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as classNames from 'classnames'
-import * as s from './TemplateComponent.css'
+import * as styles from './TemplateComponent.css'
 
 import {} from '../../sharedTypes'
 import {} from '../../data/'
@@ -13,6 +13,11 @@ interface Props {
     optionalProp?: PropType
     someOptionalPropWithSomethingToRender: React.Node
     optionalPropOption?: 'possValue1' | 'possValue2' | 'possValue3' | 'possValue4'
+
+    // Connecting the component
+    appState: AppState
+    actions: Actions
+    refAssignmentFunctions: RefAssignmentFunctions
 
     // Instance-specific data extracted from appState upstream
     propOption: 
@@ -41,18 +46,19 @@ export class TemplateComponent extends React.Component<Props, {}> {
         return (
             <outerMostHtmlElement
                 className={classNames(
-                    s.TemplateComponent,
-                    s.className,
+                    styles.TemplateComponent,
+                    styles.className,
+                    styles[props.propOption!],
                     {
-                        [s.conditionallyAppliedClassName]: props.prop,
-                        [s.conditionallyAppliedClassName]: props.prop,
+                        [styles.conditionallyAppliedClassName]: props.prop,
+                        [styles.conditionallyAppliedClassName]: props.prop,
                     }
                 )}
             >
                 <div
                     className={classNames(
-                        s.className,
-                        s.className,
+                        styles.className,
+                        styles.className,
                     )}
                 >
                     {props.prop}

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as s from './Alert.css'
+import * as styles from './Alert.css'
 import * as classNames from 'classnames'
 
 interface Props {
@@ -23,28 +23,22 @@ export class Alert extends React.Component<Props, {}> {
     }
 
     render() {
-        const {
-            visible,
-            children,
-            typeOption,
-            dismissable,
-            handleClick,
-        } = this.props
+        const { props } = this
 
         return (
             <div
                 className={classNames(
-                    s.Alert,
-                    s[typeOption!],
+                    styles.Alert,
+                    styles[props.typeOption!],
                     {
-                        [s.visible]: visible
+                        [styles.visible]: props.visible
                     }
                 )}
-                onClick={handleClick}
+                onClick={props.handleClick}
             >
-                {children}
+                {props.children}
 
-                {dismissable &&
+                {props.dismissable &&
                     <button
                         type='button'
                         onClick={() => { }}
