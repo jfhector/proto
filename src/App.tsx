@@ -71,10 +71,10 @@ class App extends React.Component<Props, AppState> {
             )
         },
         conditionallySetMeasureInDetailBoardHeaderVisibleStateBasedOnScrollY: () => {
+            let measureInDetailBoardHeaderContainingDivBoundingClientRect = this.refToMeasureInDetailBoardHeaderContainingDiv.getBoundingClientRect() as DOMRect
+
             this.setState({
-                  measureInDetailBoardHeaderVisible: (
-                    (this.refToMeasureInDetailBoardHeaderContainingDiv.getBoundingClientRect() as DOMRect).top > 0
-                  ) ? false : true,
+                  measureInDetailBoardHeaderVisible: measureInDetailBoardHeaderContainingDivBoundingClientRect.top > 0 ? false : true,
             })
         },
         changeSelected: {
