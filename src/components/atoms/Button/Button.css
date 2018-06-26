@@ -6,17 +6,12 @@
     font-size: medium;
     cursor: pointer;
     width: max-content;
-    background-color: red;
 }
 
 /* bool */
 
 .fullWidth {
     width: 100%;
-}
-
-.disabled {
-    background-color: var(--backgroundColor_button_disabled);
 }
 
 /* typeOption */
@@ -59,6 +54,12 @@
 .dark {
     background-color: var(--backgroundColor_button_dark);
     color: white;
+}
+
+/* bool */
+
+.disabled {
+    background-color: var(--backgroundColor_button_disabled);
 }
 
 /* sizeOption */

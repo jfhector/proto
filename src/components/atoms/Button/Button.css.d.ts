@@ -1,6 +1,5 @@
 export const Button: string;
 export const fullWidth: string;
-export const disabled: string;
 export const primary: string;
 export const secondary: string;
 export const success: string;
@@ -9,6 +8,7 @@ export const warning: string;
 export const info: string;
 export const light: string;
 export const dark: string;
+export const disabled: string;
 export const small: string;
 export const medium: string;
 export const large: string;
