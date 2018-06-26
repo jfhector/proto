@@ -37,14 +37,10 @@ export function kpisDataForAllMeasuresFor(appState: AppState): KpisDataForAllMea
 
     // Deterministically derive an integer from 0 to 4 from appState
     const numberThatIsDifferentForDifferentValuesOfDisplayedFilters = Object.values(appState.displayedFilters).join().length + Number.parseInt(appState.displayedFilters.duration) + Number.parseInt(appState.displayedFilters.dates)
-    const numberFrom0To4 = numberThatIsDifferentForDifferentValuesOfDisplayedFilters % 5
-    
-    if (!(numberFrom0To4 === 0 || numberFrom0To4 === 1 || numberFrom0To4 === 2 || numberFrom0To4 === 3 || numberFrom0To4 === 4)) { throw new Error('numberFrom0To3 wasn\'t 0, 1, 2, 3 or 4') }
+    const intFrom0To4 = numberThatIsDifferentForDifferentValuesOfDisplayedFilters % 5 as (0 | 1 | 2 | 3 | 4)
 
-    console.log(numberFrom0To4)
-    
     // Switch on this number to return one of the data sets above
-    switch (numberFrom0To4) {
+    switch (intFrom0To4) {
         case 0:
             return dataForAllMeasuresBasedOnAppState0
         case 1:
@@ -56,7 +52,7 @@ export function kpisDataForAllMeasuresFor(appState: AppState): KpisDataForAllMea
         case 4:
             return dataForAllMeasuresBasedOnAppState4
         default:
-            const _exhaustiveCheck: never = numberFrom0To4
+            const _exhaustiveCheck: never = intFrom0To4
             return _exhaustiveCheck
     }
 }
