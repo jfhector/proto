@@ -1,0 +1,64 @@
+.TemplateComponent {
+    display: grid;
+    grid-template-columns: auto auto 1fr auto;
+    grid-template-rows: auto auto
+    grid-template-areas:
+        "buttonArea     titleArea       .               rightNodeContainerArea"
+        "childrenArea   childrenArea    childrenArea    childrenArea";
+}
+
+.className {
+    grid-area: buttonArea;
+}
+
+.className {
+    grid-area: titleArea;
+}
+
+.className {
+    grid-area: rightContainerArea;
+}
+
+.className {
+    grid-area: childrenArea;
+}
+
+.className > .className {
+
+}
+
+.className:hover:not(.className) {
+
+}
+
+/* prop OPTION PROP */
+
+.possValue1 {
+
+}
+
+.possValue2 {
+
+}
+
+.possValue3 {
+
+}
+
+.possValue4 {
+
+}
+
+/* prop OPTION PROP */
+
+/* prop BOOL PROP */
+
+.propBool {
+
+}
+
+.propBool .className {
+
+}
+
+/* prop BOOL PROP */

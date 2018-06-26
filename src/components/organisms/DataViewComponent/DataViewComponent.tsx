@@ -1,5 +1,4 @@
 import * as React from 'react'
-import App from '../../../App'
 import * as s from './DataViewComponent.css'
 import { Button, Alert, CollapsibleContentBoard, KpiTile, Selector, CollapsibleContentModule, DataSubtitle } from '../..'
 import { measureOptions, kpisDataForAllMeasuresFor } from '../../../data'
@@ -16,11 +15,7 @@ interface Props {
 export class DataViewComponent extends React.Component<Props, {}> {
 
     render() {
-        const {
-            appState,
-            actions,
-            refAssignmentFunctions,
-        } = this.props
+        const { props } = this
 
         return (
             <div
@@ -56,8 +51,8 @@ export class DataViewComponent extends React.Component<Props, {}> {
                 >
                     <Alert
                         typeOption='warning'
-                        visible={appState.dataViewNeedsUpdating}
-                        handleClick={actions.updateView}
+                        visible={props.appState.dataViewNeedsUpdating}
+                        handleClick={props.actions.updateView}
                         dismissable
                     >
                         <b>This view doesn&apos;t reflect your new selection yet.&nbsp;</b> Click <span className={s.alertLink}>&apos;Update view&apos;&nbsp;</span> to refresh this view.
@@ -66,8 +61,8 @@ export class DataViewComponent extends React.Component<Props, {}> {
 
                 <CollapsibleContentBoard
                     title='Performance overview'
-                    expanded={appState.expanded.measuresSummaryBoard}
-                    handleCollapseButtonClick={actions.toggleExpansion.measuresSummary}
+                    expanded={props.appState.expanded.measuresSummaryBoard}
+                    handleCollapseButtonClick={props.actions.toggleExpansion.measuresSummary}
                 >
                     <div
                         className={s.KpiTilesContainer}
@@ -76,9 +71,9 @@ export class DataViewComponent extends React.Component<Props, {}> {
                             Object.keys(measureOptions).map((measureOption: MeasureOption) =>
                                 <KpiTile
                                     measure={measureOption}
-                                    kpisData={kpisDataForAllMeasuresFor(appState)[measureOption]}
-                                    selected={appState.selectedMeasure === measureOption}
-                                    handleKpiTileClick={actions.changeSelected.measure}
+                                    kpisData={kpisDataForAllMeasuresFor(props.appState)[measureOption]}
+                                    selected={props.appState.selectedMeasure === measureOption}
+                                    handleKpiTileClick={props.actions.changeSelected.measure}
                                     key={measureOption}
                                 />
                             )
@@ -88,12 +83,12 @@ export class DataViewComponent extends React.Component<Props, {}> {
 
                 <CollapsibleContentBoard
                     title='KPI tree'
-                    expanded={appState.expanded.kpisTreesBoard}
-                    handleCollapseButtonClick={actions.toggleExpansion.kpisTrees}
+                    expanded={props.appState.expanded.kpisTreesBoard}
+                    handleCollapseButtonClick={props.actions.toggleExpansion.kpisTrees}
                 >
                     <DataSubtitle
-                            selectedMeasure={appState.selectedMeasure}
-                            displayedFilters={appState.displayedFilters}
+                            selectedMeasure={props.appState.selectedMeasure}
+                            displayedFilters={props.appState.displayedFilters}
                     />
                     <img
                         src={PROTOIMG_kpiTree}
@@ -103,10 +98,10 @@ export class DataViewComponent extends React.Component<Props, {}> {
                 <CollapsibleContentBoard
                     title='Measure in detail'
                     headerIsSticky
-                    expanded={appState.expanded.measuresInDetailBoard}
-                    headerHighlighted={appState.measureInDetailBoardHeaderVisible}
-                    handleCollapseButtonClick={actions.toggleExpansion.measureInDetail}
-                    refAssignmentFunctionforHeaderContainingDiv={refAssignmentFunctions.forMeasureInDetailBoardHeaderContainingDiv}
+                    expanded={props.appState.expanded.measuresInDetailBoard}
+                    headerHighlighted={props.appState.measureInDetailBoardHeaderVisible}
+                    handleCollapseButtonClick={props.actions.toggleExpansion.measureInDetail}
+                    refAssignmentFunctionforHeaderContainingDiv={props.refAssignmentFunctions.forMeasureInDetailBoardHeaderContainingDiv}
                     rightNode={
                         <> 
                             <span
@@ -116,25 +111,25 @@ export class DataViewComponent extends React.Component<Props, {}> {
                             </span>
                             <Selector
                                 optionsArray={Object.keys(measureOptions)}
-                                value={`${appState.selectedMeasure}`}
-                                handleSelectorChange={actions.changeSelected.measure}
+                                value={`${props.appState.selectedMeasure}`}
+                                handleSelectorChange={props.actions.changeSelected.measure}
                             />
                         </>
                     }
                 >
                     <CollapsibleContentModule
                         title='Trend'
-                        expanded={appState.expanded.trendGraphModule}
-                        handleCollapseButtonClick={actions.toggleExpansion.trendGraph}
+                        expanded={props.appState.expanded.trendGraphModule}
+                        handleCollapseButtonClick={props.actions.toggleExpansion.trendGraph}
                     >
                         <DataSubtitle
-                            selectedMeasure={appState.selectedMeasure}
-                            displayedFilters={appState.displayedFilters}
+                            selectedMeasure={props.appState.selectedMeasure}
+                            displayedFilters={props.appState.displayedFilters}
                         />
                         <img
                             src={
                                 (function () {
-                                    switch (appState.selectedMeasure) {
+                                    switch (props.appState.selectedMeasure) {
                                         case 'Sales value':
                                         case 'Basket penetration':
                                             return PROTOIMG_graph_salesValue
@@ -149,7 +144,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                                         case 'Units per visit':
                                             return PROTOIMG_graph_spendPerVisit
                                         default:
-                                            const _exhaustiveCheck: never = appState.selectedMeasure
+                                            const _exhaustiveCheck: never = props.appState.selectedMeasure
                                     }
                                 })()
                             }
@@ -157,18 +152,18 @@ export class DataViewComponent extends React.Component<Props, {}> {
                     </CollapsibleContentModule>
 
                     <CollapsibleContentModule
-                        title={`Top 10 movers in ${appState.displayedFilters.subcategory}`}
-                        expanded={appState.expanded.splitBySubcategoryModule}
-                        handleCollapseButtonClick={actions.toggleExpansion.splitBySubcategory}
+                        title={`Top 10 movers in ${props.appState.displayedFilters.subcategory}`}
+                        expanded={props.appState.expanded.splitBySubcategoryModule}
+                        handleCollapseButtonClick={props.actions.toggleExpansion.splitBySubcategory}
                     >
                         <DataSubtitle
-                            selectedMeasure={appState.selectedMeasure}
-                            displayedFilters={appState.displayedFilters}
+                            selectedMeasure={props.appState.selectedMeasure}
+                            displayedFilters={props.appState.displayedFilters}
                         />
                         <img
                             src={
                                 (function () {
-                                    switch (appState.selectedMeasure) {
+                                    switch (props.appState.selectedMeasure) {
                                         case 'Sales value':
                                         case 'Basket penetration':
                                             return PROTOIMG_table_subcategories_salesValue
@@ -183,7 +178,7 @@ export class DataViewComponent extends React.Component<Props, {}> {
                                         case 'Units per visit':
                                             return PROTOIMG_table_subcategories_spendPerVisit
                                         default:
-                                            const _exhaustiveCheck: never = appState.selectedMeasure
+                                            const _exhaustiveCheck: never = props.appState.selectedMeasure
                                     }
                                 })()
                             }
@@ -192,12 +187,12 @@ export class DataViewComponent extends React.Component<Props, {}> {
 
                     <CollapsibleContentModule
                         title='Split by region'
-                        expanded={appState.expanded.splitByRegionModule}
-                        handleCollapseButtonClick={actions.toggleExpansion.splitByRegion}
+                        expanded={props.appState.expanded.splitByRegionModule}
+                        handleCollapseButtonClick={props.actions.toggleExpansion.splitByRegion}
                     >
                         <DataSubtitle
-                            selectedMeasure={appState.selectedMeasure}
-                            displayedFilters={appState.displayedFilters}
+                            selectedMeasure={props.appState.selectedMeasure}
+                            displayedFilters={props.appState.displayedFilters}
                         />
                         <img
                             src={PROTOIMG_table_regions_salesValue}
@@ -206,12 +201,12 @@ export class DataViewComponent extends React.Component<Props, {}> {
 
                     <CollapsibleContentModule
                         title='Split by store format'
-                        expanded={appState.expanded.splitByStoreFormatModule}
-                        handleCollapseButtonClick={actions.toggleExpansion.splitByStoreFormat}
+                        expanded={props.appState.expanded.splitByStoreFormatModule}
+                        handleCollapseButtonClick={props.actions.toggleExpansion.splitByStoreFormat}
                     >
                         <DataSubtitle
-                            selectedMeasure={appState.selectedMeasure}
-                            displayedFilters={appState.displayedFilters}
+                            selectedMeasure={props.appState.selectedMeasure}
+                            displayedFilters={props.appState.displayedFilters}
                         />
                         <img
                             src={PROTOIMG_table_storeFormats_salesValue}
@@ -220,12 +215,12 @@ export class DataViewComponent extends React.Component<Props, {}> {
 
                     <CollapsibleContentModule
                         title='Split by customer segment'
-                        expanded={appState.expanded.splitByCustomerSegmentModule}
-                        handleCollapseButtonClick={actions.toggleExpansion.splitByCustomerSegment}
+                        expanded={props.appState.expanded.splitByCustomerSegmentModule}
+                        handleCollapseButtonClick={props.actions.toggleExpansion.splitByCustomerSegment}
                     >
                         <DataSubtitle
-                            selectedMeasure={appState.selectedMeasure}
-                            displayedFilters={appState.displayedFilters}
+                            selectedMeasure={props.appState.selectedMeasure}
+                            displayedFilters={props.appState.displayedFilters}
                         />
                         <img
                             src={PROTOIMG_table_customerTypes_salesValue}

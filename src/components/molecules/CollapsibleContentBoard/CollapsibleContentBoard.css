@@ -1,11 +1,6 @@
 .CollapsibleContentBoard {
     padding-top: 4px;
     margin-bottom: 20px;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-        "headerArea"
-        "childrenArea";
     border: 1px solid var(--borderColor_aroundWhiteOrLightestGrey);
     border-radius: 5px;
     background-color: white;
@@ -13,7 +8,6 @@
 }
 
 .headerContainer {
-    grid-area: headerArea;
     display: grid;
     grid-template-columns: auto auto 1fr auto;
     grid-template-areas: "buttonArea    titleArea   .   rightNodeContainerArea";
@@ -34,8 +28,6 @@
     align-self: center;
     font-size: x-large;
     font-weight: bold;
-    cursor: pointer;
-    user-select: none;
 }
 
 .headerContainer > .rightNodeContainer {
@@ -45,7 +37,6 @@
 }
 
 .childrenContainer {
-    grid-area: childrenArea;
     margin: 0 20px 0 20px;
 }
 
@@ -62,7 +53,6 @@
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    z-index: 1;
 }
 
 /* headerIsHighlighted BOOL PROP */

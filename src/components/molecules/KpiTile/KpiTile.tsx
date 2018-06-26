@@ -21,34 +21,29 @@ export class KpiTile extends React.Component<Props, {}> {
     }
 
     render() {
-        const {
-            measure,
-            kpisData,
-            selected,
-            handleKpiTileClick,
-        } = this.props
+        const { props } = this
 
         return (
             <div
                 className={classNames(
                     s.KpiTile,
                     {
-                        [s.selected]: selected,
-                        [s.changedUpwards]: kpisData.changedUpwards,
+                        [s.selected]: props.selected,
+                        [s.changedUpwards]: props.kpisData.changedUpwards,
                     }
                 )}
-                onClick={() => handleKpiTileClick!(measure)}
+                onClick={() => props.handleKpiTileClick!(props.measure)}
             >
                 <div
                     className={s.measureName}
                 >
-                    {measure}
+                    {props.measure}
                 </div>
 
                 <div
                     className={s.measureValue}
                 >
-                    {kpisData.value}
+                    {props.kpisData.value}
                 </div>
 
                 <div
@@ -57,7 +52,7 @@ export class KpiTile extends React.Component<Props, {}> {
                         s.valueChange
                     )}
                 >
-                    {kpisData.valueChange}
+                    {props.kpisData.valueChange}
                 </div>
 
                 <div
@@ -66,7 +61,7 @@ export class KpiTile extends React.Component<Props, {}> {
                         s.percentChange
                     )}
                 >
-                    {kpisData.percentChange}
+                    {props.kpisData.percentChange}
                 </div>
             </div>
         )

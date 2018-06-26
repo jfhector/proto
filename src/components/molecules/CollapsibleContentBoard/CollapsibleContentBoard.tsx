@@ -31,59 +31,50 @@ export class CollapsibleContentBoard extends React.Component<Props, {}> {
     }
 
     render() {
-        const {
-            title,
-            children,
-            headerIsSticky,
-            handleCollapseButtonClick,
-            refAssignmentFunctionforHeaderContainingDiv,
-            headerHighlighted,
-            expanded,
-            rightNode
-        } = this.props
+        const { props } = this
 
         return (
             <div
                 className={classNames(
                     s.CollapsibleContentBoard,
                     {
-                        [s.expanded]: expanded,
-                        [s.headerIsSticky]: headerIsSticky,
-                        [s.headerHighlighted]: headerHighlighted
+                        [s.expanded]: props.expanded,
+                        [s.headerIsSticky]: props.headerIsSticky,
+                        [s.headerHighlighted]: props.headerHighlighted
                     }
                 )}
             >
                 <div
                     className={s.headerContainer}
-                    ref={refAssignmentFunctionforHeaderContainingDiv}
+                    ref={props.refAssignmentFunctionforHeaderContainingDiv}
                 >
                     <div
                         className={s.collapseButtonContainer}
                     >
                         <CollapseButton
-                            expanded={expanded}
-                            handleClick={handleCollapseButtonClick}
+                            expanded={props.expanded}
+                            handleClick={props.handleCollapseButtonClick}
                         />
                     </div>
 
                     <div
                         className={s.title}
                     >
-                        {title}
+                        {props.title}
                     </div>
 
                     <div
                         className={s.rightNodeContainer}
                     >
-                        {rightNode}
+                        {props.rightNode}
                     </div>
                 </div>
                 
-                {expanded &&
+                {props.expanded &&
                     <div
                         className={s.childrenContainer}
                     >
-                        {children}
+                        {props.children}
                     </div>
                 }
             </div>
