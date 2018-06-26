@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as s from './KpiTile.css'
+import * as styles from './KpiTile.css'
 import * as classNames from 'classnames'
 import { AppState, MeasureOption, MeasureData } from '../../../sharedTypes'
 
@@ -26,30 +26,30 @@ export class KpiTile extends React.Component<Props, {}> {
         return (
             <div
                 className={classNames(
-                    s.KpiTile,
+                    styles.KpiTile,
                     {
-                        [s.selected]: props.selected,
-                        [s.changedUpwards]: props.kpisData.changedUpwards,
+                        [styles.selected]: props.selected,
+                        [styles.changedUpwards]: props.kpisData.changedUpwards,
                     }
                 )}
                 onClick={() => props.handleKpiTileClick!(props.measure)}
             >
                 <div
-                    className={s.measureName}
+                    className={styles.measureName}
                 >
                     {props.measure}
                 </div>
 
                 <div
-                    className={s.measureValue}
+                    className={styles.measureValue}
                 >
                     {props.kpisData.value}
                 </div>
 
                 <div
                     className={classNames(
-                        s.changeMeasure,
-                        s.valueChange
+                        styles.changeMeasure,
+                        styles.valueChange
                     )}
                 >
                     {props.kpisData.valueChange}
@@ -57,8 +57,8 @@ export class KpiTile extends React.Component<Props, {}> {
 
                 <div
                     className={classNames(
-                        s.changeMeasure,
-                        s.percentChange
+                        styles.changeMeasure,
+                        styles.percentChange
                     )}
                 >
                     {props.kpisData.percentChange}

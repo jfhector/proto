@@ -25,6 +25,7 @@ interface Props {
 
     // Instance-specific function extracted from actions upstream
     prop: PropType
+    handleClick?: React.MouseEventHandler<HTMLElement>
     optionalProp?: PropType
 
     // Ref assignment function
@@ -38,6 +39,7 @@ export class TemplateComponent extends React.Component<Props, {}> {
         optionalPropOption: 'possValue1',
         someOptionalPropWithSomethingToRender: null,
         refAssignmentFunctionForSomeHtmlElement: undefined,
+        handleButtonClick: () => { console.log('Button clicked') },
     }
 
     render() {

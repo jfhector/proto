@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as s from './Sidebar.css'
+import * as styles from './Sidebar.css'
 import { Selector, Button } from '../..'
 import { AppState, Actions, DurationOption, ComparisonOption, RegionOption, StoreFormatOption, CustomerSegmentOption } from '../../../sharedTypes'
 import { durationOptions, datesOptionsFor, comparisonOptionsFor, categoryHierarchy, regionOptions, storeFormatOptions, customerSegmentOptions } from '../../../data'
@@ -13,72 +13,69 @@ interface Props {
 
 export class Sidebar extends React.Component<Props, {}> {
     render() {
-        const {
-            appState,
-            actions,
-        } = this.props
+        const { props } = this
 
         return (
             <div
-                className={s.Sidebar}
+                className={styles.Sidebar}
             >
                 <div
-                    className={s.title}
+                    className={styles.title}
                 >
                     Configure view
                 </div>
 
                 <div
-                    className={s.selectorGroupContainer}
+                    className={styles.selectorGroupContainer}
                 >
                     <div
-                        className={s.selectorGroupTitle}
+                        className={styles.selectorGroupTitle}
                     >
                         Analysis period
                     </div>
 
                     <div
-                        className={s.selectorContainer}
+                        className={styles.selectorContainer}
                     >
                         <Selector
                             optionsArray={Object.keys(durationOptions)}
-                            value={appState.selectedFilters.duration}
-                            handleSelectorChange={actions.changeSelected.duration}
+                            value={props.appState.selectedFilters.duration}
+                            handleSelectorChange={props.actions.changeSelected.duration}
                         />
                     </div>
 
                     <div
-                        className={s.selectorContainer}
+                        className={styles.selectorContainer}
                     >
                         <Selector
-                            optionsArray={Object.keys(datesOptionsFor(appState.selectedFilters.duration))}
-                            value={appState.selectedFilters.dates}
-                            handleSelectorChange={actions.changeSelected.dates}
+                            optionsArray={Object.keys(datesOptionsFor(props.appState.selectedFilters.duration))}
+                            value={props.appState.selectedFilters.dates}
+                            handleSelectorChange={props.actions.changeSelected.dates}
                         />
                     </div>
 
                     <div
-                        className={s.selectorContainer}
+                        className={styles.selectorContainer}
                     >
                         <Selector
-                            optionsArray={Object.keys(comparisonOptionsFor(appState.selectedFilters.duration))}
-                            value={appState.selectedFilters.comparison}
-                            handleSelectorChange={actions.changeSelected.comparison}
+                            optionsArray={Object.keys(comparisonOptionsFor(props.appState.selectedFilters.duration))}
+                            value={props.appState.selectedFilters.comparison}
+                            handleSelectorChange={props.actions.changeSelected.comparison}
                         />
                     </div>
                 </div>
 
                 <div
-                    className={s.selectorGroupContainer}
+                    className={styles.selectorGroupContainer}
                 >
                     <div
-                        className={s.selectorGroupTitle}
+                        className={styles.selectorGroupTitle}
                     >
                         Data source
                     </div>
 
                     <form
-                        className={s.radiosAndLabels}
+                        className={styles.radiosAndLabels}
                     >
                         <input
                             type='radio'
@@ -110,59 +107,59 @@ export class Sidebar extends React.Component<Props, {}> {
                 </div>
 
                 <div
-                    className={s.selectorGroupContainer}
+                    className={styles.selectorGroupContainer}
                 >
                     <div
-                        className={s.selectorGroupTitle}
+                        className={styles.selectorGroupTitle}
                     >
                         Data filters
                     </div>
 
                     <div
-                        className={s.selectorContainer}
+                        className={styles.selectorContainer}
                     >
                         <Selector
                             optionsArray={Object.keys(categoryHierarchy['MEDICINE'])}
-                            value={appState.selectedFilters.subcategory}
-                            handleSelectorChange={actions.changeSelected.subcategory}
+                            value={props.appState.selectedFilters.subcategory}
+                            handleSelectorChange={props.actions.changeSelected.subcategory}
                         />
                     </div>
 
                     <div
-                        className={s.selectorContainer}
+                        className={styles.selectorContainer}
                     >
                         <Selector
                             optionsArray={Object.keys(regionOptions)}
-                            value={appState.selectedFilters.region}
-                            handleSelectorChange={actions.changeSelected.region}
+                            value={props.appState.selectedFilters.region}
+                            handleSelectorChange={props.actions.changeSelected.region}
                         />
                     </div>
 
                     <div
-                        className={s.selectorContainer}
+                        className={styles.selectorContainer}
                     >
                         <Selector
                             optionsArray={Object.keys(storeFormatOptions)}
-                            value={appState.selectedFilters.storeFormat}
-                            handleSelectorChange={actions.changeSelected.storeFormat}
+                            value={props.appState.selectedFilters.storeFormat}
+                            handleSelectorChange={props.actions.changeSelected.storeFormat}
                         />
                     </div>
 
                     <div
-                        className={s.selectorContainer}
+                        className={styles.selectorContainer}
                     >
                         <Selector
                             optionsArray={Object.keys(customerSegmentOptions)}
-                            value={appState.selectedFilters.customerSegment}
-                            handleSelectorChange={actions.changeSelected.customerSegment}
+                            value={props.appState.selectedFilters.customerSegment}
+                            handleSelectorChange={props.actions.changeSelected.customerSegment}
                         />
                     </div>
                 </div>
 
                 <Button
                     fullWidth
-                    disabled={!appState.dataViewNeedsUpdating}
-                    handleButtonClick={actions.updateView}
+                    disabled={!props.appState.dataViewNeedsUpdating}
+                    handleButtonClick={props.actions.updateView}
                 >
                     Update view
                 </Button>

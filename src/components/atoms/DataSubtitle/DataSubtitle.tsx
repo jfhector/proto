@@ -1,7 +1,8 @@
 import * as React from 'react'
-import * as s from './DataSubtitle.css'
+import * as styles from './DataSubtitle.css'
 import * as classNames from 'classnames'
-import { AppState, MeasureOption, FiltersSet } from '../../../sharedTypes'
+
+import { MeasureOption, FiltersSet } from '../../../sharedTypes'
 
 interface Props {
     displayedFilters: FiltersSet,
@@ -10,30 +11,17 @@ interface Props {
 
 export class DataSubtitle extends React.Component<Props, {}> {
     render() {
-        const {
-            selectedMeasure,
-            displayedFilters,
-        } = this.props
-
-        const {
-            duration,
-            dates,
-            comparison,
-            subcategory,
-            region,
-            storeFormat,
-            customerSegment,
-        } = displayedFilters
+        const { props } = this
 
         return (
             <div
                 className={classNames(
-                    s.DataSubtitle
+                    styles.DataSubtitle
                 )}
             >
-                {`${selectedMeasure} • ${duration} • ${dates} ${comparison}`}
+                {`${props.selectedMeasure} • ${props.displayedFilters.duration} • ${props.displayedFilters.dates} ${props.displayedFilters.comparison}`}
                 <br />
-                {`${subcategory} • ${region} • ${storeFormat} • ${customerSegment}`}
+                {`${props.displayedFilters.subcategory} • ${props.displayedFilters.region} • ${props.displayedFilters.storeFormat} • ${props.displayedFilters.customerSegment}`}
             </div>
         )
     }

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as s from './CollapseButton.css'
+import * as styles from './CollapseButton.css'
 
 interface Props {
     // Instance-specific data extracted from appState upsteam
@@ -16,17 +16,14 @@ export class CollapseButton extends React.Component<Props, {}> {
     }
 
     render() {
-        const {
-            expanded,
-            handleClick,
-        } = this.props
+        const { props } = this
 
         return (
             <div
-                className={s.CollapseButton}
-                onClick={handleClick}
+                className={styles.CollapseButton}
+                onClick={props.handleClick}
             >
-                {expanded ? '\u2013' : '+'}
+                {props.expanded ? '\u2013' : '+'}
             </div>
         )
     }

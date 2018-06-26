@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as s from './Button.css'
+import * as styles from './Button.css'
 import * as classNames from 'classnames'
 
 interface Props {
@@ -23,29 +23,22 @@ export class Button extends React.Component<Props, {}> {
     }
 
     render() {
-        const {
-            disabled,
-            handleButtonClick,
-            typeOption,
-            sizeOption,
-            fullWidth,
-            children,
-        } = this.props
+        const { props } = this
 
         return (
             <button
                 className={classNames(
-                    s.Button,
-                    s[typeOption!],
-                    s[sizeOption!],
+                    styles.Button,
+                    styles[props.typeOption!],
+                    styles[props.sizeOption!],
                     {
-                        [s.fullWidth]: fullWidth,
-                        [s.disabled]: disabled,
+                        [styles.fullWidth]: props.fullWidth,
+                        [styles.disabled]: props.disabled,
                     }
                 )}
-                onClick={!disabled ? handleButtonClick : (() => { console.log('Button was clicked but is disabled') })}
+                onClick={!props.disabled ? props.handleButtonClick : (() => { console.log('Button was clicked but is disabled') })}
             >
-                {children}
+                {props.children}
             </button>
         )
     }

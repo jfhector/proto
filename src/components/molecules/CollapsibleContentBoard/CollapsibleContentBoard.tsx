@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as s from './CollapsibleContentBoard.css'
+import * as styles from './CollapsibleContentBoard.css'
 import * as classNames from 'classnames'
 import { CollapseButton } from '../../'
 
@@ -36,20 +36,20 @@ export class CollapsibleContentBoard extends React.Component<Props, {}> {
         return (
             <div
                 className={classNames(
-                    s.CollapsibleContentBoard,
+                    styles.CollapsibleContentBoard,
                     {
-                        [s.expanded]: props.expanded,
-                        [s.headerIsSticky]: props.headerIsSticky,
-                        [s.headerHighlighted]: props.headerHighlighted
+                        [styles.expanded]: props.expanded,
+                        [styles.headerIsSticky]: props.headerIsSticky,
+                        [styles.headerHighlighted]: props.headerHighlighted
                     }
                 )}
             >
                 <div
-                    className={s.headerContainer}
+                    className={styles.headerContainer}
                     ref={props.refAssignmentFunctionforHeaderContainingDiv}
                 >
                     <div
-                        className={s.collapseButtonContainer}
+                        className={styles.collapseButtonContainer}
                     >
                         <CollapseButton
                             expanded={props.expanded}
@@ -58,13 +58,13 @@ export class CollapsibleContentBoard extends React.Component<Props, {}> {
                     </div>
 
                     <div
-                        className={s.title}
+                        className={styles.title}
                     >
                         {props.title}
                     </div>
 
                     <div
-                        className={s.rightNodeContainer}
+                        className={styles.rightNodeContainer}
                     >
                         {props.rightNode}
                     </div>
@@ -72,7 +72,7 @@ export class CollapsibleContentBoard extends React.Component<Props, {}> {
                 
                 {props.expanded &&
                     <div
-                        className={s.childrenContainer}
+                        className={styles.childrenContainer}
                     >
                         {props.children}
                     </div>

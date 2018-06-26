@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as s from './CollapsibleContentModule.css'
+import * as styles from './CollapsibleContentModule.css'
 import * as classNames from 'classnames'
 import { CollapseButton } from '../..'
 
@@ -21,42 +21,37 @@ export class CollapsibleContentModule extends React.Component<Props, {}> {
     }
 
     render() {
-        const {
-            title,
-            children,
-            expanded,
-            handleCollapseButtonClick,
-        } = this.props
+        const { props } = this
 
         return (
             <div
                 className={classNames(
-                    s.CollapsibleContentModule,
+                    styles.CollapsibleContentModule,
                     {
-                        [s.expanded]: expanded,
+                        [styles.expanded]: props.expanded,
                     }
                 )}
             >
                 <div
-                    className={s.collapseButtonContainer}
+                    className={styles.collapseButtonContainer}
                 >
                     <CollapseButton
-                        expanded={expanded}
-                        handleClick={handleCollapseButtonClick}
+                        expanded={props.expanded}
+                        handleClick={props.handleCollapseButtonClick}
                     />
                 </div>
 
                 <div
-                    className={s.title}
+                    className={styles.title}
                 >
-                    {title}
+                    {props.title}
                 </div>
 
-                {expanded &&
+                {props.expanded &&
                     <div
-                        className={s.childrenContainer}
+                        className={styles.childrenContainer}
                     >
-                        {children}
+                        {props.children}
                     </div>
                 }
             </div>

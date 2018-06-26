@@ -1,7 +1,6 @@
 .TemplateComponent {
     display: grid;
     grid-template-columns: auto auto 1fr auto;
-    grid-template-rows: auto auto
     grid-template-areas:
         "buttonArea     titleArea       .               rightNodeContainerArea"
         "childrenArea   childrenArea    childrenArea    childrenArea";
