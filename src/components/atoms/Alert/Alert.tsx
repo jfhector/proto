@@ -40,6 +40,7 @@ export class Alert extends React.Component<Props, {}> {
 
                 {props.dismissable &&
                     <button
+                        className={classNames(styles.button)}
                         type='button'
                         onClick={() => { }}
                     >
