@@ -141,12 +141,12 @@ export const customerSegmentOptions = {
 
 export const measureOptions = {
     'Sales value': undefined,
-    'Spend per customer': undefined,
+    'Sales units': undefined,
     'Customers': undefined,
-    'Retailer visits': undefined,
+    'Spend per customer': undefined,
     'Spend per visit': undefined,
     'Units per visit': undefined,
+    'Retailer visits': undefined,
     'Basket penetration': undefined,
     'Frequency of purchase': undefined,
-    'Sales units': undefined,
 }

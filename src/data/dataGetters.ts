@@ -41,6 +41,8 @@ export function kpisDataForAllMeasuresFor(appState: AppState): KpisDataForAllMea
     
     if (!(numberFrom0To4 === 0 || numberFrom0To4 === 1 || numberFrom0To4 === 2 || numberFrom0To4 === 3 || numberFrom0To4 === 4)) { throw new Error('numberFrom0To3 wasn\'t 0, 1, 2, 3 or 4') }
 
+    console.log(numberFrom0To4)
+    
     // Switch on this number to return one of the data sets above
     switch (numberFrom0To4) {
         case 0:
