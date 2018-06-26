@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as s from './Alert.css'
-import classNames = require('classnames')
+import * as classNames from 'classnames'
 
 interface Props {
     children: React.ReactNode

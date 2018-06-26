@@ -1,4 +1,4 @@
-import React = require('react')
+import * as React from 'react'
 import * as s from './CollapseButton.css'
 
 interface Props {

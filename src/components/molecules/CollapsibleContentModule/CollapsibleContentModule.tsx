@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as s from './CollapsibleContentModule.css'
+import * as classNames from 'classnames'
 import { CollapseButton } from '../..'
-import classNames = require('classnames')
 
 interface Props {
     title: string

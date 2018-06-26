@@ -1,7 +1,6 @@
-import React = require('react')
-import App from '../../../App'
-import { Selector, Button } from '../..'
+import * as React from 'react'
 import * as s from './Sidebar.css'
+import { Selector, Button } from '../..'
 import { AppState, Actions, DurationOption, ComparisonOption, RegionOption, StoreFormatOption, CustomerSegmentOption } from '../../../sharedTypes'
 import { durationOptions, datesOptionsFor, comparisonOptionsFor, categoryHierarchy, regionOptions, storeFormatOptions, customerSegmentOptions } from '../../../data'
 

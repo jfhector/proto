@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as s from './DataSubtitle.css'
+import * as classNames from 'classnames'
 import { AppState, MeasureOption, FiltersSet } from '../../../sharedTypes'
-import classNames = require('classnames')
 
 interface Props {
     displayedFilters: FiltersSet,
