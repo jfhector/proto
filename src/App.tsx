@@ -70,7 +70,7 @@ class App extends React.Component<Props, AppState> {
                 })
             )
         },
-        conditionallyHighlightMeasureInDetailBoardHeaderBasedOnScrollY: () => {
+        conditionallySetMeasureInDetailBoardHeaderVisibleStateBasedOnScrollY: () => {
             let measureInDetailBoardHeaderContainingDivBoundingClientRect = this.refToMeasureInDetailBoardHeaderContainingDiv.getBoundingClientRect() as DOMRect
 
             this.setState({
@@ -251,14 +251,14 @@ class App extends React.Component<Props, AppState> {
     componentDidMount() {
         window.addEventListener(
             'scroll',
-            this.actions.conditionallyHighlightMeasureInDetailBoardHeaderBasedOnScrollY
+            this.actions.conditionallySetMeasureInDetailBoardHeaderVisibleStateBasedOnScrollY
         )
     }
 
     componentWillUnmount() {
         window.removeEventListener(
             'scroll',
-            this.actions.conditionallyHighlightMeasureInDetailBoardHeaderBasedOnScrollY
+            this.actions.conditionallySetMeasureInDetailBoardHeaderVisibleStateBasedOnScrollY
         )
     }
 
