@@ -14,10 +14,6 @@
     cursor: pointer;
 }
 
-.KpiTile:hover:not(.selected) {
-    border: 2px solid var(--borderColor_button_info);
-}
-
 .measureName {
     grid-area: measureName;
     font-size: medium;
@@ -54,12 +50,16 @@
     cursor: default;
 }
 
-.selected .measureName {
+.selected > .measureName {
     color: var(--textColor_default);
+}
+
+.KpiTile:hover:not(.selected) {
+    border: 2px solid var(--borderColor_button_info);
 }
 
 /* changedUpwards BOOL */
 
-.changedUpwards .changeMeasure {
+.changedUpwards > .changeMeasure {
     color: var(--textColor_positive);
 }

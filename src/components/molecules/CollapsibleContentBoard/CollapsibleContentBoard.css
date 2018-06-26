@@ -21,14 +21,14 @@
     overflow: visible;
 }
 
-.headerContainer .collapseButtonContainer {
+.headerContainer > .collapseButtonContainer {
     grid-area: buttonArea;
     align-self: center;
     margin-left: 20px;
     margin-right: 10px;
 }
 
-.headerContainer .title {
+.headerContainer > .title {
     grid-area: titleArea;
     margin-bottom: 5px;
     align-self: center;
@@ -38,7 +38,7 @@
     user-select: none;
 }
 
-.headerContainer .rightNodeContainer {
+.headerContainer > .rightNodeContainer {
     grid-area: rightNodeContainerArea;
     margin-right: 20px;
     align-self: center;
@@ -58,7 +58,7 @@
 
 /* headerIsSticky BOOL PROP */
 
-.headerIsSticky .headerContainer {
+.headerIsSticky > .headerContainer {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
@@ -67,7 +67,7 @@
 
 /* headerIsHighlighted BOOL PROP */
 
-.headerContainerVisible .headerContainer {
+.headerHighlighted > .headerContainer {
     box-shadow: 0 2px 4px var(--shadowColor_default);
     background-color: #fffe;
     transition: box-shadow 200ms;

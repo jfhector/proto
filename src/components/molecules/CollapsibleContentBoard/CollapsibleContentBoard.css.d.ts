@@ -6,4 +6,4 @@ export const rightNodeContainer: string;
 export const childrenContainer: string;
 export const expanded: string;
 export const headerIsSticky: string;
-export const headerContainerVisible: string;
+export const headerHighlighted: string;

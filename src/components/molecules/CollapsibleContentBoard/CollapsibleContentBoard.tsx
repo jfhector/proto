@@ -49,7 +49,7 @@ export class CollapsibleContentBoard extends React.Component<Props, {}> {
                     {
                         [s.expanded]: expanded,
                         [s.headerIsSticky]: headerIsSticky,
-                        [s.headerContainerVisible]: headerHighlighted
+                        [s.headerHighlighted]: headerHighlighted
                     }
                 )}
             >
