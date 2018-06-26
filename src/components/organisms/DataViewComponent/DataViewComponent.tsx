@@ -22,11 +22,6 @@ export class DataViewComponent extends React.Component<Props, {}> {
             refAssignmentFunctions,
         } = this.props
 
-        // TYPE GUARDS
-        if (typeof appState.displayedFilters === 'undefined') { throw new Error() }
-        if (typeof appState.dataViewNeedsUpdating === 'undefined') { throw new Error() }
-        if (typeof appState.selectedMeasure === 'undefined') { throw new Error() }
-
         return (
             <div
                 className={s.DataView}

@@ -19,9 +19,6 @@ export class Sidebar extends React.Component<Props, {}> {
             actions,
         } = this.props
 
-        // TYPE GUARDS
-        if (typeof appState.selectedFilters === 'undefined') { throw new Error() }
-
         return (
             <div
                 className={s.Sidebar}
