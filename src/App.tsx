@@ -1,9 +1,10 @@
 import * as React from 'react'
 import { hot } from 'react-hot-loader'
-import * as s from './App.css'
-import { Sidebar, DataViewComponent } from './components/'
-import { AppState, MeasureOption, DateOption, ComparisonOption, MedicineSubcategoryOption, RegionOption, StoreFormatOption, CustomerSegmentOption, DurationOption } from './sharedTypes'
-import { AssetsLoader, PROTOIMG_nav_header, PROTOIMG_nav_tabs, PROTOIMG_nav_footer } from './assets'
+
+import * as styles from './App.css'
+// import {} from './components/'
+import { AppState } from './sharedTypes'
+import { AssetsLoader } from './assets'
 
 interface Props {}
 
@@ -12,255 +13,132 @@ class App extends React.Component<Props, AppState> {
     // STATE
 
     state: AppState = {
-        selectedFilters: {
-            duration: '4 weeks',
-            dates: '25 Dec 2017 - 21 Jan 2018',
-            comparison: 'vs. previous 4 weeks',
-            subcategory: 'All product groups',
-            storeFormat: 'All store formats',
-            customerSegment: 'All customer segments',
-            region: 'All regions',
-        },
-        displayedFilters: {
-            duration: '4 weeks',
-            dates: '25 Dec 2017 - 21 Jan 2018',
-            comparison: 'vs. previous 4 weeks',
-            subcategory: 'All product groups',
-            storeFormat: 'All store formats',
-            customerSegment: 'All customer segments',
-            region: 'All regions'
-        },
-        dataViewNeedsUpdating: false,
 
-        selectedMeasure: 'Sales value',
+        count: 0
 
-        expanded: {
-            measuresSummaryBoard: true,
-            measuresInDetailBoard: true,
-            kpisTreesBoard: false,
+        // selectedFilters: {
+        //     duration: '4 weeks',
+        //     dates: '25 Dec 2017 - 21 Jan 2018',
+        //     comparison: 'vs. previous 4 weeks',
+        //     subcategory: 'All product groups',
+        //     storeFormat: 'All store formats',
+        //     customerSegment: 'All customer segments',
+        //     region: 'All regions',
+        // },
+        // displayedFilters: {
+        //     duration: '4 weeks',
+        //     dates: '25 Dec 2017 - 21 Jan 2018',
+        //     comparison: 'vs. previous 4 weeks',
+        //     subcategory: 'All product groups',
+        //     storeFormat: 'All store formats',
+        //     customerSegment: 'All customer segments',
+        //     region: 'All regions'
+        // },
+        // dataViewNeedsUpdating: false,
 
-            trendGraphModule: false,
-            splitBySubcategoryModule: false,
-            splitByStoreFormatModule: false,
-            splitByCustomerSegmentModule: false,
-            splitByRegionModule: false,
-        },
+        // selectedMeasure: 'Sales value',
 
-        measureInDetailBoardHeaderVisible: false,
+        // expanded: {
+        //     measuresSummaryBoard: true,
+        //     measuresInDetailBoard: true,
+        //     kpisTreesBoard: false,
+
+        //     trendGraphModule: false,
+        //     splitBySubcategoryModule: false,
+        //     splitByStoreFormatModule: false,
+        //     splitByCustomerSegmentModule: false,
+        //     splitByRegionModule: false,
+        // },
+
+        // measureInDetailBoardHeaderVisible: false,
     }
 
     // REFS
 
-    refToMeasureInDetailBoardHeaderContainingDiv: HTMLDivElement
+    // refToMeasureInDetailBoardHeaderContainingDiv: HTMLDivElement
 
     refAssignmentFunctions = {
-        forMeasureInDetailBoardHeaderContainingDiv: (element: HTMLDivElement) => {
-            this.refToMeasureInDetailBoardHeaderContainingDiv = element
-        }
+        // forMeasureInDetailBoardHeaderContainingDiv: (element: HTMLDivElement) => {
+        //     this.refToMeasureInDetailBoardHeaderContainingDiv = element
+        // }
     }
 
     // ACTIONS
 
     actions = {
-        updateView: () => {
+        incrementCount: () => {
             this.setState(
                 (prevState: AppState) => ({
-                    displayedFilters: prevState.selectedFilters,
-                    dataViewNeedsUpdating: false,
+                    count: prevState.count + 1
                 })
             )
         },
-        conditionallySetMeasureInDetailBoardHeaderVisibleStateBasedOnScrollY: () => {
-            let measureInDetailBoardHeaderContainingDivBoundingClientRect = this.refToMeasureInDetailBoardHeaderContainingDiv.getBoundingClientRect() as DOMRect
-
-            this.setState({
-                  measureInDetailBoardHeaderVisible: measureInDetailBoardHeaderContainingDivBoundingClientRect.top > 0 ? false : true,
-            })
-        },
-        changeSelected: {
-            duration: (newlySelectedDuration: DurationOption) => {
-                this.setState(
-                    (prevState: AppState) => ({
-                        ...prevState,
-                        selectedFilters: {
-                            ...prevState.selectedFilters,
-                            duration: newlySelectedDuration,
-                        },
-                        dataViewNeedsUpdating: true,
-                    } as AppState)
-                )
-            },
-            dates: (newlySelectedDates: DateOption) => {
-                this.setState(
-                    (prevState: AppState) => ({
-                        selectedFilters: {
-                            ...prevState.selectedFilters,
-                            dates: newlySelectedDates
-                        },
-                        dataViewNeedsUpdating: true,
-                    } as AppState)
-                )
-            },
-            comparison: (newlySelectedComparison: ComparisonOption) => {
-                this.setState(
-                    (prevState: AppState) => ({
-                        selectedFilters: {
-                            ...prevState.selectedFilters,
-                            comparison: newlySelectedComparison,
-                        },
-                        dataViewNeedsUpdating: true,
-                    } as AppState)
-                )
-            },
-            subcategory: (newlySelectedSubcategory: MedicineSubcategoryOption) => {
-                this.setState(
-                    (prevState: AppState) => ({
-                        selectedFilters: {
-                            ...prevState.selectedFilters,
-                            subcategory: newlySelectedSubcategory,
-                        },
-                        dataViewNeedsUpdating: true,
-                    } as AppState)
-                )
-            },
-            region: (newlySelectedRegion: RegionOption) => {
-                this.setState(
-                    (prevState: AppState) => ({
-                        selectedFilters: {
-                            ...prevState.selectedFilters,
-                            region: newlySelectedRegion,
-                        },
-                        dataViewNeedsUpdating: true,
-                    } as AppState)
-                )
-            },
-            storeFormat: (newlySelectedStoreFormat: StoreFormatOption) => {
-                this.setState(
-                    (prevState: AppState) => ({
-                        selectedFilters: {
-                            ...prevState.selectedFilters,
-                            storeFormat: newlySelectedStoreFormat,
-                        },
-                        dataViewNeedsUpdating: true,
-                    } as AppState)
-                )
-            },
-            customerSegment: (newlySelectedCustomerSegment: CustomerSegmentOption) => {
-                this.setState(
-                    (prevState: AppState) => ({
-                        selectedFilters: {
-                            ...prevState.selectedFilters,
-                            customerSegment: newlySelectedCustomerSegment,
-                        },
-                        dataViewNeedsUpdating: true,
-                    } as AppState)
-                )
-            },
-            measure: (newlySelectedMeasure: MeasureOption) => {
-                this.setState({
-                    selectedMeasure: newlySelectedMeasure
+        decrementCount: () => {
+            this.setState(
+                (prevState: AppState) => ({
+                    count: prevState.count - 1
                 })
-            },
+            )
         },
-        toggleExpansion: {
-            measuresSummary: () => {
-                this.setState(
-                    (prevState: AppState) => ({
-                        expanded: {
-                            ...prevState.expanded,
-                            measuresSummaryBoard: !prevState.expanded.measuresSummaryBoard,
-                        }
-                    })
-                )
-            },
-            kpisTrees: () => {
-                this.setState(
-                    (prevState: AppState) => ({
-                        expanded: {
-                            ...prevState.expanded,
-                            kpisTreesBoard: !prevState.expanded.kpisTreesBoard
-                        }
-                    })
-                )
-            },
-            measureInDetail: () => {
-                this.setState(
-                    (prevState: AppState) => ({
-                        expanded: {
-                            ...prevState.expanded,
-                            measuresInDetailBoard: !prevState.expanded.measuresInDetailBoard,
-                        }
-                    })
-                )
-            },
-            trendGraph: () => {
-                this.setState(
-                    (prevState: AppState) => ({
-                        expanded: {
-                            ...prevState.expanded,
-                            trendGraphModule: !prevState.expanded.trendGraphModule
-                        }
-                    })
-                )
-            },
-            splitBySubcategory: () => {
-                this.setState(
-                    (prevState: AppState) => ({
-                        expanded: {
-                            ...prevState.expanded,
-                            splitBySubcategoryModule: !prevState.expanded.splitBySubcategoryModule
-                        }
-                    })
-                )
-            },
-            splitByRegion: () => {
-                this.setState(
-                    (prevState: AppState) => ({
-                        expanded: {
-                            ...prevState.expanded,
-                            splitByRegionModule: !prevState.expanded.splitByRegionModule
-                        }
-                    })
-                )
-            },
-            splitByStoreFormat: () => {
-                this.setState(
-                    (prevState: AppState) => ({
-                        expanded: {
-                            ...prevState.expanded,
-                            splitByStoreFormatModule: !prevState.expanded.splitByStoreFormatModule
-                        }
-                    })
-                )
-            },
-            splitByCustomerSegment: () => {
-                this.setState(
-                    (prevState: AppState) => ({
-                        expanded: {
-                            ...prevState.expanded,
-                            splitByCustomerSegmentModule: !prevState.expanded.splitByCustomerSegmentModule
-                        }
-                    })
-                )
-            },
-        },
+
+    //     updateView: () => {
+    //         this.setState(
+    //             (prevState: AppState) => ({
+    //                 displayedFilters: prevState.selectedFilters,
+    //                 dataViewNeedsUpdating: false,
+    //             })
+    //         )
+    //     },
+    //     conditionallySetMeasureInDetailBoardHeaderVisibleStateBasedOnScrollY: () => {
+    //         let measureInDetailBoardHeaderContainingDivBoundingClientRect = this.refToMeasureInDetailBoardHeaderContainingDiv.getBoundingClientRect() as DOMRect
+
+    //         this.setState({
+    //               measureInDetailBoardHeaderVisible: measureInDetailBoardHeaderContainingDivBoundingClientRect.top > 0 ? false : true,
+    //         })
+    //     },
+    //     changeSelected: {
+    //         duration: (newlySelectedDuration: DurationOption) => {
+    //             this.setState(
+    //                 (prevState: AppState) => ({
+    //                     ...prevState,
+    //                     selectedFilters: {
+    //                         ...prevState.selectedFilters,
+    //                         duration: newlySelectedDuration,
+    //                     },
+    //                     dataViewNeedsUpdating: true,
+    //                 } as AppState)
+    //             )
+    //         },
+    //     },
+    //     toggleExpansion: {
+    //         measuresSummary: () => {
+    //             this.setState(
+    //                 (prevState: AppState) => ({
+    //                     expanded: {
+    //                         ...prevState.expanded,
+    //                         measuresSummaryBoard: !prevState.expanded.measuresSummaryBoard,
+    //                     }
+    //                 })
+    //             )
+    //         },
+    //     },
     }
 
     // Event listeners
 
-    componentDidMount() {
-        window.addEventListener(
-            'scroll',
-            this.actions.conditionallySetMeasureInDetailBoardHeaderVisibleStateBasedOnScrollY
-        )
-    }
+    // componentDidMount() {
+    //     window.addEventListener(
+    //         'scroll',
+    //         this.actions.conditionallySetMeasureInDetailBoardHeaderVisibleStateBasedOnScrollY
+    //     )
+    // }
 
-    componentWillUnmount() {
-        window.removeEventListener(
-            'scroll',
-            this.actions.conditionallySetMeasureInDetailBoardHeaderVisibleStateBasedOnScrollY
-        )
-    }
+    // componentWillUnmount() {
+    //     window.removeEventListener(
+    //         'scroll',
+    //         this.actions.conditionallySetMeasureInDetailBoardHeaderVisibleStateBasedOnScrollY
+    //     )
+    // }
 
     // Render
 
@@ -268,41 +146,27 @@ class App extends React.Component<Props, AppState> {
         return (
             <div>
                 <header
-                    className={s.headerContainer}
+                    className={styles.headerContainer}
                 >
-                    <img src={PROTOIMG_nav_header} />
-                </header>
-
-                <header
-                    className={s.tabsBarContainer}
-                >
-                    <img src={PROTOIMG_nav_tabs} />
+                    {/* <img src={PROTOIMG_nav_header} /> */}
                 </header>
 
                 <main
-                    className={s.main}
+                    className={styles.main}
                 >
-                    <div
-                        className={s.sideBarContainer}
+                    Count: {this.state.count}
+
+                    <button
+                        onClick={this.actions.incrementCount}
                     >
-                        <Sidebar
-                            appState={this.state}
-                            actions={this.actions}
-                        />
-                    </div>
-
-                    <DataViewComponent
-                        appState={this.state}
-                        actions={this.actions}
-                        refAssignmentFunctions={this.refAssignmentFunctions}
-                    />
+                        Increment
+                    </button>
+                    <button
+                        onClick={this.actions.decrementCount}
+                    >
+                        Decrement
+                    </button>
                 </main>
-
-                <footer
-                    className={s.footer}
-                >
-                    <img src={PROTOIMG_nav_footer} />
-                </footer>
 
                 <AssetsLoader />
             </div>
